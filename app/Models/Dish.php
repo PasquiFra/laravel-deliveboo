@@ -10,4 +10,14 @@ class Dish extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
+
+    public function restaurant()
+    {
+        return $this->belongsTo(Restaurant::class);
+    }
 }
