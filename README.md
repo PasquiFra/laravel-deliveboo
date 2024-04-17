@@ -1,66 +1,176 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# DeliveBoo
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Introduzione
+DeliveBoo è una web app che permette di ordinare cibo a domicilio nella città di ***.
+Permette agli utenti di cercare i loro cibi preferiti, preparati dai loro ristoranti di fiducia. 
 
-## About Laravel
+Tutto rimanendo comodamente sul divano di casa.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tipi di Utenti
+Definiamo i seguenti tipi di utente che possono utilizzare DeliveBoo:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+● Utente Interessato (UI): un utente non registrato che visita il sito
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+● Utente Registrato (UR): un utente che ha effettuato la registrazione come ristoratore
+Lista delle pagine
 
-## Learning Laravel
+● Homepage:
+offre la possibilità di cliccare sulle tipologie di ristorante e senza il refresh della
+pagina ottenere una lista di ristoranti con le tipologie di appartenenza sotto ogni
+nome.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+● Pagina Menù Ristoratore Pubblica:
+permette di visualizzare il menù di un particolare ristoratore.
+È possibile scegliere i cibi desiderati e relativa quantità per inserirli nel carrello.
+Il carrello si popola con i cibi selezionati e le relative quantità.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+● Pagina carrello/checkout:
+permette di modificare le quantità dei cibi e di procedere all’ordine.
+È possibile acquistare solo da un ristoratore alla volta.
+Tramite questo pannello è possibile pagare inserendo i dettagli della carta di credito.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+● Dashboard Utente Registrato:
+permette la gestione dei propri dati e l’inserimento dei piatti disponibili
 
-## Laravel Sponsors
+○ Pagina Lista Piatti
+Da qui è possibile accedere alla modifica e cancellazione dei propri piatti
+I piatti non hanno categoria e si mostrano in ordine alfabetico. (possibilità di
+integrare ordinamento e categoria successivamente)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+○ Pagina Piatto
+pagina per l’inserimento del piatto singolo con descrizione e prezzo
 
-### Premium Partners
+○ Pagina Lista Ordini Ricevuti
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+○ Pagina Statistiche Ordini
+permette di visualizzare le statistiche degli ordini.
+Nello specifico i grafici mostrano il numero di ordini per mesi/anni e
+l’ammontare delle vendite
 
-## Contributing
+## Requisiti Tecnici
+### (RT1) Client-side Validation
+Tutti gli input inseriti dall’utente sono controllati client-side (oltre che server-side) per un
+controllo di veridicità (es. il prezzo di un piatto deve essere positivo).
+### (RT2) Sistema di Pagamento
+Il sistema di pagamento utilizzato è Braintree: https://www.braintreepayments.com/
+Il sistema permette agli sviluppatori di simulare pagamenti senza essere approvati
+formalmente e senza utilizzare vere carte di credito.
+### (RT3) Il sito è responsive
+Il sito è correttamente visibile da desktop e da smartphone.
+### (RT4) La ricerca dei ristoranti avviene senza il refresh
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Requisiti Funzionali
+La piattaforma soddisfa i seguenti requisiti funzionali (RF) che vengono dettagliati nelle
+pagine successive:
 
-## Code of Conduct
+● (RF1) Permettere ai ristoratori di registrarsi alla piattaforma
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+● (RF2) Permettere ai ristoratori di aggiungere un piatto
 
-## Security Vulnerabilities
+● (RF3) Permette ai visitatori di ricercare per tipologia di ristorante
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+● (RF4) Permettere ai visitatori di vedere il menu di un ristorante
 
-## License
+● (RF5) Permettere ai UI di pagare l’ordinazione
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+● (RF6) Permettere ai ristoratori di visualizzare il riepilogo degli ordini ricevuti
+
+● (RF7) Permettere ai ristoratori di visualizzare le statistiche degli ordini
+
+### (RF1) Permettere ai ristoratori di registrarsi alla piattaforma
+#### Visibilità: UI
+#### Descrizione:
+L’applicazione permette ai ristoratori di registrarsi alla piattaforma e creare un profilo.
+Le informazioni che l’utente può inserire sono:
+
+● Email *
+
+● Password *
+
+● Nome Attività *
+
+● Indirizzo *
+
+● PIVA *
+
+● Uno o più tipologie*:
+italiano, internazionale, cinese, giapponese, messicano, indiano, pesce, carne,
+pizza...
+
+Sono contrassegnati con * i dati obbligatori.
+
+Email e password sono utilizzati dall’utente per fare il login alla piattaforma.
+Non è previsto un pannello per modificare le informazioni inserite una volta registrato.
+I form devono rispettare RT1
+#### Risultato: 
+Un nuovo utente viene creato nel sistema
+#### Eccezioni: 
+Esiste già nel sistema un utente con l’email inserita
+
+### (RF2) Permettere ai ristoratori di aggiungere un piatto
+#### Visibilità: UR
+#### Descrizione: Un ristoratore ha la possibilità di inserire uno o più piatti all’interno del sistema.
+Per inserire un nuovo piatto vanno inserite le seguenti informazioni:
+● Nome piatto
+● Ingredienti/descrizione
+● Prezzo
+● visibile si/no
+È possibile modificare le informazioni inserite
+I form devono rispettare RT1.
+#### Risultato: 
+Un piatto è inserito nel sistema e le sue informazioni sono aggiornate
+#### Eccezioni: /
+
+### (RF3) Permette ai visitatori di ricercare per tipologia di ristorante
+#### Visibilità: UI / UR
+#### Descrizione: Un utente è in grado di ricercare per una o più tipologie di ristorante
+La ricerca dei ristoranti deve rispettare RT4
+#### Risultato: 
+Viene generata una lista di ristoranti che corrispondono alla ricerca
+#### Eccezioni: /
+
+### (RF4) Permettere ai visitatori di vedere il menu di un ristorante
+#### Visibilità: UI / UR
+#### Descrizione: Selezionando un ristoratore appaiono tutti i dettagli disponibili riguardanti il
+ristorante e i piatti disponibili.
+È possibile aggiungere piatti al carrello cliccando sui singoli prodotti.
+Il carrello si visualizza in pagina e si aggiorna senza refresh.
+#### Risultato: 
+Viene visualizzata la pagina del menu
+#### Eccezioni: /
+
+### (RF5) Permettere ai UI di pagare l’ordinazione
+#### Visibilità: UI / UR
+#### Descrizione: in questa pagina è possibile aggiornare il carrello e inserire i dati per la
+consegna e della carta di credito con cui processare il pagamento
+#### Risultato: 
+L’ordine viene effettuato e si viene inviati ad una pagina di avvenuto ordine e
+viene inviata una mail all’utente e al ristoratore
+#### Eccezioni:
+ Il sistema di pagamento non ha processato correttamente il pagamento / i dati
+della carta di credito non sono validi
+
+### (RF6) Permettere ai ristoratori di visualizzare il riepilogo degli ordini
+ricevuti
+#### Visibilità: UR
+#### Descrizione: Un ristoratore ha la possibilità di vedere il riepilogo degli ordini ricevuti, con i
+dati dell’utente che ha effettuato l’ordine.
+#### Risultato: 
+L'utente visualizza il riepilogo degli ordini ricevuti, ordinati in modo decrescente
+per data
+#### Eccezioni: /
+
+### (RF7) Permettere ai ristoratori di visualizzare le statistiche degli ordini
+#### Visibilità: UR
+#### Descrizione: 
+Un ristoratore ha la possibilità di vedere le statistiche degli ordini ricevuti
+#### Risultato: 
+L'utente visualizza le statistiche degli ordini ricevuti per mese/anno e l’ammontare
+delle vendite
+#### Eccezioni: /
+
+# Collaboratori
+- ## [Giordano Guidi](https://github.com/BiagioCaputo)
+- ## [Gioacchino Argo](https://github.com/dieghino26)
+- ## [Francesco Pasquinoni](https://github.com/MatteoCantafio25)
+- ## [Santiago Galvan Colorado](https://github.com/SantiGalvan)
