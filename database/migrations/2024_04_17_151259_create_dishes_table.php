@@ -18,8 +18,10 @@ return new class extends Migration
             // $table->integer('quantity')->required();
             $table->boolean('availability')->required();
             $table->text('image')->nullable();
+
             $table->string('diet', 20)->nullable();
-            $table->text('ingredient')->required()->nullable();
+            $table->text('ingredient')->nullable();
+
             $table->decimal('price')->required();
             $table->timestamps();
             $table->softDeletes();
