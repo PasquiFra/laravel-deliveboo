@@ -2,5 +2,6 @@
 
 @section('content')
  
+    @include('admin.form.form')
 
 @endsection

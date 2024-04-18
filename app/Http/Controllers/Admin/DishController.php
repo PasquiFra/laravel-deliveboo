@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Spatie\LaravelIgnition\Recorders\DumpRecorder\Dump;
 
 class DishController extends Controller
 {
@@ -32,7 +33,7 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $ingredients = implode(', ', $request->input('ingredients'));
-
+        dd($ingredients);
         return redirect()->back()->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredients);
     }
 

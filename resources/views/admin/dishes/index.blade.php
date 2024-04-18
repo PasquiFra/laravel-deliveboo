@@ -27,7 +27,7 @@
                 <th scope="col">Slug</th>
                 <th scope="col">Quantità</th>
                 <th scope="col">Disponibile (si/no)</th>
-                <th scope="col">Diet</th>
+                <th scope="col">Dieta</th>
                 <th scope="col">Prezzo</th>
                 <th scope="col">Ingredienti</th>
                 <th scope="col">Immagine</th>
