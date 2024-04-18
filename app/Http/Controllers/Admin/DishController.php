@@ -31,7 +31,9 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ingredients = implode(', ', $request->input('ingredients'));
+
+        return redirect()->back()->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredients);
     }
 
     /**

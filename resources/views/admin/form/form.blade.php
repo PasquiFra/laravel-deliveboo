@@ -88,9 +88,12 @@
         <div class="input-group mb-3 w-50 p-1 d-flex">
             <select class="form-select" aria-label="Default select example">
                 <option selected>Scegli un'opzione (facoltativo)</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="veg">Vegetariano</option>
+                <option value="veggie">Vegano</option>
+                <option value="gf">Gluten-free</option>
+                <option value="meat">Carne</option>
+                <option value="fish">Pesce</option>
+                <option value="cal">Calorico</option>
             </select>
             @error('name')
             <div class="invalid-feedback">
@@ -101,6 +104,45 @@
                 Campo corretto
             </div>      
             @enderror       
+        </div>
+
+        {{-- INPUT GROUP INGREDIENTS --}}
+        <div class="input-group mb-3 w-50 p-1 d-flex">
+            
+            <div class="w-100">
+                <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
+            </div>
+            <div id="inputs">
+                {{-- singolo campo ingrediente --}}
+                <input 
+                    type="text" 
+                    id="ingredients" 
+                    name="ingredients[]" 
+                    class="ingredient-input" 
+                    value="{{old('ingredients', $dish->ingredients)}}" 
+                    placeholder="Inserisci un ingrediente..."
+                >
+
+            </div>
+            <button type="button" id="add-ingredient-btn" onclick="addIngredient()">Aggiungi Ingrediente</button>
+
+        </div>
+
+        {{-- INPUT GROUP PRICE --}}
+        <div class="input-group mb-3 w-50 p-1 d-flex">
+            
+            <span class="input-group-text">€</span>
+            <input type="number" name="price" id="price"  class="form-control @error('price') is-invalid @elseif(old('price')) is-valid @enderror">
+            @error('price')
+            <div class="invalid-feedback">
+                {{$message}}
+            </div>   
+            @else        
+            <div class="valid-feedback">
+                Campo corretto
+            </div>      
+            @enderror     
+
         </div>
 
         {{-- INPUT IMMAGINE --}}
@@ -140,4 +182,21 @@
     </form>
     
     @include('admin.form.slug')
+@endsection
+
+@section('scripts')
+<script>
+
+    // AGGIUNTA INPUT FIELD
+    function addIngredient() {
+        const inputs = document.getElementById('inputs');
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = 'ingredients[]';
+        input.className = 'ingredient-input';
+        container.appendChild(input);
+    }
+
+</script>
+
 @endsection
