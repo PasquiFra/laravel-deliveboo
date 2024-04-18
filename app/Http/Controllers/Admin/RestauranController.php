@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
 class RestauranController extends Controller
@@ -27,9 +28,9 @@ class RestauranController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
