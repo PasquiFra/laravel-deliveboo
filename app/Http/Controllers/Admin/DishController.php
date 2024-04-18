@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Dish;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DishController extends Controller
 {
@@ -12,15 +13,17 @@ class DishController extends Controller
      */
     public function index()
     {
-        //
+        $dishes = Dish::all();
+
+        return view('admin.dishes.index', compact('dishes'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Dish $dish)
     {
-        //
+        return view('admin.dishes.create', compact('dish'));
     }
 
     /**

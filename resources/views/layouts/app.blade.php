@@ -88,7 +88,12 @@
         <main class="">
             @yield('content')
         </main>
+    
     </div>
+
+    {{--Scripts--}}
+    @yield('scripts')
+
 </body>
 
 </html>
