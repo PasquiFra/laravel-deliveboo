@@ -6,18 +6,20 @@
 <div class="container">
     
     <div class="d-flex justify-content-end gap-2 p-2 my-3">
-        <!--Cestino-->
+        <!-- Cestino -->
         <a href="{{route('admin.dishes.trash')}}" class="btn btn-danger">
             <i class="far fa-trash-can"></i> 
             Vedi Cestino
         </a>
-        <!--Nuova dish-->
+        <!-- Crea nuovo dish -->
         <a href="{{route('admin.dishes.create')}}" class="btn btn-success">
             <i class="fa-solid fa-plus"></i>
             Aggiungi piatto
         </a>
     </div>
     <table class="table table-dark">
+
+        {{-- HEADER TABELLA --}}
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -34,6 +36,8 @@
                 <th scope="col"></th>
             </tr>
         </thead>
+
+        {{-- BODY TABELLA --}}
         <tbody>
     
             @forelse ($dishes as $dish)
@@ -51,17 +55,17 @@
               <td>{{$dish->updated_at}}</td>
               <td>
                 <div class="d-flex gap-2 justify-content-end">
-                  {{--# SHOW --}}
+                  {{--# COLLEGAMENTO A SHOW --}}
                   <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn-primary">
                     <i class="far fa-eye"></i>
                   </a>
       
-                  {{--# EDIT --}}
+                  {{--# COLLEGAMENTO A  EDIT --}}
                   <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn-secondary">
                     <i class="fas fa-pencil"></i>
                   </a>
       
-                  {{--# DESTROY --}}
+                  {{--# COLLEGAMENTO A  DESTROY --}}
                   <form action="{{ route('admin.dishes.destroy', $dish->id) }}" 
                     method="POST" class="delete-form" data-dish="{{$dish->name}}">
                     @csrf
@@ -71,6 +75,8 @@
                 </div>
               </td>
             </tr>
+            
+            {{-- NESSUN PROGETTO --}}
             @empty
             <h1>Non ci sono progetti da mostrare</h1>
             @endforelse
@@ -84,6 +90,8 @@
 
 @section('scripts')
 <script>
+
+    // CONFERMA DI CANCELLAZIONE
     const formsDelete= document.querySelectorAll('.delete-form');
     formsDelete.forEach(form => {
         form.addEventListener('submit', e => {
