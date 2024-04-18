@@ -17,11 +17,11 @@
             Aggiungi piatto
         </a>
     </div>
-    <table class="table table-dark">
+    <table class="table">
 
         {{-- HEADER TABELLA --}}
         <thead>
-            <tr>
+            <tr class="">
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Slug</th>
@@ -48,8 +48,8 @@
               <td>{{$dish->quantity}}</td>
               <td>{{$dish->availability}}</td>
               <td>{{$dish->diet}}</td>
-              <td>{{$dish->prezzo}}</td>
-              <td>{{$dish->ingredienti}}</td>
+              <td>{{$dish->price}}</td>
+              <td>{{$dish->ingredient}}</td>
               <td>{{$dish->image}}</td>
               <td>{{$dish->created_at}}</td>
               <td>{{$dish->updated_at}}</td>
