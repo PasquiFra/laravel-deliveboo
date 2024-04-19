@@ -15,13 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50)->required();
             $table->string('slug');
-            // $table->integer('quantity')->required();
             $table->boolean('availability')->required();
             $table->text('image')->nullable();
-
             $table->string('diet', 20)->nullable();
             $table->text('ingredient')->nullable();
-
             $table->decimal('price')->required();
             $table->timestamps();
             $table->softDeletes();

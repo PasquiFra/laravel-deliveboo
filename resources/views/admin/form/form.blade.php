@@ -142,7 +142,7 @@
                     id="ingredients" 
                     name="ingredients[]" 
                     class="me-2 mb-2" 
-                    value="{{old('ingredients', $dish->ingredients)}}" 
+                    value="{{$dish->ingredient}}" 
                     placeholder="Inserisci un ingrediente..."
                 >
             </div>

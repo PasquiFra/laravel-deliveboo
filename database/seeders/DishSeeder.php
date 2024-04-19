@@ -28,7 +28,7 @@ class DishSeeder extends Seeder
             [
                 'restaurant_id' => 1,
                 'name' => 'Patatine fritte',
-                'availability' => 1,
+                'availability' => 0,
                 'diet' => 'Vegano',
                 'price' => 4.50
             ],
@@ -46,7 +46,7 @@ class DishSeeder extends Seeder
             [
                 'restaurant_id' => 2,
                 'name' => 'Supplì',
-                'availability' => 1,
+                'availability' => 0,
                 'ingredient' => 'Pomodoro, Basilico, Riso',
                 'price' => 4
             ],
