@@ -162,27 +162,27 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Cavour, 254'
             ],
 
-            // // Ristoranti Thailandesi
-            // [
-            //     'name' => 'Isola Puket',
-            //     'address' => 'Via di Villa Chigi, 91'
-            // ],
-            // [
-            //     'name' => 'Bussarakham',
-            //     'address' => 'Via Emanuele Filiberto, 251'
-            // ],
-            // [
-            //     'name' => 'Bin Hai',
-            //     'address' => 'Via la Spezia 86'
-            // ],
-            // [
-            //     'name' => 'Siam Cuisine',
-            //     'address' => 'Via Toscana, 34'
-            // ],
-            // [
-            //     'name' => 'Thai Inn',
-            //     'address' => 'Via Brittania, 5'
-            // ],
+            // Ristoranti Thailandesi
+            [
+                'name' => 'Isola Puket',
+                'address' => 'Via di Villa Chigi, 91'
+            ],
+            [
+                'name' => 'Bussarakham',
+                'address' => 'Via Emanuele Filiberto, 251'
+            ],
+            [
+                'name' => 'Bin Hai',
+                'address' => 'Via la Spezia 86'
+            ],
+            [
+                'name' => 'Siam Cuisine',
+                'address' => 'Via Toscana, 34'
+            ],
+            [
+                'name' => 'Thai Inn',
+                'address' => 'Via Brittania, 5'
+            ],
 
             // // Ristoranti Brasiliani
             // [
