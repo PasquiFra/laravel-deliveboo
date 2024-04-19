@@ -104,7 +104,14 @@ class DishController extends Controller
     public function destroy(Dish $dish)
     {
         $dish->delete();
-        return to_route('admin.dishes.index');
+        //Flash data
+        return to_route('admin.dishes.index')
+            ->with('toast-button-type', 'danger')
+            ->with('toast-message', 'Piatto eliminato')
+            ->with('toast-label', config('app.name'))
+            ->with('toast-method', 'PATCH')
+            ->with('toast-route', route('admin.dishes.restore', $dish->id))
+            ->with('toast-button-label', 'Annulla');
     }
 
     //# Action per eliminare il piatto

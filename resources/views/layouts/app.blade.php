@@ -88,8 +88,11 @@
         <main class="container">
             @yield('content')
         </main>
-    
+
     </div>
+    
+    {{--Toast--}}
+    @include('layouts.includes.toast')
 
     {{--Scripts--}}
     @yield('scripts')
