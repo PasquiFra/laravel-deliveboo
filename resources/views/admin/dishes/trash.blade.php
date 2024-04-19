@@ -55,7 +55,14 @@
                     @method('DELETE')
                     <button class="btn btn-sm btn-danger"><i class="far fa-trash-can"></i></button>
                   </form>
-                  
+                   {{--Ripristina il Piatto--}}
+                   <form action="{{route('admin.dishes.restore',$dish->id)}}" method="POST" 
+                    class="form-delete m-0" data-dish="{{$dish->title}}">
+                    @csrf
+                    @method('PATCH')
+                    <button  class="btn btn-success">
+                        <i class="fas fa-arrows-rotate"></i>
+                    </button>
                 </form>
                 </div>
               </td>
