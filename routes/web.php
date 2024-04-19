@@ -23,6 +23,9 @@ Route::get('/', function () {
 
 Route::prefix('/admin')->middleware(['auth'])->name('admin.')->group(function () {
     //Route::get('', DishController::class)->name('home');
+
+    //Rotta per eliminare un piatto
+    Route::delete('/dishes/{dish}', [DishController::class, 'destroy'])->name('dishes.destroy');
     // Rotta per spostare un progetto nel cestino
     Route::get('/dishes/trash', [DishController::class, 'trash'])->name('dishes.trash');
     // Rotta per il restore di un progetto
