@@ -115,6 +115,8 @@ class RestauranController extends Controller
 
         $data = $request->all();
 
+        $restaurant = new Restaurant();
+
         $restaurant->slug = Str::slug($data['name']);
 
         $restaurant->update($data);
