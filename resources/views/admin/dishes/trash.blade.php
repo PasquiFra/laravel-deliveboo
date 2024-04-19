@@ -44,6 +44,10 @@
                   <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn-primary">
                     <i class="far fa-eye"></i>
                   </a>
+                  {{-- Modifica il Piatto --}} 
+                  <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn-warning">
+                    <i class="fas fa-pencil"></i>
+                  </a>
                 </div>
               </td>
             </tr>
