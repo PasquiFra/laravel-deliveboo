@@ -30,7 +30,8 @@
            
             <input 
                 type="text" 
-                required id="name" 
+                required 
+                id="name" 
                 name="name" 
                 class="form-control @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
                 value="{{old('name', $dish->name)}}" 
@@ -45,25 +46,6 @@
                 Campo corretto
             </div>      
             @enderror       
-        </div>
-    
-        {{-- INPUT GROUP DELLO SLUG --}}
-        <div class=" mb-3 col-6">
-            
-            <label class="form-label label fw-bold" for="slug">Slug:</label>
-            
-            <input type="text" id="slug" name="slug" class="form-control" 
-            value="{{$dish->slug}}" 
-            readonly>    
-        </div>
-
-        {{-- INPUT GROUP QUANTITY --}}
-        <div class=" mb-3  col-6">
-
-            <label class="form-label label fw-bold" for="quantity">Quantity:</label>
-
-            <input type="number" id="quantity" name="quantity" class="form-control" 
-            value="{{$dish->quantity}}">    
         </div>
 
         {{-- INPUT GROUP Availability --}}
@@ -136,15 +118,30 @@
             <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
 
             <div id="ingredient-inputs">
-                {{-- singolo campo ingrediente --}}
-                <input 
-                    type="text" 
-                    id="ingredients" 
-                    name="ingredients[]" 
-                    class="me-2 mb-2" 
-                    value="{{$dish->ingredient}}" 
-                    placeholder="Inserisci un ingrediente..."
-                >
+
+                @if (!$dish->ingredient)
+                
+                    {{-- Se sono in store e non ho ingredienti inizio con un campo vuoto --}}
+                    <input 
+                        type="text" 
+                        id="ingredients" 
+                        name="ingredients[]" 
+                        class="me-2 mb-2" 
+                        value="{{$dish->ingredient}}" 
+                        placeholder="Inserisci un ingrediente..."
+                    >
+
+                @else
+                {{-- Se sono in edit stamperò ciascun ingrediente in un input field differente --}}
+                    {{-- faccio diventare la stringa un'array --}}
+                    @php
+                    $ingredients = explode(', ', $dish->ingredient);
+                    @endphp
+                    {{-- stampo ciascun valore in un input field diverso --}}
+                    @foreach ($ingredients as $ingredient)
+                        <input type="text" name="ingredients[]" class="me-2 mb-2" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                    @endforeach
+                @endif
             </div>
             <button type="button" id="add-ingredient-btn" onclick="addIngredient()">Aggiungi Ingrediente</button>
 
@@ -203,9 +200,8 @@
 
     </form>
     
-    @include('admin.form.slug')
 @endsection
-
+    
 @section('scripts')
 <script>
 
