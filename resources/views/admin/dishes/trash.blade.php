@@ -48,6 +48,15 @@
                   <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn-warning">
                     <i class="fas fa-pencil"></i>
                   </a>
+                  {{--Elimina Definitivamente il Piatto --}}
+                  <form action="{{ route('admin.dishes.drop', $dish->id) }}" 
+                    method="POST" class="delete-form" data-dish="{{$dish->name}}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-sm btn-danger"><i class="far fa-trash-can"></i></button>
+                  </form>
+                  
+                </form>
                 </div>
               </td>
             </tr>
