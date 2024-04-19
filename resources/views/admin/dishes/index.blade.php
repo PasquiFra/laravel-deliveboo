@@ -1,10 +1,7 @@
 
 @extends('layouts.app')
  
-@section('content')
-
-<div class="container">
-    
+@section('content')    
     <div class="d-flex justify-content-end gap-2 p-2 my-3">
         <!-- Cestino -->
         <a href="{{route('admin.dishes.trash')}}" class="btn btn-danger">
@@ -17,16 +14,15 @@
             Aggiungi piatto
         </a>
     </div>
-    <table class="table table-dark">
+    <table class="table table-dark table-hover">
 
         {{-- HEADER TABELLA --}}
         <thead>
-            <tr>
+            <tr class="">
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Slug</th>
-                <th scope="col">Quantità</th>
-                <th scope="col">Disponibile (si/no)</th>
+                <th scope="col">Online</th>
                 <th scope="col">Dieta</th>
                 <th scope="col">Prezzo</th>
                 <th scope="col">Ingredienti</th>
@@ -41,16 +37,17 @@
         <tbody>
     
             @forelse ($dishes as $dish)
-            <tr>
+            <tr> 
               <th scope="row">{{$dish->id}}</th>
               <td>{{$dish->name}}</td>
               <td>{{$dish->slug}}</td>
-              <td>{{$dish->quantity}}</td>
-              <td>{{$dish->availability}}</td>
+              <td>{{$dish->availability == 1 ? 'Si' : 'No'}}</td>
               <td>{{$dish->diet}}</td>
-              <td>{{$dish->prezzo}}</td>
-              <td>{{$dish->ingredienti}}</td>
-              <td>{{$dish->image}}</td>
+              <td>{{$dish->price}}</td>
+              <td>{{$dish->ingredient}}</td>
+              <td class="image-preview">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThT_FiKa24LyxPc7o6o0CtG_wKVYFrdBnP3qoRIZeXwg&s" alt="dish-image">
+              </td>
               <td>{{$dish->created_at}}</td>
               <td>{{$dish->updated_at}}</td>
               <td>
@@ -83,9 +80,6 @@
     
         </tbody>
     </table> 
-
-</div>
-
 @endsection
 
 @section('scripts')
