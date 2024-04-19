@@ -32,39 +32,31 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Viale dei Quattro Venti, 150/c',
             ],
             [
-                'name' => 'Trapizzino',
-                'address' => 'Via Giovanni Branca, 88',
+                'name' => 'Tonnarello',
+                'address' => 'Via del Governo Vecchio, 86',
             ],
-            // [
-            //     'name' => 'Bistrot NaturaSì',
-            //     'address' => 'Piazza Farnese, 99',
-            // ],
-            // [
-            //     'name' => 'Gelateria Bartocci',
-            //     'address' => 'Via Alessandria, 145',
-            // ],
-            // [
-            //     'name' => 'Nonna Agrippina',
-            //     'address' => 'Vicolo del Cinque, 15',
-            // ],
-            // [
-            //     'name' => 'Tonnarello',
-            //     'address' => 'Via del Governo Vecchio, 86',
-            // ],
-            // [
-            //     'name' => 'Gelateria Giolitti',
-            //     'address' => 'Via degli Uffici del Vicario, 40',
-            // ],
-            // [
-            //     'name' => 'Il Pellicano',
-            //     'address' => 'Via Ugo De Carolis, 26',
-            // ],
-            // [
-            //     'name' => 'Tavola Rotonda',
-            //     'address' => 'Via Pippo De Ciccio, 116',
-            // ],
+            [
+                'name' => 'Gelateria Bartocci',
+                'address' => 'Via Alessandria, 145',
+            ],
+            [
+                'name' => 'Nonna Agrippina',
+                'address' => 'Vicolo del Cinque, 15',
+            ],
+            [
+                'name' => 'Gelateria Giolitti',
+                'address' => 'Via degli Uffici del Vicario, 40',
+            ],
+            [
+                'name' => 'Il Pellicano',
+                'address' => 'Via Ugo De Carolis, 26',
+            ],
+            [
+                'name' => 'Tavola Rotonda',
+                'address' => 'Via Pippo De Ciccio, 116',
+            ],
 
-            // // Ristoranti Giapponesi e Cinesi
+            //Ristoranti Giapponesi e Cinesi
             // [
             //     'name' => 'Chinese Express',
             //     'address' => 'Viale Regina Margherita, 242'
