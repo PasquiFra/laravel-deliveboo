@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -72,9 +73,11 @@ class RestauranController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Restaurant $restaurant)
     {
-        //
+        $categories = Category::select('label', 'id');
+
+        return view('admin.restaurants.edit', compact('restaurant', 'categories'));
     }
 
     /**
