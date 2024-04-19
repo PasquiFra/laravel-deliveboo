@@ -14,7 +14,7 @@
             Aggiungi piatto
         </a>
     </div>
-    <table class="table table-dark">
+    <table class="table table-dark table-hover">
 
         {{-- HEADER TABELLA --}}
         <thead>
@@ -37,7 +37,7 @@
         <tbody>
     
             @forelse ($dishes as $dish)
-            <tr>
+            <tr> 
               <th scope="row">{{$dish->id}}</th>
               <td>{{$dish->name}}</td>
               <td>{{$dish->slug}}</td>

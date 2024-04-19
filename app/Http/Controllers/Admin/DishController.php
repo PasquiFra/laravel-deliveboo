@@ -9,6 +9,8 @@ use Spatie\LaravelIgnition\Recorders\DumpRecorder\Dump;
 use Illuminate\Support\Str;
 
 use App\Http\Requests\StoreDishRequest;
+use App\Http\Requests\UpdateDishRequest;
+use Illuminate\Support\Arr;
 
 class DishController extends Controller
 {
@@ -37,20 +39,21 @@ class DishController extends Controller
     {
         $ingredient = implode(', ', $request->input('ingredients'));
 
-        dd($request);
-
         $data = $request->validated();
 
-        $new_dish = new Dish();
+        $dish = new Dish();
 
-        $new_dish->slug = Str::slug($new_dish->name);
+        $dish->slug = Str::slug($dish->name);
 
-        $new_dish->fill($data);
+        $dish->fill($data);
 
+        $dish->ingredient = $ingredient;
 
-        $new_dish->save();
+        $dish->availability = Arr::exists($data, 'availability');
 
-        return redirect()->route('admin.dishes.show', $new_dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient);
+        $dish->save();
+
+        return redirect()->route('admin.dishes.show', $dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient);
     }
 
     /**
@@ -58,7 +61,9 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        //
+        $ingredients = explode(', ', $dish->ingredient);
+        $dish->ingredient = $ingredients;
+        return view('admin.dishes.show', compact('dish'));
     }
 
     /**
@@ -72,9 +77,25 @@ class DishController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Dish $dish)
+    public function update(UpdateDishRequest $request, Dish $dish)
     {
-        //
+        $ingredient = implode(', ', $request->input('ingredients'));
+
+        $data = $request->validated();
+
+        $dish->slug = Str::slug($dish->name);
+
+        $dish->fill($data);
+
+        $dish->ingredient = $ingredient;
+
+        $dish->availability = Arr::exists($data, 'availability');
+
+        $dish->update();
+
+        return redirect()->route('admin.dishes.show', $dish)
+            ->with('Link', 'success')
+            ->with('message', "$dish->name modificato con successo.");
     }
 
     /**
