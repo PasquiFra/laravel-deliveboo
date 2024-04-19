@@ -1615,6 +1615,198 @@ class DishSeeder extends Seeder
                 'price' => 2.50
             ],
 
+            //~ Ristoranti Messicani
+
+            //# Billy Tacos
+
+            // Antipasti
+            [
+                'restaurant_id' => 25,
+                'name' => 'Nachos con formaggio fuso',
+                'availability' => 1,
+                'ingredient' => 'Tortilla chips, formaggio fuso, jalapenos',
+                'diet' => null,
+                'price' => 6
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 25,
+                'name' => 'Taco al pastor',
+                'availability' => 1,
+                'ingredient' => 'Maiale marinato, ananas, cipolle, coriandolo',
+                'diet' => null,
+                'price' => 3.50
+            ],
+            [
+                'restaurant_id' => 25,
+                'name' => 'Burrito di carne asada',
+                'availability' => 1,
+                'ingredient' => 'Manzo alla griglia, fagioli, riso, formaggio, salsa',
+                'diet' => null,
+                'price' => 8
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 25,
+                'name' => 'Churros con cioccolato',
+                'availability' => 1,
+                'ingredient' => 'Pasta fritta, zucchero, cannella, cioccolato caldo',
+                'diet' => null,
+                'price' => 5
+            ],
+
+            //# Taco Libre
+
+            // Antipasti
+            [
+                'restaurant_id' => 26,
+                'name' => 'Guacamole con chips di mais',
+                'availability' => 1,
+                'ingredient' => 'Avocado, pomodoro, cipolla, lime, coriandolo',
+                'diet' => 'Vegetariano',
+                'price' => 7
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 26,
+                'name' => 'Taco al pastor',
+                'availability' => 1,
+                'ingredient' => 'Maiale marinato, ananas, cipolle, coriandolo',
+                'diet' => null,
+                'price' => 3
+            ],
+            [
+                'restaurant_id' => 26,
+                'name' => 'Enchiladas de pollo',
+                'availability' => 1,
+                'ingredient' => 'Pollo, tortilla di mais, salsa rossa, formaggio',
+                'diet' => null,
+                'price' => 9
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 26,
+                'name' => 'Flan al caramello',
+                'availability' => 1,
+                'ingredient' => 'Uova, latte, zucchero, vaniglia, caramello',
+                'diet' => null,
+                'price' => 6
+            ],
+
+            //# The Mexican
+
+            // Antipasti
+            [
+                'restaurant_id' => 27,
+                'name' => 'Guacamole fresco',
+                'availability' => 1,
+                'ingredient' => 'Avocado, pomodoro, cipolla, lime, coriandolo',
+                'diet' => 'Vegetariano',
+                'price' => 8
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 27,
+                'name' => 'Fajitas di manzo',
+                'availability' => 1,
+                'ingredient' => 'Manzo, peperoni, cipolle, salsa, tortillas',
+                'diet' => null,
+                'price' => 12
+            ],
+            [
+                'restaurant_id' => 27,
+                'name' => 'Tacos al pastor',
+                'availability' => 1,
+                'ingredient' => 'Maiale marinato, ananas, cipolle, coriandolo',
+                'diet' => null,
+                'price' => 3.50
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 27,
+                'name' => 'Pastel de tres leches',
+                'availability' => 1,
+                'ingredient' => 'Torta imbevuta di tre tipi di latte, panna montata',
+                'diet' => null,
+                'price' => 7
+            ],
+
+            //# Casa Quesadillas
+
+            // Antipasti
+            [
+                'restaurant_id' => 28,
+                'name' => 'Chips e salsa',
+                'availability' => 1,
+                'ingredient' => 'Tortilla chips, salsa di pomodoro',
+                'diet' => 'Vegetariano',
+                'price' => 4
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 28,
+                'name' => 'Quesadilla di pollo',
+                'availability' => 1,
+                'ingredient' => 'Tortilla di farina, pollo, formaggio, peperoni',
+                'diet' => null,
+                'price' => 7
+            ],
+            [
+                'restaurant_id' => 28,
+                'name' => 'Burrito di fagioli neri',
+                'availability' => 1,
+                'ingredient' => 'Fagioli neri, riso, formaggio, salsa',
+                'diet' => 'Vegetariano',
+                'price' => 8
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 28,
+                'name' => 'Tres leches cake',
+                'availability' => 1,
+                'ingredient' => 'Torta imbevuta di tre tipi di latte, panna montata',
+                'diet' => null,
+                'price' => 6
+            ],
+
+            //#Tacos King
+
+            // Antipasti
+            [
+                'restaurant_id' => 29,
+                'name' => 'Tortilla chips con salsa guacamole',
+                'availability' => 1,
+                'ingredient' => 'Tortilla chips, avocado, pomodoro, cipolla, lime',
+                'diet' => 'Vegetariano',
+                'price' => 6
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 29,
+                'name' => 'Tacos al pastor',
+                'availability' => 1,
+                'ingredient' => 'Maiale marinato, ananas, cipolle, coriandolo',
+                'diet' => null,
+                'price' => 3.50
+            ],
+            [
+                'restaurant_id' => 29,
+                'name' => 'Burrito di pollo',
+                'availability' => 1,
+                'ingredient' => 'Pollo, fagioli, riso, formaggio, salsa',
+                'diet' => null,
+                'price' => 8
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 29,
+                'name' => 'Tres leches cake',
+                'availability' => 1,
+                'ingredient' => 'Torta imbevuta di tre tipi di latte, panna montata',
+                'diet' => null,
+                'price' => 7
+            ],
+
         ];
 
 

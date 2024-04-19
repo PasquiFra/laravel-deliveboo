@@ -120,27 +120,27 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via dei Prati dei Papa, 16'
             ],
 
-            // // Ristoranti Messicani
-            // [
-            //     'name' => 'Billy Tacos',
-            //     'address' => 'Piazza Ippolito Nievo, 33'
-            // ],
-            // [
-            //     'name' => 'Taco Libre',
-            //     'address' => 'Via Tacito, 14'
-            // ],
-            // [
-            //     'name' => 'The Mexican',
-            //     'address' => 'Via Cappadocia 26, Roma'
-            // ],
-            // [
-            //     'name' => 'Casa Quesadillas',
-            //     'address' => 'Via Carlo Sereni, 14'
-            // ],
-            // [
-            //     'name' => 'Tacos King',
-            //     'address' => 'Via degli Equi, 56'
-            // ],
+            // Ristoranti Messicani
+            [
+                'name' => 'Billy Tacos',
+                'address' => 'Piazza Ippolito Nievo, 33'
+            ],
+            [
+                'name' => 'Taco Libre',
+                'address' => 'Via Tacito, 14'
+            ],
+            [
+                'name' => 'The Mexican',
+                'address' => 'Via Cappadocia 26, Roma'
+            ],
+            [
+                'name' => 'Casa Quesadillas',
+                'address' => 'Via Carlo Sereni, 14'
+            ],
+            [
+                'name' => 'Tacos King',
+                'address' => 'Via degli Equi, 56'
+            ],
 
             // // Ristoranti Siriani
             // [
