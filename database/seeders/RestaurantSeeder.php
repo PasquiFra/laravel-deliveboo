@@ -98,27 +98,27 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Giovan Battista Gandino, 44'
             ],
 
-            // // Ristoranti Indiani
-            // [
-            //     'name' => 'Saravanaa Bhavan',
-            //     'address' => 'Via Volturno, 1'
-            // ],
-            // [
-            //     'name' => 'Himalaya\'s Kashmir',
-            //     'address' => 'Via Principe Amedeo 325'
-            // ],
-            // [
-            //     'name' => 'Tiger Tandoori',
-            //     'address' => 'Via l\'Aquila, 50'
-            // ],
-            // [
-            //     'name' => 'New Delhi',
-            //     'address' => 'Via Milazzo, 25/25a'
-            // ],
-            // [
-            //     'name' => 'Samoseria',
-            //     'address' => 'Via dei Prati dei Papa, 16'
-            // ],
+            // Ristoranti Indiani
+            [
+                'name' => 'Saravanaa Bhavan',
+                'address' => 'Via Volturno, 1'
+            ],
+            [
+                'name' => 'Himalaya\'s Kashmir',
+                'address' => 'Via Principe Amedeo 325'
+            ],
+            [
+                'name' => 'Tiger Tandoori',
+                'address' => 'Via l\'Aquila, 50'
+            ],
+            [
+                'name' => 'New Delhi',
+                'address' => 'Via Milazzo, 25/25a'
+            ],
+            [
+                'name' => 'Samoseria',
+                'address' => 'Via dei Prati dei Papa, 16'
+            ],
 
             // // Ristoranti Messicani
             // [

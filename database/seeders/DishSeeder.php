@@ -1262,6 +1262,359 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'price' => 4.50
             ],
+
+            //~ Ristoranti Indiani
+
+            //# Saravanaa Bhavan
+
+            // Antipasti
+            [
+                'restaurant_id' => 20,
+                'name' => 'Samosa',
+                'availability' => 1,
+                'ingredient' => 'Patate, piselli, spezie, pasta sfoglia',
+                'diet' => 'Vegetariano',
+                'price' => 4
+            ],
+            [
+                'restaurant_id' => 20,
+                'name' => 'Paneer Tikka',
+                'availability' => 1,
+                'ingredient' => 'Paneer (formaggio indiano), peperoni, cipolla, spezie',
+                'diet' => null,
+                'price' => 6
+            ],
+
+            // Piatti principali - Vegetariani
+            [
+                'restaurant_id' => 20,
+                'name' => 'Palak Paneer',
+                'availability' => 1,
+                'ingredient' => 'Paneer, spinaci, pomodori, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+            [
+                'restaurant_id' => 20,
+                'name' => 'Aloo Gobi',
+                'availability' => 1,
+                'ingredient' => 'Patate, cavolfiore, pomodori, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 9
+            ],
+
+            // Piatti principali - Non vegetariani
+            [
+                'restaurant_id' => 20,
+                'name' => 'Chicken Tikka Masala',
+                'availability' => 1,
+                'ingredient' => 'Pollo, salsa di pomodoro, panna, spezie',
+                'diet' => null,
+                'price' => 14
+            ],
+            [
+                'restaurant_id' => 20,
+                'name' => 'Lamb Rogan Josh',
+                'availability' => 1,
+                'ingredient' => 'Agnello, yogurt, spezie',
+                'diet' => null,
+                'price' => 16
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 20,
+                'name' => 'Gulab Jamun',
+                'availability' => 1,
+                'ingredient' => 'Palle dolci fritte, sciroppo di zucchero, cardamomo',
+                'diet' => null,
+                'price' => 5
+            ],
+            [
+                'restaurant_id' => 20,
+                'name' => 'Kheer',
+                'availability' => 1,
+                'ingredient' => 'Riso, latte, zucchero, cardamomo, pistacchi',
+                'diet' => 'Vegetariano',
+                'price' => 4
+            ],
+
+            //# Himalaya's Kashmir
+
+            // Antipasti
+            [
+                'restaurant_id' => 21,
+                'name' => 'Samosa di verdure',
+                'availability' => 1,
+                'ingredient' => 'Patate, piselli, carote, pasta sfoglia',
+                'diet' => 'Vegetariano',
+                'price' => 4.50
+            ],
+            [
+                'restaurant_id' => 21,
+                'name' => 'Pakora di pollo',
+                'availability' => 1,
+                'ingredient' => 'Pollo marinato, pastella di ceci, spezie',
+                'diet' => null,
+                'price' => 6
+            ],
+
+            // Piatti principali - Vegetariani
+            [
+                'restaurant_id' => 21,
+                'name' => 'Saag Paneer',
+                'availability' => 1,
+                'ingredient' => 'Spinaci, paneer, pomodori, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 11
+            ],
+            [
+                'restaurant_id' => 21,
+                'name' => 'Aloo Baingan',
+                'availability' => 1,
+                'ingredient' => 'Patate, melanzane, pomodori, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+
+            // Piatti principali - Non vegetariani
+            [
+                'restaurant_id' => 21,
+                'name' => 'Mutton Rogan Josh',
+                'availability' => 1,
+                'ingredient' => 'Agnello, yogurt, spezie',
+                'diet' => null,
+                'price' => 16
+            ],
+            [
+                'restaurant_id' => 21,
+                'name' => 'Tandoori Chicken',
+                'availability' => 1,
+                'ingredient' => 'Pollo marinato con yogurt e spezie, cotto al forno tandoor',
+                'diet' => null,
+                'price' => 14
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 21,
+                'name' => 'Gulab Jamun',
+                'availability' => 1,
+                'ingredient' => 'Palle dolci fritte, sciroppo di zucchero, cardamomo',
+                'diet' => null,
+                'price' => 5.50
+            ],
+            [
+                'restaurant_id' => 21,
+                'name' => 'Kheer',
+                'availability' => 1,
+                'ingredient' => 'Riso, latte, zucchero, cardamomo, pistacchi',
+                'diet' => 'Vegetariano',
+                'price' => 4.50
+            ],
+
+            //# Tiger Tandoori
+
+            // Antipasti
+            [
+                'restaurant_id' => 22,
+                'name' => 'Pakora di verdure',
+                'availability' => 1,
+                'ingredient' => 'Verdure miste, pastella di ceci, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 5
+            ],
+            [
+                'restaurant_id' => 22,
+                'name' => 'Tandoori Wings',
+                'availability' => 1,
+                'ingredient' => 'Ali di pollo marinate, spezie, cottura al forno tandoor',
+                'diet' => null,
+                'price' => 7
+            ],
+
+            // Piatti principali - Vegetariani
+            [
+                'restaurant_id' => 22,
+                'name' => 'Paneer Tikka Masala',
+                'availability' => 1,
+                'ingredient' => 'Paneer, salsa di pomodoro, panna, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 12
+            ],
+            [
+                'restaurant_id' => 22,
+                'name' => 'Baingan Bharta',
+                'availability' => 1,
+                'ingredient' => 'Melanzane, pomodori, cipolle, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+
+            // Piatti principali - Non vegetariani
+            [
+                'restaurant_id' => 22,
+                'name' => 'Chicken Biryani',
+                'availability' => 1,
+                'ingredient' => 'Pollo, riso basmati, spezie, aromi',
+                'diet' => null,
+                'price' => 15
+            ],
+            [
+                'restaurant_id' => 22,
+                'name' => 'Tandoori Fish Tikka',
+                'availability' => 1,
+                'ingredient' => 'Filetto di pesce marinato, spezie, cottura al forno tandoor',
+                'diet' => null,
+                'price' => 16
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 22,
+                'name' => 'Gajar Halwa',
+                'availability' => 1,
+                'ingredient' => 'Carote, latte, zucchero, burro, frutta secca',
+                'diet' => 'Vegetariano',
+                'price' => 6
+            ],
+            [
+                'restaurant_id' => 22,
+                'name' => 'Rasmalai',
+                'availability' => 1,
+                'ingredient' => 'Palle di latte cagliato, zucchero, cardamomo, mandorle',
+                'diet' => 'Vegetariano',
+                'price' => 5
+            ],
+
+            //# New Delhi
+
+            // Antipasti
+            [
+                'restaurant_id' => 23,
+                'name' => 'Pakora di cipolle',
+                'availability' => 1,
+                'ingredient' => 'Cipolle, pastella di ceci, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 4.50
+            ],
+            [
+                'restaurant_id' => 23,
+                'name' => 'Paneer Pakora',
+                'availability' => 1,
+                'ingredient' => 'Paneer, pastella di ceci, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 6
+            ],
+
+            // Piatti principali - Vegetariani
+            [
+                'restaurant_id' => 23,
+                'name' => 'Chole',
+                'availability' => 1,
+                'ingredient' => 'Ceci, pomodori, cipolle, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 9
+            ],
+            [
+                'restaurant_id' => 23,
+                'name' => 'Baingan Masala',
+                'availability' => 1,
+                'ingredient' => 'Melanzane, pomodori, cipolle, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+
+            // Piatti principali - Non vegetariani
+            [
+                'restaurant_id' => 23,
+                'name' => 'Chicken Curry',
+                'availability' => 1,
+                'ingredient' => 'Pollo, salsa di pomodoro, yogurt, spezie',
+                'diet' => null,
+                'price' => 14
+            ],
+            [
+                'restaurant_id' => 23,
+                'name' => 'Lamb Biryani',
+                'availability' => 1,
+                'ingredient' => 'Agnello, riso basmati, spezie, aromi',
+                'diet' => null,
+                'price' => 16
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 23,
+                'name' => 'Gulab Jamun',
+                'availability' => 1,
+                'ingredient' => 'Palle dolci fritte, sciroppo di zucchero, cardamomo',
+                'diet' => null,
+                'price' => 5
+            ],
+            [
+                'restaurant_id' => 23,
+                'name' => 'Kulfi',
+                'availability' => 1,
+                'ingredient' => 'Gelato indiano, frutta secca, saffron',
+                'diet' => 'Vegetariano',
+                'price' => 4
+            ],
+
+            //# Samoseria
+
+            // Samosa
+            [
+                'restaurant_id' => 24,
+                'name' => 'Samosa al ceci',
+                'availability' => 1,
+                'ingredient' => 'Patate, ceci, cipolle, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 3
+            ],
+            [
+                'restaurant_id' => 24,
+                'name' => 'Samosa al pollo',
+                'availability' => 1,
+                'ingredient' => 'Pollo, piselli, cipolle, spezie',
+                'diet' => null,
+                'price' => 4
+            ],
+            [
+                'restaurant_id' => 24,
+                'name' => 'Samosa vegetariana mista',
+                'availability' => 1,
+                'ingredient' => 'Patate, piselli, carote, cipolle, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 3.50
+            ],
+            [
+                'restaurant_id' => 24,
+                'name' => 'Samosa di agnello',
+                'availability' => 1,
+                'ingredient' => 'Agnello, patate, cipolle, spezie',
+                'diet' => null,
+                'price' => 5
+            ],
+
+            // Contorni
+            [
+                'restaurant_id' => 24,
+                'name' => 'Chutney di menta',
+                'availability' => 1,
+                'ingredient' => 'Menta, yogurt, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 2
+            ],
+            [
+                'restaurant_id' => 24,
+                'name' => 'Raita',
+                'availability' => 1,
+                'ingredient' => 'Yogurt, cetrioli, pomodori, spezie',
+                'diet' => 'Vegetariano',
+                'price' => 2.50
+            ],
+
         ];
 
 
