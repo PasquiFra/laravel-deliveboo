@@ -152,15 +152,15 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Viale Guglielmo Marconi, 415'
             ],
 
-            // // Ristoranti Africani
-            // [
-            //     'name' => 'Blackalicious Afrofood',
-            //     'address' => 'Via Giovanni De Calvi, box 19'
-            // ],
-            // [
-            //     'name' => 'Afrik Cavour',
-            //     'address' => 'Via Cavour, 254'
-            // ],
+            // Ristoranti Africani
+            [
+                'name' => 'Blackalicious Afrofood',
+                'address' => 'Via Giovanni De Calvi, box 19'
+            ],
+            [
+                'name' => 'Afrik Cavour',
+                'address' => 'Via Cavour, 254'
+            ],
 
             // // Ristoranti Thailandesi
             // [

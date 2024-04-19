@@ -1882,6 +1882,84 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'price' => 5
             ],
+
+            //~ Ristoranti Africani
+
+            //# Blackalicious Afrofood
+
+            // Antipasti
+            [
+                'restaurant_id' => 32,
+                'name' => 'Sambusa di carne',
+                'availability' => 1,
+                'ingredient' => 'Carne macinata, cipolla, spezie, pasta brick',
+                'diet' => null,
+                'price' => 4
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 32,
+                'name' => 'Jollof rice con pollo',
+                'availability' => 1,
+                'ingredient' => 'Riso, pollo, pomodoro, cipolla, peperoni, spezie',
+                'diet' => null,
+                'price' => 12
+            ],
+            [
+                'restaurant_id' => 32,
+                'name' => 'Fufu con zuppa di verdure',
+                'availability' => 1,
+                'ingredient' => 'Fufu (pasta di farina di mais e igname), verdure miste, brodo',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 32,
+                'name' => 'Puff Puff',
+                'availability' => 1,
+                'ingredient' => 'Impasto di farina, lievito, zucchero, olio di palma',
+                'diet' => 'Vegetariano',
+                'price' => 5
+            ],
+
+            //# Afrik Cavour
+
+            // Antipasti
+            [
+                'restaurant_id' => 33,
+                'name' => 'Kelewele',
+                'availability' => 1,
+                'ingredient' => 'Banane, pepe di giamaica, zenzero, aglio, olio di palma',
+                'diet' => 'Vegetariano',
+                'price' => 6
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 33,
+                'name' => 'Suya di manzo',
+                'availability' => 1,
+                'ingredient' => 'Manzo marinato, spezie, arachidi tostate',
+                'diet' => null,
+                'price' => 14
+            ],
+            [
+                'restaurant_id' => 33,
+                'name' => 'Jollof rice con gamberi',
+                'availability' => 1,
+                'ingredient' => 'Riso, gamberi, pomodoro, cipolla, peperoni, spezie',
+                'diet' => null,
+                'price' => 15
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 33,
+                'name' => 'Chin Chin',
+                'availability' => 1,
+                'ingredient' => 'Farina, burro, uova, zucchero, latte',
+                'diet' => 'Vegetariano',
+                'price' => 7
+            ],
         ];
 
 
