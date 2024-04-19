@@ -40,6 +40,10 @@
               <td>{{$dish->updated_at}}</td>
               <td>
                 <div class="d-flex gap-2 justify-content-end">
+                  {{--Vedi il Piatto--}}
+                  <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn-primary">
+                    <i class="far fa-eye"></i>
+                  </a>
                 </div>
               </td>
             </tr>
