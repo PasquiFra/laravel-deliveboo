@@ -24,7 +24,9 @@ Route::get('/', function () {
 Route::prefix('/admin')->middleware(['auth'])->name('admin.')->group(function () {
     //Route::get('', DishController::class)->name('home');
 
-    //Rotta per eliminare un piatto
+    //Rotta per svuotare il Cestino
+    Route::delete('/dishes/drop-all-trashed', [DishController::class, 'dropAllTrashed'])->name('dishes.dropAllTrashed');
+    //Rotta per eliminare un piatto //!forse eliminare e mettere destroy in resource
     Route::delete('/dishes/{dish}', [DishController::class, 'destroy'])->name('dishes.destroy');
     // Rotta per spostare un progetto nel cestino
     Route::get('/dishes/trash', [DishController::class, 'trash'])->name('dishes.trash');
