@@ -6,7 +6,11 @@
     <div class="mb-3 d-flex align-items-center justify-content-between">
         <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Piatti disponibili</a>
         <h1 class="text-center">Piatti Eliminati</h1>
-        <form>
+        {{--Svuota Cestino--}}
+        <form action="{{ route('admin.dishes.dropAllTrashed') }}"
+            method="POST"  class="empty-trash-form  delete-form">
+            @csrf
+            @method('DELETE')
             <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Elimina tutti i Piatti</button>
         </form>
     </div>
@@ -94,7 +98,6 @@
             if(confirmation) form.submit();
         })
     });
-
 </script>
 @endsection
 
