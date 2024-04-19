@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <main>
-        <div class="container">
             <h1 class="text-center my-3">Crea il tuo ristorante</h1>
 
             {{-- Form  --}}
@@ -37,9 +35,9 @@
                     </div>
                     <div class="col-3">
                         <div class="mb-5">
-                            <label for="phone-number" class="form-label">Numero di telefono</label>
-                            <input value="{{old('phone-number', '')}}" type="text" class="form-control @error('phone-number') is-invalid @elseif(old('phone-number', '')) is-valid @enderror" id="phone-number">
-                            @error('phone-number')   
+                            <label for="phone" class="form-label">Numero di telefono</label>
+                            <input value="{{old('phone', '')}}" type="text" class="form-control @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
+                            @error('phone')   
                                 <div class="invalid-feedback">{{$message}}</div>
                             @else
                                 <div class="form-text">
@@ -109,7 +107,5 @@
                         <button class="btn btn-lg btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Reset</button>
                     </div>
                 </div>
-            </form>
-        </div>   
-    </main>    
+            </form>     
 @endsection
