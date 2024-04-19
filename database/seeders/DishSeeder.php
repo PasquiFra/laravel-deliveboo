@@ -2152,6 +2152,85 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'price' => 7
             ],
+
+            //~ Ristoranti Brasiliani
+
+            //# Brazilian Food
+
+            // Antipasti
+            [
+                'restaurant_id' => 39,
+                'name' => 'Tom Yum Goong',
+                'availability' => 1,
+                'ingredient' => 'Gamberetti, funghi, erba cipollina, peperoncino, lime',
+                'diet' => null,
+                'price' => 10
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 39,
+                'name' => 'Pad Thai',
+                'availability' => 1,
+                'ingredient' => 'Tagliatelle di riso, gamberetti, tofu, uova, arachidi',
+                'diet' => null,
+                'price' => 12
+            ],
+            [
+                'restaurant_id' => 39,
+                'name' => 'Massaman Curry di manzo',
+                'availability' => 1,
+                'ingredient' => 'Manzo, patate, arachidi, curry, latte di cocco',
+                'diet' => null,
+                'price' => 15
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 39,
+                'name' => 'Mango Sticky Rice',
+                'availability' => 1,
+                'ingredient' => 'Riso glutinoso, mango maturo, latte di cocco, zucchero',
+                'diet' => 'Vegetariano',
+                'price' => 8
+            ],
+
+            //# Manioka
+
+            // Antipasti
+            [
+                'restaurant_id' => 40,
+                'name' => 'Som Tam',
+                'availability' => 1,
+                'ingredient' => 'Papaya verde, pomodoro, arachidi, fagiolini, peperoncino',
+                'diet' => 'Vegetariano',
+                'price' => 9
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 40,
+                'name' => 'Pad See Ew con pollo',
+                'availability' => 1,
+                'ingredient' => 'Tagliatelle di riso, pollo, broccoli, cavolo cinese, salsa di soia',
+                'diet' => null,
+                'price' => 13
+            ],
+            [
+                'restaurant_id' => 40,
+                'name' => 'Gai Med Ma Muang',
+                'availability' => 1,
+                'ingredient' => 'Pollo, anacardi, peperoni, cipolle, salsa di ostriche',
+                'diet' => null,
+                'price' => 14
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 40,
+                'name' => 'Khanom Mo Kaeng',
+                'availability' => 1,
+                'ingredient' => 'Farina di riso, latte di cocco, zucchero, uova',
+                'diet' => 'Vegetariano',
+                'price' => 7
+            ],
+
         ];
 
 

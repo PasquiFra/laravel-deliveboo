@@ -184,15 +184,15 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Brittania, 5'
             ],
 
-            // // Ristoranti Brasiliani
-            // [
-            //     'name' => 'Brazilian Food',
-            //     'address' => 'Via Tuscolana, 231/A'
-            // ],
-            // [
-            //     'name' => 'Manioka',
-            //     'address' => 'Viale Aventino, 40'
-            // ],
+            // Ristoranti Brasiliani
+            [
+                'name' => 'Brazilian Food',
+                'address' => 'Via Tuscolana, 231/A'
+            ],
+            [
+                'name' => 'Manioka',
+                'address' => 'Viale Aventino, 40'
+            ],
 
             // // Ristoranti Turchi
             // [
