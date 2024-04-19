@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+        <section id="create-form">
             <h1 class="text-center my-3">Crea il tuo ristorante</h1>
 
             {{-- Form  --}}
@@ -107,5 +108,6 @@
                         <button class="btn btn-lg btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Reset</button>
                     </div>
                 </div>
-            </form>     
+            </form> 
+        </section>    
 @endsection
