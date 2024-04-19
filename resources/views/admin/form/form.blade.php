@@ -136,15 +136,27 @@
             <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
 
             <div id="ingredient-inputs">
-                {{-- singolo campo ingrediente --}}
-                <input 
+
+                @if (!$dish->ingredient)
+                    {{-- SE siamo in create (non ho ingredienti salvati) --}}
+                    <input 
                     type="text" 
                     id="ingredients" 
                     name="ingredients[]" 
                     class="me-2 mb-2" 
                     value="{{$dish->ingredient}}" 
                     placeholder="Inserisci un ingrediente..."
-                >
+                    >
+                @else
+                    {{-- SE siamo in edit (ho ingredienti salvati) li stampo ciascuno in un input field --}}
+                    @php
+                        $ingredients = explode(', ', $dish->ingredient);
+                    @endphp
+                    @foreach ($ingredients as $ingredient)
+                        <input type="text" name="ingredients[]" class="me-2 mb-2" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                    @endforeach
+                @endif
+                
             </div>
             <button type="button" id="add-ingredient-btn" onclick="addIngredient()">Aggiungi Ingrediente</button>
 
@@ -196,9 +208,12 @@
 
     </div>
 
-    <div class="w-100 pt-4">
-        <button type="submit" class="btn btn-success me-3">Salva</button>
-        <button type="reset" class="btn btn-danger">Svuota</button>
+    <div class="col d-flex justify-content-between">
+        <button class="btn btn-lg btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</button>
+        <div>
+            <button class="btn btn-lg btn-success me-2"><i class="fa-solid fa-floppy-disk me-2"></i>Save</button>
+            <button class="btn btn-lg btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Reset</button>
+        </div>
     </div>
 
     </form>
