@@ -6,6 +6,7 @@ use App\Models\Dish;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\LaravelIgnition\Recorders\DumpRecorder\Dump;
+use Illuminate\Support\Str;
 
 class DishController extends Controller
 {
@@ -32,9 +33,19 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        $ingredients = implode(', ', $request->input('ingredients'));
-        dd($ingredients);
-        return redirect()->back()->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredients);
+        $ingredient = implode(', ', $request->input('ingredients'));
+
+        $data = $request->validated();
+
+        $new_dish = new Dish();
+
+        $new_dish->fill($data);
+
+        $new_dish->slug = Str::slug($new_dish->name);
+
+        $new_dish->save();
+
+        return redirect()->route('admin.dishes.show', $new_dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient);
     }
 
     /**
