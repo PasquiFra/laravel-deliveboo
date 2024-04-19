@@ -3,7 +3,13 @@
 
 @section('content')
 <section id='dishes-trash' class="my-5">
-    <h1 class="mb-5">Piatti Eliminati</h1>
+    <div class="mb-3 d-flex align-items-center justify-content-between">
+        <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Piatti disponibili</a>
+        <h1 class="text-center">Piatti Eliminati</h1>
+        <form>
+            <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Elimina tutti i Piatti</button>
+        </form>
+    </div>
     {{--Tabella--}}
     <table class="table table-dark">
         {{-- HEADER TABELLA --}}
@@ -73,6 +79,22 @@
             @endforelse
         </tbody>
     </table> 
-    <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary">Piatti disponibili</a>
 </section>
 @endsection
+@section('scripts')
+<script>
+
+    // CONFERMA DI CANCELLAZIONE
+    const formsDelete= document.querySelectorAll('.delete-form');
+    formsDelete.forEach(form => {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const dish = form.dataset.dish;
+            const confirmation = confirm(`Sei sicuro di voler eliminare il piatto ${dish}?`);
+            if(confirmation) form.submit();
+        })
+    });
+
+</script>
+@endsection
+
