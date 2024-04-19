@@ -142,15 +142,15 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via degli Equi, 56'
             ],
 
-            // // Ristoranti Siriani
-            // [
-            //     'name' => 'Shawarma Express',
-            //     'address' => 'Vicolo del Gallo, 11'
-            // ],
-            // [
-            //     'name' => 'Damas Kebab',
-            //     'address' => 'Viale Guglielmo Marconi, 415'
-            // ],
+            // Ristoranti Siriani
+            [
+                'name' => 'Shawarma Express',
+                'address' => 'Vicolo del Gallo, 11'
+            ],
+            [
+                'name' => 'Damas Kebab',
+                'address' => 'Viale Guglielmo Marconi, 415'
+            ],
 
             // // Ristoranti Africani
             // [

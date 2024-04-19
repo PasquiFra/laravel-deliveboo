@@ -1807,6 +1807,81 @@ class DishSeeder extends Seeder
                 'price' => 7
             ],
 
+            //~ Ristoranti Siriani
+
+            //# Shawarma Express
+            // Antipasti
+            [
+                'restaurant_id' => 30,
+                'name' => 'Hummus con pita',
+                'availability' => 1,
+                'ingredient' => 'Ceci, tahini, aglio, limone, olio d\'oliva',
+                'diet' => 'Vegetariano',
+                'price' => 5
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 30,
+                'name' => 'Shawarma di pollo',
+                'availability' => 1,
+                'ingredient' => 'Pollo marinato, insalata, salsa tahini, pane pita',
+                'diet' => null,
+                'price' => 8
+            ],
+            [
+                'restaurant_id' => 30,
+                'name' => 'Falafel wrap',
+                'availability' => 1,
+                'ingredient' => 'Falafel, insalata, salsa tahini, pane pita',
+                'diet' => 'Vegetariano',
+                'price' => 7
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 30,
+                'name' => 'Baklava',
+                'availability' => 1,
+                'ingredient' => 'Pasta fillo, noci, miele',
+                'diet' => null,
+                'price' => 4
+            ],
+
+            //# Damas Kebab
+
+            [
+                'restaurant_id' => 31,
+                'name' => 'Mutabbal',
+                'availability' => 1,
+                'ingredient' => 'Melanzane grigliate, tahini, aglio, limone, olio d\'oliva',
+                'diet' => 'Vegetariano',
+                'price' => 6
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 31,
+                'name' => 'Kebab di agnello',
+                'availability' => 1,
+                'ingredient' => 'Agnello macinato, spezie, pane pita',
+                'diet' => null,
+                'price' => 10
+            ],
+            [
+                'restaurant_id' => 31,
+                'name' => 'Kafta wrap',
+                'availability' => 1,
+                'ingredient' => 'Kafta (polpettone di carne macinata), insalata, pane pita',
+                'diet' => null,
+                'price' => 9
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 31,
+                'name' => 'Halva',
+                'availability' => 1,
+                'ingredient' => 'Tahini, zucchero, vaniglia',
+                'diet' => 'Vegetariano',
+                'price' => 5
+            ],
         ];
 
 
