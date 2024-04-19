@@ -1,10 +1,7 @@
 
 @extends('layouts.app')
  
-@section('content')
-
-<div class="container">
-    
+@section('content')    
     <div class="d-flex justify-content-end gap-2 p-2 my-3">
         <!-- Cestino -->
         <a href="{{route('admin.dishes.trash')}}" class="btn btn-danger">
@@ -83,9 +80,6 @@
     
         </tbody>
     </table> 
-
-</div>
-
 @endsection
 
 @section('scripts')

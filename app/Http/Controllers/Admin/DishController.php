@@ -80,8 +80,45 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    //# Action per eliminare il piatto
     public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+        return to_route('admin.dishes.index');
+    }
+
+    //# Action per eliminare il piatto
+    public function trash()
+    {
+        $dishes = Dish::onlyTrashed()->get();
+        return view('admin.dishes.trash', compact('dishes'));
+    }
+
+    //# Action per ripristianre il piatto
+    public function restore(Dish $dish)
+    {
+        $dish->restore();
+
+        return to_route('admin.dishes.index', $dish->id);
+        // ->with('type', 'success')
+        // ->with('message', "Progetto {$dish->title} ripristinato con successo");
+    }
+
+    //# Action per eliminare definitivamente il piatto
+    public function drop(Dish $dish)
+    {
+        $dish->forceDelete();
+        return to_route('admin.dishes.trash');
+    }
+
+    //# Action svuotare il Cestino
+    public function dropAllTrashed()
+    {
+        //Prendo tutti i piatti eliminati
+        $trashedDishes = Dish::onlyTrashed()->get();
+        foreach ($trashedDishes as $dish) {
+            $dish->forceDelete();
+        }
+        return to_route('admin.dishes.trash');
     }
 }
