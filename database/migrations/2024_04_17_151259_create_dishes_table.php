@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50)->required();
             $table->string('slug');
-            $table->boolean('availability')->default('false');
+            $table->boolean('availability');
             $table->text('image')->nullable();
             $table->string('diet', 20)->nullable();
             $table->text('ingredient')->nullable();
