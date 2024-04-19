@@ -78,6 +78,7 @@ class DishController extends Controller
         return view('admin.dishes.trash', compact('dishes'));
     }
 
+    //# Action per ripristianre il piatto
     public function restore(Dish $dish)
     {
         $dish->restore();
@@ -87,10 +88,21 @@ class DishController extends Controller
         // ->with('message', "Progetto {$dish->title} ripristinato con successo");
     }
 
+    //# Action per eliminare definitivamente il piatto
     public function drop(Dish $dish)
     {
         $dish->forceDelete();
+        return to_route('admin.dishes.trash');
+    }
 
+    //# Action svuotare il Cestino
+    public function dropAllTrashed()
+    {
+        //Prendo tutti i piatti eliminati
+        $trashedDishes = Dish::onlyTrashed()->get();
+        foreach ($trashedDishes as $dish) {
+            $dish->forceDelete();
+        }
         return to_route('admin.dishes.trash');
     }
 }
