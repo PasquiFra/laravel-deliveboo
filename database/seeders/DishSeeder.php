@@ -2231,6 +2231,83 @@ class DishSeeder extends Seeder
                 'price' => 7
             ],
 
+            //~ Ristoranti Turchi
+
+            //# Turkish Kebab
+
+            // Antipasti
+            [
+                'restaurant_id' => 42,
+                'name' => 'Cig Köfte',
+                'availability' => 1,
+                'ingredient' => 'Carne macinata, bulgur, peperoncino, spezie',
+                'diet' => null,
+                'price' => 9
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 42,
+                'name' => 'Lahmacun',
+                'availability' => 1,
+                'ingredient' => 'Base di pizza sottile, carne macinata, cipolla, pomodoro, prezzemolo',
+                'diet' => null,
+                'price' => 10
+            ],
+            [
+                'restaurant_id' => 42,
+                'name' => 'Shish Kebab',
+                'availability' => 1,
+                'ingredient' => 'Spiedini di carne di agnello marinata, peperoni, cipolla',
+                'diet' => null,
+                'price' => 16
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 42,
+                'name' => 'Künefe',
+                'availability' => 1,
+                'ingredient' => 'Pasta fillo, formaggio, sciroppo di zucchero',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+
+            //# Furious Kebab
+
+            // Antipasti
+            [
+                'restaurant_id' => 42,
+                'name' => 'Cig Köfte',
+                'availability' => 1,
+                'ingredient' => 'Carne macinata, bulgur, peperoncino, spezie',
+                'diet' => null,
+                'price' => 9
+            ],
+            // Piatti principali
+            [
+                'restaurant_id' => 42,
+                'name' => 'Lahmacun',
+                'availability' => 1,
+                'ingredient' => 'Base di pizza sottile, carne macinata, cipolla, pomodoro, prezzemolo',
+                'diet' => null,
+                'price' => 10
+            ],
+            [
+                'restaurant_id' => 42,
+                'name' => 'Shish Kebab',
+                'availability' => 1,
+                'ingredient' => 'Spiedini di carne di agnello marinata, peperoni, cipolla',
+                'diet' => null,
+                'price' => 16
+            ],
+            // Dolci
+            [
+                'restaurant_id' => 42,
+                'name' => 'Künefe',
+                'availability' => 1,
+                'ingredient' => 'Pasta fillo, formaggio, sciroppo di zucchero',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
         ];
 
 

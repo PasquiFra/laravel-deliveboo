@@ -194,15 +194,15 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Viale Aventino, 40'
             ],
 
-            // // Ristoranti Turchi
-            // [
-            //     'name' => 'Turkish Kebap',
-            //     'address' => 'Via Cipro, 79'
-            // ],
-            // [
-            //     'name' => 'Furious Kebab',
-            //     'address' => 'Via di Acqua Bullicante, 43'
-            // ],
+            // Ristoranti Turchi
+            [
+                'name' => 'Turkish Kebap',
+                'address' => 'Via Cipro, 79'
+            ],
+            [
+                'name' => 'Furious Kebab',
+                'address' => 'Via di Acqua Bullicante, 43'
+            ],
         ];
 
 
