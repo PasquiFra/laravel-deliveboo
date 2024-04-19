@@ -30,7 +30,8 @@
            
             <input 
                 type="text" 
-                required id="name" 
+                required 
+                id="name" 
                 name="name" 
                 class="form-control @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
                 value="{{old('name', $dish->name)}}" 
@@ -45,16 +46,6 @@
                 Campo corretto
             </div>      
             @enderror       
-        </div>
-    
-        {{-- INPUT GROUP DELLO SLUG --}}
-        <div class=" mb-3 col-6">
-            
-            <label class="form-label label fw-bold" for="slug">Slug:</label>
-            
-            <input type="text" id="slug" name="slug" class="form-control" 
-            value="{{$dish->slug}}" 
-            readonly>    
         </div>
 
         {{-- INPUT GROUP Availability --}}
@@ -139,6 +130,7 @@
                         value="{{$dish->ingredient}}" 
                         placeholder="Inserisci un ingrediente..."
                     >
+
                 @else
                 {{-- Se sono in edit stamperò ciascun ingrediente in un input field differente --}}
                     {{-- faccio diventare la stringa un'array --}}
@@ -208,9 +200,8 @@
 
     </form>
     
-    @include('admin.form.slug')
 @endsection
-
+    
 @section('scripts')
 <script>
 

@@ -17,7 +17,7 @@
             Aggiungi piatto
         </a>
     </div>
-    <table class="table">
+    <table class="table table-dark">
 
         {{-- HEADER TABELLA --}}
         <thead>
