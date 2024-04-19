@@ -80,16 +80,15 @@ class DishController extends Controller
     public function update(UpdateDishRequest $request, Dish $dish)
     {
         $ingredient = implode(', ', $request->input('ingredients'));
+        $availability = $request->input('availability') ? true : false;
 
         $data = $request->validated();
 
         $dish->slug = Str::slug($dish->name);
 
         $dish->fill($data);
-
         $dish->ingredient = $ingredient;
-
-        $dish->availability = Arr::exists($data, 'availability');
+        $dish->availability = $availability;
 
         $dish->update();
 

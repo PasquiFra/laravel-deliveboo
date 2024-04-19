@@ -225,7 +225,7 @@
         const label = document.getElementById('availability-label');
         const input = document.getElementById('availability');
         
-        if (input) {
+        if (input.checked) {
             label.textContent = 'Articolo disponibile online';
         } else {
             label.textContent = 'Articolo disattivato';
