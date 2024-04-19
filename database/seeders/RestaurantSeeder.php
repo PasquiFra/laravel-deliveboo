@@ -61,42 +61,42 @@ class RestaurantSeeder extends Seeder
                 'name' => 'Chinese Express',
                 'address' => 'Viale Regina Margherita, 242'
             ],
-            // [
-            //     'name' => 'Your Sushi',
-            //     'address' => 'Via dei Magazzini Generali, 2C'
-            // ],
-            // [
-            //     'name' => 'Panda Market',
-            //     'address' => 'Via della Meloria, 13'
-            // ],
-            // [
-            //     'name' => 'Ciao Zì',
-            //     'address' => 'Via di Santa Maria Ausiliatrice, 16'
-            // ],
-            // [
-            //     'name' => 'Zen Sushi',
-            //     'address' => 'Via degli scipioni, 243'
-            // ],
-            // [
-            //     'name' => 'Zenzero Fleming',
-            //     'address' => 'Via Flaminia L, 573'
-            // ],
-            // [
-            //     'name' => 'New Town',
-            //     'address' => 'Via della Meloria, 15'
-            // ],
-            // [
-            //     'name' => 'Crudo Pokè',
-            //     'address' => 'Via Salaria, 17'
-            // ],
-            // [
-            //     'name' => 'Temakinho',
-            //     'address' => 'Via dei Serpenti, 16'
-            // ],
-            // [
-            //     'name' => 'Ravioleria Baozi',
-            //     'address' => 'Via Giovan Battista Gandino, 44'
-            // ],
+            [
+                'name' => 'Your Sushi',
+                'address' => 'Via dei Magazzini Generali, 2C'
+            ],
+            [
+                'name' => 'Panda Market',
+                'address' => 'Via della Meloria, 13'
+            ],
+            [
+                'name' => 'Ciao Zì',
+                'address' => 'Via di Santa Maria Ausiliatrice, 16'
+            ],
+            [
+                'name' => 'Zen Sushi',
+                'address' => 'Via degli scipioni, 243'
+            ],
+            [
+                'name' => 'Zenzero Fleming',
+                'address' => 'Via Flaminia L, 573'
+            ],
+            [
+                'name' => 'New Town',
+                'address' => 'Via della Meloria, 15'
+            ],
+            [
+                'name' => 'Crudo Pokè',
+                'address' => 'Via Salaria, 17'
+            ],
+            [
+                'name' => 'Temakinho',
+                'address' => 'Via dei Serpenti, 16'
+            ],
+            [
+                'name' => 'Ravioleria Baozi',
+                'address' => 'Via Giovan Battista Gandino, 44'
+            ],
 
             // // Ristoranti Indiani
             // [
