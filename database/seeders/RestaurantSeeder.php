@@ -57,10 +57,10 @@ class RestaurantSeeder extends Seeder
             ],
 
             //Ristoranti Giapponesi e Cinesi
-            // [
-            //     'name' => 'Chinese Express',
-            //     'address' => 'Viale Regina Margherita, 242'
-            // ],
+            [
+                'name' => 'Chinese Express',
+                'address' => 'Viale Regina Margherita, 242'
+            ],
             // [
             //     'name' => 'Your Sushi',
             //     'address' => 'Via dei Magazzini Generali, 2C'

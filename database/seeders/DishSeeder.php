@@ -15,9 +15,10 @@ class DishSeeder extends Seeder
      */
     public function run(Generator $faker): void
     {
-        //# Rifugio Romano
 
-        // Piatti Italiani
+        //~ Piatti Ristoranti Italiani
+
+        //# Rifugio Romano
         $dishes = [
             // Antipasti
             [
@@ -576,10 +577,693 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta sfoglia, crema pasticcera, fragole, zucchero a velo',
                 'diet' => null,
                 'price' => 7
-            ]
+            ],
 
+            //~ Piatti Ristoranti Giapponesi e Cinesi
 
+            //# Chinese Express
+
+            // Antipasti
+            [
+                'restaurant_id' => 10,
+                'name' => 'Ravioli al vapore',
+                'availability' => 1,
+                'ingredient' => 'Pasta di grano, maiale macinato, cavolo cinese, zenzero, salsa di soia',
+                'diet' => null,
+                'price' => 7.50
+            ],
+            [
+                'restaurant_id' => 10,
+                'name' => 'Edamame',
+                'availability' => 1,
+                'ingredient' => 'Fagioli di soia, sale',
+                'diet' => 'Vegetariano',
+                'price' => 5.50
+            ],
+            [
+                'restaurant_id' => 10,
+                'name' => 'Gyoza',
+                'availability' => 1,
+                'ingredient' => 'Pasta di grano, maiale macinato, cavolo cinese, aglio, zenzero',
+                'diet' => null,
+                'price' => 8
+            ],
+
+            // Primi
+            [
+                'restaurant_id' => 10,
+                'name' => 'Noodles saltati con verdure',
+                'availability' => 1,
+                'ingredient' => 'Noodles, verdure miste, salsa di soia',
+                'diet' => 'Vegetariano',
+                'price' => 9
+            ],
+            [
+                'restaurant_id' => 10,
+                'name' => 'Yakisoba',
+                'availability' => 1,
+                'ingredient' => 'Noodles, carne, verdure, salsa yakisoba',
+                'diet' => null,
+                'price' => 12
+            ],
+
+            // Secondi
+            [
+                'restaurant_id' => 10,
+                'name' => 'Anatra all\'arancia',
+                'availability' => 1,
+                'ingredient' => 'Anatra, salsa all\'arancia, verdure miste',
+                'diet' => null,
+                'price' => 15
+            ],
+            [
+                'restaurant_id' => 10,
+                'name' => 'Manzo in salsa piccante',
+                'availability' => 1,
+                'ingredient' => 'Fettine di manzo, salsa piccante, peperoni, cipolla',
+                'diet' => null,
+                'price' => 13
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 10,
+                'name' => 'Biscotti della fortuna',
+                'availability' => 1,
+                'ingredient' => 'Farina, zucchero, uova',
+                'diet' => null,
+                'price' => 4
+            ],
+            [
+                'restaurant_id' => 10,
+                'name' => 'Gelato fritto',
+                'availability' => 1,
+                'ingredient' => 'Gelato, pastella, olio',
+                'diet' => null,
+                'price' => 6.50
+            ],
+
+            //# Your Sushi
+
+            // Antipasti
+            [
+                'restaurant_id' => 11,
+                'name' => 'Ravioli al vapore',
+                'availability' => 1,
+                'ingredient' => 'Pasta di grano, maiale macinato, cavolo cinese, zenzero, salsa di soia',
+                'diet' => null,
+                'price' => 7.50
+            ],
+            [
+                'restaurant_id' => 11,
+                'name' => 'Gamberi saltati con peperoni',
+                'availability' => 1,
+                'ingredient' => 'Gamberi, peperoni, salsa di soia, aglio',
+                'diet' => null,
+                'price' => 9
+            ],
+
+            // Primi
+            [
+                'restaurant_id' => 11,
+                'name' => 'Tagliatelle con verdure',
+                'availability' => 1,
+                'ingredient' => 'Tagliatelle, verdure miste, salsa di soia',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+            [
+                'restaurant_id' => 11,
+                'name' => 'Riso cantonese',
+                'availability' => 1,
+                'ingredient' => 'Riso, uova, piselli, carote, prosciutto cotto',
+                'diet' => null,
+                'price' => 11
+            ],
+            [
+                'restaurant_id' => 11,
+                'name' => 'Uramaki California',
+                'availability' => 1,
+                'ingredient' => 'Riso, avocado, surimi, sesamo',
+                'diet' => null,
+                'price' => 14
+            ],
+
+            // Secondi
+            [
+                'restaurant_id' => 11,
+                'name' => 'Anatra all\'arancia',
+                'availability' => 1,
+                'ingredient' => 'Anatra, salsa all\'arancia, verdure miste',
+                'diet' => null,
+                'price' => 15
+            ],
+            [
+                'restaurant_id' => 11,
+                'name' => 'Pollo alle mandorle',
+                'availability' => 1,
+                'ingredient' => 'Pollo, mandorle, peperoni, cipolla, salsa di soia',
+                'diet' => null,
+                'price' => 13
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 11,
+                'name' => 'Cheesecake al tè matcha',
+                'availability' => 1,
+                'ingredient' => 'Biscotti digestive, formaggio cremoso, tè matcha, panna',
+                'diet' => null,
+                'price' => 6
+            ],
+            [
+                'restaurant_id' => 11,
+                'name' => 'Mochi alla fragola',
+                'availability' => 1,
+                'ingredient' => 'Mochi, gelato alla fragola',
+                'diet' => null,
+                'price' => 5.50
+            ],
+
+            //# Panda Market
+
+            // Antipasti
+            [
+                'restaurant_id' => 12,
+                'name' => 'Tempura di verdure',
+                'availability' => 1,
+                'ingredient' => 'Verdure miste, pastella leggera, salsa ponzu',
+                'diet' => 'Vegetariano',
+                'price' => 8
+            ],
+            [
+                'restaurant_id' => 12,
+                'name' => 'Involtini primavera',
+                'availability' => 1,
+                'ingredient' => 'Verdure, gamberetti, involucro croccante, salsa agrodolce',
+                'diet' => null,
+                'price' => 9
+            ],
+
+            // Primi
+            [
+                'restaurant_id' => 12,
+                'name' => 'Udon al pollo',
+                'availability' => 1,
+                'ingredient' => 'Udon, pollo, verdure, brodo di pollo',
+                'diet' => null,
+                'price' => 11
+            ],
+            [
+                'restaurant_id' => 12,
+                'name' => 'Zuppa di miso',
+                'availability' => 1,
+                'ingredient' => 'Tofu, alghe, miso, cipollotti',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+
+            // Secondi
+            [
+                'restaurant_id' => 12,
+                'name' => 'Anatra alla pechinese',
+                'availability' => 1,
+                'ingredient' => 'Anatra, pancetta, salsa alla pechinese, verdure',
+                'diet' => null,
+                'price' => 16
+            ],
+            [
+                'restaurant_id' => 12,
+                'name' => 'Gamberoni alla griglia',
+                'availability' => 1,
+                'ingredient' => 'Gamberoni, aglio, prezzemolo, olio d\'oliva',
+                'diet' => null,
+                'price' => 15
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 12,
+                'name' => 'Tiramisù al tè verde',
+                'availability' => 1,
+                'ingredient' => 'Biscotti savoiardi, mascarpone, tè verde, cacao',
+                'diet' => null,
+                'price' => 7.50
+            ],
+            [
+                'restaurant_id' => 12,
+                'name' => 'Gelato al sesamo nero',
+                'availability' => 1,
+                'ingredient' => 'Sesamo nero, latte, zucchero, panna',
+                'diet' => null,
+                'price' => 6.50
+            ],
+
+            //# Ciao Zì
+
+            // Antipasti
+            [
+                'restaurant_id' => 13,
+                'name' => 'Tempura di verdure',
+                'availability' => 1,
+                'ingredient' => 'Verdure miste, pastella leggera, salsa ponzu',
+                'diet' => 'Vegetariano',
+                'price' => 8
+            ],
+            [
+                'restaurant_id' => 13,
+                'name' => 'Involtini primavera',
+                'availability' => 1,
+                'ingredient' => 'Verdure, gamberetti, involucro croccante, salsa agrodolce',
+                'diet' => null,
+                'price' => 9
+            ],
+
+            // Primi
+            [
+                'restaurant_id' => 13,
+                'name' => 'Udon al pollo',
+                'availability' => 1,
+                'ingredient' => 'Udon, pollo, verdure, brodo di pollo',
+                'diet' => null,
+                'price' => 11
+            ],
+            [
+                'restaurant_id' => 13,
+                'name' => 'Zuppa di miso',
+                'availability' => 1,
+                'ingredient' => 'Tofu, alghe, miso, cipollotti',
+                'diet' => 'Vegetariano',
+                'price' => 10
+            ],
+
+            // Secondi
+            [
+                'restaurant_id' => 13,
+                'name' => 'Anatra alla pechinese',
+                'availability' => 1,
+                'ingredient' => 'Anatra, pancetta, salsa alla pechinese, verdure',
+                'diet' => null,
+                'price' => 16
+            ],
+            [
+                'restaurant_id' => 13,
+                'name' => 'Gamberoni alla griglia',
+                'availability' => 1,
+                'ingredient' => 'Gamberoni, aglio, prezzemolo, olio d\'oliva',
+                'diet' => null,
+                'price' => 15
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 13,
+                'name' => 'Tiramisù al tè verde',
+                'availability' => 1,
+                'ingredient' => 'Biscotti savoiardi, mascarpone, tè verde, cacao',
+                'diet' => null,
+                'price' => 7.50
+            ],
+            [
+                'restaurant_id' => 13,
+                'name' => 'Gelato al sesamo nero',
+                'availability' => 1,
+                'ingredient' => 'Sesamo nero, latte, zucchero, panna',
+                'diet' => null,
+                'price' => 6.50
+            ],
+
+            //# Zen Sushi
+
+            // Antipasti
+            [
+                'restaurant_id' => 14,
+                'name' => 'Edamame al sesamo',
+                'availability' => 1,
+                'ingredient' => 'Fagioli di soia, sale marino, sesamo tostato',
+                'diet' => 'Vegetariano',
+                'price' => 6
+            ],
+            [
+                'restaurant_id' => 14,
+                'name' => 'Tartare di tonno',
+                'availability' => 1,
+                'ingredient' => 'Tonno fresco, avocado, cipolla rossa, salsa teriyaki',
+                'diet' => null,
+                'price' => 12
+            ],
+
+            // Primi
+            [
+                'restaurant_id' => 14,
+                'name' => 'Sashimi misto',
+                'availability' => 1,
+                'ingredient' => 'Pesce fresco assortito, wasabi, salsa di soia',
+                'diet' => null,
+                'price' => 18
+            ],
+            [
+                'restaurant_id' => 14,
+                'name' => 'Yakisoba con pollo',
+                'availability' => 1,
+                'ingredient' => 'Noodles, pollo, verdure miste, salsa yakisoba',
+                'diet' => null,
+                'price' => 14
+            ],
+
+            // Secondi
+            [
+                'restaurant_id' => 14,
+                'name' => 'Tempura di gamberi e verdure',
+                'availability' => 1,
+                'ingredient' => 'Gamberi, verdure assortite, pastella leggera, salsa tempura',
+                'diet' => null,
+                'price' => 16
+            ],
+            [
+                'restaurant_id' => 14,
+                'name' => 'Salmone teriyaki',
+                'availability' => 1,
+                'ingredient' => 'Filetto di salmone, salsa teriyaki, verdure grigliate',
+                'diet' => null,
+                'price' => 17
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 14,
+                'name' => 'Mochi al cioccolato',
+                'availability' => 1,
+                'ingredient' => 'Mochi, gelato al cioccolato',
+                'diet' => null,
+                'price' => 7
+            ],
+            [
+                'restaurant_id' => 14,
+                'name' => 'Torta al matcha',
+                'availability' => 1,
+                'ingredient' => 'Tè matcha, farina di riso, latte di cocco, zucchero',
+                'diet' => null,
+                'price' => 8
+            ],
+
+            //# Zenzero Fleming
+
+            // Antipasti
+            [
+                'restaurant_id' => 15,
+                'name' => 'Gyoza al vapore',
+                'availability' => 1,
+                'ingredient' => 'Gyoza di maiale, salsa di soia',
+                'diet' => null,
+                'price' => 8
+            ],
+            [
+                'restaurant_id' => 15,
+                'name' => 'Tartare di salmone e avocado',
+                'availability' => 1,
+                'ingredient' => 'Salmone fresco, avocado, salsa ponzu',
+                'diet' => null,
+                'price' => 13
+            ],
+
+            // Primi
+            [
+                'restaurant_id' => 15,
+                'name' => 'Ramen con maiale alla griglia',
+                'availability' => 1,
+                'ingredient' => 'Brodo di pollo, noodles ramen, maiale alla griglia, uova sode',
+                'diet' => null,
+                'price' => 15
+            ],
+            [
+                'restaurant_id' => 15,
+                'name' => 'Uramaki Dragon Roll',
+                'availability' => 1,
+                'ingredient' => 'Riso, gambero tempura, avocado, salsa unagi, tobiko',
+                'diet' => null,
+                'price' => 16
+            ],
+
+            // Secondi
+            [
+                'restaurant_id' => 15,
+                'name' => 'Pollo katsu',
+                'availability' => 1,
+                'ingredient' => 'Petto di pollo impanato, salsa katsu, riso bianco, insalata',
+                'diet' => null,
+                'price' => 14
+            ],
+            [
+                'restaurant_id' => 15,
+                'name' => 'Tonno scottato con salsa teriyaki',
+                'availability' => 1,
+                'ingredient' => 'Tonno fresco, salsa teriyaki, verdure grigliate',
+                'diet' => null,
+                'price' => 18
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 15,
+                'name' => 'Cheesecake al mango',
+                'availability' => 1,
+                'ingredient' => 'Biscotti digestive, formaggio cremoso, purea di mango',
+                'diet' => null,
+                'price' => 7
+            ],
+            [
+                'restaurant_id' => 15,
+                'name' => 'Gelato al tè verde',
+                'availability' => 1,
+                'ingredient' => 'Tè verde, latte, zucchero, panna',
+                'diet' => null,
+                'price' => 6.50
+            ],
+
+            //# New Town
+
+            // Antipasti
+            [
+                'restaurant_id' => 16,
+                'name' => 'Tartare di tonno piccante',
+                'availability' => 1,
+                'ingredient' => 'Tonno fresco, peperoncino, cipolla rossa, salsa di sesamo piccante',
+                'diet' => null,
+                'price' => 12
+            ],
+            [
+                'restaurant_id' => 16,
+                'name' => 'Insalata di alghe wakame',
+                'availability' => 1,
+                'ingredient' => 'Alghe wakame, cetrioli, sesamo, salsa di sesamo',
+                'diet' => 'Vegetariano',
+                'price' => 9
+            ],
+
+            // Primi
+            [
+                'restaurant_id' => 16,
+                'name' => 'Ramen al curry',
+                'availability' => 1,
+                'ingredient' => 'Brodo di pollo, noodles ramen, pollo al curry, uova sode',
+                'diet' => null,
+                'price' => 14
+            ],
+            [
+                'restaurant_id' => 16,
+                'name' => 'Udon ai frutti di mare',
+                'availability' => 1,
+                'ingredient' => 'Udon, gamberi, calamari, vongole, verdure, brodo dashi',
+                'diet' => null,
+                'price' => 16
+            ],
+
+            // Secondi
+            [
+                'restaurant_id' => 16,
+                'name' => 'Pollo teriyaki',
+                'availability' => 1,
+                'ingredient' => 'Petto di pollo, salsa teriyaki, riso bianco, verdure saltate',
+                'diet' => null,
+                'price' => 15
+            ],
+            [
+                'restaurant_id' => 16,
+                'name' => 'Sushi assortito',
+                'availability' => 1,
+                'ingredient' => 'Nigiri, sashimi, maki assortiti',
+                'diet' => null,
+                'price' => 18
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 16,
+                'name' => 'Mousse al tè verde',
+                'availability' => 1,
+                'ingredient' => 'Gelatina di tè verde, panna montata, zucchero',
+                'diet' => null,
+                'price' => 7
+            ],
+            [
+                'restaurant_id' => 16,
+                'name' => 'Dorayaki alla nutella',
+                'availability' => 1,
+                'ingredient' => 'Pancake giapponese, crema di nutella',
+                'diet' => null,
+                'price' => 6
+            ],
+
+            //# Crudo Pokè
+
+            // Pokè Bowls
+            [
+                'restaurant_id' => 17,
+                'name' => 'Pokè di salmone fresco',
+                'availability' => 1,
+                'ingredient' => 'Salmone fresco a cubetti, avocado, edamame, cipolla rossa, salsa di soia',
+                'diet' => null,
+                'price' => 14
+            ],
+            [
+                'restaurant_id' => 17,
+                'name' => 'Pokè di tonno piccante',
+                'availability' => 1,
+                'ingredient' => 'Tonno fresco piccante a cubetti, mango, avocado, peperoncino, salsa piccante',
+                'diet' => null,
+                'price' => 15
+            ],
+
+            // Contorni
+            [
+                'restaurant_id' => 17,
+                'name' => 'Edamame saltati',
+                'availability' => 1,
+                'ingredient' => 'Fagioli edamame, aglio, peperoncino, salsa di soia',
+                'diet' => 'Vegetariano',
+                'price' => 6
+            ],
+            [
+                'restaurant_id' => 17,
+                'name' => 'Insalata di alghe',
+                'availability' => 1,
+                'ingredient' => 'Alghe wakame, sesamo, cetrioli, salsa di sesamo',
+                'diet' => 'Vegetariano',
+                'price' => 7
+            ],
+
+            //# Temakinho
+
+            // Antipasti
+            [
+                'restaurant_id' => 18,
+                'name' => 'Gyoza al vapore',
+                'availability' => 1,
+                'ingredient' => 'Gyoza di maiale, salsa ponzu',
+                'diet' => null,
+                'price' => 8
+            ],
+            [
+                'restaurant_id' => 18,
+                'name' => 'Tataki di tonno',
+                'availability' => 1,
+                'ingredient' => 'Tonno fresco, salsa tataki, sesamo',
+                'diet' => null,
+                'price' => 12
+            ],
+
+            // Primi
+            [
+                'restaurant_id' => 18,
+                'name' => 'Yakisoba di pollo',
+                'availability' => 1,
+                'ingredient' => 'Noodles soba, pollo, verdure miste, salsa yakisoba',
+                'diet' => null,
+                'price' => 15
+            ],
+            [
+                'restaurant_id' => 18,
+                'name' => 'Riso alla cantonese',
+                'availability' => 1,
+                'ingredient' => 'Riso, uova, piselli, carote, prosciutto cotto',
+                'diet' => null,
+                'price' => 13
+            ],
+
+            // Secondi
+            [
+                'restaurant_id' => 18,
+                'name' => 'Salmone teriyaki',
+                'availability' => 1,
+                'ingredient' => 'Filetto di salmone, salsa teriyaki, verdure grigliate',
+                'diet' => null,
+                'price' => 17
+            ],
+            [
+                'restaurant_id' => 18,
+                'name' => 'Pollo katsu',
+                'availability' => 1,
+                'ingredient' => 'Petto di pollo impanato, salsa katsu, riso bianco, insalata',
+                'diet' => null,
+                'price' => 16
+            ],
+
+            // Dolci
+            [
+                'restaurant_id' => 18,
+                'name' => 'Cheesecake giapponese',
+                'availability' => 1,
+                'ingredient' => 'Formaggio cremoso, biscotti digestive, marmellata di frutti di bosco',
+                'diet' => null,
+                'price' => 7
+            ],
+            [
+                'restaurant_id' => 18,
+                'name' => 'Mochi alla fragola',
+                'availability' => 1,
+                'ingredient' => 'Mochi, gelato alla fragola',
+                'diet' => null,
+                'price' => 6
+            ],
+
+            //# Ravioleria Baozi
+
+            // Baozi
+            [
+                'restaurant_id' => 19,
+                'name' => 'Baozi al vapore con ripieno di maiale',
+                'availability' => 1,
+                'ingredient' => 'Pasta al vapore, maiale macinato, cipolla verde, salsa di soia',
+                'diet' => null,
+                'price' => 3.50
+            ],
+            [
+                'restaurant_id' => 19,
+                'name' => 'Baozi fritto con ripieno di verdure',
+                'availability' => 1,
+                'ingredient' => 'Pasta fritta, verdure miste, salsa agrodolce',
+                'diet' => 'Vegetariano',
+                'price' => 4
+            ],
+            [
+                'restaurant_id' => 19,
+                'name' => 'Baozi alla griglia con ripieno di gamberetti',
+                'availability' => 1,
+                'ingredient' => 'Pasta alla griglia, gamberetti, peperoni, cipolla, salsa piccante',
+                'diet' => null,
+                'price' => 5
+            ],
+            [
+                'restaurant_id' => 19,
+                'name' => 'Baozi al vapore con ripieno di funghi e tofu',
+                'availability' => 1,
+                'ingredient' => 'Pasta al vapore, funghi misti, tofu, cipolla, salsa di soia',
+                'diet' => 'Vegetariano',
+                'price' => 4.50
+            ],
         ];
+
 
         foreach ($dishes as $dish) {
 
