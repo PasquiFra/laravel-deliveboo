@@ -25,8 +25,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Slug</th>
-                <th scope="col">Quantità</th>
-                <th scope="col">Disponibile (si/no)</th>
+                <th scope="col">Online</th>
                 <th scope="col">Dieta</th>
                 <th scope="col">Prezzo</th>
                 <th scope="col">Ingredienti</th>
@@ -45,12 +44,13 @@
               <th scope="row">{{$dish->id}}</th>
               <td>{{$dish->name}}</td>
               <td>{{$dish->slug}}</td>
-              <td>{{$dish->quantity}}</td>
-              <td>{{$dish->availability}}</td>
+              <td>{{$dish->availability == 1 ? 'Si' : 'No'}}</td>
               <td>{{$dish->diet}}</td>
               <td>{{$dish->price}}</td>
               <td>{{$dish->ingredient}}</td>
-              <td>{{$dish->image}}</td>
+              <td class="image-preview">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThT_FiKa24LyxPc7o6o0CtG_wKVYFrdBnP3qoRIZeXwg&s" alt="dish-image">
+              </td>
               <td>{{$dish->created_at}}</td>
               <td>{{$dish->updated_at}}</td>
               <td>

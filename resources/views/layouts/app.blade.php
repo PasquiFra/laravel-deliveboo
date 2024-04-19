@@ -29,8 +29,8 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     
-                    <picture>
-                        <img src="{{ asset('/public/images/logo-deliveboo.png') }}" alt="Deliveboo">
+                    <picture class="logo-container">
+                        <img src="{{ asset('images/logo-deliveboo.png') }}" alt="Deliveboo" id="logo">
                     </picture>
                     
                 </a>
