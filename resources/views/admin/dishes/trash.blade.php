@@ -49,7 +49,7 @@
               <td>{{$dish->created_at}}</td>
               <td>{{$dish->updated_at}}</td>
               <td>
-                <div class="d-flex gap-2 justify-content-end">
+                <div class="d-flex gap-2 justify-content-end align-items-center">
                   {{--Vedi il Piatto--}}
                   <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn-primary">
                     <i class="far fa-eye"></i>
@@ -67,10 +67,10 @@
                   </form>
                    {{--Ripristina il Piatto--}}
                    <form action="{{route('admin.dishes.restore',$dish->id)}}" method="POST" 
-                    class="form-delete m-0" data-dish="{{$dish->title}}">
+                    class="form-delete" data-dish="{{$dish->title}}">
                     @csrf
                     @method('PATCH')
-                    <button  class="btn btn-success">
+                    <button  class="btn btn-sm btn-success">
                         <i class="fas fa-arrows-rotate"></i>
                     </button>
                 </form>
