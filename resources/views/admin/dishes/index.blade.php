@@ -46,7 +46,7 @@
               <td>{{$dish->price}}</td>
               <td>{{$dish->ingredient}}</td>
               <td class="image-preview">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThT_FiKa24LyxPc7o6o0CtG_wKVYFrdBnP3qoRIZeXwg&s" alt="dish-image">
+                <img src="{{$dish->image}}" alt="dish-image">
               </td>
               <td>{{$dish->created_at}}</td>
               <td>{{$dish->updated_at}}</td>

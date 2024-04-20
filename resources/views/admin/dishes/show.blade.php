@@ -9,9 +9,15 @@
                 L'articolo è 
                 <span class="{{$dish->availability ? 'text-success' : 'text-disabled'}}">
                     <strong>
-                        {{$dish->availability ? 'disponibile' : 'impostato come bozza'}}
+                        {{$dish->availability ? 'attivo nel menu' : 'impostato come bozza'}}
                     </strong>
                 </span>
+            </div>
+            <div>
+                {{$dish->diet}}
+            </div>
+            <div>
+                {{$dish->course}}
             </div>
             <picture id="show-picture">
                 @if ($dish->image && @getimagesize($dish->image))
