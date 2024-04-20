@@ -26,6 +26,7 @@ class UpdateDishRequest extends FormRequest
             'name' => 'required|string',
             'slug' => 'string',
             'price' => 'decimal:2|required',
+            'course' => 'nullable',
             'image' => 'nullable',
             'diet' => 'nullable',
         ];
