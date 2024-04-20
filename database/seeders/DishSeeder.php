@@ -2321,3 +2321,478 @@ class DishSeeder extends Seeder
         }
     }
 }
+
+/*
+$dishes = [
+
+    //~ Ristoranti Africani
+
+    //# Blackalicious Afrofood
+
+    // Antipasti
+    [
+        'restaurant_id' => 32,
+        'name' => 'Sambusa di carne',
+        'availability' => 1,
+        'ingredient' => 'Carne macinata, cipolla, spezie, pasta brick',
+        'diet' => null,
+        'price' => 4,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 32,
+        'name' => 'Jollof rice con pollo',
+        'availability' => 1,
+        'ingredient' => 'Riso, pollo, pomodoro, cipolla, peperoni, spezie',
+        'diet' => null,
+        'price' => 12,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 32,
+        'name' => 'Fufu con zuppa di verdure',
+        'availability' => 1,
+        'ingredient' => 'Fufu (pasta di farina di mais e igname), verdure miste, brodo',
+        'diet' => 'Vegetariano',
+        'price' => 10,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 32,
+        'name' => 'Puff Puff',
+        'availability' => 1,
+        'ingredient' => 'Impasto di farina, lievito, zucchero, olio di palma',
+        'diet' => 'Vegetariano',
+        'price' => 5,
+        'course' => 'dessert'
+    ],
+
+    //# Afrik Cavour
+
+    // Antipasti
+    [
+        'restaurant_id' => 33,
+        'name' => 'Kelewele',
+        'availability' => 1,
+        'ingredient' => 'Banane, pepe di giamaica, zenzero, aglio, olio di palma',
+        'diet' => 'Vegetariano',
+        'price' => 6,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 33,
+        'name' => 'Suya di manzo',
+        'availability' => 1,
+        'ingredient' => 'Manzo marinato, spezie, arachidi tostate',
+        'diet' => null,
+        'price' => 14,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 33,
+        'name' => 'Jollof rice con gamberi',
+        'availability' => 1,
+        'ingredient' => 'Riso, gamberi, pomodoro, cipolla, peperoni, spezie',
+        'diet' => null,
+        'price' => 15,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 33,
+        'name' => 'Chin Chin',
+        'availability' => 1,
+        'ingredient' => 'Farina, burro, uova, zucchero, latte',
+        'diet' => 'Vegetariano',
+        'price' => 7,
+        'course' => 'dessert'
+    ],
+
+    //~ Ristoranti Thailandesi
+
+    //# Isola Puket
+
+    // Antipasti
+    [
+        'restaurant_id' => 34,
+        'name' => 'Tom Yum Goong',
+        'availability' => 1,
+        'ingredient' => 'Gamberetti, funghi, erba cipollina, peperoncino, lime',
+        'diet' => null,
+        'price' => 10,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 34,
+        'name' => 'Pad Thai',
+        'availability' => 1,
+        'ingredient' => 'Tagliatelle di riso, gamberetti, tofu, uova, arachidi',
+        'diet' => null,
+        'price' => 12,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 34,
+        'name' => 'Massaman Curry di manzo',
+        'availability' => 1,
+        'ingredient' => 'Manzo, patate, arachidi, curry, latte di cocco',
+        'diet' => null,
+        'price' => 15,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 34,
+        'name' => 'Mango Sticky Rice',
+        'availability' => 1,
+        'ingredient' => 'Riso glutinoso, mango maturo, latte di cocco, zucchero',
+        'diet' => 'Vegetariano',
+        'price' => 8,
+        'course' => 'dessert'
+    ],
+
+    //# Bussarakham
+
+    // Antipasti
+    [
+        'restaurant_id' => 35,
+        'name' => 'Som Tam',
+        'availability' => 1,
+        'ingredient' => 'Papaya verde, pomodoro, arachidi, fagiolini, peperoncino',
+        'diet' => 'Vegetariano',
+        'price' => 9,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 35,
+        'name' => 'Pad See Ew con pollo',
+        'availability' => 1,
+        'ingredient' => 'Tagliatelle di riso, pollo, broccoli, cavolo cinese, salsa di soia',
+        'diet' => null,
+        'price' => 13,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 35,
+        'name' => 'Gai Med Ma Muang',
+        'availability' => 1,
+        'ingredient' => 'Pollo, anacardi, peperoni, cipolle, salsa di ostriche',
+        'diet' => null,
+        'price' => 14,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 35,
+        'name' => 'Khanom Mo Kaeng',
+        'availability' => 1,
+        'ingredient' => 'Farina di riso, latte di cocco, zucchero, uova',
+        'diet' => 'Vegetariano',
+        'price' => 7,
+        'course' => 'dessert'
+    ],
+
+    //# Bin Hai
+
+    // Antipasti
+    [
+        'restaurant_id' => 36,
+        'name' => 'Satay di pollo',
+        'availability' => 1,
+        'ingredient' => 'Spiedini di pollo marinato, salsa di arachidi',
+        'diet' => null,
+        'price' => 8,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 36,
+        'name' => 'Tom Kha Gai',
+        'availability' => 1,
+        'ingredient' => 'Pollo, funghi, citronella, galanga, lime, latte di cocco',
+        'diet' => null,
+        'price' => 11,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 36,
+        'name' => 'Pad Kra Pao Moo',
+        'availability' => 1,
+        'ingredient' => 'Maiale tritato, basilico, peperoncino, aglio, salsa di soia',
+        'diet' => null,
+        'price' => 12,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 36,
+        'name' => 'Khanom Krok',
+        'availability' => 1,
+        'ingredient' => 'Farina di riso, latte di cocco, zucchero di palma',
+        'diet' => 'Vegetariano',
+        'price' => 6,
+        'course' => 'dessert'
+    ],
+
+    //# Siam Cuisine
+
+    // Antipasti
+    [
+        'restaurant_id' => 37,
+        'name' => 'Tod Mun Pla',
+        'availability' => 1,
+        'ingredient' => 'Polpettine di pesce, curry rosso, fagiolini, lime',
+        'diet' => null,
+        'price' => 10,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 37,
+        'name' => 'Khao Pad Gai',
+        'availability' => 1,
+        'ingredient' => 'Riso fritto, pollo, uova, cipolle, piselli, salsa di soia',
+        'diet' => null,
+        'price' => 11,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 37,
+        'name' => 'Gaeng Keow Wan Gai',
+        'availability' => 1,
+        'ingredient' => 'Pollo, curry verde, melanzane, peperoni, basilico, latte di cocco',
+        'diet' => null,
+        'price' => 14,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 37,
+        'name' => 'Kluay Buat Chi',
+        'availability' => 1,
+        'ingredient' => 'Banana, latte di cocco, zucchero, sale',
+        'diet' => 'Vegetariano',
+        'price' => 8,
+        'course' => 'dessert'
+    ],
+
+    //# Thai Inn
+
+    // Antipasti
+    [
+        'restaurant_id' => 38,
+        'name' => 'Yam Pla Duk Fu',
+        'availability' => 1,
+        'ingredient' => 'Insalata di pesce gatto croccante, mango, cipolla, peperoncino, menta',
+        'diet' => null,
+        'price' => 9,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 38,
+        'name' => 'Khao Soi Gai',
+        'availability' => 1,
+        'ingredient' => 'Tagliatelle di uova, pollo, curry giallo, cipolle fritte, lime',
+        'diet' => null,
+        'price' => 12,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 38,
+        'name' => 'Pla Rad Prik',
+        'availability' => 1,
+        'ingredient' => 'Pesce fritto, salsa di peperoncino dolce, basilico, cipolla',
+        'diet' => null,
+        'price' => 15,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 38,
+        'name' => 'Tako',
+        'availability' => 1,
+        'ingredient' => 'Pudding di tapioca, latte di cocco, mais dolce',
+        'diet' => 'Vegetariano',
+        'price' => 7,
+        'course' => 'dessert'
+    ],
+
+    //~ Ristoranti Brasiliani
+
+    //# Brazilian Food
+
+    // Antipasti
+    [
+        'restaurant_id' => 39,
+        'name' => 'Tom Yum Goong',
+        'availability' => 1,
+        'ingredient' => 'Gamberetti, funghi, erba cipollina, peperoncino, lime',
+        'diet' => null,
+        'price' => 10,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 39,
+        'name' => 'Pad Thai',
+        'availability' => 1,
+        'ingredient' => 'Tagliatelle di riso, gamberetti, tofu, uova, arachidi',
+        'diet' => null,
+        'price' => 12,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 39,
+        'name' => 'Massaman Curry di manzo',
+        'availability' => 1,
+        'ingredient' => 'Manzo, patate, arachidi, curry, latte di cocco',
+        'diet' => null,
+        'price' => 15,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 39,
+        'name' => 'Mango Sticky Rice',
+        'availability' => 1,
+        'ingredient' => 'Riso glutinoso, mango maturo, latte di cocco, zucchero',
+        'diet' => 'Vegetariano',
+        'price' => 8,
+        'course' => 'dessert'
+    ],
+
+    //# Manioka
+
+    // Antipasti
+    [
+        'restaurant_id' => 40,
+        'name' => 'Som Tam',
+        'availability' => 1,
+        'ingredient' => 'Papaya verde, pomodoro, arachidi, fagiolini, peperoncino',
+        'diet' => 'Vegetariano',
+        'price' => 9,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 40,
+        'name' => 'Pad See Ew con pollo',
+        'availability' => 1,
+        'ingredient' => 'Tagliatelle di riso, pollo, broccoli, cavolo cinese, salsa di soia',
+        'diet' => null,
+        'price' => 13,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 40,
+        'name' => 'Gai Med Ma Muang',
+        'availability' => 1,
+        'ingredient' => 'Pollo, anacardi, peperoni, cipolle, salsa di ostriche',
+        'diet' => null,
+        'price' => 14,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 40,
+        'name' => 'Khanom Mo Kaeng',
+        'availability' => 1,
+        'ingredient' => 'Farina di riso, latte di cocco, zucchero, uova',
+        'diet' => 'Vegetariano',
+        'price' => 7,
+        'course' => 'dessert'
+    ],
+
+    //~ Ristoranti Turchi
+
+    //# Turkish Kebab
+
+    // Antipasti
+    [
+        'restaurant_id' => 42,
+        'name' => 'Cig Köfte',
+        'availability' => 1,
+        'ingredient' => 'Carne macinata, bulgur, peperoncino, spezie',
+        'diet' => null,
+        'price' => 9,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 42,
+        'name' => 'Lahmacun',
+        'availability' => 1,
+        'ingredient' => 'Base di pizza sottile, carne macinata, cipolla, pomodoro, prezzemolo',
+        'diet' => null,
+        'price' => 10,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 42,
+        'name' => 'Shish Kebab',
+        'availability' => 1,
+        'ingredient' => 'Spiedini di carne di agnello marinata, peperoni, cipolla',
+        'diet' => null,
+        'price' => 16,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 42,
+        'name' => 'Künefe',
+        'availability' => 1,
+        'ingredient' => 'Pasta fillo, formaggio, sciroppo di zucchero',
+        'diet' => 'Vegetariano',
+        'price' => 10,
+        'course' => 'dessert'
+    ],
+
+    //# Furious Kebab
+
+    // Antipasti
+    [
+        'restaurant_id' => 42,
+        'name' => 'Cig Köfte',
+        'availability' => 1,
+        'ingredient' => 'Carne macinata, bulgur, peperoncino, spezie',
+        'diet' => null,
+        'price' => 9,
+        'course' => 'antipasto'
+    ],
+    // Piatti principali
+    [
+        'restaurant_id' => 42,
+        'name' => 'Lahmacun',
+        'availability' => 1,
+        'ingredient' => 'Base di pizza sottile, carne macinata, cipolla, pomodoro, prezzemolo',
+        'diet' => null,
+        'price' => 10,
+        'course' => 'primo'
+    ],
+    [
+        'restaurant_id' => 42,
+        'name' => 'Shish Kebab',
+        'availability' => 1,
+        'ingredient' => 'Spiedini di carne di agnello marinata, peperoni, cipolla',
+        'diet' => null,
+        'price' => 16,
+        'course' => 'primo'
+    ],
+    // Dolci
+    [
+        'restaurant_id' => 42,
+        'name' => 'Künefe',
+        'availability' => 1,
+        'ingredient' => 'Pasta fillo, formaggio, sciroppo di zucchero',
+        'diet' => 'Vegetariano',
+        'price' => 10,
+        'course' => 'dessert'
+    ],
+];
+*/

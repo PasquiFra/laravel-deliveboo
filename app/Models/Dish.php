@@ -11,7 +11,7 @@ class Dish extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'image', 'diet', 'ingredient', 'price'];
+    protected $fillable = ['name', 'image', 'diet', 'course', 'ingredient', 'price'];
 
     public function orders()
     {

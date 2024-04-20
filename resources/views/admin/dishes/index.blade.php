@@ -42,6 +42,7 @@
               <td>{{$dish->name}}</td>
               <td>{{$dish->slug}}</td>
               <td>{{$dish->availability == 1 ? 'Si' : 'No'}}</td>
+              <td>{{$dish->course}}</td>
               <td>{{$dish->diet}}</td>
               <td>{{$dish->price}}</td>
               <td>{{$dish->ingredient}}</td>
