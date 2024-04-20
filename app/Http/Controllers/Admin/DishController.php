@@ -53,7 +53,10 @@ class DishController extends Controller
 
         $dish->save();
 
-        return redirect()->route('admin.dishes.show', $dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient);
+        return redirect()->route('admin.dishes.show', $dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient)
+            //Alert creazione piatto
+            ->with('message', "Piatto {$dish->name} creato con successo")
+            ->with('type', 'success');
     }
 
     /**
@@ -93,8 +96,9 @@ class DishController extends Controller
         $dish->update();
 
         return redirect()->route('admin.dishes.show', $dish)
-            ->with('Link', 'success')
-            ->with('message', "$dish->name modificato con successo.");
+            //Alert modifica piatto
+            ->with('message', "Piatto {$dish->name} modificato con successo")
+            ->with('type', 'warning');
     }
 
     /**
@@ -104,7 +108,7 @@ class DishController extends Controller
     public function destroy(Dish $dish)
     {
         $dish->delete();
-        //Flash data
+        //Flash data toast
         return to_route('admin.dishes.index')
             ->with('toast-button-type', 'danger')
             ->with('toast-message', 'Piatto eliminato')
@@ -126,16 +130,18 @@ class DishController extends Controller
     {
         $dish->restore();
 
-        return to_route('admin.dishes.index', $dish->id);
-        // ->with('type', 'success')
-        // ->with('message', "Progetto {$dish->title} ripristinato con successo");
+        return to_route('admin.dishes.index', $dish->id)
+            ->with('type', 'success')
+            ->with('message', "Piatto {$dish->name} ripristinato con successo");
     }
 
     //# Action per eliminare definitivamente il piatto
     public function drop(Dish $dish)
     {
         $dish->forceDelete();
-        return to_route('admin.dishes.trash');
+        return to_route('admin.dishes.trash')
+            ->with('message', "Piatto {$dish->name} eliminato definitivamente")
+            ->with('type', 'danger');
     }
 
     //# Action svuotare il Cestino
@@ -146,6 +152,8 @@ class DishController extends Controller
         foreach ($trashedDishes as $dish) {
             $dish->forceDelete();
         }
-        return to_route('admin.dishes.trash');
+        return to_route('admin.dishes.trash')
+            ->with('message', "Piatti eliminati definitivamente")
+            ->with('type', 'danger');;
     }
 }
