@@ -193,15 +193,12 @@
                     @enderror       
                 </div>
             </div>
-    
+            {{-- CAMPO PREVIEW IMAGE --}}
             <div id="preview-section">
-                <img id="preview" src="{{ 
-                old('image', $dish->image) && @getimagesize($dish->image)
-                ?
-                asset('storage/' . old('image', $dish->image))
-                :
-                asset('/images/default-dish.png')
-                }}">
+                <img id="preview" src="{{ old('image', $dish->image) && @getimagesize($dish->image)
+                ? asset('storage/' . old('image', $dish->image)) 
+                : asset('/images/default-dish.png')}}" 
+                alt="{{$dish->slug}}">
             </div>
         </div>
 
@@ -212,7 +209,6 @@
         <button type="submit" class="btn btn-success me-3">Salva</button>
         <button type="reset" class="btn btn-danger">Svuota</button>
     </div>
-
     </form>
     
 @endsection
@@ -231,6 +227,32 @@
             label.textContent = 'Articolo disattivato';
         }
     });
+
+    // setto la visualizzazione dinamica dell'immagine in pagina
+    const imageField = document.getElementById('image');
+    const previewField = document.getElementById('preview');
+
+    let blobUrl;
+
+    imageField.addEventListener('change', () => {
+
+        // controllo se ho il file
+        if (imageField.files && imageField.files[0]){
+            
+            //prendo il file
+            const file = imageField.files[0];
+
+            //preparo l'url
+            const blobUrl = URL.createObjectURL(file);
+
+            previewField.src = blobUrl;
+        }
+    })
+
+    window.addEventListener('beforeunload', ()=> {
+        if(blobUrl) URL.revokeObjectURL(blobUrl);
+    })
+        
 
     // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
     document.getElementById('form').addEventListener('submit', function() {;
