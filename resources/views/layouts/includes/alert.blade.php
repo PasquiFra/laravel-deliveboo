@@ -6,4 +6,4 @@
   </div>
 @endsession
 
-{{--Aggiungere anche gli errori qui--}}
+{{--Aggiungere anche gli errori del form  qui--}}
