@@ -84,7 +84,7 @@ class DishController extends Controller
     {
         $ingredient = implode(', ', $request->input('ingredients'));
         $availability = $request->input('availability') ? true : false;
-
+        //dd($request);
         $data = $request->validated();
 
         $dish->slug = Str::slug($dish->name);
