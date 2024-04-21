@@ -16,6 +16,11 @@
                         <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
                         <p><i class="fa-solid fa-envelope me-2"></i>{{$restaurant->email}}</p>
                         <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
+                        <p><strong>Categorie: </strong>
+                            @foreach ($restaurant->categories as $index => $category)                              
+                                {{$category->label}}@if($index < count($restaurant->categories) - 1), @else. @endif
+                            @endforeach
+                        </p>
                     </div>
                     <div class="col-3 d-flex align-items-center">
                         <a href="{{route('admin.dishes.index')}}">
