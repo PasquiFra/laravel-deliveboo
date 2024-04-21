@@ -3,7 +3,7 @@
 
 <div class="container">
     <h2 class="fs-1 fw-semibold text-light text-center my-4">
-        {{ __('Admin') }}
+        {{ __('Home') }}
     </h2>
     <div class="row justify-content-center">
         <div class="col-5">
