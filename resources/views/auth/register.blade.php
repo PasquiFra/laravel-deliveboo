@@ -87,7 +87,7 @@
                             <label for="telephone_number" class="col-md-4 col-form-label text-md-right">Numero di telefono<span class="text-danger"><strong>*</strong></span></label>
 
                             <div class="col-md-6">
-                                <input id="telephone_number" type="text" class="form-control @error('telephone_number') is-invalid @enderror" name="telephone_number" value="{{ old('telephone_number') }}" required autocomplete="telephone_number" autofocus>
+                                <input id="telephone_number" type="text" class="form-control @error('telephone_number') is-invalid @enderror" name="telephone_number" value="{{ old('telephone_number') }}+39 " required autocomplete="telephone_number" autofocus>
 
                                 @error('telephone_number')
                                 <span class="invalid-feedback" role="alert">
@@ -102,7 +102,7 @@
                             <label for="birthday" class="col-md-4 col-form-label text-md-right">Data di nascita</label>
 
                             <div class="col-md-6">
-                                <input id="birthday" type="date" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" required autocomplete="birthday" autofocus>
+                                <input id="birthday" type="date" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" autocomplete="birthday" autofocus>
 
                                 @error('birthday')
                                 <span class="invalid-feedback" role="alert">
