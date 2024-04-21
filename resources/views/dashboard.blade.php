@@ -21,12 +21,12 @@
                     <div class="row">
                         {{-- Finire di compilare gli href --}}
                         <div class="col-3 text-center my-4">
-                            <a href="">
+                            <a href="{{route('admin.dishes.index')}}">
                                 <img class="img-fluid w-50" src="{{asset('img/menu.png')}}" alt="menu">
                             </a>
                         </div>
                         <div class="col-3 text-center my-4">
-                            <a href="">
+                            <a href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">
                                 <img class="img-fluid w-50" src="{{asset('img/restaurant.png')}}" alt="ristorante">
                             </a>
                         </div>
