@@ -62,6 +62,7 @@ class UserSeeder extends Seeder
             $new_user->birthday = $faker->date();
             $new_user->remember_token = Str::random(10);
             $new_user->password = Hash::make('password');
+            $new_user->email_verified_at = now();
             $new_user->save();
         }
     }
