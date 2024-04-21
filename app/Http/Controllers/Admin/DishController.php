@@ -95,8 +95,9 @@ class DishController extends Controller
     public function update(UpdateDishRequest $request, Dish $dish)
     {
         $ingredient = implode(', ', $request->input('ingredients'));
+
+        dd($request);
         $availability = $request->input('availability') ? true : false;
-        //dd($request);
         $data = $request->validated();
 
         // Salvataggio dell'immagine nel database

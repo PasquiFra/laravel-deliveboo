@@ -120,6 +120,7 @@
                 Campo corretto
             </div>      
             @enderror       
+            
         </div>
 
         {{-- INPUT GROUP INGREDIENTS --}}
