@@ -17,6 +17,11 @@
                         <p><i class="fa-solid fa-envelope me-2"></i>{{$restaurant->email}}</p>
                         <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
                     </div>
+                    <div class="col-3 d-flex align-items-center">
+                        <a href="{{route('admin.dishes.index')}}">
+                            <img class="img-fluid w-50" src="{{asset('img/menu.png')}}" alt="menu">
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">
