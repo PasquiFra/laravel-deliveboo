@@ -88,7 +88,7 @@
             </div>
         </div>
         <div class="col-1 d-flex justify-content-center align-items-center mb-5">
-            <img class="img-fluid" src="https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg" alt="">
+            <img class="img-fluid" src="{{old('image', $restaurant->image) ? asset('storage/'. $restaurant->image) : 'https://marcolanci.it/boolean/assets/placeholder.png'}}" alt="immagine del ristorante" id="preview">
         </div>
         <div class="col mb-5">
             <p class="mb-3">Categorie</p>
@@ -113,3 +113,15 @@
         </div>
     </div>
 </form> 
+
+@section('scripts')
+<script>
+    const placeholder = 'https://marcolanci.it/boolean/assets/placeholder.png';
+    const input = document.getElementById('image');
+    const preview = document.getElementById('preview');
+
+    input.addEventListener('input', () => {
+        preview.src = input.value || placeholder;
+    })
+</script>
+@endsection
