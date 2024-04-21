@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
-class RestauranController extends Controller
+class RestaurantController extends Controller
 {
 
     /**
@@ -17,7 +17,8 @@ class RestauranController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $restaurant = new Restaurant();
+        return view('admin.restaurants.create', compact('restaurant'));
     }
 
     /**
