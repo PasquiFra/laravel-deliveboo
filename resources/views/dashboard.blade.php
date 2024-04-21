@@ -55,7 +55,7 @@
                         @endif
                         <div class="row">
                             <div class="col-6 offset-3 text-center">
-                                <h4 class="mb-3">Aggiungi il tuo ristorante</h4>
+                                <h4 class="mb-3">Crea il tuo ristorante</h4>
                                 <a href="{{route('admin.restaurants.create')}}">
                                     <img class="img-fluid w-50" src="{{asset('img/restaurant.png')}}" alt="ristorante">
                                 </a>
