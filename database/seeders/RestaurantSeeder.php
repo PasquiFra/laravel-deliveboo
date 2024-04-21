@@ -206,7 +206,7 @@ class RestaurantSeeder extends Seeder
         ];
 
 
-        foreach ($restaurants as $restaurant) {
+        foreach ($restaurants as $key => $restaurant) {
 
             // Nuovo numero telefonico
             $phone_number = $faker->randomNumber(9, true);
@@ -221,6 +221,7 @@ class RestaurantSeeder extends Seeder
             $new_mail = Str::lower(str_replace(' ', '.', $restaurant['name']));
 
             $new_restaurant = new Restaurant();
+            $new_restaurant->user_id = $key + 1;
             $new_restaurant->image = $faker->imageUrl(null, 350, 350);
             $new_restaurant->vat = $new_vat;
             $new_restaurant->phone =  $new_phone;
