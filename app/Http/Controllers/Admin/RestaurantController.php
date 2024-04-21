@@ -18,7 +18,8 @@ class RestaurantController extends Controller
     public function create()
     {
         $restaurant = new Restaurant();
-        return view('admin.restaurants.create', compact('restaurant'));
+        $categories = Category::select('label', 'id')->get();
+        return view('admin.restaurants.create', compact('restaurant', 'categories'));
     }
 
     /**
