@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('cap', 7)->required()->default('00187');
             $table->string('phone', 20);
             $table->string('email');
-            $table->string('VAT')->required()->unique();
+            $table->string('vat')->required()->unique();
             $table->text('image')->nullable();
             $table->timestamps();
         });

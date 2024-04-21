@@ -1,1 +1,13 @@
-@import '~bootstrap/scss/bootstrap'
+@import './reset';
+@import './_utilities';
+@import './_home';
+@import './components/form';
+@import './views/index';
+@import './views/show';
+
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: #d8e2dc
+}
