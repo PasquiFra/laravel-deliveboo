@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'admin@admin.com',
         // ]);
 
-        $this->call(UserSeeder::class);
+        $this->call([UserSeeder::class, CategorySeeder::class]);
 
         \App\Models\User::factory(37)->create();
 
-        $this->call([RestaurantSeeder::class, DishSeeder::class, CategorySeeder::class]);
+        $this->call([RestaurantSeeder::class, DishSeeder::class]);
     }
 }
