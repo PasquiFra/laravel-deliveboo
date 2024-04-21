@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class RestaurantController extends Controller
@@ -33,7 +35,7 @@ class RestaurantController extends Controller
             'phone' => 'string|min:10|max:15|nullable',
             'email' => 'email|string|lowercase|nullable',
             'vat' => 'required|unique:restaurants|string|min:13|max:13',
-            'category_id' => 'required',
+            'categories' => 'required|exists:categories,id',
             'image' => 'nullable|url'
         ], [
             'name.required' => 'Il nome del ristorante è obbligatorio',
@@ -50,7 +52,8 @@ class RestaurantController extends Controller
             'vat.unique' => 'P.IVA già usata',
             'vat.min' => 'La P.IVA non può contenere meno di :min cifre',
             'vat.max' => 'La P.IVA non può contenere più di :max cifre',
-            'category_id.required' => 'Categoria obbligatoria',
+            'categories.required' => 'Categoria obbligatoria',
+            'categories.exists' => 'Categoria non valida',
             'image.url' => 'Devi inserire un url'
         ]);
 
@@ -61,6 +64,12 @@ class RestaurantController extends Controller
         $restaurant->fill($data);
 
         $restaurant->slug = Str::slug($data['name']);
+
+        $restaurant->user_id = Auth::user()->id;
+
+        $restaurant->save();
+
+        if (Arr::exists($data, 'categories')) $restaurant->categories()->attach($data['categories']);
 
         return to_route('admin.restaurants.show', $restaurant->id);
     }
@@ -78,9 +87,11 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
+        $prev_categories = $restaurant->categories->pluck('id')->toArray();
+
         $categories = Category::select('label', 'id')->get();
 
-        return view('admin.restaurants.edit', compact('restaurant', 'categories'));
+        return view('admin.restaurants.edit', compact('restaurant', 'categories', 'prev_categories'));
     }
 
     /**
@@ -94,8 +105,8 @@ class RestaurantController extends Controller
             'phone' => 'string|min:10|max:15|nullable',
             'email' => 'email|string|lowercase|nullable',
             'vat' => ['required', 'string', 'min:13', 'max:13', Rule::unique('restaurants')->ignore($restaurant->vat)],
-            'category_id' => 'required',
-            'image' => 'nullable|url'
+            'image' => 'nullable|url',
+            'categories' => 'required|exists:categories,id'
         ], [
             'name.required' => 'Il nome del ristorante è obbligatorio',
             'name.min' => 'Il nome non può essere più corto di :min caratteri',
@@ -108,20 +119,21 @@ class RestaurantController extends Controller
             'email.email' => 'L\'email inserita non è valida',
             'email.lowercase' => 'L\'email non può contenere lettere maiuscole',
             'vat.required' => 'La P.IVA è obbligatoria',
-            'vat.unique' => 'P.IVA già usata',
             'vat.min' => 'La P.IVA non può contenere meno di :min cifre',
             'vat.max' => 'La P.IVA non può contenere più di :max cifre',
-            'category_id.required' => 'Categoria obbligatoria',
-            'image.url' => 'Devi inserire un url'
+            'image.url' => 'Devi inserire un url',
+            'categories.required' => 'Categoria obbligatoria',
+            'categories.exists' => 'Categoria non valida'
         ]);
 
         $data = $request->all();
 
-        $restaurant = new Restaurant();
-
         $restaurant->slug = Str::slug($data['name']);
 
         $restaurant->update($data);
+
+        if (Arr::exists($data, 'categories')) $restaurant->categories()->sync($data['categories']);
+        elseif (!Arr::exists($data, 'categories') && $restaurant->has('categories')) $restaurant->categories()->detach();
 
         return to_route('admin.restaurants.show', $restaurant->id);
     }
