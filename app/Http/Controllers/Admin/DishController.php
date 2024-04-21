@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -37,23 +38,46 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-        $ingredient = implode(', ', $request->input('ingredients'));
+        // stabilisco la variabile ingredients (array proveniente dal form)
+        $ingredients = $request->input('ingredients');
+
+        // filtro l'array in modo da vedere se ho campi nulli o stringa vuota ed eliminarli
+        $filteredIngredients = array_filter($ingredients, function ($value) {
+            return !is_null($value) && $value !== '';
+        });
+
+        // trasformo l'array che ricevo dal form in una stringa contenente tutti gli ingredienti
+        $ingredient = implode(', ', $filteredIngredients);
 
         $data = $request->validated();
 
-        $dish = new Dish();
+        $new_dish = new Dish();
 
-        $dish->slug = Str::slug($dish->name);
+        $new_dish->slug = Str::slug($new_dish->name);
 
-        $dish->fill($data);
+        // Salvataggio dell'immagine nel database
+        if (Arr::exists($data, 'image')) {
 
-        $dish->ingredient = $ingredient;
+            if ($new_dish->image) Storage::delete($new_dish->image);
 
-        $dish->availability = Arr::exists($data, 'availability');
+            $extension = $data['image']->extension();
 
-        $dish->save();
+            $img_url = Storage::putFileAs('dish_images', $data['image'], "$new_dish->slug.$extension");
+            $new_dish->image = $img_url;
+        }
 
-        return redirect()->route('admin.dishes.show', $dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient);
+        $new_dish->fill($data);
+
+        $new_dish->ingredient = $ingredient;
+
+        $new_dish->availability = Arr::exists($data, 'availability');
+
+        $new_dish->save();
+
+        return redirect()->route('admin.dishes.show', $new_dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient)
+            //Alert creazione piatto
+            ->with('message', "Piatto {$new_dish->name} creato con successo")
+            ->with('type', 'success');
     }
 
     /**
@@ -79,10 +103,24 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
+        // trasformo l'array che ricevo dal form in una stringa contenente tutti gli ingredienti
         $ingredient = implode(', ', $request->input('ingredients'));
+
+        // imposto il valore di availability dal form, se ricevo un valore è true, altrimenti false
         $availability = $request->input('availability') ? true : false;
 
         $data = $request->validated();
+
+        // Salvataggio dell'immagine nel database
+        if (Arr::exists($data, 'image')) {
+
+            if ($dish->image) Storage::delete($dish->image);
+
+            $extension = $data['image']->extension();
+
+            $img_url = Storage::putFileAs('dish_images', $data['image'], "$dish->slug.$extension");
+            $dish->image = $img_url;
+        }
 
         $dish->slug = Str::slug($dish->name);
 
@@ -93,8 +131,9 @@ class DishController extends Controller
         $dish->update();
 
         return redirect()->route('admin.dishes.show', $dish)
-            ->with('Link', 'success')
-            ->with('message', "$dish->name modificato con successo.");
+            //Alert modifica piatto
+            ->with('message', "Piatto {$dish->name} modificato con successo")
+            ->with('type', 'warning');
     }
 
     /**
@@ -104,7 +143,7 @@ class DishController extends Controller
     public function destroy(Dish $dish)
     {
         $dish->delete();
-        //Flash data
+        //Flash data toast
         return to_route('admin.dishes.index')
             ->with('toast-button-type', 'danger')
             ->with('toast-message', 'Piatto eliminato')
@@ -126,16 +165,18 @@ class DishController extends Controller
     {
         $dish->restore();
 
-        return to_route('admin.dishes.index', $dish->id);
-        // ->with('type', 'success')
-        // ->with('message', "Progetto {$dish->title} ripristinato con successo");
+        return to_route('admin.dishes.index', $dish->id)
+            ->with('type', 'success')
+            ->with('message', "Piatto {$dish->name} ripristinato con successo");
     }
 
     //# Action per eliminare definitivamente il piatto
     public function drop(Dish $dish)
     {
         $dish->forceDelete();
-        return to_route('admin.dishes.trash');
+        return to_route('admin.dishes.trash')
+            ->with('message', "Piatto {$dish->name} eliminato definitivamente")
+            ->with('type', 'danger');
     }
 
     //# Action svuotare il Cestino
@@ -146,6 +187,8 @@ class DishController extends Controller
         foreach ($trashedDishes as $dish) {
             $dish->forceDelete();
         }
-        return to_route('admin.dishes.trash');
+        return to_route('admin.dishes.trash')
+            ->with('message', "Piatti eliminati definitivamente")
+            ->with('type', 'danger');;
     }
 }
