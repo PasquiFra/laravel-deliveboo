@@ -104,7 +104,7 @@ class RestaurantController extends Controller
             'address' => 'required|string|min:5|max:50',
             'phone' => 'string|min:10|max:15|nullable',
             'email' => 'email|string|lowercase|nullable',
-            'vat' => ['required', 'string', 'min:13', 'max:13', Rule::unique('restaurants')->ignore($restaurant->vat)],
+            'vat' => ['required', 'string', 'min:13', 'max:13', Rule::unique('restaurants')->ignore($restaurant->id)],
             'image' => 'nullable|url',
             'categories' => 'required|exists:categories,id'
         ], [
