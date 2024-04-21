@@ -78,7 +78,7 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        $categories = Category::select('label', 'id');
+        $categories = Category::select('label', 'id')->get();
 
         return view('admin.restaurants.edit', compact('restaurant', 'categories'));
     }
