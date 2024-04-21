@@ -106,11 +106,14 @@
         {{-- INPUT GROUP COURSE --}}
         <div class=" mb-3 col-6">
             <select class="form-select"  name="course" id="course" >
+                
+                {{-- creo la variabile $courseOptions--}}
                 <?php
-                $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
+                    $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
                 ?>
+                {{-- stampo i campi option della select inserendo le opzioni --}}
                 <?php foreach ($courseOptions as $option): ?>
-                <option value="{{$option}}" {{ old('course', $dish->course) === $option ? 'selected' : '' }}>{{$option}}</option>
+                    <option value="{{$option}}" {{ old('course', $dish->course) === $option ? 'selected' : '' }}>{{$option}}</option>
                 <?php endforeach; ?>
                 <option 
                     value="" {{ old('course', $dish->course) ? '' : 'selected' }}>Scegli un'opzione (Obbligatorio)
