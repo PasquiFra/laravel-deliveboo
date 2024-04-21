@@ -1,0 +1,10 @@
+#home-card {
+    transition: transform linear 0.4s;
+    background-color: #bdf38f;
+    color: #212529;
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: #b4f37c;
+    }
+}
