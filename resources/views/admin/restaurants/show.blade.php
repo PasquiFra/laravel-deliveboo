@@ -11,10 +11,10 @@
                         <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
                     </div>
                     <div class="col">
-                        <p><i class="fa-solid fa-map-pin me-3"></i>{{$restaurant->address}}</p>
-                        <p><i class="fa-solid fa-phone me-3"></i>{{$restaurant->phone}}</p>
-                        <p><i class="fa-solid fa-location-dot me-3"></i>{{$restaurant->city}}</p>
-                        <p><i class="fa-solid fa-envelope me-3"></i>{{$restaurant->address}}</p>
+                        <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
+                        <p><i class="fa-solid fa-phone me-2"></i>{{$restaurant->phone}}</p>
+                        <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
+                        <p><i class="fa-solid fa-envelope me-2"></i>{{$restaurant->email}}</p>
                         <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
                     </div>
                 </div>
