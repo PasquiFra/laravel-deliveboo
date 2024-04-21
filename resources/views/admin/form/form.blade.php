@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
  @section('content')
     
@@ -73,7 +72,7 @@
                 <input class="form-check-input" type="checkbox" role="switch" id="availability" 
                 name="availability"
                 {{-- {{$dish->availability == 1 ? 'checked' : ''}} --}}
-                @if(old('availability', $dish->availability)) checked @endif
+                @if(old('availability', $dish->availability) == 1) checked @endif
                 >
 
             </div>
@@ -82,14 +81,16 @@
 
         {{-- INPUT GROUP DIET --}}
         <div class=" mb-3 col-6">
-            <select class="form-select" name="diet" id="diet"  >
-                <option selected value="">Scegli un'opzione (facoltativo)</option>
-                <option value="Vegetariano">Vegetariano</option>
-                <option value="Vegano">Vegano</option>
-                <option value="Gluten-free">Gluten-free</option>
-                <option value="Carne">Carne</option>
-                <option value="Pesce">Pesce</option>
-                <option value="Calorico">Calorico</option>
+            <select class="form-select" name="diet" id="diet">
+                <?php
+                $dietOptions = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce', 'Calorico'];
+                ?>
+                <?php foreach ($dietOptions as $option): ?>
+                <option value="{{$option}}" {{ old('diet', $dish->diet) === $option ? 'selected' : '' }}>{{$option}}</option>
+                <?php endforeach; ?>
+                <option 
+                    value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)
+                </option>
             </select>
             @error('diet')
             <div class="invalid-feedback">
@@ -105,11 +106,18 @@
         {{-- INPUT GROUP COURSE --}}
         <div class=" mb-3 col-6">
             <select class="form-select"  name="course" id="course" >
-                <option selected value="">Scegli un'opzione (obbligatorio)</option>
-                <option value="antipasto">Antipasto</option>
-                <option value="primo">Primo</option>
-                <option value="secondo">Secondo</option>
-                <option value="dessert">Dessert</option>
+                
+                {{-- creo la variabile $courseOptions--}}
+                <?php
+                    $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
+                ?>
+                {{-- stampo i campi option della select inserendo le opzioni --}}
+                <?php foreach ($courseOptions as $option): ?>
+                    <option value="{{$option}}" {{ old('course', $dish->course) === $option ? 'selected' : '' }}>{{$option}}</option>
+                <?php endforeach; ?>
+                <option 
+                    value="" {{ old('course', $dish->course) ? '' : 'selected' }}>Scegli un'opzione (Obbligatorio)
+                </option>
             </select>
             @error('course')
             <div class="invalid-feedback">
@@ -120,6 +128,7 @@
                 Campo corretto
             </div>      
             @enderror       
+
         </div>
 
         {{-- INPUT GROUP INGREDIENTS --}}
@@ -131,14 +140,18 @@
             <div id="ingredient-inputs">
 
                 @if (!$dish->ingredient)
-                
+                    @if (old('ingredients'))
+                        @foreach (old('ingredients') as $ingredient)
+                        <input type="text" name="ingredients[]" class="me-2 mb-2" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                        @endforeach
+                    @endif
                     {{-- Se sono in store e non ho ingredienti inizio con un campo vuoto --}}
                     <input 
                         type="text" 
                         id="ingredients" 
                         name="ingredients[]" 
                         class="me-2 mb-2" 
-                        value="{{$dish->ingredient}}" 
+                        value="{{trim($dish->ingredient)}}" 
                         placeholder="Inserisci un ingrediente..."
                     >
 
@@ -270,7 +283,7 @@
         input.className = 'me-2 mb-2';
         inputs.appendChild(input);
     }
-
+ 
 </script>
 
 @endsection
