@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-md shadow-sm">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+        <a class="navbar-brand d-flex align-items-center me-1" href="{{ url('/') }}">
             
             <picture class="logo-container">
-                <img src="{{ asset('images/logo-deliveboo.png') }}" alt="Deliveboo" id="logo">
+                <img class="rounded-circle" src="{{ asset('images/pasq-eat.jpg') }}" alt="Deliveboo" id="logo">
             </picture>
             
         </a>
@@ -18,6 +18,17 @@
                 <li class="nav-item">
                     <a class="nav-link " href="{{url('/') }}">{{ __('Home') }}</a>
                 </li>
+                @guest()
+
+                @elseif (Auth::user()->restaurant)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">Ristorante</a>
+                </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.restaurants.create')}}">Crea il tuo ristorante</a>
+                </li>
+                @endguest
             </ul>
 
             <!-- Right Side Of Navbar -->
