@@ -137,14 +137,18 @@
             <div id="ingredient-inputs">
 
                 @if (!$dish->ingredient)
-                
+                    @if (old('ingredients'))
+                        @foreach (old('ingredients') as $ingredient)
+                        <input type="text" name="ingredients[]" class="me-2 mb-2" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                        @endforeach
+                    @endif
                     {{-- Se sono in store e non ho ingredienti inizio con un campo vuoto --}}
                     <input 
                         type="text" 
                         id="ingredients" 
                         name="ingredients[]" 
                         class="me-2 mb-2" 
-                        value="{{$dish->ingredient}}" 
+                        value="{{trim($dish->ingredient)}}" 
                         placeholder="Inserisci un ingrediente..."
                     >
 
