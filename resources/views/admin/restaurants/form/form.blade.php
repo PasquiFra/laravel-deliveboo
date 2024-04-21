@@ -98,7 +98,7 @@
                 @enderror
             </div>
         </div>
-        <div class="col-1 d-flex justify-content-center align-items-center mb-4">
+        <div class="col-1 d-flex justify-content-center align-items-center mb-5">
             <img class="img-fluid" src="https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg" alt="">
         </div>
     </div>
