@@ -22,4 +22,9 @@ class Dish extends Model
     {
         return $this->belongsTo(Restaurant::class);
     }
+
+    public function abstract()
+    {
+        return substr($this->ingredient, 0, 30);
+    }
 }

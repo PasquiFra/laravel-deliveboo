@@ -7,3 +7,34 @@
         width: auto;
     }
 }
+
+.transparent-card {
+    background-color: rgba(255, 255, 255, 0.30) !important;
+}
+
+.available {
+    color: $text_green;
+}
+
+
+.btn-outline-light {
+    color: #f8f9fa !important;
+    background-color: transparent !important;
+    background-image: none;
+    border-color: #f8f9fa;
+    border: 2px solid #f8f9fa !important;
+    font-size: 16px !important;
+    padding: 5px 9px;
+}
+
+.destroy:hover {
+    color: #f8f9fa !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.edit:hover {
+    color: #f8f9fa !important;
+    background-color: #FFC107 !important;
+    border-color: #FFC107 !important;
+}
