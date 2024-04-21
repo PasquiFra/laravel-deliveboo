@@ -95,8 +95,8 @@
                 {{-- Foreach delle categorie --}}
             @foreach ($categories as $category)
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
                     <label class="form-check-label" for="category-{{$category->id}}">{{$category->label}}</label>
+                    <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
                 </div>
             @endforeach
         </div>
