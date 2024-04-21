@@ -96,7 +96,6 @@ class DishController extends Controller
     {
         $ingredient = implode(', ', $request->input('ingredients'));
 
-        dd($request);
         $availability = $request->input('availability') ? true : false;
         $data = $request->validated();
 

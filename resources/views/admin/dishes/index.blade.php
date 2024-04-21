@@ -23,6 +23,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Slug</th>
                 <th scope="col">Online</th>
+                <th scope="col">Portata</th>
                 <th scope="col">Dieta</th>
                 <th scope="col">Prezzo</th>
                 <th scope="col">Ingredienti</th>
