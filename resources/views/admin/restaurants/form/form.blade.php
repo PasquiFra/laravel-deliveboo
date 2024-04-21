@@ -78,8 +78,11 @@
             <label for="category_id" class="form-label">Categoria</label>
             <select class="form-select" id="category_id" name="category_id">
                 <option selected>Seleziona la categoria</option>
-                {{-- Dobbiamo farci un foreach --}}
-                <option value="1">One</option>
+                {{-- Foreach delle categorie --}}
+                @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->label}}</option>
+                @endforeach
+                
             </select>
             @error('category_id')   
                 <div class="invalid-feedback">{{$message}}</div>
