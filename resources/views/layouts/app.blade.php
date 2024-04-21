@@ -46,6 +46,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
+                        @guest()
+                            
+                        @elseif (Auth::user()->restaurant)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">Ristorante</a>
+                        </li>
+                        @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.restaurants.create')}}">Crea il tuo ristorante</a>
+                        </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
