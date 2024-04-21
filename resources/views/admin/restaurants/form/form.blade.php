@@ -103,7 +103,11 @@
         </div>
     </div>
     <div class="col d-flex justify-content-between">
-        <button class="btn btn-lg btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</button>
+        @if (Auth::user()->restaurant)   
+        <a href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}" class="btn btn-lg btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
+        @else
+        <a href="{{route('dashboard')}}" class="btn btn-lg btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
+        @endif
         <div>
             <button class="btn btn-lg btn-success me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Save</button>
             <button class="btn btn-lg btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Reset</button>
