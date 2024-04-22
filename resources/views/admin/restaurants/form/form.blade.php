@@ -109,8 +109,8 @@
         <a href="{{route('dashboard')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
         @endif
         <div>
-            <button class="btn btn-success me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Save</button>
-            <button class="btn btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Reset</button>
+            <button class="btn btn-success me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Salva</button>
+            <button class="btn btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Svuota</button>
         </div>
     </div>
 </div>
