@@ -62,7 +62,7 @@
                 @enderror
             </div>
         </div>
-        <div class="col-5">
+        <div class="col-3">
             <div class="mb-5">
                 <label for="vat" class="form-label">P.IVA</label>
                 <input name="vat" value="{{old('vat', $restaurant->vat)}}" type="text" class="form-control @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat">
@@ -75,10 +75,10 @@
                 @enderror
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-8">
             <div class="mb-5">
                 <label for="image" class="form-label">Immagine</label>
-                <input name="image" value="{{old('image', $restaurant->image)}}" type="url" class="form-control @error('image') is-invalid @elseif(old('image', '')) is-valid @enderror" id="image">
+                <input name="image" value="{{old('image', $restaurant->image)}}" type="file" class="form-control @error('image') is-invalid @elseif(old('image', '')) is-valid @enderror" id="image">
                 @error('image')   
                     <div class="invalid-feedback">{{$message}}</div>
                 @else
