@@ -59,22 +59,9 @@ class DishController extends Controller
 
         $new_dish = new Dish();
 
-
         $new_dish->fill($data);
 
-        dd($new_dish->id);
-
         $new_dish->slug = Str::slug($new_dish->name);
-
-
-        // Salvataggio dell'immagine nel database
-        if (Arr::exists($data, 'image')) {
-
-            $extension = $data['image']->extension();
-
-            $img_url = Storage::putFileAs('dish_images', $data['image'], "$new_dish->slug.$extension");
-            $new_dish->image = $img_url;
-        }
 
         $new_dish->ingredient = $ingredient;
 
@@ -83,6 +70,17 @@ class DishController extends Controller
         $new_dish->restaurant_id = Auth::user()->restaurant->id;
 
         $new_dish->save();
+
+        // Salvataggio dell'immagine nel database
+        if (Arr::exists($data, 'image')) {
+
+            $extension = $data['image']->extension();
+
+            $img_url = Storage::putFileAs('dish_images', $data['image'], "{$new_dish->slug}_{$new_dish->id}.{$extension}");
+
+            $new_dish->image = $img_url;
+        }
+
 
         return redirect()->route('admin.dishes.show', $new_dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient)
             //Alert creazione piatto
