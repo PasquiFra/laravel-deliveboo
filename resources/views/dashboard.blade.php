@@ -7,7 +7,7 @@
     </h1>
     <div class="row justify-content-center">
         <div class="col">
-            <div class="card-show">
+            <div class="glass-card">
                 <div class="card-header mt-3">
                     <h2 class="text-center my-3">{{ Auth::user()->name }} {{ Auth::user()->lastname }}</h2>
                 </div>

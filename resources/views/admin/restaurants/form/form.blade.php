@@ -8,7 +8,7 @@
     
 @endif
     @csrf
-    <div class="card-show p-5">
+    <div class="glass-card p-5">
     <div class="row">
         <div class="col-3">
             <div class="mb-5">
