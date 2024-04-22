@@ -59,20 +59,22 @@ class DishController extends Controller
 
         $new_dish = new Dish();
 
+
+        $new_dish->fill($data);
+
+        dd($new_dish->id);
+
         $new_dish->slug = Str::slug($new_dish->name);
+
 
         // Salvataggio dell'immagine nel database
         if (Arr::exists($data, 'image')) {
-
-            if ($new_dish->image) Storage::delete($new_dish->image);
 
             $extension = $data['image']->extension();
 
             $img_url = Storage::putFileAs('dish_images', $data['image'], "$new_dish->slug.$extension");
             $new_dish->image = $img_url;
         }
-
-        $new_dish->fill($data);
 
         $new_dish->ingredient = $ingredient;
 
