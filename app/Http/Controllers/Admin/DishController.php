@@ -75,6 +75,8 @@ class DishController extends Controller
 
         $new_dish->availability = Arr::exists($data, 'availability');
 
+        $new_dish->restaurant_id = Auth::user()->restaurant->id;
+
         $new_dish->save();
 
         return redirect()->route('admin.dishes.show', $new_dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient)
