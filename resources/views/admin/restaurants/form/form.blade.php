@@ -10,6 +10,8 @@
     @csrf
     <div class="glass-card p-5">
     <div class="row">
+
+        {{-- Input Nome --}}
         <div class="col-3">
             <div class="mb-5">
                 <label for="name" class="form-label">Nome</label>
@@ -23,6 +25,8 @@
                 @enderror
             </div>
         </div>
+
+        {{-- Input Indirizzo --}}
         <div class="col-3">
             <div class="mb-5">
                 <label for="address" class="form-label">Indirizzo</label>
@@ -36,10 +40,12 @@
                 @enderror
             </div>
         </div>
+
+        {{-- Input Numero di telefono --}}
         <div class="col-3">
             <div class="mb-5">
                 <label for="phone" class="form-label">Numero di telefono</label>
-                <input name="phone" value="{{old('phone', $restaurant->phone)}}" type="text" class="form-control @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
+                <input name="phone" value="@if(old('phone', '+39 ')){{old('phone', $restaurant->phone)}}@else+39 @endif" type="text" class="form-control @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
                 @error('phone')   
                     <div class="invalid-feedback">{{$message}}</div>
                 @else
@@ -49,6 +55,8 @@
                 @enderror
             </div>
         </div>
+
+        {{-- Input Email --}}
         <div class="col-3">
             <div class="mb-5">
                 <label for="email" class="form-label">Email</label>
@@ -62,6 +70,8 @@
                 @enderror
             </div>
         </div>
+
+        {{-- Input P.IVA (VAT) --}}
         <div class="col-3">
             <div class="mb-5">
                 <label for="vat" class="form-label">P.IVA</label>
@@ -75,6 +85,8 @@
                 @enderror
             </div>
         </div>
+
+        {{-- Input Image --}}
         <div class="col-8">
             <div class="mb-5">
                 <label for="image" class="form-label">Immagine</label>
@@ -88,13 +100,18 @@
                 @enderror
             </div>
         </div>
+
+        {{-- Preview Image --}}
         <div class="col-1">
             <div class="mb-5">
                 <img class="img-fluid" src="{{old('image', $restaurant->image) ? asset('storage/'. $restaurant->image) : 'https://marcolanci.it/boolean/assets/placeholder.png'}}" alt="immagine del ristorante" id="preview">
             </div>
         </div>
+
+        {{-- CheckBox Categorie --}}
         <div class="col mb-5">
             <p class="mb-3">Categorie</p>
+
                 {{-- Foreach delle categorie --}}
             @foreach ($categories as $category)
                 <div class="form-check form-check-inline me-2">
@@ -104,9 +121,15 @@
             @endforeach
         </div>
     </div>
+
+    {{-- Bottoni --}}
     <div class="col d-flex justify-content-between">
-        @if (Auth::user()->restaurant)   
+
+        {{-- Se lo User ha un ristorante --}}
+        @if (Auth::user()->restaurant)
         <a href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
+
+        {{-- Se lo User non ha ancora un ristorante --}}
         @else
         <a href="{{route('dashboard')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
         @endif
