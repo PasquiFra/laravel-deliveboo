@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', Auth::user()->name)
+
 @section('content')
 <div class="container">
     <h1 class="text-center my-4">

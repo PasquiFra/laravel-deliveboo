@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', $restaurant->name)
+
 @section('content')
     <section id="restaurant-show">
         <div class="glass-card my-5 p-4">

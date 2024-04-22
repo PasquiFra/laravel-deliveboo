@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $dish->name)
+
 @section('content')
 <section class="p-3 my-5">
     <div class="glass-card px-4 pb-4 card-color">    
