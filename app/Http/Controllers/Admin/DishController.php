@@ -52,28 +52,36 @@ class DishController extends Controller
         // trasformo l'array che ricevo dal form in una stringa contenente tutti gli ingredienti
         $ingredient = implode(', ', $filteredIngredients);
 
+        // imposto il valore di availability dal form, se ricevo un valore è true, altrimenti false
+        $availability = $request->input('availability') ? true : false;
+
         $data = $request->validated();
+
+        // dd($data['image']);
 
         $new_dish = new Dish();
 
+        $new_dish->fill($data);
+
         $new_dish->slug = Str::slug($new_dish->name);
+
+        $new_dish->ingredient = $ingredient;
+
+        $new_dish->availability = $availability;
+
+        $new_dish->restaurant_id = Auth::user()->restaurant->id;
+
+        $new_dish->save();
 
         // Salvataggio dell'immagine nel database
         if (Arr::exists($data, 'image')) {
 
-            if ($new_dish->image) Storage::delete($new_dish->image);
-
             $extension = $data['image']->extension();
 
-            $img_url = Storage::putFileAs('dish_images', $data['image'], "$new_dish->slug.$extension");
+            $img_url = Storage::putFileAs('public/dish_images', $data['image'], "{$new_dish->slug}_{$new_dish->id}.{$extension}");
+
             $new_dish->image = $img_url;
         }
-
-        $new_dish->fill($data);
-
-        $new_dish->ingredient = $ingredient;
-
-        $new_dish->availability = Arr::exists($data, 'availability');
 
         $new_dish->save();
 
