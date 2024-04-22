@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Cestino')
 
 @section('content')
 <section id='dishes-trash' class="my-5">
