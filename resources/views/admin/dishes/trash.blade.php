@@ -8,7 +8,7 @@
         <h1 class="text-center">Piatti Eliminati</h1>
         {{--Svuota Cestino--}}
         <form action="{{ route('admin.dishes.dropAllTrashed') }}"
-            method="POST"  class="empty-trash-form  delete-form">
+            method="POST"  class="empty-trash-form  delete-all-form">
             @csrf
             @method('DELETE')
             <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Elimina tutti i Piatti</button>
@@ -88,13 +88,13 @@
 @section('scripts')
 <script>
 
-    // CONFERMA DI CANCELLAZIONE
-    const formsDelete= document.querySelectorAll('.delete-form');
+       // CONFERMA DI CANCELLAZIONE
+       const formsDelete= document.querySelectorAll('.delete-all-form');
     formsDelete.forEach(form => {
         form.addEventListener('submit', e => {
             e.preventDefault();
             const dish = form.dataset.dish;
-            const confirmation = confirm(`Sei sicuro di voler eliminare il piatto ${dish}?`);
+            const confirmation = confirm(`Sei sicuro di voler eliminare tutti i piatti?`);
             if(confirmation) form.submit();
         })
     });

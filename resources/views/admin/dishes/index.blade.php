@@ -3,14 +3,33 @@
  
 @section('content')    
 <div class="mb-2">
-  <div class="mt-5 mb-3 d-flex justify-content-between">
-    <h1 class="text-white ps-5">Menù</h1>
+  <div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+    <!--Filtro per Portata del Piatto-->
+    <form class="filter-courses" action="{{ route('admin.dishes.index') }}" method="GET">
+      <div class="input-group">
+          <select class="form-select w-25" name="course">
+            <option value="">Tutte le portate</option>
+            @foreach ($courses as $course)
+            <option value="{{ $course }}"  {{ request('course') == $course ? 'selected' : '' }}>
+              {{ $course }}
+            </option>
+            @endforeach
+          </select>
+          <!--Filtro in base a disponibilità del piatto-->
+          <select class="form-select w-25 pe-5" name="availability">
+            <option value="">Tutti</option>
+            <option value="available" @if($availability==='available')selected @endif>Disponibile</option>
+            <option value="not-available" @if($availability==='not-available')selected @endif>Non Disponibile</option>
+          </select>
+          <button class="btn btn-outline-secondary" type="submit">Filtra</button>
+      </div>
+  </form>
+    <h1 class="text-white me-5">Menu</h1>
     <div class="d-flex justify-content-end gap-2 p-2">
       <!-- Cestino -->
       <a href="{{route('admin.dishes.trash')}}" class="btn btn-danger">
           <i class="far fa-trash-can"></i> Vedi Cestino
       </a>
-    
       <!-- Crea nuovo dish -->
       <a href="{{route('admin.dishes.create')}}" class="btn btn-success">
         <i class="fa-solid fa-plus"></i> Aggiungi piatto
@@ -24,6 +43,7 @@
           <th>Immagine</th>
           <th>Nome</th>
           <th>Online</th>
+          <th>Portata</th>
           <th>Dieta</th>
           <th>Prezzo</th>
           <th>Ultima modifica</th>
@@ -46,7 +66,9 @@
                 @endif
               </div>
             </td>
+            {{--Nome--}}
             <td class="text-center">{{$dish->name}}</td>
+            {{--Disponibilità--}}
             <td class="text-center">
               {{$dish->availability == 1 ? 'Si' : 'No'}}
               @if ($dish->availability == 1)
@@ -55,6 +77,11 @@
                 <span class="stamp not-available"></span>
               @endif
             </td>
+            {{--Portata--}}
+            <td class="text-center">
+              {{$dish->course}}
+            </td>
+            {{--Dieta--}}
             <td class="text-center">
               @if($dish->diet)
                {{$dish->diet}}
@@ -62,6 +89,7 @@
                 ---
               @endif
             </td>
+            {{--Prezzo--}}
             <td class="text-center">{{$dish->price}}</td>
             <td class="text-center">{{$dish->updated_at}}</td>
             <td>
@@ -108,6 +136,8 @@
             if(confirmation) form.submit();
         })
     });
+
+  
 
 </script>
 

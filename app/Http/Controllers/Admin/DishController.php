@@ -19,13 +19,39 @@ class DishController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        if (!Auth::user()->restaurant) return to_route('admin.restaurants.create');
+        // Prendo i piatti del ristorante dell'utente autenticato
+        $query = Auth::user()->restaurant->dishes();
 
-        $dishes = Auth::user()->restaurant->dishes;
+        // Filtro per disponibilità
+        $availability = $request->query('availability');
+        if ($availability) {
+            if ($availability === 'available') {
+                $query->where('availability', true);
+            } elseif ($availability === 'not-available') {
+                $query->where('availability', false);
+            }
+        }
 
-        return view('admin.dishes.index', compact('dishes'));
+        // Filtro per tipo di portata
+        if ($request->filled('course')) {
+            $query->where('course', $request->course);
+        }
+
+
+        // Esecuzione della query con filtro 
+        $dishes = $query->get();
+
+        // Prendo tutte le portate
+        $courses = Dish::select('course')->distinct()->pluck('course');
+
+        // Controllo se l'utente ha un ristorante associato, altrimenti reindirizzo
+        if (!Auth::user()->restaurant) {
+            return to_route('admin.restaurants.create');
+        }
+
+        return view('admin.dishes.index', compact('dishes', 'courses', 'availability'));
     }
 
     /**
