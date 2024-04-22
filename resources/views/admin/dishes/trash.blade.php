@@ -5,7 +5,7 @@
 <section id='dishes-trash' class="my-5">
     <div class="mb-3 d-flex align-items-center justify-content-between">
         <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Piatti disponibili</a>
-        <h1 class="text-center">Piatti Eliminati</h1>
+        <h1 class="text-center text-white">Piatti Eliminati</h1>
         {{--Svuota Cestino--}}
         <form action="{{ route('admin.dishes.dropAllTrashed') }}"
             method="POST"  class="empty-trash-form  delete-all-form">
@@ -15,74 +15,90 @@
         </form>
     </div>
     {{--Tabella--}}
-    <table class="table table-dark">
-        {{-- HEADER TABELLA --}}
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Slug</th>
-                <th scope="col">Quantità</th>
-                <th scope="col">Disponibile (si/no)</th>
-                <th scope="col">Dieta</th>
-                <th scope="col">Prezzo</th>
-                <th scope="col">Ingredienti</th>
-                <th scope="col">Immagine</th>
-                <th scope="col">Data creazione</th>
-                <th scope="col">Ultima modifica</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        {{-- BODY TABELLA --}}
-        <tbody>
-            @forelse ($dishes as $dish)
-            <tr>
-              <th scope="row">{{$dish->id}}</th>
-              <td>{{$dish->name}}</td>
-              <td>{{$dish->slug}}</td>
-              <td>{{$dish->quantity}}</td>
-              <td>{{$dish->availability}}</td>
-              <td>{{$dish->diet}}</td>
-              <td>{{$dish->prezzo}}</td>
-              <td>{{$dish->ingredienti}}</td>
-              <td>{{$dish->image}}</td>
-              <td>{{$dish->created_at}}</td>
-              <td>{{$dish->updated_at}}</td>
-              <td>
-                <div class="d-flex gap-2 justify-content-end align-items-center">
-                  {{--Vedi il Piatto--}}
-                  <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn-primary">
-                    <i class="far fa-eye"></i>
-                  </a>
-                  {{-- Modifica il Piatto --}} 
-                  <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn-warning">
-                    <i class="fas fa-pencil"></i>
-                  </a>
-                  {{--Elimina Definitivamente il Piatto --}}
-                  <form action="{{ route('admin.dishes.drop', $dish->id) }}" 
+    <div class="tbl-header">
+    <table class="text-center">
+      <thead>
+        <tr>
+          <th>Immagine</th>
+          <th>Nome</th>
+          <th>Online</th>
+          <th>Dieta</th>
+          <th>Prezzo</th>
+          <th>Ultima modifica</th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table>
+      <tbody>
+        @forelse ($dishes as $dish)
+          <tr>
+            <td class="text-center d-flex justify-content-center">
+              <div class="index-prev">
+                @if ($dish->image)
+                    <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
+                @else
+                    <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid">
+                @endif
+              </div>
+            </td>
+            <td class="text-center">{{$dish->name}}</td>
+            <td class="text-center">
+              @if ($dish->availability == 1)
+                <span class="stamp is-available"></span> 
+              @else
+                <span class="stamp not-available"></span>
+              @endif
+            </td>
+            <td class="text-center">
+              @if($dish->diet)
+               {{$dish->diet}}
+              @else
+                ---
+              @endif
+            </td>
+            <td class="text-center">{{$dish->price}}</td>
+            <td class="text-center">{{$dish->updated_at}}</td>
+            <td>
+              <div class="d-flex gap-2 justify-content-end">
+                {{--# COLLEGAMENTO A SHOW --}}
+                <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn btn-outline-light show">
+                  <i class="far fa-eye"></i>
+                </a>
+                
+                {{--# COLLEGAMENTO A  EDIT --}}
+                <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn btn-outline-light edit">
+                  <i class="fas fa-pencil"></i>
+                </a>
+                
+                {{--# COLLEGAMENTO AL DROP --}}
+                <form action="{{ route('admin.dishes.drop', $dish->id) }}" 
                     method="POST" class="delete-form" data-dish="{{$dish->name}}">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-sm btn-danger"><i class="far fa-trash-can"></i></button>
-                  </form>
-                   {{--Ripristina il Piatto--}}
-                   <form action="{{route('admin.dishes.restore',$dish->id)}}" method="POST" 
+                    <button class="btn btn-sm btn btn-outline-light destroy"><i class="far fa-trash-can"></i></button>
+                </form>
+
+                {{--# COLLEGAMENTO A RESTORE --}} 
+                <form action="{{route('admin.dishes.restore',$dish->id)}}" method="POST" 
                     class="form-delete" data-dish="{{$dish->title}}">
                     @csrf
                     @method('PATCH')
-                    <button  class="btn btn-sm btn-success">
+                    <button  class="btn btn-sm btn btn-outline-light restore">
                         <i class="fas fa-arrows-rotate"></i>
                     </button>
                 </form>
-                </div>
-              </td>
-            </tr>
-            {{-- NESSUN PROGETTO --}}
-            @empty
-            <h1>Non ci sono Piatti eliminati</h1>
-            @endforelse
-        </tbody>
-    </table> 
+              </div>
+            </td>
+          </tr>
+        @empty
+          <h1 class="text-white py-5">Non ci sono piatti da mostrare</h1>
+        @endforelse
+      </tbody>
+    </table>
+  </div> 
 </section>
 @endsection
 @section('scripts')

@@ -70,7 +70,6 @@
             <td class="text-center">{{$dish->name}}</td>
             {{--Disponibilità--}}
             <td class="text-center">
-              {{$dish->availability == 1 ? 'Si' : 'No'}}
               @if ($dish->availability == 1)
                 <span class="stamp is-available"></span> 
               @else
