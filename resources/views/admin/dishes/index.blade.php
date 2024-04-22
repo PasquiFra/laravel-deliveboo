@@ -3,14 +3,22 @@
  
 @section('content')    
 <div class="mb-2">
-  <div class="mt-5 mb-3 d-flex justify-content-between">
+  <div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+    <!--Filtro per Portata del Piatto-->
+    <form class="filter-courses" action="{{route('admin.dishes.index')}}" method="GET">
+      @csrf
+      <div class="input-group">
+        <select class="form-select" name="type_filter">
+        </select>
+        <button class="btn btn-outline-secondary">Filtra</button>
+      </div>
+    </form>
     <h1 class="text-white ps-5">Menù</h1>
     <div class="d-flex justify-content-end gap-2 p-2">
       <!-- Cestino -->
       <a href="{{route('admin.dishes.trash')}}" class="btn btn-danger">
           <i class="far fa-trash-can"></i> Vedi Cestino
       </a>
-    
       <!-- Crea nuovo dish -->
       <a href="{{route('admin.dishes.create')}}" class="btn btn-success">
         <i class="fa-solid fa-plus"></i> Aggiungi piatto
