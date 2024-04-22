@@ -8,7 +8,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-4">
-                        <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}" class="img-fluid">
+                        <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->name}}" class="img-fluid">
                     </div>
                     <div class="col">
                         <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
