@@ -80,7 +80,7 @@ class RestaurantController extends Controller
 
         if (Arr::exists($data, 'categories')) $restaurant->categories()->attach($data['categories']);
 
-        return to_route('admin.restaurants.show', $restaurant->id);
+        return to_route('admin.restaurants.show', $restaurant->id)->with('type', 'success')->with('message', "Ristorante: $restaurant->name aggiunto");
     }
 
     /**
@@ -156,6 +156,6 @@ class RestaurantController extends Controller
         if (Arr::exists($data, 'categories')) $restaurant->categories()->sync($data['categories']);
         elseif (!Arr::exists($data, 'categories') && $restaurant->has('categories')) $restaurant->categories()->detach();
 
-        return to_route('admin.restaurants.show', $restaurant->id);
+        return to_route('admin.restaurants.show', $restaurant->id)->with('type', 'success')->with('message', "Ristorante: $restaurant->name modificato");
     }
 }
