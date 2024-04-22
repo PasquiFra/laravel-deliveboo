@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="p-3 my-5">
-    <div class="card-show px-4 pb-4 card-color">    
+    <div class="glass-card px-4 pb-4 card-color">    
         <div class="card-header pt-3 pb-4">
             <div class="col">
                 <h1 class="card-title text-center">{{$dish->name}}</h1>
@@ -11,14 +11,12 @@
         <div class="card-body row position-relative d-flex align-items-center"> 
 
             {{-- IMMAGINE --}}
-            <div class="col-sm-auto col-md-6 col-lg-4 col-xl-3 col-12">
-                <picture id="show-picture text-center">
-                    @if ($dish->image && @getimagesize($dish->image))
-                        <img src="{{$dish->image}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded">
-                    @else
-                        <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded">
-                    @endif
-                </picture>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-12">
+                @if ($dish->image && @getimagesize($dish->image))
+                    <img src="{{$dish->image}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded">
+                @else
+                    <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded">
+                @endif
             </div>
 
             {{-- INFO PIATTO --}}
@@ -57,7 +55,7 @@
                     </div>
                 </div>
                 {{-- BOTTONI di CRUD --}}
-                <div class="button-group ">
+                <div class="button-group">
                     <div class="d-flex gap-2 mt-4">
                         {{--# EDIT --}}
                         <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-outline-light edit">
@@ -75,8 +73,8 @@
         </div>
     </div>
     <div class="d-flex justify-content-center">
-        <a href="{{route('admin.dishes.index')}}" class="btn btn-primary my-5">
-            Torna indietro
+        <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary my-4">
+            <i class="fa-solid fa-left-long me-2"></i>Torna indietro
         </a>
     </div>
 </section>
