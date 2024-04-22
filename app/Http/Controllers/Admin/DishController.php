@@ -33,7 +33,8 @@ class DishController extends Controller
      */
     public function create(Dish $dish)
     {
-        return view('admin.dishes.create', compact('dish'));
+        $diet_options = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce'];
+        return view('admin.dishes.create', compact('dish', 'diet_options'));
     }
 
     /**
@@ -106,7 +107,9 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        return view('admin.dishes.edit', compact('dish'));
+        $diet_options = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce'];
+
+        return view('admin.dishes.edit', compact('dish', 'diet_options'));
     }
 
     /**
@@ -114,6 +117,7 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
+
         // trasformo l'array che ricevo dal form in una stringa contenente tutti gli ingredienti
         $ingredient = implode(', ', $request->input('ingredients'));
 

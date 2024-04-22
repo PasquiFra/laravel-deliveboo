@@ -63,15 +63,12 @@
                 <div class="col-6 mb-3 ">
                     <label class="form-label label fw-bold" for="diet">Dieta:</label>
                     <select class="form-select" name="diet" id="diet">
-                        <?php
-                        $dietOptions = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce', 'Calorico'];
-                        ?>
-                        @foreach ($dietOptions as $option)
-                            <option value="{{ $option }}" {{ old('diet', $dish->diet) === $option ? 'selected' : '' }}>{{ $option }}</option>
-                        @endforeach
                         <option 
                             value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)
                         </option>
+                        @foreach ($diet_options as $option)
+                            <option value="{{ $option }}" {{ old('diet', $dish->diet) === $option ? 'selected' : '' }}>{{ $option }}</option>
+                        @endforeach
                     </select>
                     @error('diet')
                         <div class="invalid-feedback">
