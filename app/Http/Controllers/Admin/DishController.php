@@ -57,6 +57,8 @@ class DishController extends Controller
 
         $data = $request->validated();
 
+        // dd($data['image']);
+
         $new_dish = new Dish();
 
         $new_dish->fill($data);
@@ -76,11 +78,12 @@ class DishController extends Controller
 
             $extension = $data['image']->extension();
 
-            $img_url = Storage::putFileAs('dish_images', $data['image'], "{$new_dish->slug}_{$new_dish->id}.{$extension}");
+            $img_url = Storage::putFileAs('public/dish_images', $data['image'], "{$new_dish->slug}_{$new_dish->id}.{$extension}");
 
             $new_dish->image = $img_url;
         }
 
+        $new_dish->save();
 
         return redirect()->route('admin.dishes.show', $new_dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient)
             //Alert creazione piatto
