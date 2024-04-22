@@ -6,11 +6,11 @@
         <div class="card-body row position-relative"> 
             <div class="col-md-3">
                 <picture id="show-picture">
-                    {{-- @if ($dish->image && @getimagesize($dish->image)) --}}
-                        <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="img-fluid">
-                    {{-- @else
+                    @if ($dish->image)
+                        <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
+                    @else
                         <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid">
-                    @endif --}}
+                    @endif
                 </picture>
             </div>
             <div class="col-md-5"> 
