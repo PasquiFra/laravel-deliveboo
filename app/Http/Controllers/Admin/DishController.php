@@ -52,6 +52,9 @@ class DishController extends Controller
         // trasformo l'array che ricevo dal form in una stringa contenente tutti gli ingredienti
         $ingredient = implode(', ', $filteredIngredients);
 
+        // imposto il valore di availability dal form, se ricevo un valore è true, altrimenti false
+        $availability = $request->input('availability') ? true : false;
+
         $data = $request->validated();
 
         $new_dish = new Dish();
@@ -73,7 +76,7 @@ class DishController extends Controller
 
         $new_dish->ingredient = $ingredient;
 
-        $new_dish->availability = Arr::exists($data, 'availability');
+        $new_dish->availability = $availability;
 
         $new_dish->restaurant_id = Auth::user()->restaurant->id;
 
