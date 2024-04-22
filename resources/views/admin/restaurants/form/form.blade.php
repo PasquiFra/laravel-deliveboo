@@ -88,8 +88,10 @@
                 @enderror
             </div>
         </div>
-        <div class="col-1 d-flex justify-content-center align-items-center mb-5">
-            <img class="img-fluid" src="{{old('image', $restaurant->image) ? asset('storage/'. $restaurant->image) : 'https://marcolanci.it/boolean/assets/placeholder.png'}}" alt="immagine del ristorante" id="preview">
+        <div class="col-1">
+            <div class="mb-5">
+                <img class="img-fluid" src="{{old('image', $restaurant->image) ? asset('storage/'. $restaurant->image) : 'https://marcolanci.it/boolean/assets/placeholder.png'}}" alt="immagine del ristorante" id="preview">
+            </div>
         </div>
         <div class="col mb-5">
             <p class="mb-3">Categorie</p>
@@ -118,12 +120,29 @@
 
 @section('scripts')
 <script>
-    const placeholder = 'https://marcolanci.it/boolean/assets/placeholder.png';
-    const input = document.getElementById('image');
-    const preview = document.getElementById('preview');
+    // setto la visualizzazione dinamica dell'immagine in pagina
+    const imageField = document.getElementById('image');
+    const previewField = document.getElementById('preview');
 
-    input.addEventListener('input', () => {
-        preview.src = input.value || placeholder;
+    let blobUrl;
+
+    imageField.addEventListener('change', () => {
+
+        // controllo se ho il file
+        if (imageField.files && imageField.files[0]){
+            
+            //prendo il file
+            const file = imageField.files[0];
+
+            //preparo l'url
+            const blobUrl = URL.createObjectURL(file);
+
+            previewField.src = blobUrl;
+        }
+    })
+
+    window.addEventListener('beforeunload', ()=> {
+        if(blobUrl) URL.revokeObjectURL(blobUrl);
     })
 </script>
 @endsection
