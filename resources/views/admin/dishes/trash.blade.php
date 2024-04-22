@@ -105,15 +105,25 @@
 <script>
 
        // CONFERMA DI CANCELLAZIONE
-       const formsDelete= document.querySelectorAll('.delete-all-form');
+       const formsDeleteAll= document.querySelectorAll('.delete-all-form');
+    formsDeleteAll.forEach(form => {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const dish = form.dataset.dish;
+            const confirmation = confirm('Sei sicuro di voler eliminare tutti i piatti?');
+            if(confirmation) form.submit();
+        })
+    });
+    
+      // CONFERMA DI CANCELLAZIONE
+      const formsDelete= document.querySelectorAll('.delete-form');
     formsDelete.forEach(form => {
         form.addEventListener('submit', e => {
             e.preventDefault();
             const dish = form.dataset.dish;
-            const confirmation = confirm(`Sei sicuro di voler eliminare tutti i piatti?`);
+            const confirmation = confirm(`Sei sicuro di voler eliminare il piatto ${dish}?`);
             if(confirmation) form.submit();
         })
     });
 </script>
 @endsection
-

@@ -2554,10 +2554,6 @@ class DishSeeder extends Seeder
             ],
         ];
 
-        //Storage::makeDirectory('dish_images');
-        // $img = fake()->image(null, 350, 350);
-        // $img_url = Storage::putFile('dish_image', $img);
-
         foreach ($dishes as $dish) {
 
             $new_dish = new Dish();
