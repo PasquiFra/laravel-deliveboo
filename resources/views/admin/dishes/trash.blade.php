@@ -110,10 +110,9 @@
         form.addEventListener('submit', e => {
             e.preventDefault();
             const dish = form.dataset.dish;
-            const confirmation = confirm(`Sei sicuro di voler eliminare tutti i piatti?`);
+            const confirmation = confirm(Sei sicuro di voler eliminare tutti i piatti?);
             if(confirmation) form.submit();
         })
     });
 </script>
 @endsection
-
