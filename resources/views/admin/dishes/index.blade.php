@@ -8,12 +8,12 @@
     <form class="filter-courses" action="{{ route('admin.dishes.index') }}" method="GET">
       <div class="input-group">
           <select class="form-select" name="course">
+            <option value="">Tutte le portate</option>
             @foreach ($courses as $course)
             <option value="{{ $course }}"  {{ request('course') == $course ? 'selected' : '' }}>
               {{ $course }}
             </option>
             @endforeach
-            <option value="">Seleziona un tipo di portata</option>
           </select>
           <button class="btn btn-outline-secondary" type="submit">Filtra</button>
       </div>
@@ -126,6 +126,8 @@
             if(confirmation) form.submit();
         })
     });
+
+  
 
 </script>
 
