@@ -7,7 +7,7 @@
     <!--Filtro per Portata del Piatto-->
     <form class="filter-courses" action="{{ route('admin.dishes.index') }}" method="GET">
       <div class="input-group">
-          <select class="form-select" name="course">
+          <select class="form-select w-25" name="course">
             <option value="">Tutte le portate</option>
             @foreach ($courses as $course)
             <option value="{{ $course }}"  {{ request('course') == $course ? 'selected' : '' }}>
@@ -15,10 +15,16 @@
             </option>
             @endforeach
           </select>
+          <!--Filtro in base a disponibilità del piatto-->
+          <select class="form-select" name="availability">
+            <option value="">Tutti</option>
+            <option value="available" @if($availability==='available')selected @endif>Disponibile</option>
+            <option value="not-available" @if($availability==='not-available')selected @endif>Non Disponibile</option>
+          </select>
           <button class="btn btn-outline-secondary" type="submit">Filtra</button>
       </div>
   </form>
-    <h1 class="text-white ps-5">Menù</h1>
+    <h1 class="text-white me-5">Menu</h1>
     <div class="d-flex justify-content-end gap-2 p-2">
       <!-- Cestino -->
       <a href="{{route('admin.dishes.trash')}}" class="btn btn-danger">
