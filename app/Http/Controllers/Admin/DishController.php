@@ -78,7 +78,7 @@ class DishController extends Controller
 
             $extension = $data['image']->extension();
 
-            $img_url = Storage::putFileAs('public/dish_images', $data['image'], "{$new_dish->slug}_{$new_dish->id}.{$extension}");
+            $img_url = Storage::putFileAs('public/dish_images', $data['image'], "{$new_dish->slug}-{$new_dish->id}.{$extension}");
 
             $new_dish->image = $img_url;
         }
@@ -184,6 +184,8 @@ class DishController extends Controller
     //# Action per eliminare definitivamente il piatto
     public function drop(Dish $dish)
     {
+        if ($dish->image) Storage::delete($dish->image);
+
         $dish->forceDelete();
         return to_route('admin.dishes.trash')
             ->with('message', "Piatto {$dish->name} eliminato definitivamente")

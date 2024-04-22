@@ -11,12 +11,14 @@
         <div class="card-body row position-relative d-flex align-items-center"> 
 
             {{-- IMMAGINE --}}
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-12">
-                @if ($dish->image && @getimagesize($dish->image))
-                    <img src="{{$dish->image}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded">
-                @else
-                    <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded">
-                @endif
+            <div class="col-sm-auto col-md-6 col-lg-4 col-xl-3 col-12">
+                <picture id="show-picture text-center">
+                    @if ($dish->image)
+                        <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
+                    @else
+                        <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid">
+                    @endif
+                </picture>
             </div>
 
             {{-- INFO PIATTO --}}

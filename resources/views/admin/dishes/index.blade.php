@@ -39,7 +39,11 @@
           <tr>
             <td class="text-center d-flex justify-content-center">
               <div class="index-prev">
-                <img class="img-preview" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThT_FiKa24LyxPc7o6o0CtG_wKVYFrdBnP3qoRIZeXwg&s" alt="dish-image">
+                @if ($dish->image)
+                    <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
+                @else
+                    <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid">
+                @endif
               </div>
             </td>
             <td class="text-center">{{$dish->name}}</td>
