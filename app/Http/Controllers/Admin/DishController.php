@@ -21,6 +21,8 @@ class DishController extends Controller
      */
     public function index()
     {
+        if (!Auth::user()->restaurant) return to_route('admin.restaurants.create');
+
         $dishes = Auth::user()->restaurant->dishes;
 
         return view('admin.dishes.index', compact('dishes'));
