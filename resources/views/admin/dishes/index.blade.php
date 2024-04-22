@@ -5,14 +5,19 @@
 <div class="mb-2">
   <div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
     <!--Filtro per Portata del Piatto-->
-    <form class="filter-courses" action="{{route('admin.dishes.index')}}" method="GET">
-      @csrf
+    <form class="filter-courses" action="{{ route('admin.dishes.index') }}" method="GET">
       <div class="input-group">
-        <select class="form-select" name="type_filter">
-        </select>
-        <button class="btn btn-outline-secondary">Filtra</button>
+          <select class="form-select" name="course">
+            @foreach ($courses as $course)
+            <option value="{{ $course }}"  {{ request('course') == $course ? 'selected' : '' }}>
+              {{ $course }}
+            </option>
+            @endforeach
+            <option value="">Seleziona un tipo di portata</option>
+          </select>
+          <button class="btn btn-outline-secondary" type="submit">Filtra</button>
       </div>
-    </form>
+  </form>
     <h1 class="text-white ps-5">Menù</h1>
     <div class="d-flex justify-content-end gap-2 p-2">
       <!-- Cestino -->
