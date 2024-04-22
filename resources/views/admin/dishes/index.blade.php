@@ -23,7 +23,7 @@
         <tr>
           <th>Immagine</th>
           <th>Nome</th>
-          <th>Disponibilità</th>
+          <th>Online</th>
           <th>Dieta</th>
           <th>Prezzo</th>
           <th>Ultima modifica</th>
@@ -37,10 +37,20 @@
       <tbody>
         @forelse ($dishes as $dish)
           <tr>
-            <td class="text-center">
-              <img class="img-preview" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThT_FiKa24LyxPc7o6o0CtG_wKVYFrdBnP3qoRIZeXwg&s" alt="dish-image"></td>
+            <td class="text-center d-flex justify-content-center">
+              <div class="index-prev">
+                <img class="img-preview" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThT_FiKa24LyxPc7o6o0CtG_wKVYFrdBnP3qoRIZeXwg&s" alt="dish-image">
+              </div>
+            </td>
             <td class="text-center">{{$dish->name}}</td>
-            <td class="text-center">{{$dish->availability == 1 ? 'Si' : 'No'}}</td>
+            <td class="text-center">
+              {{$dish->availability == 1 ? 'Si' : 'No'}}
+              @if ($dish->availability == 1)
+                <span class="stamp is-available"></span> 
+              @else
+                <span class="stamp not-available"></span>
+              @endif
+            </td>
             <td class="text-center">
               @if($dish->diet)
                {{$dish->diet}}
