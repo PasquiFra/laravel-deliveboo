@@ -21,7 +21,10 @@ class RestaurantController extends Controller
     public function create()
     {
         $restaurant = new Restaurant();
+
+        // Recupero le categorie da passare al form
         $categories = Category::select('label', 'id')->get();
+
         return view('admin.restaurants.create', compact('restaurant', 'categories'));
     }
 
@@ -30,6 +33,7 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
+        // Validazione e messaggi
         $request->validate([
             'name' => 'required|string|min:5|max:50',
             'address' => 'required|string|min:5|max:50',
@@ -66,6 +70,7 @@ class RestaurantController extends Controller
 
         $restaurant->slug = Str::slug($data['name']);
 
+        // Salvataggio dell'immagine nel database
         if (Arr::exists($data, 'image')) {
             $extension = $data['image']->extension();
 
@@ -73,7 +78,7 @@ class RestaurantController extends Controller
             $restaurant->image = $img_url;
         }
 
-
+        // Nel Ristorante collego lo user_id
         $restaurant->user_id = Auth::user()->id;
 
         $restaurant->save();
@@ -96,8 +101,10 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
+        // Recupero le categorie del Ristorante e le trasforma in un array da mandare al form
         $prev_categories = $restaurant->categories->pluck('id')->toArray();
 
+        // Recupero le categorie da passare al form
         $categories = Category::select('label', 'id')->get();
 
         return view('admin.restaurants.edit', compact('restaurant', 'categories', 'prev_categories'));
@@ -108,6 +115,8 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, Restaurant $restaurant)
     {
+
+        // Validazione e messaggi
         $request->validate([
             'name' => 'required|string|min:5|max:50',
             'address' => 'required|string|min:5|max:50',
@@ -141,6 +150,7 @@ class RestaurantController extends Controller
 
         $restaurant->fill($data);
 
+        // Modifica dell'immagine
         if (Arr::exists($data, 'image')) {
 
             if ($restaurant->image) Storage::delete($restaurant->image);
