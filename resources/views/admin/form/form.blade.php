@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="glass-card my-5">
+<section class="glass-card p-4 my-5">
     <h1 class="text-center py-3">
         @if (Route::is('admin.dishes.create')) Aggiungi nuovo piatto
         @else Modifica {{$dish->name}} @endif 
@@ -12,24 +12,31 @@
 
     {{-- Impostazioni del form --}}
     @if ($dish->exists)
-        <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" 
-            class="flex container py-4 justify-content-center"
-            id="form"
-            enctype="multipart/form-data">
-            @method('put')
+        <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data">
+        @method('put')
     @else
-        <form action="{{ route('admin.dishes.store') }}" method="post" 
-            class="flex container py-4 justify-content-center"
-            id="form"
-            enctype="multipart/form-data">
+        <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
     @endif
 
-    {{-- TOKEN csrf --}}
-        @csrf
+            {{-- TOKEN csrf --}}
+            @csrf
             <div class="row">
+                {{-- INPUT AVAILABILITY --}}
+                <div class="col-12 mb-3">
+                    <div class="form-check form-switch p-0">
+                        <label class="form-check-label" for="availability">Status articolo:</label>
+                        <div class="ms-5">
+                            <label class="form-check-label" id="availability-label" for="availability"></label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="availability" 
+                            name="availability"
+                            @if(old('availability', $dish->availability) == 1) checked @endif
+                            >
+                        </div>
+                    </div> 
+                </div>
 
-                {{-- INPUT GROUP DEL NAME --}}
-                <div class="mb-3 col-6">
+                {{-- INPUT TITLE --}}
+                <div class="col-12 mb-3">
                     <label class="form-label label fw-bold" for="name">Titolo:</label>
                     <input 
                         type="text" 
@@ -51,20 +58,10 @@
                     @enderror       
                 </div>
 
-                {{-- INPUT GROUP AVAILABILITY --}}
-                <div class="form-check form-switch d-flex align-center col-6">
-                    <label class="form-check-label" for="availability">Status articolo:</label>
-                    <div class="ms-5">
-                        <label class="form-check-label" id="availability-label" for="availability"></label>
-                        <input class="form-check-input" type="checkbox" role="switch" id="availability" 
-                        name="availability"
-                        @if(old('availability', $dish->availability) == 1) checked @endif
-                        >
-                    </div>
-                </div> 
 
-                {{-- INPUT GROUP DIET --}}
-                <div class="mb-3 col-6">
+                {{-- SELECT DIET --}}
+                <div class="col-6 mb-3 ">
+                    <label class="form-label label fw-bold" for="diet">Dieta:</label>
                     <select class="form-select" name="diet" id="diet">
                         <?php
                         $dietOptions = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce', 'Calorico'];
@@ -87,8 +84,9 @@
                     @enderror       
                 </div>
 
-                {{-- INPUT GROUP COURSE --}}
+                {{-- SELECT COURSE --}}
                 <div class="mb-3 col-6">
+                    <label class="form-label label fw-bold" for="name">Portata:</label>
                     <select class="form-select"  name="course" id="course" >
                         <?php
                         $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
@@ -114,18 +112,18 @@
                 {{-- INPUT GROUP INGREDIENTS --}}
                 <div class="mb-3 col-12">
                     <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
-                    <div id="ingredient-inputs">
+                    <div id="ingredient-inputs"> 
                         @if (!$dish->ingredient)
                             @if (old('ingredients'))
                                 @foreach (old('ingredients') as $ingredient)
-                                    <input type="text" name="ingredients[]" class="me-2 mb-2" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                                    <input type="text" name="ingredients[]" class="mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
                                 @endforeach
                             @endif
                             <input 
                                 type="text" 
                                 id="ingredients" 
                                 name="ingredients[]" 
-                                class="me-2 mb-2" 
+                                class="me-2 mb-2 form-control" 
                                 value="{{ trim($dish->ingredient) }}" 
                                 placeholder="Inserisci un ingrediente..."
                             >
@@ -134,17 +132,17 @@
                             $ingredients = explode(', ', $dish->ingredient);
                             @endphp
                             @foreach ($ingredients as $ingredient)
-                                <input type="text" name="ingredients[]" class="me-2 mb-2" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                                <input type="text" name="ingredients[]" class="me-2 mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
                             @endforeach
                         @endif
                     </div>
-                    <button type="button" id="add-ingredient-btn" onclick="addIngredient()">Aggiungi Ingrediente</button>
+                    <button type="button" id="add-ingredient-btn" class="btn btn-sm btn-primary" onclick="addIngredient()">Aggiungi Ingrediente</button>
                 </div>
 
                 {{-- INPUT GROUP PRICE --}}
-                <div class="mb-3 col-6">
-                    <span class="-text">€</span>
-                    <input type="number" name="price" id="price" step="0.01" class="form-control @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                <div class="mb-3 col-3 col-sm-4 col-xl-3">
+                    <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
+                    <input type="number" name="price" id="price" step="0.1" class="form-control @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                     value="{{ old('price', $dish->price) }}">
                     @error('price')
                         <div class="invalid-feedback">
@@ -158,40 +156,40 @@
                 </div>
 
                 {{-- INPUT IMMAGINE --}}
-                <div class="d-flex  col-12 mb-3">
-                    <div class="w-75">
-                        <div class="p-1 d-flex">
-                            <label class="form-label label" for="image">Url Immagine</label>
-                            <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
-                            @error('image')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>   
-                            @else        
-                                <div class="valid-feedback">
-                                    Campo corretto
-                                </div>      
-                            @enderror       
-                        </div>
-                    </div>
-                    {{-- CAMPO PREVIEW IMAGE --}}
-                    <div id="preview-section">
-                        <img id="preview" src="{{ old('image', $dish->image) && @getimagesize($dish->image)
-                        ? asset('storage/' . old('image', $dish->image)) 
-                        : asset('/images/default-dish.png')}}" 
-                        alt="{{ $dish->slug }}">
+                <div class="col-8 mb-3">
+                    <div>
+                        <label class="form-label label fw-bold" for="image">Url Immagine</label>
+                        <input type="file" name="image" class="form-control @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
+                        @error('image')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>   
+                        @else        
+                            <div class="valid-feedback">
+                                Campo corretto
+                            </div>      
+                        @enderror       
                     </div>
                 </div>
+                {{-- CAMPO PREVIEW IMAGE --}}
+                <div class="col-1 align-items-center d-none d-xl-flex">
+                    <img id="preview" src="{{ old('image', $dish->image) && @getimagesize($dish->image)
+                    ? asset('storage/' . old('image', $dish->image)) 
+                    : asset('/images/default-dish.png')}}" 
+                    alt="{{ $dish->slug }}" class="img-fluid">
+                </div>
 
+                <div class="col d-flex justify-content-between pt-4">
+                    <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
+                    <div>
+                        <button class="btn btn-success me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Salva</button>
+                        <button class="btn btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Svuota</button>
+                    </div>
+                </div>
             </div>
-
-            <div class="w-100 pt-4">
-                <button type="submit" class="btn btn-success me-3">Salva</button>
-                <button type="reset" class="btn btn-danger">Svuota</button>
-            </div>
+            
         </form>
-
-</div>    
+</section>    
     
 @endsection
     
@@ -249,7 +247,7 @@
         const input = document.createElement('input');
         input.type = 'text';
         input.name = 'ingredients[]';
-        input.className = 'me-2 mb-2';
+        input.className = 'me-2 mb-2 form-control';
         inputs.appendChild(input);
     }
  
