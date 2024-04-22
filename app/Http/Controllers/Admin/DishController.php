@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
@@ -20,7 +21,7 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = Dish::all();
+        $dishes = Auth::user()->restaurant->dishes;
 
         return view('admin.dishes.index', compact('dishes'));
     }
