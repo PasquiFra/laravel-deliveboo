@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class RestaurantController extends Controller
@@ -36,7 +37,7 @@ class RestaurantController extends Controller
             'email' => 'email|string|lowercase|nullable',
             'vat' => 'required|unique:restaurants|string|min:13|max:13',
             'categories' => 'required|exists:categories,id',
-            'image' => 'nullable|url'
+            'image' => 'nullable|image|mimes:png,jpg,jpeg'
         ], [
             'name.required' => 'Il nome del ristorante è obbligatorio',
             'name.min' => 'Il nome non può essere più corto di :min caratteri',
@@ -54,7 +55,7 @@ class RestaurantController extends Controller
             'vat.max' => 'La P.IVA non può contenere più di :max cifre',
             'categories.required' => 'Categoria obbligatoria',
             'categories.exists' => 'Categoria non valida',
-            'image.url' => 'Devi inserire un url'
+            'image.image' => 'Il file inserito non è un\'immagine',
         ]);
 
         $data = $request->all();
@@ -64,6 +65,14 @@ class RestaurantController extends Controller
         $restaurant->fill($data);
 
         $restaurant->slug = Str::slug($data['name']);
+
+        if (Arr::exists($data, 'image')) {
+            $extension = $data['image']->extension();
+
+            $img_url = Storage::putFileAs('restaurant_images', $data['image'], "$restaurant->slug.$extension");
+            $restaurant->image = $img_url;
+        }
+
 
         $restaurant->user_id = Auth::user()->id;
 
@@ -105,7 +114,7 @@ class RestaurantController extends Controller
             'phone' => 'string|min:10|max:15|nullable',
             'email' => 'email|string|lowercase|nullable',
             'vat' => ['required', 'string', 'min:13', 'max:13', Rule::unique('restaurants')->ignore($restaurant->id)],
-            'image' => 'nullable|url',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg',
             'categories' => 'required|exists:categories,id'
         ], [
             'name.required' => 'Il nome del ristorante è obbligatorio',
@@ -121,7 +130,7 @@ class RestaurantController extends Controller
             'vat.required' => 'La P.IVA è obbligatoria',
             'vat.min' => 'La P.IVA non può contenere meno di :min cifre',
             'vat.max' => 'La P.IVA non può contenere più di :max cifre',
-            'image.url' => 'Devi inserire un url',
+            'image.image' => 'Il file inserito non è un\'immagine',
             'categories.required' => 'Categoria obbligatoria',
             'categories.exists' => 'Categoria non valida'
         ]);
@@ -130,7 +139,19 @@ class RestaurantController extends Controller
 
         $restaurant->slug = Str::slug($data['name']);
 
-        $restaurant->update($data);
+        $restaurant->fill($data);
+
+        if (Arr::exists($data, 'image')) {
+
+            if ($restaurant->image) Storage::delete($restaurant->image);
+
+            $extension = $data['image']->extension();
+
+            $img_url = Storage::putFileAs('restaurant_images', $data['image'], "$restaurant->slug.$extension");
+            $restaurant->image = $img_url;
+        }
+
+        $restaurant->update();
 
         if (Arr::exists($data, 'categories')) $restaurant->categories()->sync($data['categories']);
         elseif (!Arr::exists($data, 'categories') && $restaurant->has('categories')) $restaurant->categories()->detach();

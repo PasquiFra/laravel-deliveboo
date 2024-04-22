@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <section id="restaurant-show">
-        <div class="card my-4">
-            <div class="card-header">
-                <h1 class="text-center">{{$restaurant->name}}</h1>
+        <div class="card-show my-5 p-4">
+            <div class="card-header mt-2">
+                <h1 class="text-center mb-5">{{$restaurant->name}}</h1>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-4">
-                        <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}" class="img-fluid">
+                        <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->name}}" class="img-fluid">
                     </div>
                     <div class="col">
                         <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer">
+            <div class="card-footer mt-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="{{route('dashboard')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
                     <a href="{{route('admin.restaurants.edit', $restaurant->id)}}" class="btn btn-warning"><i class="fas fa-pencil me-2"></i>Modifica</a>
