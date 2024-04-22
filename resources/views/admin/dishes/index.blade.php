@@ -24,6 +24,7 @@
           <th>Immagine</th>
           <th>Nome</th>
           <th>Online</th>
+          <th>Portata</th>
           <th>Dieta</th>
           <th>Prezzo</th>
           <th>Ultima modifica</th>
@@ -42,7 +43,9 @@
                 <img class="img-preview" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThT_FiKa24LyxPc7o6o0CtG_wKVYFrdBnP3qoRIZeXwg&s" alt="dish-image">
               </div>
             </td>
+            {{--Nome--}}
             <td class="text-center">{{$dish->name}}</td>
+            {{--Disponibilità--}}
             <td class="text-center">
               {{$dish->availability == 1 ? 'Si' : 'No'}}
               @if ($dish->availability == 1)
@@ -51,6 +54,11 @@
                 <span class="stamp not-available"></span>
               @endif
             </td>
+            {{--Portata--}}
+            <td class="text-center">
+              {{$dish->course}}
+            </td>
+            {{--Dieta--}}
             <td class="text-center">
               @if($dish->diet)
                {{$dish->diet}}
@@ -58,6 +66,7 @@
                 ---
               @endif
             </td>
+            {{--Prezzo--}}
             <td class="text-center">{{$dish->price}}</td>
             <td class="text-center">{{$dish->updated_at}}</td>
             <td>
