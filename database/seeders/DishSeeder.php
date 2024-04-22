@@ -6,6 +6,7 @@ use App\Models\Dish;
 use Faker\Generator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class DishSeeder extends Seeder
@@ -2553,10 +2554,14 @@ class DishSeeder extends Seeder
             ],
         ];
 
+        //Storage::makeDirectory('dish_images');
+        // $img = fake()->image(null, 350, 350);
+        // $img_url = Storage::putFile('dish_image', $img);
 
         foreach ($dishes as $dish) {
 
             $new_dish = new Dish();
+            // $new_dish->image = $img_url;
             $new_dish->image = 'https://media.istockphoto.com/id/1359180794/it/vettoriale/spaghetti-italiani-in-contorni-neri-stile-scarabocchio-illustrazione-vettoriale-isolata.jpg?s=612x612&w=0&k=20&c=6jppKd4ITSGazQjGpeaIiyTcThvkLMBTgKv7w-zboh0=';
             $new_dish->slug = Str::slug($dish['name']);
             $new_dish->fill($dish);

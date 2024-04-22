@@ -2,6 +2,7 @@
 
 @section('content')
 <section class="p-3 my-5">
+
     <div class="card-show px-4 pb-4 card-color">    
         <div class="card-header pt-3 pb-4">
             <div class="col">
@@ -13,10 +14,10 @@
             {{-- IMMAGINE --}}
             <div class="col-sm-auto col-md-6 col-lg-4 col-xl-3 col-12">
                 <picture id="show-picture text-center">
-                    @if ($dish->image && @getimagesize($dish->image))
-                        <img src="{{$dish->image}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded">
+                    @if ($dish->image)
+                        <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
                     @else
-                        <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded">
+                        <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid">
                     @endif
                 </picture>
             </div>

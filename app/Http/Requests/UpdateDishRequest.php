@@ -27,7 +27,7 @@ class UpdateDishRequest extends FormRequest
             'slug' => 'string',
             'price' => 'decimal:2|required',
             'course' => 'nullable',
-            'image' => 'nullable',
+            'image' => 'nullable|image',
             'diet' => 'nullable',
         ];
     }
@@ -36,6 +36,7 @@ class UpdateDishRequest extends FormRequest
         return [
             'name.required' => 'Il nome del piatto è obbligatorio',
             'availability.required' => 'Indica se pubblicare o no il prodotto',
+            'image.image' => 'Il tipo di file non è corretto',
         ];
     }
 }

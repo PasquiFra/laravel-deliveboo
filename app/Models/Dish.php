@@ -11,7 +11,7 @@ class Dish extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'image', 'diet', 'course', 'ingredient', 'price'];
+    protected $fillable = ['name', 'diet', 'course', 'ingredient', 'price'];
 
     public function orders()
     {
@@ -26,5 +26,10 @@ class Dish extends Model
     public function abstract()
     {
         return substr($this->ingredient, 0, 30);
+    }
+
+    public function printImage()
+    {
+        return asset('storage', $this->image);
     }
 }
