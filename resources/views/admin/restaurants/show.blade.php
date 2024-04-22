@@ -7,10 +7,14 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-4">
+
+                    {{-- Colonna dell'immagine --}}
+                    <div class="col-3">
                         <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->name}}" class="img-fluid">
                     </div>
-                    <div class="col">
+
+                    {{-- Colonna delle informazioni --}}
+                    <div class="offset-2 col">
                         <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
                         <p><i class="fa-solid fa-phone me-2"></i>{{$restaurant->phone}}</p>
                         <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
@@ -22,13 +26,18 @@
                             @endforeach
                         </p>
                     </div>
-                    <div class="col-3 d-flex align-items-center">
+
+                    {{-- Colonna del menù --}}
+                    <div class="col-3 text-center mt-4">
                         <a href="{{route('admin.dishes.index')}}">
                             <img class="img-fluid w-50" src="{{asset('img/menu.png')}}" alt="menu">
+                            <h3 class="mt-4">Vedi il tuo menu</h3>
                         </a>
                     </div>
                 </div>
             </div>
+
+            {{-- Bottoni --}}
             <div class="card-footer mt-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="{{route('dashboard')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
