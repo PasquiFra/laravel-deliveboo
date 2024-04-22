@@ -8,6 +8,7 @@
     
 @endif
     @csrf
+    <div class="card-show p-5">
     <div class="row">
         <div class="col-3">
             <div class="mb-5">
@@ -94,7 +95,7 @@
             <p class="mb-3">Categorie</p>
                 {{-- Foreach delle categorie --}}
             @foreach ($categories as $category)
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline me-2">
                     <label class="form-check-label" for="category-{{$category->id}}">{{$category->label}}</label>
                     <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
                 </div>
@@ -112,6 +113,7 @@
             <button class="btn btn-lg btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Reset</button>
         </div>
     </div>
+</div>
 </form> 
 
 @section('scripts')
