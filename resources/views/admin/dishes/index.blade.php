@@ -16,7 +16,7 @@
             @endforeach
           </select>
           <!--Filtro in base a disponibilità del piatto-->
-          <select class="form-select" name="availability">
+          <select class="form-select w-25 pe-5" name="availability">
             <option value="">Tutti</option>
             <option value="available" @if($availability==='available')selected @endif>Disponibile</option>
             <option value="not-available" @if($availability==='not-available')selected @endif>Non Disponibile</option>
