@@ -3,7 +3,7 @@
 @section('title', Auth::user()->name)
 
 @section('content')
-<div class="container">
+<div class="container spacing">
     <h1 class="text-center">
         Benvenuto {{ Auth::user()->name }}
     </h1>
