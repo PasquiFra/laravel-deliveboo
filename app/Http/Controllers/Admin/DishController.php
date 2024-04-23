@@ -23,6 +23,9 @@ class DishController extends Controller
     {
         // Prendo i piatti del ristorante dell'utente autenticato
         $query = Dish::whereRestaurantId(Auth::id());
+        //$query = Dish::whereRestaurantId(43);
+
+        //dd($query);
 
         // Filtro per disponibilità
         $availability = $request->query('availability');
