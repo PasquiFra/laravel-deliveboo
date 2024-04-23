@@ -14,7 +14,7 @@
         {{-- Input Nome --}}
         <div class="col-3">
             <div class="mb-5">
-                <label for="name" class="form-label">Nome</label>
+                <label for="name" class="form-label">Nome<span class="text-danger"><strong>*</strong></span></label>
                 <input name="name" value="{{old('name', $restaurant->name)}}" type="text" class="form-control @error('name') is-invalid @elseif(old('name', '')) is-valid @enderror"  id="name">
                 @error('name')   
                     <div class="invalid-feedback">{{$message}}</div>
@@ -29,7 +29,7 @@
         {{-- Input Indirizzo --}}
         <div class="col-3">
             <div class="mb-5">
-                <label for="address" class="form-label">Indirizzo</label>
+                <label for="address" class="form-label">Indirizzo<span class="text-danger"><strong>*</strong></span></label>
                 <input name="address" value="{{old('address', $restaurant->address)}}" type="text" class="form-control @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
                 @error('address')   
                     <div class="invalid-feedback">{{$message}}</div>
@@ -74,7 +74,7 @@
         {{-- Input P.IVA (VAT) --}}
         <div class="col-3">
             <div class="mb-5">
-                <label for="vat" class="form-label">P.IVA</label>
+                <label for="vat" class="form-label">P.IVA<span class="text-danger"><strong>*</strong></span></label>
                 <input name="vat" value="{{old('vat', $restaurant->vat)}}" type="text" class="form-control @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat">
                 @error('vat')   
                     <div class="invalid-feedback">{{$message}}</div>
@@ -109,7 +109,7 @@
         </div>
 
         {{-- CheckBox Categorie --}}
-        <div class="col mb-5">
+        <div class="col mb-4">
             <p class="mb-3">Categorie</p>
 
                 {{-- Foreach delle categorie --}}
@@ -121,6 +121,7 @@
             @endforeach
         </div>
     </div>
+    <p class="asterisk mb-4">I campi contrassegnati con <span class="text-danger"><strong>*</strong></span> sono obbligatori</p>
 
     {{-- Bottoni --}}
     <div class="col d-flex justify-content-between">
