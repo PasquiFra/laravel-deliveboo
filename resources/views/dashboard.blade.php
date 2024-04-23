@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="text-center my-4">
+    <h1 class="text-center">
         Benvenuto {{ Auth::user()->name }}
     </h1>
     <div class="row justify-content-center">

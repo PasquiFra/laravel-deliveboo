@@ -5,7 +5,7 @@
 
 @section('content')    
 <div class="mb-2">
-  <div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
+  <div class="mb-3 d-flex justify-content-between align-items-center spacing">
     <!--Filtro per Portata del Piatto-->
     <form class="filter-courses" action="{{ route('admin.dishes.index') }}" method="GET">
       <div class="input-group">

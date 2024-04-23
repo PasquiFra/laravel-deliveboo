@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container spacing">
     <h2 class="fs-4 text-secondary my-4">
         {{ __('Profile') }}
     </h2>
