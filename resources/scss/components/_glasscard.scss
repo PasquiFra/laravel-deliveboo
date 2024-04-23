@@ -19,3 +19,13 @@
         color: black;
     }
 }
+
+// Dashbord
+.effect {
+    display: block;
+    transition: transform 0.3s linear;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
