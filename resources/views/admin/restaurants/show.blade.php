@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section id="restaurant-show">
-        <div class="card my-4">
+        <div class="card spacing">
             <div class="card-header">
                 <h1 class="text-center">{{$restaurant->name}}</h1>
             </div>
