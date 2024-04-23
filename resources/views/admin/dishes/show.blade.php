@@ -14,11 +14,11 @@
 
             {{-- IMMAGINE --}}
             <div class="col-sm-auto col-md-6 col-lg-4 col-xl-3 col-12">
-                <picture id="show-picture text-center">
+                <picture class="show-picture text-center">
                     @if ($dish->image)
-                        <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
+                        <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded">
                     @else
-                        <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid">
+                        <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded">
                     @endif
                 </picture>
             </div>

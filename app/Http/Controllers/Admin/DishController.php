@@ -143,9 +143,15 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
-
+        // stabilisco la variabile ingredients (array proveniente dal form)
+        $ingredients = $request->input('ingredients');
+        // filtro l'array in modo da vedere se ho campi nulli o stringa vuota ed eliminarli
+        $filteredIngredients = array_filter($ingredients, function ($value) {
+            return !is_null($value) && $value !== '';
+        });
         // trasformo l'array che ricevo dal form in una stringa contenente tutti gli ingredienti
-        $ingredient = implode(', ', $request->input('ingredients'));
+        $ingredient = implode(', ', $filteredIngredients);
+
 
         // imposto il valore di availability dal form, se ricevo un valore è true, altrimenti false
         $availability = $request->input('availability') ? true : false;
