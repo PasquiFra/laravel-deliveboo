@@ -3,17 +3,10 @@
 @section('title', 'Cestino')
 
 @section('content')
-<section id='dishes-trash' class="my-5">
-    <div class="mb-3 d-flex align-items-center justify-content-between">
-        <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Piatti disponibili</a>
-        <h1 class="text-center text-white">Piatti Eliminati</h1>
-        {{--Svuota Cestino--}}
-        <form action="{{ route('admin.dishes.dropAllTrashed') }}"
-            method="POST"  class="empty-trash-form  delete-all-form">
-            @csrf
-            @method('DELETE')
-            <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Elimina tutti i Piatti</button>
-        </form>
+<section id='dishes-trash' class="spacing">
+    <div class="mb-2 d-flex justify-content-between align-items-center">
+      <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
+      <h1 class="text-white text-center mb-0">Piatti Eliminati</h1>
     </div>
     {{--Tabella--}}
     <div class="tbl-header">
@@ -73,14 +66,6 @@
                 <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn btn-outline-light edit">
                   <i class="fas fa-pencil"></i>
                 </a>
-                
-                {{--# COLLEGAMENTO AL DROP --}}
-                <form action="{{ route('admin.dishes.drop', $dish->id) }}" 
-                    method="POST" class="delete-form" data-dish="{{$dish->name}}">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-sm btn btn-outline-light destroy"><i class="far fa-trash-can"></i></button>
-                </form>
 
                 {{--# COLLEGAMENTO A RESTORE --}} 
                 <form action="{{route('admin.dishes.restore',$dish->id)}}" method="POST" 
@@ -104,17 +89,6 @@
 @endsection
 @section('scripts')
 <script>
-
-       // CONFERMA DI CANCELLAZIONE
-       const formsDeleteAll= document.querySelectorAll('.delete-all-form');
-    formsDeleteAll.forEach(form => {
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            const dish = form.dataset.dish;
-            const confirmation = confirm('Sei sicuro di voler eliminare tutti i piatti?');
-            if(confirmation) form.submit();
-        })
-    });
     
       // CONFERMA DI CANCELLAZIONE
       const formsDelete= document.querySelectorAll('.delete-form');

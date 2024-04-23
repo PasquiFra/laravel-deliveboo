@@ -229,28 +229,4 @@ class DishController extends Controller
             ->with('type', 'success')
             ->with('message', "Piatto {$dish->name} ripristinato con successo");
     }
-
-    //# Action per eliminare definitivamente il piatto
-    public function drop(Dish $dish)
-    {
-        if ($dish->image) Storage::delete($dish->image);
-
-        $dish->forceDelete();
-        return to_route('admin.dishes.trash')
-            ->with('message', "Piatto {$dish->name} eliminato definitivamente")
-            ->with('type', 'danger');
-    }
-
-    //# Action svuotare il Cestino
-    public function dropAllTrashed()
-    {
-        //Prendo tutti i piatti eliminati
-        $trashedDishes = Dish::onlyTrashed()->get();
-        foreach ($trashedDishes as $dish) {
-            $dish->forceDelete();
-        }
-        return to_route('admin.dishes.trash')
-            ->with('message', "Piatti eliminati definitivamente")
-            ->with('type', 'danger');;
-    }
 }
