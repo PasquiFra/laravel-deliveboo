@@ -62,14 +62,14 @@
                 <div class="button-group">
                     <div class="d-flex gap-2 mt-4">
                         {{--# EDIT --}}
-                        <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-outline-light edit">
+                        <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn button-outline-light edit">
                             <i class="fas fa-pencil"></i>
                         </a>
                         {{--# DESTROY --}}
                         <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" id="delete-form">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-light destroy"><i class="far fa-trash-can"></i></button>
+                            <button class="btn button-outline-light destroy"><i class="far fa-trash-can"></i></button>
                         </form>
                     </div>
                 </div>

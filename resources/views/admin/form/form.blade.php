@@ -23,7 +23,7 @@
             <div class="row">
                 {{-- INPUT AVAILABILITY --}}
                 <div class="col-12 mb-3">
-                    <div class="form-check form-switch p-0">
+                    <div class="form-check form-switch d-flex p-0">
                         <label class="form-check-label" for="availability">Status articolo:</label>
                         <div class="ms-5">
                             <label class="form-check-label" id="availability-label" for="availability"></label>
@@ -43,7 +43,7 @@
                         required 
                         id="name" 
                         name="name" 
-                        class="form-control @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
+                        class="form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
                         value="{{ old('name', $dish->name) }}" 
                         placeholder="Inserisci titolo..."
                     >
@@ -62,7 +62,7 @@
                 {{-- SELECT DIET --}}
                 <div class="col-6 mb-3 ">
                     <label class="form-label label fw-bold" for="diet">Dieta:</label>
-                    <select class="form-select" name="diet" id="diet">
+                    <select class="form-select bg-transparent border-dark-light rounded-pill" name="diet" id="diet">
                         <option 
                             value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)
                         </option>
@@ -84,7 +84,7 @@
                 {{-- SELECT COURSE --}}
                 <div class="mb-3 col-6">
                     <label class="form-label label fw-bold" for="name">Portata:</label>
-                    <select class="form-select"  name="course" id="course" >
+                    <select class="form-select bg-transparent border-dark-light rounded-pill"  name="course" id="course" >
                         <?php
                         $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
                         ?>
@@ -120,7 +120,7 @@
                                 type="text" 
                                 id="ingredients" 
                                 name="ingredients[]" 
-                                class="me-2 mb-2 form-control" 
+                                class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" 
                                 value="{{ trim($dish->ingredient) }}" 
                                 placeholder="Inserisci un ingrediente..."
                             >
@@ -129,17 +129,17 @@
                             $ingredients = explode(', ', $dish->ingredient);
                             @endphp
                             @foreach ($ingredients as $ingredient)
-                                <input type="text" name="ingredients[]" class="me-2 mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                                <input type="text" name="ingredients[]" class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
                             @endforeach
                         @endif
                     </div>
-                    <button type="button" id="add-ingredient-btn" class="btn btn-sm btn-primary" onclick="addIngredient()">Aggiungi Ingrediente</button>
+                    <button type="button" id="add-ingredient-btn" class="btn btn-sm mt-2 border-light-subtle rounded-pill" onclick="addIngredient()">Aggiungi Ingrediente</button>
                 </div>
 
                 {{-- INPUT GROUP PRICE --}}
                 <div class="mb-3 col-3 col-sm-4 col-xl-3">
                     <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
-                    <input type="number" name="price" id="price" step="0.1" class="form-control @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                    <input type="number" name="price" id="price" step="0.1" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                     value="{{ old('price', $dish->price) }}">
                     @error('price')
                         <div class="invalid-feedback">
@@ -156,7 +156,7 @@
                 <div class="col-8 mb-3">
                     <div>
                         <label class="form-label label fw-bold" for="image">Url Immagine</label>
-                        <input type="file" name="image" class="form-control @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
+                        <input type="file" name="image" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
                         @error('image')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -199,9 +199,9 @@
         const input = document.getElementById('availability');
         
         if (input.checked) {
-            label.textContent = 'Articolo disponibile online';
+            label.textContent = 'disponibile';
         } else {
-            label.textContent = 'Articolo disattivato';
+            label.textContent = 'non disponibile';
         }
     });
 
@@ -244,7 +244,8 @@
         const input = document.createElement('input');
         input.type = 'text';
         input.name = 'ingredients[]';
-        input.className = 'me-2 mb-2 form-control';
+        input.className = 'me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill';
+        input.placeholder = 'inserisci un ingrediente...';
         inputs.appendChild(input);
     }
  
