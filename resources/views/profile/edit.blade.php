@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', 'Modifica Profilo')
+
 @section('content')
 
 <div class="container spacing">

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', 'Modifica'.' '.$restaurant->name)
+
 @section('content')
         <section id="edit-form">
             <h1 class="text-center my-3">Modifica il tuo ristorante</h1>

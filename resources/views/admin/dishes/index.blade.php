@@ -1,6 +1,8 @@
 
 @extends('layouts.app')
- 
+
+@section('title', 'Menu')
+
 @section('content')    
 <div class="mb-2">
   <div class="mb-3 d-flex justify-content-between align-items-center spacing">
