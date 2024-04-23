@@ -22,7 +22,7 @@ class DishController extends Controller
     public function index(Request $request)
     {
         // Prendo i piatti del ristorante dell'utente autenticato
-        $query = Auth::user()->restaurant->dishes();
+        $query = Dish::whereRestaurantId(Auth::id());
 
         // Filtro per disponibilità
         $availability = $request->query('availability');
@@ -98,6 +98,7 @@ class DishController extends Controller
 
         $new_dish->restaurant_id = Auth::user()->restaurant->id;
 
+
         $new_dish->save();
 
         // Salvataggio dell'immagine nel database
@@ -123,6 +124,12 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
+        if ($dish->restaurant->user_id !== Auth::id()) {
+            return to_route('admin.dishes.index')
+                ->with('message', "Non sei autorizzato a vedere questo piatto")
+                ->with('type', 'danger');;
+        };
+
         $ingredients = explode(', ', $dish->ingredient);
         $dish->ingredient = $ingredients;
         return view('admin.dishes.show', compact('dish'));
@@ -133,6 +140,12 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        if ($dish->restaurant->user_id !== Auth::id()) {
+            return to_route('admin.dishes.index')
+                ->with('message', "Non sei autorizzato a modifcare questo piatto")
+                ->with('type', 'danger');;
+        };
+
         $diet_options = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce'];
 
         return view('admin.dishes.edit', compact('dish', 'diet_options'));
