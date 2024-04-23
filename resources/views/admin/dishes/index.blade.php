@@ -23,7 +23,7 @@
             <option value="available" @if($availability==='available')selected @endif>Disponibile</option>
             <option value="not-available" @if($availability==='not-available')selected @endif>Non Disponibile</option>
           </select>
-          <button class="btn btn-outline-secondary" type="submit">Filtra</button>
+          <button class="btn btn-secondary" type="submit">Filtra</button>
       </div>
   </form>
     <h1 class="text-white me-5">Menu</h1>

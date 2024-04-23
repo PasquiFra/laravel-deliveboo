@@ -31,8 +31,8 @@ Route::prefix('/admin')->middleware(['auth'])->name('admin.')->group(function ()
     Route::get('/dishes/trash', [DishController::class, 'trash'])->name('dishes.trash');
     // Rotta per il restore di un progetto
     Route::patch('/dishes/{dish}/restore', [DishController::class, 'restore'])->name('dishes.restore')->withTrashed();
-    // Rotta per eliminare un progetto definitivamente
-    Route::delete('/dishes/{dish}/drop', [DishController::class, 'drop'])->name('dishes.drop')->withTrashed();
+
+    // Tutte le rotte dei piatti
     Route::resource('dishes', DishController::class)->withTrashed(['show', 'edit', 'update']);
 });
 
