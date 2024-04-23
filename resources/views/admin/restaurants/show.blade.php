@@ -13,7 +13,7 @@
 
                     {{-- Colonna dell'immagine --}}
                     <div class="col-3">
-                        <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->name}}" class="img-fluid">
+                        <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->name}}" class="img-fluid rounded">
                     </div>
 
                     {{-- Colonna delle informazioni --}}
@@ -32,7 +32,7 @@
 
                     {{-- Colonna del menù --}}
                     <div class="col-3 text-center mt-4">
-                        <a href="{{route('admin.dishes.index')}}">
+                        <a href="{{route('admin.dishes.index')}}" class="effect">
                             <img class="img-fluid w-50" src="{{asset('img/menu.png')}}" alt="menu">
                             <h3 class="mt-4">Vedi il tuo menu</h3>
                         </a>
