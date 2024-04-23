@@ -29,7 +29,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, pomodoro, mozzarella',
                 'diet' => null,
                 'course' => 'Antipasto',
-                'price' => 4
+                'price' => 4,
+                'image' => 'dish_images/suppli.jpg'
             ],
             [
                 'restaurant_id' => 1,
@@ -38,7 +39,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
-                'price' => 4.50
+                'price' => 4.50,
+                'image' => 'dish_images/patatine-fritte.jpg'
             ],
 
             // Primi 
@@ -49,7 +51,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Paccheri freschi, sugo all\'amatriciana, guanciale vegan, pecorino vegano leggermente piccante',
                 'diet' => 'Vegano',
                 'course' => 'Primo',
-                'price' => 13
+                'price' => 13,
+                'image' => 'dish_images/amatriciana-vegana.jpg'
             ],
             [
                 'restaurant_id' => 1,
@@ -58,7 +61,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Risotto agli asparagi, limone, burrata di anacardi',
                 'diet' => 'Vegano',
                 'course' => 'Primo',
-                'price' => 14
+                'price' => 14,
+                'image' => 'dish_images/risotto-trionfo-di-asparagi.jpg'
             ],
 
             // Secondi
@@ -69,7 +73,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo vegetale, pomodoro, olive, peperoni, patate arrosto',
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => 'dish_images/pollo-alla-romana-veg.jpg'
             ],
             [
                 'restaurant_id' => 1,
@@ -78,7 +83,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Burger Beyond Meat, salsiccia Beyond Meat, pollo veg Planted, patate arrosto, maionese',
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
-                'price' => 22
+                'price' => 22,
+                'image' => 'dish_images/grigliata-beyond-meat.jpg'
             ],
             // Dolci
             [
@@ -88,7 +94,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'caffè, alcool, glutine',
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
-                'price' => 6
+                'price' => 6,
+                'image' => 'dish_images/tiramisu-vegan.jpg'
             ],
             [
                 'restaurant_id' => 1,
@@ -97,7 +104,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'nocciole, cioccolato',
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
-                'price' => 4
+                'price' => 4,
+                'image' => 'dish_images/tozzetti-artigianali.jpg'
             ],
 
 
@@ -115,7 +123,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Spaghetti, sugo di pomodoro, basilico',
                 'diet' => 'Vegano',
                 'course' => 'Primo',
-                'price' => 13
+                'price' => 13,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 2,
@@ -124,7 +133,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Spaghetti, uova, pecorino, guanciale',
                 'diet' => null,
                 'course' => 'Primo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
 
             // Secondi
@@ -135,7 +145,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fettine di vitello, prosciutto crudo, farina, salvia, patate arrosto,',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 2,
@@ -144,7 +155,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'carne di vitello, carne di maiale, parmigiano, passata di pomodoro, patate arrosto',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 22
+                'price' => 22,
+                'image' => ''
             ],
             // Dolci
             [
@@ -154,7 +166,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'caffè, mascarpone, alcool, polvere di cioccolato amaro',
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 2,
@@ -163,7 +176,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'biscotti secchi, burro, panna, mascarpone, crema di pistacchio, farina di pistacchio',
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
 
             //# Foodie GreenLab
@@ -180,7 +194,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Cous cous, carote, zucchine, melanzane e peperoni',
                 'diet' => 'Vegano',
                 'course' => 'Primo',
-                'price' => 7.90
+                'price' => 7.90,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 3,
@@ -189,7 +204,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => 'Vegano',
                 'course' => 'Primo',
-                'price' => 9.90
+                'price' => 9.90,
+                'image' => ''
             ],
 
             // Secondi
@@ -200,7 +216,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 3,
@@ -209,7 +226,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Salsa di cocco, anacardi e curry',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             // Dolci
             [
@@ -219,7 +237,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'barretta di cocco, cioccolato, datteri',
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
-                'price' => 5.50
+                'price' => 5.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 3,
@@ -228,7 +247,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
 
             //# Tonnarello
@@ -242,7 +262,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'All\'amatriciana, al ragù, cacio pepe e crocchetta di patate',
                 'diet' => null,
                 'course' => 'Antipasto',
-                'price' => 19
+                'price' => 19,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 4,
@@ -251,7 +272,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
-                'price' => 8.50
+                'price' => 8.50,
+                'image' => ''
             ],
 
             // Primi 
@@ -262,7 +284,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Primo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 4,
@@ -271,7 +294,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Primo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
 
             // Secondi
@@ -282,7 +306,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 22
+                'price' => 22,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 4,
@@ -291,7 +316,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 18
+                'price' => 18,
+                'image' => ''
             ],
             // Dolci
             [
@@ -301,7 +327,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 4,
@@ -310,7 +337,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 6.50
+                'price' => 6.50,
+                'image' => ''
             ],
 
             //# Gelateria Bartocci
@@ -323,7 +351,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 5,
@@ -332,7 +361,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 5,
@@ -341,7 +371,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 22
+                'price' => 22,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 5,
@@ -350,7 +381,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 29
+                'price' => 29,
+                'image' => ''
             ],
 
             //# Nonna Agrippina
@@ -364,7 +396,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Cicoria, aglio, olio, peperoncino',
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 6,
@@ -373,7 +406,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Patate, sale, olio, rosmarino',
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
 
             // Primi 
@@ -384,7 +418,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Bucatini, guanciale, pomodoro, pecorino romano',
                 'diet' => null,
                 'course' => 'Primo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 6,
@@ -393,7 +428,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Cipolla rossa, riduzione di vino rosso, caponata di verdure, rucola, grana padano',
                 'diet' => 'Vegano',
                 'course' => 'Primo',
-                'price' => 19
+                'price' => 19,
+                'image' => ''
             ],
 
             // Secondi
@@ -404,7 +440,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 6,
@@ -413,7 +450,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Salsa di cocco, anacardi e curry',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             // Dolci
             [
@@ -423,7 +461,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'barretta di cocco, cioccolato, datteri',
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
-                'price' => 5.50
+                'price' => 5.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 6,
@@ -432,7 +471,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
 
             //# Gelateria Giolitti
@@ -445,7 +485,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 7,
@@ -454,7 +495,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 7,
@@ -463,7 +505,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 22
+                'price' => 22,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 7,
@@ -472,7 +515,8 @@ class DishSeeder extends Seeder
                 'ingredient' => null,
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 29
+                'price' => 29,
+                'image' => ''
             ],
 
             //# Il Pellicano
@@ -485,7 +529,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, mozzarella, ragù di carne, pangrattato',
                 'diet' => null,
                 'course' => 'Antipasto',
-                'price' => 6.50
+                'price' => 6.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 8,
@@ -494,7 +539,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Carciofi, menta, prezzemolo, aglio, olio',
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
 
             // Primi 
@@ -505,7 +551,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Spaghetti, guanciale, uova, pecorino romano, pepe',
                 'diet' => null,
                 'course' => 'Primo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 8,
@@ -514,7 +561,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Spaghetti, pecorino romano, pepe',
                 'diet' => 'Vegetariano',
                 'course' => 'Primo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
 
             // Secondi
@@ -525,7 +573,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fettine di vitello, prosciutto crudo, salvia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16.50
+                'price' => 16.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 8,
@@ -534,7 +583,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Trippa, pomodoro, menta, pecorino romano',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
 
             // Dolci
@@ -545,7 +595,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Savoiardi, mascarpone, caffè, cacao',
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 8,
@@ -554,7 +605,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Maritozzo, panna',
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             //# Tavola Rotonda
@@ -567,7 +619,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pane casareccio, pomodori freschi, basilico, aglio, olio extra vergine di oliva',
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
-                'price' => 6.50
+                'price' => 6.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 9,
@@ -576,7 +629,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fiori di zucca, farina, acqua, sale',
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
 
             // Primi 
@@ -587,7 +641,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Penne, pesto alla genovese, patate, fagiolini, pecorino romano',
                 'diet' => 'Vegetariano',
                 'course' => 'Primo',
-                'price' => 11
+                'price' => 11,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 9,
@@ -596,7 +651,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso carnaroli, funghi porcini, cipolla, brodo vegetale, burro, parmigiano',
                 'diet' => null,
                 'course' => 'Primo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
 
             // Secondi
@@ -607,7 +663,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fettine di vitello, prosciutto crudo, salvia, vino bianco',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 18.50
+                'price' => 18.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 9,
@@ -616,7 +673,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Branzino, pomodorini, olive nere, capperi, prezzemolo, limone, olio extra vergine di oliva',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 20
+                'price' => 20,
+                'image' => ''
             ],
 
             // Dolci
@@ -627,7 +685,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pan di spagna, crema pasticcera, frutta fresca',
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 8.50
+                'price' => 8.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 9,
@@ -636,7 +695,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta sfoglia, crema pasticcera, fragole, zucchero a velo',
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             // Piatti Ristoranti Giapponesi e Cinesi
@@ -651,7 +711,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta di grano, maiale macinato, cavolo cinese, zenzero, salsa di soia',
                 'diet' => null,
                 'course' => 'Antipasto',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 10,
@@ -660,7 +721,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fagioli di soia, sale',
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
-                'price' => 5.50
+                'price' => 5.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 10,
@@ -669,7 +731,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta di grano, maiale macinato, cavolo cinese, aglio, zenzero',
                 'diet' => null,
                 'course' => 'Antipasto',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
 
             // Primi
@@ -680,7 +743,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Noodles, verdure miste, salsa di soia',
                 'diet' => 'Vegetariano',
                 'course' => 'Primo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 10,
@@ -689,7 +753,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Noodles, carne, verdure, salsa yakisoba',
                 'diet' => null,
                 'course' => 'Primo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
 
             // Secondi
@@ -700,7 +765,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Anatra, salsa all\'arancia, verdure miste',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 10,
@@ -709,7 +775,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fettine di manzo, salsa piccante, peperoni, cipolla',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 13
+                'price' => 13,
+                'image' => ''
             ],
 
             // Dolci
@@ -720,7 +787,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Farina, zucchero, uova',
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 10,
@@ -729,7 +797,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gelato, pastella, olio',
                 'diet' => null,
                 'course' => 'Dessert',
-                'price' => 6.50
+                'price' => 6.50,
+                'image' => ''
             ],
 
             //# Your Sushi
@@ -742,7 +811,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta di grano, maiale macinato, cavolo cinese, zenzero, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 11,
@@ -751,7 +821,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gamberi, peperoni, salsa di soia, aglio',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
 
             // Primi
@@ -762,7 +833,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tagliatelle, verdure miste, salsa di soia',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 11,
@@ -771,7 +843,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, uova, piselli, carote, prosciutto cotto',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 11
+                'price' => 11,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 11,
@@ -780,7 +853,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, avocado, surimi, sesamo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
 
             // Secondi
@@ -791,7 +865,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Anatra, salsa all\'arancia, verdure miste',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 11,
@@ -800,7 +875,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, mandorle, peperoni, cipolla, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 13
+                'price' => 13,
+                'image' => ''
             ],
 
             // Dolci
@@ -811,7 +887,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Biscotti digestive, formaggio cremoso, tè matcha, panna',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 11,
@@ -820,7 +897,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Mochi, gelato alla fragola',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 5.50
+                'price' => 5.50,
+                'image' => ''
             ],
 
             //# Panda Market
@@ -833,7 +911,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Verdure miste, pastella leggera, salsa ponzu',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 12,
@@ -842,7 +921,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Verdure, gamberetti, involucro croccante, salsa agrodolce',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
 
             // Primi
@@ -853,7 +933,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Udon, pollo, verdure, brodo di pollo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 11
+                'price' => 11,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 12,
@@ -862,7 +943,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tofu, alghe, miso, cipollotti',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
 
             // Secondi
@@ -873,7 +955,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Anatra, pancetta, salsa alla pechinese, verdure',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 12,
@@ -882,7 +965,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gamberoni, aglio, prezzemolo, olio d\'oliva',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
 
             // Dolci
@@ -893,7 +977,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Biscotti savoiardi, mascarpone, tè verde, cacao',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 12,
@@ -902,7 +987,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Sesamo nero, latte, zucchero, panna',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6.50
+                'price' => 6.50,
+                'image' => ''
             ],
 
             //# Ciao Zì
@@ -915,7 +1001,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Verdure miste, pastella leggera, salsa ponzu',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 13,
@@ -924,7 +1011,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Verdure, gamberetti, involucro croccante, salsa agrodolce',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
 
             // Primi
@@ -935,7 +1023,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Udon, pollo, verdure, brodo di pollo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 11
+                'price' => 11,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 13,
@@ -944,7 +1033,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tofu, alghe, miso, cipollotti',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
 
             // Secondi
@@ -955,7 +1045,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Anatra, pancetta, salsa alla pechinese, verdure',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 13,
@@ -964,7 +1055,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gamberoni, aglio, prezzemolo, olio d\'oliva',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
 
             // Dolci
@@ -975,7 +1067,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Biscotti savoiardi, mascarpone, tè verde, cacao',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7.50
+                'price' => 7.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 13,
@@ -984,7 +1077,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Sesamo nero, latte, zucchero, panna',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6.50
+                'price' => 6.50,
+                'image' => ''
             ],
 
             //# Zen Sushi
@@ -997,7 +1091,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fagioli di soia, sale marino, sesamo tostato',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 14,
@@ -1006,7 +1101,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tonno fresco, avocado, cipolla rossa, salsa teriyaki',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
 
             // Primi
@@ -1017,7 +1113,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pesce fresco assortito, wasabi, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 18
+                'price' => 18,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 14,
@@ -1026,7 +1123,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Noodles, pollo, verdure miste, salsa yakisoba',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
 
             // Secondi
@@ -1037,7 +1135,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gamberi, verdure assortite, pastella leggera, salsa tempura',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 14,
@@ -1046,7 +1145,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Filetto di salmone, salsa teriyaki, verdure grigliate',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 17
+                'price' => 17,
+                'image' => ''
             ],
 
             // Dolci
@@ -1057,7 +1157,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Mochi, gelato al cioccolato',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 14,
@@ -1066,7 +1167,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tè matcha, farina di riso, latte di cocco, zucchero',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
 
             //# Zenzero Fleming
@@ -1079,7 +1181,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gyoza di maiale, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 15,
@@ -1088,7 +1191,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Salmone fresco, avocado, salsa ponzu',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 13
+                'price' => 13,
+                'image' => ''
             ],
 
             // Primi
@@ -1099,7 +1203,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Brodo di pollo, noodles ramen, maiale alla griglia, uova sode',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 15,
@@ -1108,7 +1213,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, gambero tempura, avocado, salsa unagi, tobiko',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
 
             // Secondi
@@ -1119,7 +1225,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Petto di pollo impanato, salsa katsu, riso bianco, insalata',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 15,
@@ -1128,7 +1235,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tonno fresco, salsa teriyaki, verdure grigliate',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 18
+                'price' => 18,
+                'image' => ''
             ],
 
             // Dolci
@@ -1139,7 +1247,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Biscotti digestive, formaggio cremoso, purea di mango',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 15,
@@ -1148,7 +1257,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tè verde, latte, zucchero, panna',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6.50
+                'price' => 6.50,
+                'image' => ''
             ],
 
             //# New Town
@@ -1161,7 +1271,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tonno fresco, peperoncino, cipolla rossa, salsa di sesamo piccante',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 16,
@@ -1170,7 +1281,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Alghe wakame, cetrioli, sesamo, salsa di sesamo',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
 
             // Primi
@@ -1181,7 +1293,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Brodo di pollo, noodles ramen, pollo al curry, uova sode',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 16,
@@ -1190,7 +1303,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Udon, gamberi, calamari, vongole, verdure, brodo dashi',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
 
             // Secondi
@@ -1201,7 +1315,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Petto di pollo, salsa teriyaki, riso bianco, verdure saltate',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 16,
@@ -1210,7 +1325,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Nigiri, sashimi, maki assortiti',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 18
+                'price' => 18,
+                'image' => ''
             ],
 
             // Dolci
@@ -1221,7 +1337,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gelatina di tè verde, panna montata, zucchero',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 16,
@@ -1230,7 +1347,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pancake giapponese, crema di nutella',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             //# Crudo Pokè
@@ -1243,7 +1361,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Salmone fresco a cubetti, avocado, edamame, cipolla rossa, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 17,
@@ -1252,7 +1371,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tonno fresco piccante a cubetti, mango, avocado, peperoncino, salsa piccante',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
 
             // Contorni
@@ -1263,7 +1383,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fagioli edamame, aglio, peperoncino, salsa di soia',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 17,
@@ -1272,7 +1393,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Alghe wakame, sesamo, cetrioli, salsa di sesamo',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             //# Temakinho
@@ -1285,7 +1407,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gyoza di maiale, salsa ponzu',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 18,
@@ -1294,7 +1417,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tonno fresco, salsa tataki, sesamo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
 
             // Primi
@@ -1305,7 +1429,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Noodles soba, pollo, verdure miste, salsa yakisoba',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 18,
@@ -1314,7 +1439,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, uova, piselli, carote, prosciutto cotto',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 13
+                'price' => 13,
+                'image' => ''
             ],
 
             // Secondi
@@ -1325,7 +1451,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Filetto di salmone, salsa teriyaki, verdure grigliate',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 17
+                'price' => 17,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 18,
@@ -1334,7 +1461,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Petto di pollo impanato, salsa katsu, riso bianco, insalata',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
 
             // Dolci
@@ -1345,7 +1473,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Formaggio cremoso, biscotti digestive, marmellata di frutti di bosco',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 18,
@@ -1354,7 +1483,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Mochi, gelato alla fragola',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             //# Ravioleria Baozi
@@ -1367,7 +1497,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta al vapore, maiale macinato, cipolla verde, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 3.50
+                'price' => 3.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 19,
@@ -1376,7 +1507,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta fritta, verdure miste, salsa agrodolce',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 19,
@@ -1385,7 +1517,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta alla griglia, gamberetti, peperoni, cipolla, salsa piccante',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 19,
@@ -1394,7 +1527,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta al vapore, funghi misti, tofu, cipolla, salsa di soia',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4.50
+                'price' => 4.50,
+                'image' => ''
             ],
 
             //~ Ristoranti Indiani
@@ -1409,7 +1543,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Patate, piselli, spezie, pasta sfoglia',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 20,
@@ -1418,7 +1553,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Paneer (formaggio indiano), peperoni, cipolla, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             // Piatti principali - Vegetariani
@@ -1429,7 +1565,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Paneer, spinaci, pomodori, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 20,
@@ -1438,7 +1575,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Patate, cavolfiore, pomodori, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
 
             // Piatti principali - Non vegetariani
@@ -1449,7 +1587,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, salsa di pomodoro, panna, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 20,
@@ -1458,7 +1597,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Agnello, yogurt, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
 
             // Dolci
@@ -1469,7 +1609,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Palle dolci fritte, sciroppo di zucchero, cardamomo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 20,
@@ -1478,7 +1619,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, latte, zucchero, cardamomo, pistacchi',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
 
             //# Himalaya's Kashmir
@@ -1491,7 +1633,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Patate, piselli, carote, pasta sfoglia',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4.50
+                'price' => 4.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 21,
@@ -1500,7 +1643,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo marinato, pastella di ceci, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             // Piatti principali - Vegetariani
@@ -1511,7 +1655,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Spinaci, paneer, pomodori, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 11
+                'price' => 11,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 21,
@@ -1520,7 +1665,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Patate, melanzane, pomodori, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
 
             // Piatti principali - Non vegetariani
@@ -1531,7 +1677,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Agnello, yogurt, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 21,
@@ -1540,7 +1687,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo marinato con yogurt e spezie, cotto al forno tandoor',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
 
             // Dolci
@@ -1551,7 +1699,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Palle dolci fritte, sciroppo di zucchero, cardamomo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 5.50
+                'price' => 5.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 21,
@@ -1560,7 +1709,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, latte, zucchero, cardamomo, pistacchi',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4.50
+                'price' => 4.50,
+                'image' => ''
             ],
 
             //# Tiger Tandoori
@@ -1573,7 +1723,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Verdure miste, pastella di ceci, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 22,
@@ -1582,7 +1733,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Ali di pollo marinate, spezie, cottura al forno tandoor',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             // Piatti principali - Vegetariani
@@ -1593,7 +1745,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Paneer, salsa di pomodoro, panna, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 22,
@@ -1602,7 +1755,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Melanzane, pomodori, cipolle, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
 
             // Piatti principali - Non vegetariani
@@ -1613,7 +1767,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, riso basmati, spezie, aromi',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 22,
@@ -1622,7 +1777,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Filetto di pesce marinato, spezie, cottura al forno tandoor',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
 
             // Dolci
@@ -1633,7 +1789,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Carote, latte, zucchero, burro, frutta secca',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 22,
@@ -1642,7 +1799,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Palle di latte cagliato, zucchero, cardamomo, mandorle',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
 
             //# New Delhi
@@ -1655,7 +1813,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Cipolle, pastella di ceci, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4.50
+                'price' => 4.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 23,
@@ -1664,7 +1823,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Paneer, pastella di ceci, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             // Piatti principali - Vegetariani
@@ -1675,7 +1835,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Ceci, pomodori, cipolle, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 23,
@@ -1684,7 +1845,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Melanzane, pomodori, cipolle, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
 
             // Piatti principali - Non vegetariani
@@ -1695,7 +1857,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, salsa di pomodoro, yogurt, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 23,
@@ -1704,7 +1867,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Agnello, riso basmati, spezie, aromi',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
 
             // Dolci
@@ -1715,7 +1879,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Palle dolci fritte, sciroppo di zucchero, cardamomo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 23,
@@ -1724,7 +1889,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gelato indiano, frutta secca, saffron',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
 
             //# Samoseria
@@ -1737,7 +1903,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Patate, ceci, cipolle, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 3
+                'price' => 3,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 24,
@@ -1746,7 +1913,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, piselli, cipolle, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 24,
@@ -1755,7 +1923,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Patate, piselli, carote, cipolle, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 3.50
+                'price' => 3.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 24,
@@ -1764,7 +1933,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Agnello, patate, cipolle, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
 
             // Contorni
@@ -1775,7 +1945,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Menta, yogurt, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 2
+                'price' => 2,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 24,
@@ -1784,7 +1955,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Yogurt, cetrioli, pomodori, spezie',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 2.50
+                'price' => 2.50,
+                'image' => ''
             ],
 
             //~ Ristoranti Messicani
@@ -1799,7 +1971,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tortilla chips, formaggio fuso, jalapenos',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -1809,7 +1982,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Maiale marinato, ananas, cipolle, coriandolo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 3.50
+                'price' => 3.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 25,
@@ -1818,7 +1992,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Manzo alla griglia, fagioli, riso, formaggio, salsa',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             // Dolci
             [
@@ -1828,7 +2003,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta fritta, zucchero, cannella, cioccolato caldo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
 
             //# Taco Libre
@@ -1841,7 +2017,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Avocado, pomodoro, cipolla, lime, coriandolo',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -1851,7 +2028,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Maiale marinato, ananas, cipolle, coriandolo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 3
+                'price' => 3,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 26,
@@ -1860,7 +2038,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, tortilla di mais, salsa rossa, formaggio',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             // Dolci
             [
@@ -1870,7 +2049,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Uova, latte, zucchero, vaniglia, caramello',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             //# The Mexican
@@ -1883,7 +2063,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Avocado, pomodoro, cipolla, lime, coriandolo',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -1893,7 +2074,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Manzo, peperoni, cipolle, salsa, tortillas',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 27,
@@ -1902,7 +2084,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Maiale marinato, ananas, cipolle, coriandolo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 3.50
+                'price' => 3.50,
+                'image' => ''
             ],
             // Dolci
             [
@@ -1912,7 +2095,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Torta imbevuta di tre tipi di latte, panna montata',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             //# Casa Quesadillas
@@ -1925,7 +2109,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tortilla chips, salsa di pomodoro',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -1935,7 +2120,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tortilla di farina, pollo, formaggio, peperoni',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 28,
@@ -1944,7 +2130,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fagioli neri, riso, formaggio, salsa',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             // Dolci
             [
@@ -1954,7 +2141,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Torta imbevuta di tre tipi di latte, panna montata',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             //#Tacos King
@@ -1967,7 +2155,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tortilla chips, avocado, pomodoro, cipolla, lime',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -1977,7 +2166,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Maiale marinato, ananas, cipolle, coriandolo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 3.50
+                'price' => 3.50,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 29,
@@ -1986,7 +2176,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, fagioli, riso, formaggio, salsa',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             // Dolci
             [
@@ -1996,7 +2187,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Torta imbevuta di tre tipi di latte, panna montata',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             //~ Ristoranti Siriani
@@ -2010,7 +2202,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Ceci, tahini, aglio, limone, olio d\'oliva',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2020,7 +2213,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo marinato, insalata, salsa tahini, pane pita',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 30,
@@ -2029,7 +2223,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Falafel, insalata, salsa tahini, pane pita',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2039,7 +2234,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta fillo, noci, miele',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
 
             //# Damas Kebab
@@ -2051,7 +2247,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Melanzane grigliate, tahini, aglio, limone, olio d\'oliva',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2061,7 +2258,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Agnello macinato, spezie, pane pita',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 31,
@@ -2070,7 +2268,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Kafta (polpettone di carne macinata), insalata, pane pita',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2080,7 +2279,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tahini, zucchero, vaniglia',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
 
             //~ Ristoranti Africani
@@ -2095,7 +2295,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Carne macinata, cipolla, spezie, pasta brick',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 4
+                'price' => 4,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2105,7 +2306,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, pollo, pomodoro, cipolla, peperoni, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 32,
@@ -2114,7 +2316,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Fufu (pasta di farina di mais e igname), verdure miste, brodo',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2124,7 +2327,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Impasto di farina, lievito, zucchero, olio di palma',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 5
+                'price' => 5,
+                'image' => ''
             ],
 
             //# Afrik Cavour
@@ -2137,7 +2341,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Banane, pepe di giamaica, zenzero, aglio, olio di palma',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2147,7 +2352,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Manzo marinato, spezie, arachidi tostate',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 33,
@@ -2156,7 +2362,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso, gamberi, pomodoro, cipolla, peperoni, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2166,7 +2373,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Farina, burro, uova, zucchero, latte',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             //~ Ristoranti Thailandesi
@@ -2181,7 +2389,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gamberetti, funghi, erba cipollina, peperoncino, lime',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2191,7 +2400,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tagliatelle di riso, gamberetti, tofu, uova, arachidi',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 34,
@@ -2200,7 +2410,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Manzo, patate, arachidi, curry, latte di cocco',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2210,7 +2421,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso glutinoso, mango maturo, latte di cocco, zucchero',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
 
             //# Bussarakham
@@ -2223,7 +2435,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Papaya verde, pomodoro, arachidi, fagiolini, peperoncino',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2233,7 +2446,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tagliatelle di riso, pollo, broccoli, cavolo cinese, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 13
+                'price' => 13,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 35,
@@ -2242,7 +2456,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, anacardi, peperoni, cipolle, salsa di ostriche',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2252,7 +2467,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Farina di riso, latte di cocco, zucchero, uova',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             //# Bin Hai
@@ -2265,7 +2481,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Spiedini di pollo marinato, salsa di arachidi',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2275,7 +2492,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, funghi, citronella, galanga, lime, latte di cocco',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 11
+                'price' => 11,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 36,
@@ -2284,7 +2502,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Maiale tritato, basilico, peperoncino, aglio, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2294,7 +2513,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Farina di riso, latte di cocco, zucchero di palma',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 6
+                'price' => 6,
+                'image' => ''
             ],
 
             //# Siam Cuisine
@@ -2307,7 +2527,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Polpettine di pesce, curry rosso, fagiolini, lime',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2317,7 +2538,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso fritto, pollo, uova, cipolle, piselli, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 11
+                'price' => 11,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 37,
@@ -2326,7 +2548,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, curry verde, melanzane, peperoni, basilico, latte di cocco',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2336,7 +2559,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Banana, latte di cocco, zucchero, sale',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
 
             //# Thai Inn
@@ -2349,7 +2573,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Insalata di pesce gatto croccante, mango, cipolla, peperoncino, menta',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2359,7 +2584,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tagliatelle di uova, pollo, curry giallo, cipolle fritte, lime',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 38,
@@ -2368,7 +2594,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pesce fritto, salsa di peperoncino dolce, basilico, cipolla',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2378,7 +2605,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pudding di tapioca, latte di cocco, mais dolce',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             //~ Ristoranti Brasiliani
@@ -2393,7 +2621,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Gamberetti, funghi, erba cipollina, peperoncino, lime',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2403,7 +2632,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tagliatelle di riso, gamberetti, tofu, uova, arachidi',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 12
+                'price' => 12,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 39,
@@ -2412,7 +2642,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Manzo, patate, arachidi, curry, latte di cocco',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 15
+                'price' => 15,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2422,7 +2653,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Riso glutinoso, mango maturo, latte di cocco, zucchero',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 8
+                'price' => 8,
+                'image' => ''
             ],
 
             //# Manioka
@@ -2435,7 +2667,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Papaya verde, pomodoro, arachidi, fagiolini, peperoncino',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2445,7 +2678,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Tagliatelle di riso, pollo, broccoli, cavolo cinese, salsa di soia',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 13
+                'price' => 13,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 40,
@@ -2454,7 +2688,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pollo, anacardi, peperoni, cipolle, salsa di ostriche',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 14
+                'price' => 14,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2464,7 +2699,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Farina di riso, latte di cocco, zucchero, uova',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 7
+                'price' => 7,
+                'image' => ''
             ],
 
             //~ Ristoranti Turchi
@@ -2479,7 +2715,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Carne macinata, bulgur, peperoncino, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2489,7 +2726,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Base di pizza sottile, carne macinata, cipolla, pomodoro, prezzemolo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 42,
@@ -2498,7 +2736,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Spiedini di carne di agnello marinata, peperoni, cipolla',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2508,7 +2747,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta fillo, formaggio, sciroppo di zucchero',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
 
             //# Furious Kebab
@@ -2521,7 +2761,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Carne macinata, bulgur, peperoncino, spezie',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 9
+                'price' => 9,
+                'image' => ''
             ],
             // Piatti principali
             [
@@ -2531,7 +2772,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Base di pizza sottile, carne macinata, cipolla, pomodoro, prezzemolo',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
             [
                 'restaurant_id' => 42,
@@ -2540,7 +2782,8 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Spiedini di carne di agnello marinata, peperoni, cipolla',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 16
+                'price' => 16,
+                'image' => ''
             ],
             // Dolci
             [
@@ -2550,15 +2793,19 @@ class DishSeeder extends Seeder
                 'ingredient' => 'Pasta fillo, formaggio, sciroppo di zucchero',
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
-                'price' => 10
+                'price' => 10,
+                'image' => ''
             ],
         ];
 
         foreach ($dishes as $dish) {
 
             $new_dish = new Dish();
-            // $new_dish->image = $img_url;
-            $new_dish->image = 'https://media.istockphoto.com/id/1359180794/it/vettoriale/spaghetti-italiani-in-contorni-neri-stile-scarabocchio-illustrazione-vettoriale-isolata.jpg?s=612x612&w=0&k=20&c=6jppKd4ITSGazQjGpeaIiyTcThvkLMBTgKv7w-zboh0=';
+
+            if (!$new_dish->image) {
+                $new_dish->image = 'https://media.istockphoto.com/id/1359180794/it/vettoriale/spaghetti-italiani-in-contorni-neri-stile-scarabocchio-illustrazione-vettoriale-isolata.jpg?s=612x612&w=0&k=20&c=6jppKd4ITSGazQjGpeaIiyTcThvkLMBTgKv7w-zboh0=';
+            };
+
             $new_dish->slug = Str::slug($dish['name']);
             $new_dish->fill($dish);
             $new_dish->save();
