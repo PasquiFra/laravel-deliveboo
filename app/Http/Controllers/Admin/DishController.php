@@ -21,6 +21,7 @@ class DishController extends Controller
      */
     public function index(Request $request)
     {
+
         // Prendo i piatti del ristorante dell'utente autenticato
         $query = Dish::whereRestaurantId(Auth::id());
 
@@ -217,6 +218,7 @@ class DishController extends Controller
     public function trash()
     {
         $dishes = Dish::onlyTrashed()->get();
+        //$isFromTrash = true;
         return view('admin.dishes.trash', compact('dishes'));
     }
 

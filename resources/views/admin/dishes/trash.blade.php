@@ -58,7 +58,7 @@
             <td>
               <div class="d-flex gap-2 justify-content-end">
                 {{--# COLLEGAMENTO A SHOW --}}
-                <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn btn-outline-light show">
+                <a href="{{ route('admin.dishes.show', [$dish->id, ])}}" class="btn btn-sm btn btn-outline-light show">
                   <i class="far fa-eye"></i>
                 </a>
                 

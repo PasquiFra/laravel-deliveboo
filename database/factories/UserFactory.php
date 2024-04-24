@@ -23,14 +23,11 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        $phone_number = fake()->randomNumber(9, true);
         return [
             'name' => fake()->name(),
             'lastname' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
-            'telephone_number' => '+39 3' . $phone_number,
             'image' => fake()->imageUrl(350, 350),
-            'birthday' => fake()->date(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
