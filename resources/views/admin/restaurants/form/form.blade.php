@@ -14,9 +14,9 @@
         {{-- Input Nome --}}
         <div class="col-3">
             <div class="mb-5">
-                <label for="name" class="form-label">Nome<span class="text-danger"><strong>*</strong></span></label>
-                <input name="name" value="{{old('name', $restaurant->name)}}" type="text" class="form-control @error('name') is-invalid @elseif(old('name', '')) is-valid @enderror"  id="name">
-                @error('name')   
+                <label for="restaurant_name" class="form-label">Nome del ristorante<span class="text-danger"><strong>*</strong></span></label>
+                <input name="restaurant_name" value="{{old('restaurant_name', $restaurant->restaurant_name)}}" type="text" class="form-control @error('restaurant_name') is-invalid @elseif(old('restaurant_name', '')) is-valid @enderror"  id="restaurant_name">
+                @error('restaurant_name')   
                     <div class="invalid-feedback">{{$message}}</div>
                 @else
                     <div class="form-text">
@@ -56,21 +56,6 @@
             </div>
         </div>
 
-        {{-- Input Email --}}
-        <div class="col-3">
-            <div class="mb-5">
-                <label for="email" class="form-label">Email</label>
-                <input name="email" value="{{old('email', $restaurant->email)}}" type="email" class="form-control @error('email') is-invalid @elseif(old('email', '')) is-valid @enderror" id="email">
-                @error('email')   
-                    <div class="invalid-feedback">{{$message}}</div>
-                @else
-                    <div class="form-text">
-                        Inserisci l'email del ristorante
-                    </div>
-                @enderror
-            </div>
-        </div>
-
         {{-- Input P.IVA (VAT) --}}
         <div class="col-3">
             <div class="mb-5">
@@ -102,14 +87,14 @@
         </div>
 
         {{-- Preview Image --}}
-        <div class="col-1">
+        <div class="col-1 d-flex align-items-center">
             <div class="mb-5">
                 <img class="img-fluid" src="{{old('image', $restaurant->image) ? asset('storage/'. $restaurant->image) : 'https://marcolanci.it/boolean/assets/placeholder.png'}}" alt="immagine del ristorante" id="preview">
             </div>
         </div>
 
         {{-- CheckBox Categorie --}}
-        <div class="col mb-4">
+        <div class="col-12 mb-4">
             <p class="mb-3">Categorie</p>
 
                 {{-- Foreach delle categorie --}}

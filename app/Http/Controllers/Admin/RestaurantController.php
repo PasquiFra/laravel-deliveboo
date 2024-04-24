@@ -35,24 +35,21 @@ class RestaurantController extends Controller
     {
         // Validazione e messaggi
         $request->validate([
-            'name' => 'required|string|min:5|max:50',
+            'restaurant_name' => 'required|string|min:5|max:50',
             'address' => 'required|string|min:5|max:50',
             'phone' => 'string|min:10|max:15|nullable',
-            'email' => 'email|string|lowercase|nullable',
             'vat' => 'required|unique:restaurants|string|min:13|max:13',
             'categories' => 'required|exists:categories,id',
             'image' => 'nullable|image|mimes:png,jpg,jpeg'
         ], [
-            'name.required' => 'Il nome del ristorante è obbligatorio',
-            'name.min' => 'Il nome non può essere più corto di :min caratteri',
-            'name.max' => 'Il nome non può essere più corto di :max caratteri',
+            'restaurant_name.required' => 'Il nome del ristorante è obbligatorio',
+            'restaurant_name.min' => 'Il nome non può essere più corto di :min caratteri',
+            'restaurant_name.max' => 'Il nome non può essere più corto di :max caratteri',
             'address.required' => 'L\'indirizzo del ristorante è obbligatorio',
             'address.min' => 'L\'indirizzo del ristorante non può contenere meno di :min caratteri',
             'address.max' => 'L\'indirizzo del ristorante non può contenere più di :max caratteri',
             'phone.min' => 'Il numero di telefono non può avere meno di :min cifre',
             'phone.max' => 'Il numero di telefono non può avere più di :max cifre',
-            'email.email' => 'L\'email inserita non è valida',
-            'email.lowercase' => 'L\'email non può contenere lettere maiuscole',
             'vat.required' => 'La P.IVA è obbligatoria',
             'vat.unique' => 'P.IVA già usata',
             'vat.min' => 'La P.IVA non può contenere meno di :min cifre',
@@ -68,7 +65,7 @@ class RestaurantController extends Controller
 
         $restaurant->fill($data);
 
-        $restaurant->slug = Str::slug($data['name']);
+        $restaurant->slug = Str::slug($data['restaurant_name']);
 
         // Salvataggio dell'immagine nel database
         if (Arr::exists($data, 'image')) {
@@ -85,7 +82,7 @@ class RestaurantController extends Controller
 
         if (Arr::exists($data, 'categories')) $restaurant->categories()->attach($data['categories']);
 
-        return to_route('admin.restaurants.show', $restaurant->id)->with('type', 'success')->with('message', "Ristorante: $restaurant->name aggiunto");
+        return to_route('admin.restaurants.show', $restaurant->id)->with('type', 'success')->with('message', "Ristorante: $restaurant->restaurant_name aggiunto");
     }
 
     /**
@@ -118,7 +115,7 @@ class RestaurantController extends Controller
 
         // Validazione e messaggi
         $request->validate([
-            'name' => 'required|string|min:5|max:50',
+            'restaurant_name' => 'required|string|min:5|max:50',
             'address' => 'required|string|min:5|max:50',
             'phone' => 'string|min:10|max:15|nullable',
             'email' => 'email|string|lowercase|nullable',
@@ -126,9 +123,9 @@ class RestaurantController extends Controller
             'image' => 'nullable|image|mimes:png,jpg,jpeg',
             'categories' => 'required|exists:categories,id'
         ], [
-            'name.required' => 'Il nome del ristorante è obbligatorio',
-            'name.min' => 'Il nome non può essere più corto di :min caratteri',
-            'name.max' => 'Il nome non può essere più corto di :max caratteri',
+            'restaurant_name.required' => 'Il nome del ristorante è obbligatorio',
+            'restaurant_name.min' => 'Il nome non può essere più corto di :min caratteri',
+            'restaurant_name.max' => 'Il nome non può essere più corto di :max caratteri',
             'address.required' => 'L\'indirizzo del ristorante è obbligatorio',
             'address.min' => 'L\'indirizzo del ristorante non può contenere meno di :min caratteri',
             'address.max' => 'L\'indirizzo del ristorante non può contenere più di :max caratteri',
@@ -146,7 +143,7 @@ class RestaurantController extends Controller
 
         $data = $request->all();
 
-        $restaurant->slug = Str::slug($data['name']);
+        $restaurant->slug = Str::slug($data['restaurant_name']);
 
         $restaurant->fill($data);
 
@@ -166,6 +163,6 @@ class RestaurantController extends Controller
         if (Arr::exists($data, 'categories')) $restaurant->categories()->sync($data['categories']);
         elseif (!Arr::exists($data, 'categories') && $restaurant->has('categories')) $restaurant->categories()->detach();
 
-        return to_route('admin.restaurants.show', $restaurant->id)->with('type', 'success')->with('message', "Ristorante: $restaurant->name modificato");
+        return to_route('admin.restaurants.show', $restaurant->id)->with('type', 'success')->with('message', "Ristorante: $restaurant->restaurant_name modificato");
     }
 }
