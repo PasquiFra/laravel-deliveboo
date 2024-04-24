@@ -97,7 +97,7 @@
                     </select>
                     @error('course')
                         <div class="invalid-feedback">
-                            {{ $message }}
+                            {{ $message }}<a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
                         </div>   
                     @else        
                         <div class="valid-feedback">
@@ -177,10 +177,10 @@
                 </div>
 
                 <div class="col d-flex justify-content-between pt-4">
-                    <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
+                    <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary text-white"><i class="fa-solid fa-left-long me-2"></i> Torna indietro</a>
                     <div>
                         <button class="btn btn-success me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Salva</button>
-                        <button class="btn btn-warning" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Svuota</button>
+                        <button class="btn btn-warning text-white" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Svuota</button>
                     </div>
                 </div>
             </div>
