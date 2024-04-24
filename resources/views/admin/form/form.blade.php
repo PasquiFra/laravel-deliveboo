@@ -84,16 +84,15 @@
                 {{-- SELECT COURSE --}}
                 <div class="mb-3 col-6">
                     <label class="form-label label fw-bold" for="name">Portata:</label>
-                    <select class="form-select"  name="course" id="course" >
+                    <select class="form-select" 
+                    name="course" id="course" required>
                         <?php
                         $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
                         ?>
+                        <option value="" >Scegli un'opzione (Obbligatorio)</option>
                         @foreach ($courseOptions as $option)
-                            <option value="{{ $option }}" {{ old('course', $dish->course) === $option ? 'selected' : '' }}>{{ $option }}</option>
+                        <option value="{{ $option }}" {{ old('course', $dish->course) === $option ? 'selected' : '' }}>{{ $option }}</option>
                         @endforeach
-                        <option 
-                            value="" {{ old('course', $dish->course) ? '' : 'selected' }}>Scegli un'opzione (Obbligatorio)
-                        </option>
                     </select>
                     @error('course')
                         <div class="invalid-feedback">
@@ -138,7 +137,7 @@
                 {{-- INPUT IMMAGINE --}}
                 <div class="col-8 mb-3">
                     <div>
-                        <label class="form-label label fw-bold" for="image">Url Immagine</label>
+                        <label class="form-label label fw-bold" for="image">Immagine</label>
                         <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
                         @error('image')
                             <div class="invalid-feedback">
@@ -214,11 +213,38 @@
     })
         
 
-    // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
     document.getElementById('input-form').addEventListener('submit', function() {;
+
+        event.preventDefault();
+        // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
         const priceInputField = document.getElementById('price');
         const priceValue = parseFloat(priceInputField.value).toFixed(2);
         priceInputField.value = priceValue;
+   
+        // Setto il field course in modo che abbia sempre un valore corretto
+        const courseInputField = document.getElementById('course');
+        const courseValue = courseInputField.value;
+        const courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
+        
+        // Setto il field diet in modo che abbia sempre un valore corretto
+        const dietInputField = document.getElementById('diet');
+        const dietValue = dietInputField.value;
+        const diet_options = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce'];
+        
+        if (!courseOptions.includes(courseValue) | !diet_options.includes(dietValue)) {
+            if (!courseOptions.includes(courseValue)) {
+            courseInputField.classList.add('is-invalid');
+             } 
+            if (!diet_options.includes(dietValue)) {
+                dietInputField.classList.add('is-invalid');
+            }
+        } 
+        else {
+            courseInputField.classList.add('is-valid');
+            dietInputField.classList.add('is-valid');
+            // Se l'opzione è valida, eseguo il submit del form
+            this.submit();
+        }
     });
  
 </script>
