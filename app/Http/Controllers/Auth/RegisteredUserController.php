@@ -58,6 +58,8 @@ class RegisteredUserController extends Controller
             'email.lowercase' => 'Nel campo Email non possono essere inserite lettere maiuscole',
             'email.unique' => 'Email già utilizzata',
             'email.email' => 'L\'email inserita non è valida',
+            'password.required' => 'Il campo password è obbligatorio',
+            'password.confirmed' => 'Le password non coincidono',
             'restaurant_name.required' => 'Il nome del ristorante è obbligatorio',
             'restaurant_name.min' => 'Il nome non può essere più corto di :min caratteri',
             'restaurant_name.max' => 'Il nome non può essere più corto di :max caratteri',
