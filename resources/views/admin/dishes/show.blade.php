@@ -48,11 +48,7 @@
                     </div>
                     <div>
                         Ingredienti:
-                        <ul>
-                            @foreach ($dish->ingredient as $i)
-                                <li class="mb-2">{{$i}}</li>
-                            @endforeach
-                        </ul>
+                        <span>{{$dish->ingredients}}</span>
                     </div>
                     <div>
                         Prezzo: € <span>{{$dish->price}}</span>

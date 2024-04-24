@@ -1,33 +1,28 @@
 @extends('layouts.app')
 
-@section('title', $restaurant->name)
+@section('title', $restaurant->restaurant_name)
 
 @section('content')
     <section id="restaurant-show">
         <div class="glass-card spacing p-4">
             <div class="card-header mt-2">
-                <h1 class="text-center mb-5">{{$restaurant->name}}</h1>
+                <h1 class="text-center mb-5">{{$restaurant->restaurant_name}}</h1>
             </div>
             <div class="card-body">
-                <div class="row">
-
-                    {{-- Colonna dell'immagine --}}
-                    <div class="col-3">
-                        <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->name}}" class="img-fluid rounded">
-                    </div>
+                <div class="row justify-content-around">
 
                     {{-- Colonna delle informazioni --}}
-                    <div class="offset-2 col">
-                        <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
-                        <p><i class="fa-solid fa-phone me-2"></i>{{$restaurant->phone}}</p>
-                        <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
-                        <p><i class="fa-solid fa-envelope me-2"></i>{{$restaurant->email}}</p>
-                        <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
-                        <p><strong>Categorie: </strong>
-                            @foreach ($restaurant->categories as $index => $category)                              
-                                {{$category->label}}@if($index < count($restaurant->categories) - 1), @else. @endif
-                            @endforeach
-                        </p>
+                    <div class="col-3 mt-4 d-flex align-items-center">
+                        <div>
+                            <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
+                            <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
+                            <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
+                            <p><strong>Categorie: </strong>
+                                @foreach ($restaurant->categories as $index => $category)                              
+                                    {{$category->label}}@if($index < count($restaurant->categories) - 1), @else. @endif
+                                @endforeach
+                            </p>
+                        </div>
                     </div>
 
                     {{-- Colonna del menù --}}
@@ -37,6 +32,7 @@
                             <h3 class="mt-4">Vedi il tuo menu</h3>
                         </a>
                     </div>
+
                 </div>
             </div>
 

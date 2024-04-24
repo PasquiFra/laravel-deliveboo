@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Modifica'.' '.$restaurant->name)
+@section('title', 'Modifica'.' '.$restaurant->restaurant_name)
 
 @section('content')
         <section id="edit-form">
