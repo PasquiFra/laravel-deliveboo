@@ -52,14 +52,11 @@ class UserSeeder extends Seeder
         ];
 
         foreach ($users as $user) {
-            $phone_number = $faker->randomNumber(9, true);
             $new_user = new User();
             $new_user->name = $user['name'];
             $new_user->lastname = $user['lastname'];
             $new_user->email = $user['email'];
-            $new_user->telephone_number = '+39 3' . $phone_number;
             $new_user->image = $faker->imageUrl(350, 350);
-            $new_user->birthday = $faker->date();
             $new_user->remember_token = Str::random(10);
             $new_user->password = Hash::make('password');
             $new_user->email_verified_at = now();

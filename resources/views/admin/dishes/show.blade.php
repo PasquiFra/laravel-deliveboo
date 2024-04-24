@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="card-body row position-relative d-flex align-items-center"> 
-
+            
             {{-- IMMAGINE --}}
             <div class="col-sm-auto col-md-6 col-lg-4 col-xl-3 col-12">
                 <picture class="show-picture text-center">

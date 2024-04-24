@@ -82,115 +82,82 @@
                             </div>
                         </div>
 
-                        {{-- Numero di telefono --}}
-                        <div class="mb-4 row">
-                            <label for="telephone_number" class="col-md-4 col-form-label text-md-right">Numero di telefono<span class="text-danger"><strong>*</strong></span></label>
-
-                            <div class="col-md-6">
-                                <input id="telephone_number" type="text" class="form-control @error('telephone_number') is-invalid @enderror" name="telephone_number" value="{{ old('telephone_number') }}@if(!old('telephone_number'))+39 @endif" required autocomplete="telephone_number" autofocus>
-
-                                @error('telephone_number')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                        {{-- Input Nome --}}
+                        <div class="col-3">
+                            <div class="mb-5">
+                                <label for="restaurant_name" class="form-label">Nome<span class="text-danger"><strong>*</strong></span></label>
+                                <input name="restaurant_name" value="{{old('restaurant_name')}}" type="text" class="form-control @error('restaurant_name') is-invalid @elseif(old('restaurant_name', '')) is-valid @enderror"  id="restaurant_name">
+                                @error('restaurant_name')   
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                @else
+                                    <div class="form-text">
+                                        Inserisci il nome del ristorante
+                                    </div>
                                 @enderror
                             </div>
                         </div>
 
-                        {{-- Data di nascita --}}
-                        <div class="mb-4 row">
-                            <label for="birthday" class="col-md-4 col-form-label text-md-right">Data di nascita</label>
-
-                            <div class="col-md-6">
-                                <input id="birthday" type="date" class="form-control @error('birthday') is-invalid @enderror" name="birthday" value="{{ old('birthday') }}" autocomplete="birthday" autofocus>
-
-                                @error('birthday')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                        {{-- Input Indirizzo --}}
+                        <div class="col-3">
+                            <div class="mb-5">
+                                <label for="address" class="form-label">Indirizzo<span class="text-danger"><strong>*</strong></span></label>
+                                <input name="address" value="{{old('address')}}" type="text" class="form-control @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
+                                @error('address')   
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                @else
+                                    <div class="form-text">
+                                        Inserisci l'indirizzo del ristorante
+                                    </div>
                                 @enderror
                             </div>
                         </div>
 
-{{--! XXXXXXXXXXXXXXXXXXXXXXXXXXXX  --}}
+                        {{-- Input Numero di telefono --}}
+                        <div class="col-3">
+                            <div class="mb-5">
+                                <label for="phone" class="form-label">Numero di telefono</label>
+                                <input name="phone" value="@if(old('phone', '+39 ')){{old('phone')}}@else+39 @endif" type="text" class="form-control @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
+                                @error('phone')   
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                @else
+                                    <div class="form-text">
+                                        Inserisci il numero di telefono del ristorante
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
 
-                        {{-- Input Nome --}}
-        <div class="col-3">
-            <div class="mb-5">
-                <label for="restaurant_name" class="form-label">Nome<span class="text-danger"><strong>*</strong></span></label>
-                <input name="restaurant_name" value="{{old('restaurant_name')}}" type="text" class="form-control @error('restaurant_name') is-invalid @elseif(old('restaurant_name', '')) is-valid @enderror"  id="restaurant_name">
-                @error('restaurant_name')   
-                    <div class="invalid-feedback">{{$message}}</div>
-                @else
-                    <div class="form-text">
-                        Inserisci il nome del ristorante
+                        {{-- Input P.IVA (VAT) --}}
+                        <div class="col-3">
+                            <div class="mb-5">
+                                <label for="vat" class="form-label">P.IVA<span class="text-danger"><strong>*</strong></span></label>
+                                <input name="vat" value="{{old('vat')}}" type="text" class="form-control @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat">
+                                @error('vat')   
+                                    <div class="invalid-feedback">{{$message}}</div>
+                                @else
+                                    <div class="form-text">
+                                        Inserisci la P.IVA del ristorante
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        {{-- CheckBox Categorie --}}
+                        <div class="col mb-4">
+                            <p class="mb-3">Categorie</p>
+
+                                {{-- Foreach delle categorie --}}
+                            @foreach ($categories as $category)
+                                <div class="form-check form-check-inline me-2">
+                                    <label class="form-check-label" for="category-{{$category->id}}">{{$category->label}}</label>
+                                    <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                @enderror
-            </div>
-        </div>
-
-        {{-- Input Indirizzo --}}
-        <div class="col-3">
-            <div class="mb-5">
-                <label for="address" class="form-label">Indirizzo<span class="text-danger"><strong>*</strong></span></label>
-                <input name="address" value="{{old('address')}}" type="text" class="form-control @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
-                @error('address')   
-                    <div class="invalid-feedback">{{$message}}</div>
-                @else
-                    <div class="form-text">
-                        Inserisci l'indirizzo del ristorante
-                    </div>
-                @enderror
-            </div>
-        </div>
-
-        {{-- Input Numero di telefono --}}
-        <div class="col-3">
-            <div class="mb-5">
-                <label for="phone" class="form-label">Numero di telefono</label>
-                <input name="phone" value="@if(old('phone', '+39 ')){{old('phone')}}@else+39 @endif" type="text" class="form-control @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
-                @error('phone')   
-                    <div class="invalid-feedback">{{$message}}</div>
-                @else
-                    <div class="form-text">
-                        Inserisci il numero di telefono del ristorante
-                    </div>
-                @enderror
-            </div>
-        </div>
-
-        {{-- Input P.IVA (VAT) --}}
-        <div class="col-3">
-            <div class="mb-5">
-                <label for="vat" class="form-label">P.IVA<span class="text-danger"><strong>*</strong></span></label>
-                <input name="vat" value="{{old('vat')}}" type="text" class="form-control @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat">
-                @error('vat')   
-                    <div class="invalid-feedback">{{$message}}</div>
-                @else
-                    <div class="form-text">
-                        Inserisci la P.IVA del ristorante
-                    </div>
-                @enderror
-            </div>
-        </div>
-
-        {{-- CheckBox Categorie --}}
-        <div class="col mb-4">
-            <p class="mb-3">Categorie</p>
-
-                {{-- Foreach delle categorie --}}
-            @foreach ($categories as $category)
-                <div class="form-check form-check-inline me-2">
-                    <label class="form-check-label" for="category-{{$category->id}}">{{$category->label}}</label>
-                    <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
-                </div>
-            @endforeach
-        </div>
-    </div>
-    <p class="asterisk mb-4">I campi contrassegnati con <span class="text-danger"><strong>*</strong></span> sono obbligatori</p>
+                    <p class="asterisk mb-4">I campi contrassegnati con <span class="text-danger"><strong>*</strong></span> sono obbligatori</p>
 
 
-{{--! XXXXXXXXXXXXXXXXXXXXXXXXXXXX  --}}
 
                         {{-- Bottoni --}}
                         <div class="mb-4 row mb-0">

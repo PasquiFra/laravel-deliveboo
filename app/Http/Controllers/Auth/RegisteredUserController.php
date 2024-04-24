@@ -45,8 +45,6 @@ class RegisteredUserController extends Controller
             'lastname' => 'required|string|max:255',
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'telephone_number' => 'string|min:10|max:15',
-            'birthday' => 'date|nullable',
             'restaurant_name' => 'required|string|min:5|max:50',
             'address' => 'required|string|min:5|max:50',
             'phone' => 'string|min:10|max:15|nullable',
@@ -59,8 +57,7 @@ class RegisteredUserController extends Controller
             'email.required' => 'Il campo Email è obbligatorio',
             'email.lowercase' => 'Nel campo Email non possono essere inserite lettere maiuscole',
             'email.unique' => 'Email già utilizzata',
-            'telephone_number.min' => 'Il numero di telefono non può avere meno di :min cifre',
-            'telephone_number.max' => 'Il numero di telefono non può avere più di :max cifre',
+            'email.email' => 'L\'email inserita non è valida',
             'restaurant_name.required' => 'Il nome del ristorante è obbligatorio',
             'restaurant_name.min' => 'Il nome non può essere più corto di :min caratteri',
             'restaurant_name.max' => 'Il nome non può essere più corto di :max caratteri',
@@ -69,8 +66,6 @@ class RegisteredUserController extends Controller
             'address.max' => 'L\'indirizzo del ristorante non può contenere più di :max caratteri',
             'phone.min' => 'Il numero di telefono non può avere meno di :min cifre',
             'phone.max' => 'Il numero di telefono non può avere più di :max cifre',
-            'email.email' => 'L\'email inserita non è valida',
-            'email.lowercase' => 'L\'email non può contenere lettere maiuscole',
             'vat.required' => 'La P.IVA è obbligatoria',
             'vat.unique' => 'P.IVA già usata',
             'vat.min' => 'La P.IVA non può contenere meno di :min cifre',
@@ -84,15 +79,11 @@ class RegisteredUserController extends Controller
             'lastname' => $request->lastname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'telephone_number' => $request->telephone_number,
-            'birthday' => $request->birthday,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
-
-        //! PROVA
 
         $data = $request->all();
 
@@ -100,7 +91,7 @@ class RegisteredUserController extends Controller
 
         $restaurant->fill($data);
 
-        $restaurant->slug = Str::slug($data['name']);
+        $restaurant->slug = Str::slug($data['restaurant_name']);
 
         // Nel Ristorante collego lo user_id
         $restaurant->user_id = Auth::user()->id;
@@ -109,9 +100,6 @@ class RegisteredUserController extends Controller
 
         if (Arr::exists($data, 'categories')) $restaurant->categories()->attach($data['categories']);
 
-        //!FINE PROVA
-
-        return to_route('admin.restaurants.show', $restaurant->id)->with('type', 'success')->with('message', "Ristorante: $restaurant->name aggiunto");
-        // return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME);
     }
 }
