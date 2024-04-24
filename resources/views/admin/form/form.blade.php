@@ -1,163 +1,52 @@
 @extends('layouts.app')
 @section('content')
 
-<section class="glass-card p-4 my-5">
-    <h1 class="text-center py-3">
-        @if (Route::is('admin.dishes.create')) Aggiungi nuovo piatto
-        @else Modifica {{$dish->name}} @endif 
-    </h1>
+<section class="spacing">
+    <div class="glass-card p-4 my-5"> 
 
-    {{-- banner validazione del form  --}}
-    @include('admin.form.validation')
-
-    {{-- Impostazioni del form --}}
-    @if ($dish->exists)
-        <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data">
-        @method('put')
-    @else
-        <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
-    @endif
-
-            {{-- TOKEN csrf --}}
-            @csrf
-            <div class="row">
-                {{-- INPUT AVAILABILITY --}}
-                <div class="col-12 mb-3">
-                    <div class="form-check form-switch d-flex p-0">
-                        <label class="form-check-label" for="availability">Status articolo:</label>
-                        <div class="ms-5">
-                            <label class="form-check-label" id="availability-label" for="availability"></label>
-                            <input class="form-check-input" type="checkbox" role="switch" id="availability" 
-                            name="availability"
-                            @if(old('availability', $dish->availability) == 1) checked @endif
-                            >
-                        </div>
-                    </div> 
-                </div>
-
-                {{-- INPUT TITLE --}}
-                <div class="col-12 mb-3">
-                    <label class="form-label label fw-bold" for="name">Titolo:</label>
-                    <input 
-                        type="text" 
-                        required 
-                        id="name" 
-                        name="name" 
-                        class="form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
-                        value="{{ old('name', $dish->name) }}" 
-                        placeholder="Inserisci titolo..."
-                    >
-                    @error('name')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>   
-                    @else        
-                        <div class="valid-feedback">
-                            Campo corretto
-                        </div>      
-                    @enderror       
-                </div>
-
-
-                {{-- SELECT DIET --}}
-                <div class="col-6 mb-3 ">
-                    <label class="form-label label fw-bold" for="diet">Dieta:</label>
-                    <select class="form-select bg-transparent border-dark-light rounded-pill" name="diet" id="diet">
-                        <option 
-                            value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)
-                        </option>
-                        @foreach ($diet_options as $option)
-                            <option value="{{ $option }}" {{ old('diet', $dish->diet) === $option ? 'selected' : '' }}>{{ $option }}</option>
-                        @endforeach
-                    </select>
-                    @error('diet')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>   
-                    @else        
-                        <div class="valid-feedback">
-                            Campo corretto
-                        </div>      
-                    @enderror       
-                </div>
-
-                {{-- SELECT COURSE --}}
-                <div class="mb-3 col-6">
-                    <label class="form-label label fw-bold" for="name">Portata:</label>
-                    <select class="form-select bg-transparent border-dark-light rounded-pill"  name="course" id="course" >
-                        <?php
-                        $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
-                        ?>
-                        @foreach ($courseOptions as $option)
-                            <option value="{{ $option }}" {{ old('course', $dish->course) === $option ? 'selected' : '' }}>{{ $option }}</option>
-                        @endforeach
-                        <option 
-                            value="" {{ old('course', $dish->course) ? '' : 'selected' }}>Scegli un'opzione (Obbligatorio)
-                        </option>
-                    </select>
-                    @error('course')
-                        <div class="invalid-feedback">
-                            {{ $message }}<a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
-                        </div>   
-                    @else        
-                        <div class="valid-feedback">
-                            Campo corretto
-                        </div>      
-                    @enderror       
-                </div>
-
-                {{-- INPUT GROUP INGREDIENTS --}}
-                <div class="mb-3 col-12">
-                    <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
-                    <div id="ingredient-inputs"> 
-                        @if (!$dish->ingredient)
-                            @if (old('ingredients'))
-                                @foreach (old('ingredients') as $ingredient)
-                                    <input type="text" name="ingredients[]" class="mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
-                                @endforeach
-                            @endif
-                            <input 
-                                type="text" 
-                                id="ingredients" 
-                                name="ingredients[]" 
-                                class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" 
-                                value="{{ trim($dish->ingredient) }}" 
-                                placeholder="Inserisci un ingrediente..."
-                            >
-                        @else
-                            @php
-                            $ingredients = explode(', ', $dish->ingredient);
-                            @endphp
-                            @foreach ($ingredients as $ingredient)
-                                <input type="text" name="ingredients[]" class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
-                            @endforeach
-                        @endif
+        <h1 class="text-center py-3">
+            @if (Route::is('admin.dishes.create')) Aggiungi nuovo piatto
+            @else Modifica {{$dish->name}} @endif 
+        </h1>
+    
+        {{-- Impostazioni del form --}}
+        @if ($dish->exists)
+            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data">
+            @method('put')
+        @else
+            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
+        @endif
+    
+                {{-- TOKEN csrf --}}
+                @csrf
+                <div class="row">
+                    {{-- INPUT AVAILABILITY --}}
+                    <div class="col-12 mb-3">
+                        <div class="form-check form-switch d-flex p-0">
+                            <label class="form-check-label" for="availability">Status articolo:</label>
+                            <div class="ms-5">
+                                <label class="form-check-label" id="availability-label" for="availability"></label>
+                                <input class="form-check-input" type="checkbox" role="switch" id="availability" 
+                                name="availability"
+                                @if(old('availability', $dish->availability) == 1) checked @endif
+                                >
+                            </div>
+                        </div> 
                     </div>
-                    <button type="button" id="add-ingredient-btn" class="btn btn-sm mt-2 border-light-subtle rounded-pill" onclick="addIngredient()">Aggiungi Ingrediente</button>
-                </div>
-
-                {{-- INPUT GROUP PRICE --}}
-                <div class="mb-3 col-3 col-sm-4 col-xl-3">
-                    <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
-                    <input type="number" name="price" id="price" step="0.1" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
-                    value="{{ old('price', $dish->price) }}">
-                    @error('price')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>   
-                    @else        
-                        <div class="valid-feedback">
-                            Campo corretto
-                        </div>      
-                    @enderror     
-                </div>
-
-                {{-- INPUT IMMAGINE --}}
-                <div class="col-8 mb-3">
-                    <div>
-                        <label class="form-label label fw-bold" for="image">Url Immagine</label>
-                        <input type="file" name="image" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
-                        @error('image')
+    
+                    {{-- INPUT TITLE --}}
+                    <div class="col-12 mb-3">
+                        <label class="form-label label fw-bold" for="name">Titolo:</label>
+                        <input 
+                            type="text" 
+                            required 
+                            id="name" 
+                            name="name" 
+                            class="form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
+                            value="{{ old('name', $dish->name) }}" 
+                            placeholder="Inserisci titolo..."
+                        >
+                        @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>   
@@ -167,25 +56,136 @@
                             </div>      
                         @enderror       
                     </div>
-                </div>
-                {{-- CAMPO PREVIEW IMAGE --}}
-                <div class="col-1 align-items-center d-none d-xl-flex">
-                    <img id="preview" src="{{ old('image', $dish->image) && @getimagesize($dish->image)
-                    ? asset('storage/' . old('image', $dish->image)) 
-                    : asset('/images/default-dish.png')}}" 
-                    alt="{{ $dish->slug }}" class="img-fluid">
-                </div>
-
-                <div class="col d-flex justify-content-between pt-4">
-                    <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i> Torna indietro</a>
-                    <div>
-                        <button class="btn btn-success me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Salva</button>
-                        <button class="btn btn-warning text" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Svuota</button>
+    
+    
+                    {{-- SELECT DIET --}}
+                    <div class="col-6 mb-3 ">
+                        <label class="form-label label fw-bold" for="diet">Dieta:</label>
+                        <select class="form-select bg-transparent border-dark-light rounded-pill" name="diet" id="diet">
+                            <option 
+                                value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)
+                            </option>
+                            @foreach ($diet_options as $option)
+                                <option value="{{ $option }}" {{ old('diet', $dish->diet) === $option ? 'selected' : '' }}>{{ $option }}</option>
+                            @endforeach
+                        </select>
+                        @error('diet')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>   
+                        @else        
+                            <div class="valid-feedback">
+                                Campo corretto
+                            </div>      
+                        @enderror       
+                    </div>
+    
+                    {{-- SELECT COURSE --}}
+                    <div class="mb-3 col-6">
+                        <label class="form-label label fw-bold" for="name">Portata:</label>
+                        <select class="form-select bg-transparent border-dark-light rounded-pill"  name="course" id="course" >
+                            <?php
+                            $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
+                            ?>
+                            @foreach ($courseOptions as $option)
+                                <option value="{{ $option }}" {{ old('course', $dish->course) === $option ? 'selected' : '' }}>{{ $option }}</option>
+                            @endforeach
+                            <option 
+                                value="" {{ old('course', $dish->course) ? '' : 'selected' }}>Scegli un'opzione (Obbligatorio)
+                            </option>
+                        </select>
+                        @error('course')
+                            <div class="invalid-feedback">
+                                {{ $message }}<a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
+                            </div>   
+                        @else        
+                            <div class="valid-feedback">
+                                Campo corretto
+                            </div>      
+                        @enderror       
+                    </div>
+    
+                    {{-- INPUT GROUP INGREDIENTS --}}
+                    <div class="mb-3 col-12">
+                        <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
+                        <div id="ingredient-inputs"> 
+                            @if (!$dish->ingredient)
+                                @if (old('ingredients'))
+                                    @foreach (old('ingredients') as $ingredient)
+                                        <input type="text" name="ingredients[]" class="mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                                    @endforeach
+                                @endif
+                                <input 
+                                    type="text" 
+                                    id="ingredients" 
+                                    name="ingredients[]" 
+                                    class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" 
+                                    value="{{ trim($dish->ingredient) }}" 
+                                    placeholder="Inserisci un ingrediente..."
+                                >
+                            @else
+                                @php
+                                $ingredients = explode(', ', $dish->ingredient);
+                                @endphp
+                                @foreach ($ingredients as $ingredient)
+                                    <input type="text" name="ingredients[]" class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
+                                @endforeach
+                            @endif
+                        </div>
+                        <button type="button" id="add-ingredient-btn" class="btn btn-sm mt-2 border-light-subtle rounded-pill" onclick="addIngredient()">Aggiungi Ingrediente</button>
+                    </div>
+    
+                    {{-- INPUT GROUP PRICE --}}
+                    <div class="mb-3 col-3 col-sm-4 col-xl-3">
+                        <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
+                        <input type="number" name="price" id="price" step="0.1" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                        value="{{ old('price', $dish->price) }}">
+                        @error('price')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>   
+                        @else        
+                            <div class="valid-feedback">
+                                Campo corretto
+                            </div>      
+                        @enderror     
+                    </div>
+    
+                    {{-- INPUT IMMAGINE --}}
+                    <div class="col-8 mb-3">
+                        <div>
+                            <label class="form-label label fw-bold" for="image">Url Immagine</label>
+                            <input type="file" name="image" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
+                            @error('image')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>   
+                            @else        
+                                <div class="valid-feedback">
+                                    Campo corretto
+                                </div>      
+                            @enderror       
+                        </div>
+                    </div>
+                    {{-- CAMPO PREVIEW IMAGE --}}
+                    <div class="col-1 align-items-center d-none d-xl-flex">
+                        <img id="preview" src="{{ old('image', $dish->image) && @getimagesize($dish->image)
+                        ? asset('storage/' . old('image', $dish->image)) 
+                        : asset('/images/default-dish.png')}}" 
+                        alt="{{ $dish->slug }}" class="img-fluid">
+                    </div>
+    
+                    <div class="col d-flex justify-content-between pt-4">
+                        <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i> Torna indietro</a>
+                        <div>
+                            <button class="btn btn-success me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Salva</button>
+                            <button class="btn btn-warning text" type="reset"><i class="fa-solid fa-arrows-rotate me-2"></i>Svuota</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
+    </div>
             
-        </form>
 </section>    
     
 @endsection

@@ -116,7 +116,7 @@
             </td>
           </tr>
         @empty
-          <h1>Non ci sono piatti da mostrare</h1>
+          <h1 class="py-5 text-white">Non ci sono piatti da mostrare</h1>
         @endforelse
       </tbody>
     </table>
