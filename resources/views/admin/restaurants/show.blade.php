@@ -9,20 +9,23 @@
                 <h1 class="text-center mb-5">{{$restaurant->restaurant_name}}</h1>
             </div>
             <div class="card-body">
-                <div class="row justify-content-around">
+                <div class="row">
+
+                    {{-- Colonna dell'immagine --}}
+                    <div class="col-3">
+                        <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->restaurant_name}}" class="img-fluid rounded">
+                    </div>
 
                     {{-- Colonna delle informazioni --}}
-                    <div class="col-3 mt-4 d-flex align-items-center">
-                        <div>
-                            <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
-                            <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
-                            <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
-                            <p><strong>Categorie: </strong>
-                                @foreach ($restaurant->categories as $index => $category)                              
-                                    {{$category->label}}@if($index < count($restaurant->categories) - 1), @else. @endif
-                                @endforeach
-                            </p>
-                        </div>
+                    <div class="offset-2 col">
+                        <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
+                        <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
+                        <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
+                        <p><strong>Categorie: </strong>
+                            @foreach ($restaurant->categories as $index => $category)                              
+                                {{$category->label}}@if($index < count($restaurant->categories) - 1), @else. @endif
+                            @endforeach
+                        </p>
                     </div>
 
                     {{-- Colonna del menù --}}
@@ -32,7 +35,6 @@
                             <h3 class="mt-4">Vedi il tuo menu</h3>
                         </a>
                     </div>
-
                 </div>
             </div>
 

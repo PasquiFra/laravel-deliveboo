@@ -26,7 +26,7 @@ class UpdateDishRequest extends FormRequest
             'name' => 'required|string',
             'slug' => 'string',
             'price' => 'decimal:2|required',
-            'course' => 'nullable',
+            'course' => 'string|required',
             'image' => 'nullable|image',
             'diet' => 'nullable',
             'ingredients' => 'string|nullable',
@@ -38,6 +38,8 @@ class UpdateDishRequest extends FormRequest
             'name.required' => 'Il nome del piatto è obbligatorio',
             'availability.required' => 'Indica se pubblicare o no il prodotto',
             'image.image' => 'Il tipo di file non è corretto',
+            'course.required' => 'La portata è obbligatoria',
+            'course.string' => 'La portata dev\'essere una stringa',
         ];
     }
 }
