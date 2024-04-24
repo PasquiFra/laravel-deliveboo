@@ -96,12 +96,12 @@
             <td>
               <div class="d-flex gap-2 justify-content-end">
                 {{--# COLLEGAMENTO A SHOW --}}
-                <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn btn-outline-light show">
+                <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn button-outline-light show">
                   <i class="far fa-eye"></i>
                 </a>
                 
                 {{--# COLLEGAMENTO A  EDIT --}}
-                <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn btn-outline-light edit">
+                <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn button-outline-light edit">
                   <i class="fas fa-pencil"></i>
                 </a>
                 
@@ -110,13 +110,13 @@
                   method="POST" class="delete-form" data-dish="{{$dish->name}}">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-sm btn btn-outline-light destroy"><i class="far fa-trash-can"></i></button>
+                  <button class="btn btn-sm btn button-outline-light destroy"><i class="far fa-trash-can"></i></button>
                 </form>
               </div>
             </td>
           </tr>
         @empty
-          <h1>Non ci sono piatti da mostrare</h1>
+          <h1 class="py-5 text-white">Non ci sono piatti da mostrare</h1>
         @endforelse
       </tbody>
     </table>

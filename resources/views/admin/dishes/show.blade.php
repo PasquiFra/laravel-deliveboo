@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="p-3 my-5">
-    <div class="glass-card px-4 pb-4 card-color">    
+    <div class="glass-card spacing w-75 px-4 pb-4 card-color">    
         <div class="card-header pt-3 pb-4">
             <div class="col">
                 <h1 class="card-title text-center">{{$dish->name}}</h1>
@@ -13,10 +13,11 @@
         <div class="card-body row position-relative d-flex align-items-center"> 
 
             {{-- IMMAGINE --}}
-            <div class="col-sm-auto col-md-6 col-lg-4 col-xl-3 col-12">
+            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-12">
                 <picture class="show-picture text-center">
                     @if ($dish->image)
-                        <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded">
+                        <img class="img-fluid rounded" src="https://learn.microsoft.com/it-it/shows/hello-world/media/helloworld_383x215.png" alt="">
+                        {{-- <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded"> --}}
                     @else
                         <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded">
                     @endif
@@ -24,7 +25,7 @@
             </div>
 
             {{-- INFO PIATTO --}}
-            <div class="col-sm-12 col-md-6 col-lg-8 col-xl-9 col d-flex justify-content-between"> 
+            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-9 col-12 d-flex justify-content-center"> 
                 <div class="info-dishes">
                     <div class="mb-3 mt-3">
                         L'articolo è
@@ -48,7 +49,7 @@
                     </div>
                     <div>
                         Ingredienti:
-                        <ul>
+                        <ul class="list-unstyled">
                             @foreach ($dish->ingredient as $i)
                                 <li class="mb-2">{{$i}}</li>
                             @endforeach
@@ -59,27 +60,35 @@
                     </div>
                 </div>
                 {{-- BOTTONI di CRUD --}}
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-12 justify-content-center">
                 <div class="button-group">
-                    <div class="d-flex gap-2 mt-4">
-                        {{--# EDIT --}}
-                        <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-outline-light edit">
-                            <i class="fas fa-pencil"></i>
+                    <div class="gap-2 mt-4 d-flex align-items-center justify-content-between justify-content-md-between">
+                        {{--# TORNA INDIETRO --}}
+                        <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary d-flex align-items-center">
+                            <i class="fa-solid fa-left-long"></i>
+                            <span class="d-none ms-2 d-lg-block">Torna indietro</span>
                         </a>
-                        {{--# DESTROY --}}
-                        <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" id="delete-form">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-outline-light destroy"><i class="far fa-trash-can"></i></button>
-                        </form>
+                        <div class="d-flex gap-2 justify-content-md-end">
+                            {{--# EDIT --}}
+                            <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn button-outline-light d-flex align-items-center edit">
+                                <i class="fas fa-pencil"></i>
+                                <span class="d-none ms-2 d-lg-block">Modifica</span>
+                            </a>
+                            {{--# DESTROY --}}
+                            <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" id="delete-form">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn button-outline-light destroy d-flex align-items-center text-center">
+                                    <i class="far fa-trash-can"></i>
+                                    <span class="d-none ms-2 d-lg-block">Elimina</span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="d-flex justify-content-center">
-        <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary my-4">
-            <i class="fa-solid fa-left-long me-2"></i>Torna indietro
-        </a>
     </div>
 </section>
 @endsection
