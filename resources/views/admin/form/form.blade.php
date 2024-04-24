@@ -12,10 +12,10 @@
 
     {{-- Impostazioni del form --}}
     @if ($dish->exists)
-        <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data">
+        <form id="input-form" action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data">
         @method('put')
     @else
-        <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
+        <form id="input-form"  action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
     @endif
 
             {{-- TOKEN csrf --}}
@@ -109,37 +109,20 @@
                 {{-- INPUT GROUP INGREDIENTS --}}
                 <div class="mb-3 col-12">
                     <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
-                    <div id="ingredient-inputs"> 
-                        @if (!$dish->ingredient)
-                            @if (old('ingredients'))
-                                @foreach (old('ingredients') as $ingredient)
-                                    <input type="text" name="ingredients[]" class="mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
-                                @endforeach
-                            @endif
                             <input 
                                 type="text" 
                                 id="ingredients" 
-                                name="ingredients[]" 
+                                name="ingredients" 
                                 class="me-2 mb-2 form-control" 
-                                value="{{ trim($dish->ingredient) }}" 
-                                placeholder="Inserisci un ingrediente..."
+                                value="{{ trim(old('ingredients', $dish->ingredients)) }}" 
+                                placeholder="Inserisci gli ingredienti separati da una virgola"
                             >
-                        @else
-                            @php
-                            $ingredients = explode(', ', $dish->ingredient);
-                            @endphp
-                            @foreach ($ingredients as $ingredient)
-                                <input type="text" name="ingredients[]" class="me-2 mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
-                            @endforeach
-                        @endif
-                    </div>
-                    <button type="button" id="add-ingredient-btn" class="btn btn-sm btn-primary" onclick="addIngredient()">Aggiungi Ingrediente</button>
                 </div>
 
                 {{-- INPUT GROUP PRICE --}}
                 <div class="mb-3 col-3 col-sm-4 col-xl-3">
                     <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
-                    <input type="number" name="price" id="price" step="0.1" class="form-control @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                    <input type="number" name="price" id="price" step="0.01" min="0" class="form-control @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                     value="{{ old('price', $dish->price) }}">
                     @error('price')
                         <div class="invalid-feedback">
@@ -156,7 +139,7 @@
                 <div class="col-8 mb-3">
                     <div>
                         <label class="form-label label fw-bold" for="image">Url Immagine</label>
-                        <input type="file" name="image" class="form-control @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
+                        <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
                         @error('image')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -170,7 +153,7 @@
                 </div>
                 {{-- CAMPO PREVIEW IMAGE --}}
                 <div class="col-1 align-items-center d-none d-xl-flex">
-                    <img id="preview" src="{{ old('image', $dish->image) && @getimagesize($dish->image)
+                    <img id="preview" src="{{ old('image', $dish->image)
                     ? asset('storage/' . old('image', $dish->image)) 
                     : asset('/images/default-dish.png')}}" 
                     alt="{{ $dish->slug }}" class="img-fluid">
@@ -199,7 +182,7 @@
         const input = document.getElementById('availability');
         
         if (input.checked) {
-            label.textContent = 'Articolo disponibile online';
+            label.textContent = 'Articolo visibile';
         } else {
             label.textContent = 'Articolo disattivato';
         }
@@ -232,21 +215,11 @@
         
 
     // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
-    document.getElementById('form').addEventListener('submit', function() {;
+    document.getElementById('input-form').addEventListener('submit', function() {;
         const priceInputField = document.getElementById('price');
         const priceValue = parseFloat(priceInputField.value).toFixed(2);
         priceInputField.value = priceValue;
     });
-
-    // AGGIUNTA INPUT FIELD
-    function addIngredient() {
-        const inputs = document.getElementById('ingredient-inputs');
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.name = 'ingredients[]';
-        input.className = 'me-2 mb-2 form-control';
-        inputs.appendChild(input);
-    }
  
 </script>
 

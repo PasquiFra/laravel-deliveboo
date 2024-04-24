@@ -29,6 +29,7 @@ class UpdateDishRequest extends FormRequest
             'course' => 'nullable',
             'image' => 'nullable|image',
             'diet' => 'nullable',
+            'ingredients' => 'string|nullable',
         ];
     }
     public function messages(): array

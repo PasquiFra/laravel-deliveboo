@@ -69,31 +69,16 @@ class DishController extends Controller
      */
     public function store(StoreDishRequest $request)
     {
-        // stabilisco la variabile ingredients (array proveniente dal form)
-        $ingredients = $request->input('ingredients');
-
-        // filtro l'array in modo da vedere se ho campi nulli o stringa vuota ed eliminarli
-        $filteredIngredients = array_filter($ingredients, function ($value) {
-            return !is_null($value) && $value !== '';
-        });
-
-        // trasformo l'array che ricevo dal form in una stringa contenente tutti gli ingredienti
-        $ingredient = implode(', ', $filteredIngredients);
-
         // imposto il valore di availability dal form, se ricevo un valore è true, altrimenti false
         $availability = $request->input('availability') ? true : false;
 
         $data = $request->validated();
-
-        // dd($data['image']);
 
         $new_dish = new Dish();
 
         $new_dish->fill($data);
 
         $new_dish->slug = Str::slug($new_dish->name);
-
-        $new_dish->ingredient = $ingredient;
 
         $new_dish->availability = $availability;
 
@@ -114,7 +99,7 @@ class DishController extends Controller
 
         $new_dish->save();
 
-        return redirect()->route('admin.dishes.show', $new_dish->id)->with('success', 'Gli ingredienti sono stati salvati: ' . $ingredient)
+        return redirect()->route('admin.dishes.show', $new_dish->id)
             //Alert creazione piatto
             ->with('message', "Piatto {$new_dish->name} creato con successo")
             ->with('type', 'success');
@@ -131,8 +116,6 @@ class DishController extends Controller
                 ->with('type', 'danger');;
         };
 
-        $ingredients = explode(', ', $dish->ingredient);
-        $dish->ingredient = $ingredients;
         return view('admin.dishes.show', compact('dish'));
     }
 
@@ -157,15 +140,6 @@ class DishController extends Controller
      */
     public function update(UpdateDishRequest $request, Dish $dish)
     {
-        // stabilisco la variabile ingredients (array proveniente dal form)
-        $ingredients = $request->input('ingredients');
-        // filtro l'array in modo da vedere se ho campi nulli o stringa vuota ed eliminarli
-        $filteredIngredients = array_filter($ingredients, function ($value) {
-            return !is_null($value) && $value !== '';
-        });
-        // trasformo l'array che ricevo dal form in una stringa contenente tutti gli ingredienti
-        $ingredient = implode(', ', $filteredIngredients);
-
 
         // imposto il valore di availability dal form, se ricevo un valore è true, altrimenti false
         $availability = $request->input('availability') ? true : false;
@@ -186,7 +160,7 @@ class DishController extends Controller
         $dish->slug = Str::slug($dish->name);
 
         $dish->fill($data);
-        $dish->ingredient = $ingredient;
+
         $dish->availability = $availability;
 
         $dish->update();

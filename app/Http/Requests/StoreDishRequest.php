@@ -29,6 +29,7 @@ class StoreDishRequest extends FormRequest
             'price' => 'decimal:2|required',
             'image' => 'nullable|image',
             'diet' => 'nullable',
+            'ingredients' => 'string|nullable',
         ];
     }
     public function messages(): array
