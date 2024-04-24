@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" id="registrationForm">
                         @csrf
 
                         {{-- Nome --}}
@@ -181,4 +181,28 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+
+    <script>
+        const name = document.getElementById('name');
+        document.getElementById('registrationForm').addEventListener('submit',function(){
+            //Creo un flag per gli errori
+            let isValid=true;
+
+            if(!name.value.trim()){
+                isValid=false;
+                name.classList.add('is-invalid');
+                name.classList.remove('is-valid');
+            }else{
+                name.classList.remove('is-invalid');
+                name.classList.add('is-valid');
+            }
+
+            if(!isValid){
+                event.preventDefault();
+            }
+
+        })
+    </script>
 @endsection

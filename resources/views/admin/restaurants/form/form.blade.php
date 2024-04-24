@@ -1,10 +1,10 @@
 @if ($restaurant->exists)
-<form action="{{route('admin.restaurants.update', $restaurant->id)}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('admin.restaurants.update', $restaurant->id)}}" method="POST" enctype="multipart/form-data" id="registrationForm">
     @method('PUT')
     
 @else
     
-    <form action="{{route('admin.restaurants.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('admin.restaurants.store')}}" method="POST" enctype="multipart/form-data"  id="registrationForm">
     
 @endif
     @csrf
@@ -154,4 +154,35 @@
         if(blobUrl) URL.revokeObjectURL(blobUrl);
     })
 </script>
+@endsection
+@section('scripts')
+
+    <script>
+        // const form = document.getElementById('registrationForm');
+        const name = document.getElementById('restaurant_name');
+        // console.log(form)
+        document.getElementById('registrationForm').addEventListener('submit',function(){
+            //Creo un flag per gli errori
+            let isValid=true;
+            console.log('pippo')
+
+            if(!name.value.trim()){
+                console.log('ciao')
+                isValid=false;
+                name.classList.add('is-invalid');
+                name.classList.remove('is-valid');
+            }else{
+                console.log('hello')
+
+                name.classList.remove('is-invalid');
+                name.classList.add('is-valid');
+            }
+
+            if(!isValid){
+                console.log('world')
+                event.preventDefault();
+            }
+
+        })
+    </script>
 @endsection
