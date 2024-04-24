@@ -49,10 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
 
         // Rotte Admin Restaurant CRUD
-        Route::get('/restaurants/create', [RestaurantController::class, 'create'])->name('restaurants.create');
         Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('restaurants.show');
         Route::get('/restaurants/{restaurant}/edit', [RestaurantController::class, 'edit'])->name('restaurants.edit');
-        Route::post('/restaurants', [RestaurantController::class, 'store'])->name('restaurants.store');
         Route::put('/restaurants/{restaurant}', [RestaurantController::class, 'update'])->name('restaurants.update');
     });
 });
