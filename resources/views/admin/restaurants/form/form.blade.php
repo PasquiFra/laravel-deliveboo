@@ -1,30 +1,30 @@
 @if ($restaurant->exists)
-<form action="{{route('admin.restaurants.update', $restaurant->id)}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('admin.restaurants.update', $restaurant->id)}}" method="POST" enctype="multipart/form-data" id="registrationForm">
     @method('PUT')
     
 @else
     
-    <form action="{{route('admin.restaurants.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('admin.restaurants.store')}}" method="POST" enctype="multipart/form-data"  id="registrationForm">
     
 @endif
     @csrf
     <div class="glass-card p-5">
         <div class="row">
 
-            {{-- Input Nome --}}
-            <div class="col-3">
-                <div class="mb-5">
-                    <label for="name" class="form-label">Nome<span class="text-danger"><strong>*</strong></span></label>
-                    <input name="name" value="{{old('name', $restaurant->name)}}" type="text" class="form-control @error('name') is-invalid @elseif(old('name', '')) is-valid @enderror"  id="name">
-                    @error('name')   
-                        <div class="invalid-feedback">{{$message}}</div>
-                    @else
-                        <div class="form-text">
-                            Inserisci il nome del ristorante
-                        </div>
-                    @enderror
-                </div>
+        {{-- Input Nome --}}
+        <div class="col-3">
+            <div class="mb-5">
+                <label for="restaurant_name" class="form-label">Nome del ristorante<span class="text-danger"><strong>*</strong></span></label>
+                <input name="restaurant_name" value="{{old('restaurant_name', $restaurant->restaurant_name)}}" type="text" class="form-control @error('restaurant_name') is-invalid @elseif(old('restaurant_name', '')) is-valid @enderror"  id="restaurant_name">
+                @error('restaurant_name')   
+                    <div class="invalid-feedback">{{$message}}</div>
+                @else
+                    <div class="form-text">
+                        Inserisci il nome del ristorante
+                    </div>
+                @enderror
             </div>
+        </div>
 
             {{-- Input Indirizzo --}}
             <div class="col-3">
@@ -41,35 +41,20 @@
                 </div>
             </div>
 
-            {{-- Input Numero di telefono --}}
-            <div class="col-3">
-                <div class="mb-5">
-                    <label for="phone" class="form-label">Numero di telefono</label>
-                    <input name="phone" value="@if(old('phone', '+39 ')){{old('phone', $restaurant->phone)}}@else+39 @endif" type="text" class="form-control @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
-                    @error('phone')   
-                        <div class="invalid-feedback">{{$message}}</div>
-                    @else
-                        <div class="form-text">
-                            Inserisci il numero di telefono del ristorante
-                        </div>
-                    @enderror
-                </div>
+        {{-- Input Numero di telefono --}}
+        <div class="col-3">
+            <div class="mb-5">
+                <label for="phone" class="form-label">Numero di telefono</label>
+                <input name="phone" value="@if(old('phone', '+39 ')){{old('phone', $restaurant->phone)}}@else+39 @endif" type="text" class="form-control @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
+                @error('phone')   
+                    <div class="invalid-feedback">{{$message}}</div>
+                @else
+                    <div class="form-text">
+                        Inserisci il numero di telefono del ristorante
+                    </div>
+                @enderror
             </div>
-
-            {{-- Input Email --}}
-            <div class="col-3">
-                <div class="mb-5">
-                    <label for="email" class="form-label">Email</label>
-                    <input name="email" value="{{old('email', $restaurant->email)}}" type="email" class="form-control @error('email') is-invalid @elseif(old('email', '')) is-valid @enderror" id="email">
-                    @error('email')   
-                        <div class="invalid-feedback">{{$message}}</div>
-                    @else
-                        <div class="form-text">
-                            Inserisci l'email del ristorante
-                        </div>
-                    @enderror
-                </div>
-            </div>
+        </div>
 
             {{-- Input P.IVA (VAT) --}}
             <div class="col-3">
@@ -101,16 +86,16 @@
                 </div>
             </div>
 
-            {{-- Preview Image --}}
-            <div class="col-1">
-                <div class="mb-5">
-                    <img class="img-fluid" src="{{old('image', $restaurant->image) ? asset('storage/'. $restaurant->image) : 'https://marcolanci.it/boolean/assets/placeholder.png'}}" alt="immagine del ristorante" id="preview">
-                </div>
+        {{-- Preview Image --}}
+        <div class="col-1 d-flex align-items-center">
+            <div class="mb-5">
+                <img class="img-fluid" src="{{old('image', $restaurant->image) ? asset('storage/'. $restaurant->image) : 'https://marcolanci.it/boolean/assets/placeholder.png'}}" alt="immagine del ristorante" id="preview">
             </div>
+        </div>
 
-            {{-- CheckBox Categorie --}}
-            <div class="col mb-4">
-                <p class="mb-3">Categorie</p>
+        {{-- CheckBox Categorie --}}
+        <div class="col-12 mb-4">
+            <p class="mb-3">Categorie</p>
 
                     {{-- Foreach delle categorie --}}
                 @foreach ($categories as $category)
@@ -169,4 +154,35 @@
         if(blobUrl) URL.revokeObjectURL(blobUrl);
     })
 </script>
+@endsection
+@section('scripts')
+
+    <script>
+        // const form = document.getElementById('registrationForm');
+        const name = document.getElementById('restaurant_name');
+        // console.log(form)
+        document.getElementById('registrationForm').addEventListener('submit',function(){
+            //Creo un flag per gli errori
+            let isValid=true;
+            console.log('pippo')
+
+            if(!name.value.trim()){
+                console.log('ciao')
+                isValid=false;
+                name.classList.add('is-invalid');
+                name.classList.remove('is-valid');
+            }else{
+                console.log('hello')
+
+                name.classList.remove('is-invalid');
+                name.classList.add('is-valid');
+            }
+
+            if(!isValid){
+                console.log('world')
+                event.preventDefault();
+            }
+
+        })
+    </script>
 @endsection

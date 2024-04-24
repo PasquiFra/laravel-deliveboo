@@ -1,37 +1,37 @@
 @extends('layouts.app')
 
-@section('title', $restaurant->name)
+@section('title', $restaurant->restaurant_name)
 
 @section('content')
     <section id="restaurant-show">
         <div class="glass-card spacing p-4">
             <div class="card-header mt-2">
-                <h1 class="text-center mb-5">{{$restaurant->name}}</h1>
+                <h1 class="text-center mb-5">{{$restaurant->restaurant_name}}</h1>
             </div>
             <div class="card-body">
-                <div class="row">
+                <div class="row justify-content-around mb-4">
 
                     {{-- Colonna dell'immagine --}}
-                    <div class="col-3">
-                        <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->name}}" class="img-fluid rounded">
+                    <div class="col-3 d-flex align-items-center">
+                        <img src="{{asset('storage/'. $restaurant->image)}}" alt="{{$restaurant->restaurant_name}}" class="img-fluid rounded">
                     </div>
 
                     {{-- Colonna delle informazioni --}}
-                    <div class="offset-2 col">
-                        <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
-                        <p><i class="fa-solid fa-phone me-2"></i>{{$restaurant->phone}}</p>
-                        <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
-                        <p><i class="fa-solid fa-envelope me-2"></i>{{$restaurant->email}}</p>
-                        <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
-                        <p><strong>Categorie: </strong>
-                            @foreach ($restaurant->categories as $index => $category)                              
-                                {{$category->label}}@if($index < count($restaurant->categories) - 1), @else. @endif
-                            @endforeach
-                        </p>
+                    <div class="col-3 d-flex align-items-center justify-content-center">
+                        <div>
+                            <p><i class="fa-solid fa-map-pin me-2"></i>{{$restaurant->address}}</p>
+                            <p><i class="fa-solid fa-location-dot me-2"></i>{{$restaurant->city}}</p>
+                            <p><strong>P.IVA: </strong>{{$restaurant->vat}}</p>
+                            <p><strong>Categorie: </strong>
+                                @foreach ($restaurant->categories as $index => $category)                              
+                                    {{$category->label}}@if($index < count($restaurant->categories) - 1), @else. @endif
+                                @endforeach
+                            </p>
+                        </div>
                     </div>
 
                     {{-- Colonna del menù --}}
-                    <div class="col-3 text-center mt-4">
+                    <div class="col-3 text-center">
                         <a href="{{route('admin.dishes.index')}}" class="effect">
                             <img class="img-fluid w-50" src="{{asset('img/menu.png')}}" alt="menu">
                             <h3 class="mt-4">Vedi il tuo menu</h3>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('image')->nullable();
             $table->string('diet', 20)->nullable();
             $table->string('course', 20)->required();
-            $table->text('ingredient')->nullable();
+            $table->text('ingredients')->nullable();
             $table->decimal('price')->required();
             $table->timestamps();
             $table->softDeletes();

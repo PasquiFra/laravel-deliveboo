@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="card-body row position-relative d-flex align-items-center"> 
-
+            
             {{-- IMMAGINE --}}
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-12">
                 <picture class="show-picture text-center">
@@ -49,11 +49,7 @@
                     </div>
                     <div>
                         Ingredienti:
-                        <ul class="list-unstyled">
-                            @foreach ($dish->ingredient as $i)
-                                <li class="mb-2">{{$i}}</li>
-                            @endforeach
-                        </ul>
+                        <span>{{$dish->ingredients}}</span>
                     </div>
                     <div>
                         Prezzo: € <span>{{$dish->price}}</span>

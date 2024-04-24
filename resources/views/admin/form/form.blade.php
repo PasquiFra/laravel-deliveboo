@@ -231,8 +231,10 @@
     })
         
 
-    // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
-    document.getElementById('form').addEventListener('submit', function() {;
+    document.getElementById('input-form').addEventListener('submit', function() {;
+
+        event.preventDefault();
+        // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
         const priceInputField = document.getElementById('price');
         const priceValue = parseFloat(priceInputField.value).toFixed(2);
         priceInputField.value = priceValue;
