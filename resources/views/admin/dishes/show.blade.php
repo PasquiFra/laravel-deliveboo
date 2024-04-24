@@ -16,8 +16,7 @@
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-12">
                 <picture class="show-picture text-center">
                     @if ($dish->image)
-                        <img class="img-fluid rounded" src="https://learn.microsoft.com/it-it/shows/hello-world/media/helloworld_383x215.png" alt="">
-                        {{-- <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded"> --}}
+                        <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded">
                     @else
                         <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded">
                     @endif
