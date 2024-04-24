@@ -9,7 +9,7 @@
 @endif
     @csrf
     <div class="glass-card p-5">
-    <div class="row">
+        <div class="row">
 
         {{-- Input Nome --}}
         <div class="col-3">
@@ -26,20 +26,20 @@
             </div>
         </div>
 
-        {{-- Input Indirizzo --}}
-        <div class="col-3">
-            <div class="mb-5">
-                <label for="address" class="form-label">Indirizzo<span class="text-danger"><strong>*</strong></span></label>
-                <input name="address" value="{{old('address', $restaurant->address)}}" type="text" class="form-control @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
-                @error('address')   
-                    <div class="invalid-feedback">{{$message}}</div>
-                @else
-                    <div class="form-text">
-                        Inserisci l'indirizzo del ristorante
-                    </div>
-                @enderror
+            {{-- Input Indirizzo --}}
+            <div class="col-3">
+                <div class="mb-5">
+                    <label for="address" class="form-label">Indirizzo<span class="text-danger"><strong>*</strong></span></label>
+                    <input name="address" value="{{old('address', $restaurant->address)}}" type="text" class="form-control @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
+                    @error('address')   
+                        <div class="invalid-feedback">{{$message}}</div>
+                    @else
+                        <div class="form-text">
+                            Inserisci l'indirizzo del ristorante
+                        </div>
+                    @enderror
+                </div>
             </div>
-        </div>
 
         {{-- Input Numero di telefono --}}
         <div class="col-3">
@@ -56,35 +56,35 @@
             </div>
         </div>
 
-        {{-- Input P.IVA (VAT) --}}
-        <div class="col-3">
-            <div class="mb-5">
-                <label for="vat" class="form-label">P.IVA<span class="text-danger"><strong>*</strong></span></label>
-                <input name="vat" value="{{old('vat', $restaurant->vat)}}" type="text" class="form-control @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat">
-                @error('vat')   
-                    <div class="invalid-feedback">{{$message}}</div>
-                @else
-                    <div class="form-text">
-                        Inserisci la P.IVA del ristorante
-                    </div>
-                @enderror
+            {{-- Input P.IVA (VAT) --}}
+            <div class="col-3">
+                <div class="mb-5">
+                    <label for="vat" class="form-label">P.IVA<span class="text-danger"><strong>*</strong></span></label>
+                    <input name="vat" value="{{old('vat', $restaurant->vat)}}" type="text" class="form-control @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat">
+                    @error('vat')   
+                        <div class="invalid-feedback">{{$message}}</div>
+                    @else
+                        <div class="form-text">
+                            Inserisci la P.IVA del ristorante
+                        </div>
+                    @enderror
+                </div>
             </div>
-        </div>
 
-        {{-- Input Image --}}
-        <div class="col-8">
-            <div class="mb-5">
-                <label for="image" class="form-label">Immagine</label>
-                <input name="image" value="{{old('image', $restaurant->image)}}" type="file" class="form-control @error('image') is-invalid @elseif(old('image', '')) is-valid @enderror" id="image">
-                @error('image')   
-                    <div class="invalid-feedback">{{$message}}</div>
-                @else
-                    <div class="form-text">
-                        Inserisci l'immagine del ristorante
-                    </div>
-                @enderror
+            {{-- Input Image --}}
+            <div class="col-8">
+                <div class="mb-5">
+                    <label for="image" class="form-label">Immagine</label>
+                    <input name="image" value="{{old('image', $restaurant->image)}}" type="file" class="form-control @error('image') is-invalid @elseif(old('image', '')) is-valid @enderror" id="image">
+                    @error('image')   
+                        <div class="invalid-feedback">{{$message}}</div>
+                    @else
+                        <div class="form-text">
+                            Inserisci l'immagine del ristorante
+                        </div>
+                    @enderror
+                </div>
             </div>
-        </div>
 
         {{-- Preview Image --}}
         <div class="col-1 d-flex align-items-center">
@@ -97,15 +97,15 @@
         <div class="col-12 mb-4">
             <p class="mb-3">Categorie</p>
 
-                {{-- Foreach delle categorie --}}
-            @foreach ($categories as $category)
-                <div class="form-check form-check-inline me-2">
-                    <label class="form-check-label" for="category-{{$category->id}}">{{$category->label}}</label>
-                    <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
-                </div>
-            @endforeach
+                    {{-- Foreach delle categorie --}}
+                @foreach ($categories as $category)
+                    <div class="form-check form-check-inline me-2">
+                        <label class="form-check-label" for="category-{{$category->id}}">{{$category->label}}</label>
+                        <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
+                    </div>
+                @endforeach
+            </div>
         </div>
-    </div>
     <p class="asterisk mb-4">I campi contrassegnati con <span class="text-danger"><strong>*</strong></span> sono obbligatori</p>
 
     {{-- Bottoni --}}

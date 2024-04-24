@@ -58,12 +58,12 @@
             <td>
               <div class="d-flex gap-2 justify-content-end">
                 {{--# COLLEGAMENTO A SHOW --}}
-                <a href="{{ route('admin.dishes.show', [$dish->id, ])}}" class="btn btn-sm btn btn-outline-light show">
+                <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn button-outline-light show">
                   <i class="far fa-eye"></i>
                 </a>
                 
                 {{--# COLLEGAMENTO A  EDIT --}}
-                <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn btn-outline-light edit">
+                <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn button-outline-light edit">
                   <i class="fas fa-pencil"></i>
                 </a>
 
@@ -72,7 +72,7 @@
                     class="form-delete" data-dish="{{$dish->title}}">
                     @csrf
                     @method('PATCH')
-                    <button  class="btn btn-sm btn btn-outline-light restore">
+                    <button  class="btn btn-sm btn button-outline-light restore">
                         <i class="fas fa-arrows-rotate"></i>
                     </button>
                 </form>
