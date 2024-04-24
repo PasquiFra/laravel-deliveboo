@@ -14,14 +14,16 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" id="registrationForm">
                         @csrf
-
+                        <h5 class="">Registrazione Utente</h5>
                         {{-- Nome --}}
                         <div class="mb-4 row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Nome<span class="text-danger"><strong>*</strong></span></label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" pattern="[A-Za-z]+" autofocus>
+                                <div>
+                                    <p id="error-message" class="text-danger"></p>
+                                </div>
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -84,7 +86,10 @@
                             </div>
                         </div>
 
-                                        {{-- Input Nome --}}
+                        {{-- REGISTRAZIONE RISTORANTE --}}
+                        <h5 class="">Registrazione Ristorante</h5>
+                      
+                        {{-- Input Nome --}}
                         <div class="col-3">
                             <div class="mb-5">
                                 <label for="restaurant_name" class="form-label">Nome<span class="text-danger"><strong>*</strong></span></label>
@@ -188,14 +193,18 @@
 
     <script>
         const name = document.getElementById('name');
-        document.getElementById('registrationForm').addEventListener('submit',function(){
+        const errorMessage = document.getElementById('error-message');
+        document.getElementById('registrationForm').addEventListener('blur',function(event){
             //Creo un flag per gli errori
             let isValid=true;
+            let errorText='';
 
             if(!name.value.trim()){
                 isValid=false;
                 name.classList.add('is-invalid');
                 name.classList.remove('is-valid');
+                errorText='Questo campo è obbligatorio';
+                errorMessage.innerText = errorText
             }else{
                 name.classList.remove('is-invalid');
                 name.classList.add('is-valid');
