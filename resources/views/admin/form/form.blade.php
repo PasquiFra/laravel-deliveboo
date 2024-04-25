@@ -104,35 +104,17 @@
                             </div>      
                         @enderror       
                     </div>
-    
                     {{-- INPUT GROUP INGREDIENTS --}}
                     <div class="mb-3 col-12">
                         <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
-                        <div id="ingredient-inputs"> 
-                            @if (!$dish->ingredient)
-                                @if (old('ingredients'))
-                                    @foreach (old('ingredients') as $ingredient)
-                                        <input type="text" name="ingredients[]" class="mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
-                                    @endforeach
-                                @endif
-                                <input 
-                                    type="text" 
-                                    id="ingredients" 
-                                    name="ingredients[]" 
-                                    class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" 
-                                    value="{{ trim($dish->ingredient) }}" 
-                                    placeholder="Inserisci un ingrediente..."
-                                >
-                            @else
-                                @php
-                                $ingredients = explode(', ', $dish->ingredient);
-                                @endphp
-                                @foreach ($ingredients as $ingredient)
-                                    <input type="text" name="ingredients[]" class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
-                                @endforeach
-                            @endif
-                        </div>
-                        <button type="button" id="add-ingredient-btn" class="btn btn-sm mt-2 border-light-subtle rounded-pill" onclick="addIngredient()">Aggiungi Ingrediente</button>
+                        <input 
+                            type="text" 
+                            id="ingredients" 
+                            name="ingredients" 
+                            class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" 
+                            value="{{ old('ingredients', $dish->ingredients) }}" 
+                            placeholder="Inserisci la lista di ingredienti..."
+                        >
                     </div>
     
                     {{-- INPUT GROUP PRICE --}}
@@ -155,7 +137,7 @@
                     <div class="col-8 mb-3">
                         <div>
                             <label class="form-label label fw-bold" for="image">Url Immagine</label>
-                            <input type="file" name="image" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
+                            <input type="file" name="image" id="image" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
                             @error('image')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -240,17 +222,6 @@
         priceInputField.value = priceValue;
     });
 
-    // AGGIUNTA INPUT FIELD
-    function addIngredient() {
-        const inputs = document.getElementById('ingredient-inputs');
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.name = 'ingredients[]';
-        input.className = 'me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill';
-        input.placeholder = 'inserisci un ingrediente...';
-        inputs.appendChild(input);
-    }
- 
 </script>
 
 @endsection
