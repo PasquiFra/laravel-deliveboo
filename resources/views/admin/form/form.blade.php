@@ -11,10 +11,10 @@
     
         {{-- Impostazioni del form --}}
         @if ($dish->exists)
-            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" id="input-form" enctype="multipart/form-data">
             @method('put')
         @else
-            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.dishes.store') }}" method="post" id="input-form" enctype="multipart/form-data">
         @endif
     
                 {{-- TOKEN csrf --}}
@@ -104,41 +104,23 @@
                             </div>      
                         @enderror       
                     </div>
-    
                     {{-- INPUT GROUP INGREDIENTS --}}
                     <div class="col-12">
                         <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
-                        <div id="ingredient-inputs"> 
-                            @if (!$dish->ingredients)
-                                @if (old('ingredients'))
-                                    @foreach (old('ingredients') as $ingredient)
-                                        <input type="text" name="ingredients[]" class="mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
-                                    @endforeach
-                                @endif
-                                <input 
-                                    type="text" 
-                                    id="ingredients" 
-                                    name="ingredients[]" 
-                                    class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" 
-                                    value="{{ trim($dish->ingredients) }}" 
-                                    placeholder="Inserisci un ingrediente..."
-                                >
-                            @else
-                                @php
-                                $ingredients = explode(', ', $dish->ingredients);
-                                @endphp
-                                @foreach ($ingredients as $ingredient)
-                                    <input type="text" name="ingredients[]" class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
-                                @endforeach
-                            @endif
-                        </div>
-                        <button type="button" id="add-ingredient-btn" class="btn mt-2 border-light-subtle rounded-pill" onclick="addIngredient()">Aggiungi Ingrediente</button>
+                        <input 
+                            type="text" 
+                            id="ingredients" 
+                            name="ingredients" 
+                            class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" 
+                            value="{{ old('ingredients', $dish->ingredients) }}" 
+                            placeholder="Inserisci la lista di ingredienti..."
+                        >
                     </div>
     
                     {{-- INPUT GROUP PRICE --}}
                     <div class="mb-3 col-6 col-sm-4 col-xl-5">
                         <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
-                        <input type="number" name="price" id="price" step="0.1" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                        <input type="number" name="price" id="price" step="0.01" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                         value="{{ old('price', $dish->price) }}">
                         @error('price')
                             <div class="invalid-feedback">
@@ -234,24 +216,13 @@
 
     document.getElementById('input-form').addEventListener('submit', function() {;
 
-        event.preventDefault();
+
         // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
         const priceInputField = document.getElementById('price');
         const priceValue = parseFloat(priceInputField.value).toFixed(2);
         priceInputField.value = priceValue;
     });
 
-    // AGGIUNTA INPUT FIELD
-    function addIngredient() {
-        const inputs = document.getElementById('ingredient-inputs');
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.name = 'ingredients[]';
-        input.className = 'me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill';
-        input.placeholder = 'inserisci un ingrediente...';
-        inputs.appendChild(input);
-    }
- 
 </script>
 
 @endsection

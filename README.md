@@ -1,7 +1,7 @@
 # DeliveBoo
 
 ## Introduzione
-DeliveBoo è una web app che permette di ordinare cibo a domicilio nella città di ***.
+DeliveBoo è una web app che permette di ordinare cibo a domicilio nella città di Roma.
 Permette agli utenti di cercare i loro cibi preferiti, preparati dai loro ristoranti di fiducia. 
 
 Tutto rimanendo comodamente sul divano di casa.
