@@ -1,6 +1,16 @@
 <nav class="navbar navbar-expand-md shadow-sm">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+        <a class="navbar-brand d-flex align-items-center" 
+            href="
+                @guest ()
+                
+                    {{ url('/') }}
+                @elseif (Auth::user())
+
+                    {{route('dashboard')}}
+                @endif
+                "
+        >
             
             <picture class="logo-container">
                 <img class="rounded-circle" src="{{ asset('images/pasq-eat.jpg') }}" alt="Deliveboo" id="logo">
@@ -15,20 +25,29 @@
         <div class="collapse navbar-collapse align-items-baseline" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link on-hover" href="{{url('/') }}">{{ __('Home') }}</a>
-                </li>
+
+                {{-- Se l'utente non è loggato vede la Home --}}
+                @guest()
+                    <li class="nav-item">
+                        <a class="nav-link on-hover" href="{{url('/') }}">{{ __('Home') }}</a>
+                    </li>
+                @endguest
+
                 @guest()
 
                 @elseif (Auth::user()->restaurant)
                 <li class="nav-item">
                     <a class="nav-link on-hover" href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">Ristorante</a>
                 </li>
-                @else
+                @endguest
+                @guest()
+
+                @elseif (Auth::user()->restaurant)
                 <li class="nav-item">
-                    <a class="nav-link on-hover" href="{{route('admin.restaurants.create')}}">Crea il tuo ristorante</a>
+                    <a class="nav-link on-hover" href="{{route('admin.dishes.index')}}">Menu</a>
                 </li>
                 @endguest
+
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -38,11 +57,6 @@
                 <li class="nav-item">
                     <a class="nav-link on-hover" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link on-hover" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-                @endif
                 @else
                 <li class="active">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle on-hover" href="#" role="button" tabindex="0">
