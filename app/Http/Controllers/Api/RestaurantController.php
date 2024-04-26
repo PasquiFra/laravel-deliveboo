@@ -13,7 +13,7 @@ class RestaurantController extends Controller
      */
     public function index(Request $request)
     {
-        $restaurants = Restaurant::orderByDesc('updated_at')->orderByDesc('created_at')->with('categories')->get();
+        $restaurants = Restaurant::orderByDesc('updated_at')->orderByDesc('created_at')->with('categories', 'user')->get();
         return response()->json($restaurants);
     }
 
@@ -30,8 +30,22 @@ class RestaurantController extends Controller
      */
     public function show(string $slug)
     {
-        $restaurant = Restaurant::whereSlug($slug)->with('dishes')->get();
-        return response()->json($restaurant);
+
+
+        // Recupera il ristorante con il dato slug e carica solo i piatti con disponibilità 1
+        $restaurant = Restaurant::whereSlug($slug)
+            ->with(['dishes' => function ($query) {
+                $query->where('availability', 1);
+            }])
+            ->first();
+
+        // Verifica se il ristorante esiste
+        if (!$restaurant) {
+            return response()->json(['error' => 'Restaurant not found'], 404);
+        }
+
+        // Restituisci i piatti disponibili come risposta JSON
+        return response()->json($restaurant->dishes);
     }
 
     /**
@@ -45,8 +59,20 @@ class RestaurantController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Restaurant $restaurant)
+    public function showDish(string $restaurantSlug, string $dishSlug)
     {
-        //
+        $restaurant = Restaurant::whereSlug($restaurantSlug)->first();
+
+        if (!$restaurant) {
+            return response()->json(['message' => 'Ristorante non trovato'], 404);
+        }
+
+        $dish = $restaurant->dishes()->where('slug', $dishSlug)->first();
+
+        if (!$dish) {
+            return response()->json(['message' => 'Piatto non trovato'], 404);
+        }
+
+        return response()->json($dish);
     }
 }
