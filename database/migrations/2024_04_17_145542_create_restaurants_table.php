@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('city', 50)->required()->default('Roma');
             $table->string('address', 50)->required();
             $table->string('cap', 7)->required()->default('00187');
-            $table->string('phone', 20);
+            $table->string('phone', 20)->nullable();
             $table->string('vat')->required()->unique();
             $table->text('image')->nullable();
             $table->timestamps();

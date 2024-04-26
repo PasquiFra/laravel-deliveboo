@@ -12,10 +12,10 @@
         <div class="row">
 
         {{-- Input Nome --}}
-        <div class="col-3">
+        <div class="col-4">
             <div class="mb-5">
                 <label for="restaurant_name" class="form-label">Nome del ristorante<span class="text-danger"><strong>*</strong></span></label>
-                <input name="restaurant_name" value="{{old('restaurant_name', $restaurant->restaurant_name)}}" type="text" class="form-control @error('restaurant_name') is-invalid @elseif(old('restaurant_name', '')) is-valid @enderror"  id="restaurant_name">
+                <input name="restaurant_name" value="{{old('restaurant_name', $restaurant->restaurant_name)}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('restaurant_name') is-invalid @elseif(old('restaurant_name', '')) is-valid @enderror"  id="restaurant_name">
                 @error('restaurant_name')   
                     <div class="invalid-feedback">{{$message}}</div>
                 @else
@@ -27,10 +27,10 @@
         </div>
 
             {{-- Input Indirizzo --}}
-            <div class="col-3">
+            <div class="col-4">
                 <div class="mb-5">
                     <label for="address" class="form-label">Indirizzo<span class="text-danger"><strong>*</strong></span></label>
-                    <input name="address" value="{{old('address', $restaurant->address)}}" type="text" class="form-control @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
+                    <input name="address" value="{{old('address', $restaurant->address)}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
                     @error('address')   
                         <div class="invalid-feedback">{{$message}}</div>
                     @else
@@ -42,10 +42,10 @@
             </div>
 
         {{-- Input Numero di telefono --}}
-        <div class="col-3">
+        <div class="col-4">
             <div class="mb-5">
                 <label for="phone" class="form-label">Numero di telefono</label>
-                <input name="phone" value="@if(old('phone', '+39 ')){{old('phone', $restaurant->phone)}}@else+39 @endif" type="text" class="form-control @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
+                <input name="phone" value="{{old('phone', $restaurant->phone)}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
                 @error('phone')   
                     <div class="invalid-feedback">{{$message}}</div>
                 @else
@@ -57,10 +57,10 @@
         </div>
 
             {{-- Input P.IVA (VAT) --}}
-            <div class="col-3">
+            <div class="col-4">
                 <div class="mb-5">
                     <label for="vat" class="form-label">P.IVA<span class="text-danger"><strong>*</strong></span></label>
-                    <input name="vat" value="{{old('vat', $restaurant->vat)}}" type="text" class="form-control @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat">
+                    <input name="vat" value="{{old('vat', $restaurant->vat)}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat">
                     @error('vat')   
                         <div class="invalid-feedback">{{$message}}</div>
                     @else
@@ -71,16 +71,19 @@
                 </div>
             </div>
 
-            {{-- Input Image --}}
-            <div class="col-8">
-                <div class="mb-5">
-                    <label for="image" class="form-label">Immagine</label>
-                    <input name="image" value="{{old('image', $restaurant->image)}}" type="file" class="form-control @error('image') is-invalid @elseif(old('image', '')) is-valid @enderror" id="image">
-                    @error('image')   
-                        <div class="invalid-feedback">{{$message}}</div>
+            {{-- Input Immagine --}}
+            <div class="col-6 col-sm-6 col-xl-7 mb-3">
+                <div class="d-flex flex-column">
+                    <label class="form-label label">Upload Immagine:</label>
+                    <input type="file" name="image" id="image" value="{{old('image', $restaurant->image)}}" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
+                    <label for="image" role="button" id="upload-label" class="btn border-light-subtle rounded-pill">Carica un'immagine</label>
+                    @error('image')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
                     @else
-                        <div class="form-text">
-                            Inserisci l'immagine del ristorante
+                        <div class="valid-feedback">
+                            Campo corretto
                         </div>
                     @enderror
                 </div>

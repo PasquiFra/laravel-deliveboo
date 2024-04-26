@@ -19,7 +19,7 @@
                                         Nome ristorante
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input id="restaurant_name" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @enderror" name="restaurant_name" value="{{old('restaurant_name')}}" required autocomplete="restaurant_name" pattern="[A-Za-z]+" autofocus>
+                                    <input id="restaurant_name" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @enderror" name="restaurant_name" value="{{old('restaurant_name')}}" required autocomplete="restaurant_name" autofocus>
                                     <span id="error-message" class="text-danger"></span>
                                     @error('restaurant_name')
                                         <span class="invalid-feedback" role="alert">
@@ -146,7 +146,7 @@
                                 {{-- Input Numero di telefono --}}
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4">
                                     <label for="phone" class="mb-2 ms-3">Numero di telefono</label>
-                                    <input name="phone" value="@if(old('phone', '+39 ')){{old('phone')}}@else+39 @endif" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
+                                    <input name="phone" value="{{old('phone', '')}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
                                         @error('phone')   
                                             <div class="invalid-feedback">{{$message}}</div>
                                         @else
