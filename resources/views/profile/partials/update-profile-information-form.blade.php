@@ -3,11 +3,11 @@
         
     </div>
     <header>
-        <h2 class="text-black">
+        <h2 class="ms-3 text-black">
             {{ __('Informazioni del profilo') }}
         </h2>
 
-        <p class="mt-1 text-black">
+        <p class="ms-3 mt-1 text-black">
             {{ __("Aggiorna le informazioni del profilo del tuo account e l'indirizzo email.") }}
         </p>
     </header>

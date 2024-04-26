@@ -14,7 +14,7 @@
 
     </div>
 
-    <div class="card p-4 mb-4 bg-white shadow rounded-lg">
+    <div class="glass-card p-4 mb-4 shadow rounded-lg">
 
 
         @include('profile.partials.update-password-form')
