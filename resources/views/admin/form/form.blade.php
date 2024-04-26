@@ -82,7 +82,7 @@
     
                     {{-- SELECT COURSE --}}
                     <div class="mb-3 col-6">
-                        <label class="form-label label fw-bold" for="name">Portata:</label>
+                        <label class="form-label label fw-bold" for="course">Portata:</label>
                         <select class="form-select bg-transparent border-dark-light rounded-pill"  name="course" id="course" >
                             <?php
                             $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
@@ -189,7 +189,7 @@
     });
 
     // setto la visualizzazione dinamica dell'immagine in pagina
-    const imageField = document.getElementById('image');
+    const imageField = document.getElementById('uploadBtn');
     const previewField = document.getElementById('preview');
 
     let blobUrl;
@@ -203,7 +203,7 @@
             const file = imageField.files[0];
 
             //preparo l'url
-            const blobUrl = URL.createObjectURL(file);
+            blobUrl = URL.createObjectURL(file);
 
             previewField.src = blobUrl;
         }

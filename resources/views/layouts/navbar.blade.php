@@ -24,27 +24,27 @@
 
         <div class="collapse navbar-collapse align-items-baseline" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav d-inline-block d-md-flex me-md-auto">
 
                 {{-- Se l'utente non è loggato vede la Home --}}
                 @guest()
-                    <li class="nav-item">
-                        <a class="nav-link on-hover" href="{{url('/') }}">{{ __('Home') }}</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link on-hover pe-2 p-sm-2 p-md-2" href="{{url('/') }}">{{ __('Home') }}</a>
+                </li>
                 @endguest
 
                 @guest()
 
                 @elseif (Auth::user()->restaurant)
                 <li class="nav-item">
-                    <a class="nav-link on-hover" href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">Ristorante</a>
+                    <a class="nav-link" href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">Ristorante</a>
                 </li>
                 @endguest
                 @guest()
 
                 @elseif (Auth::user()->restaurant)
                 <li class="nav-item">
-                    <a class="nav-link on-hover" href="{{route('admin.dishes.index')}}">Menu</a>
+                    <a class="nav-link" href="{{route('admin.dishes.index')}}">Menu</a>
                 </li>
                 @endguest
 
@@ -55,7 +55,7 @@
                 <!-- Authentication Links -->
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link on-hover" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link on-hover p-sm-2 p-md-2" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @else
                 <li class="active">
