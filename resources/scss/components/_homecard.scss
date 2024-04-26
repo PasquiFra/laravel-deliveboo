@@ -1,19 +1,8 @@
-// #home-card {
-//     transition: transform linear 0.4s;
-//     background-color: #bdf38f;
-//     color: #212529;
-
-//     &:hover {
-//         transform: scale(1.1);
-//         background-color: #b4f37c;
-//     }
-// }
-
 // Home
 .welcome {
     text-align: center;
     height: calc(50vh - 91px);
-    padding-top: 50px;
+    padding-top: 30px;
 
     display: flex;
     flex-direction: column;
@@ -21,14 +10,17 @@
     gap: 40px;
 
     h1 {
-        font-size: 80px;
+        font-size: 60px;
+        color: #f5f4f3;
     }
 
     p {
-        font-size: 20px;
+        font-size: 25px;
+        color: #f5f4f3;
     }
 
     a {
+        color: #f5f4f3;
         padding: 13px 25px;
         background-color: transparent;
         border: 1px solid rgba(255, 255, 255, .25);
