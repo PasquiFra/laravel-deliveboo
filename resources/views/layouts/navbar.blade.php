@@ -24,7 +24,7 @@
 
         <div class="collapse navbar-collapse align-items-baseline" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav d-inline-block me-md-auto">
+            <ul class="navbar-nav d-inline-block d-md-flex me-md-auto">
 
                 {{-- Se l'utente non è loggato vede la Home --}}
                 @guest()
