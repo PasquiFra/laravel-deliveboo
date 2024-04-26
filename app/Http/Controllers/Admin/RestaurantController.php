@@ -20,6 +20,12 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
+        if ($restaurant->user_id !== Auth::id()) {
+            return back()
+                ->with('message', "Non sei autorizzato a vedere questo ristorante")
+                ->with('type', 'danger');
+        }
+
         return view('admin.restaurants.show', compact('restaurant'));
     }
 
@@ -28,6 +34,13 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
+
+        if ($restaurant->user_id !== Auth::id()) {
+            return back()
+                ->with('message', "Non sei autorizzato a vedere questo ristorante")
+                ->with('type', 'danger');
+        }
+
         // Recupero le categorie del Ristorante e le trasforma in un array da mandare al form
         $prev_categories = $restaurant->categories->pluck('id')->toArray();
 
