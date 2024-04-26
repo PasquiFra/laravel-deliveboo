@@ -11,10 +11,10 @@
     
         {{-- Impostazioni del form --}}
         @if ($dish->exists)
-            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" id="input-form" enctype="multipart/form-data">
+            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data">
             @method('put')
         @else
-            <form action="{{ route('admin.dishes.store') }}" method="post" id="input-form" enctype="multipart/form-data">
+            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
         @endif
     
                 {{-- TOKEN csrf --}}
@@ -120,7 +120,7 @@
                     {{-- INPUT GROUP PRICE --}}
                     <div class="mb-3 col-3 col-sm-4 col-xl-3">
                         <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
-                        <input type="number" name="price" id="price" step="0.01" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                        <input type="number" name="price" id="price" step="0.1" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                         value="{{ old('price', $dish->price) }}">
                         @error('price')
                             <div class="invalid-feedback">
@@ -215,7 +215,7 @@
 
     document.getElementById('input-form').addEventListener('submit', function() {;
 
-
+        event.preventDefault();
         // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
         const priceInputField = document.getElementById('price');
         const priceValue = parseFloat(priceInputField.value).toFixed(2);
