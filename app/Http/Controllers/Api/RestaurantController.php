@@ -28,9 +28,10 @@ class RestaurantController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Restaurant $restaurant)
+    public function show(string $slug)
     {
-        //
+        $restaurant = Restaurant::whereSlug($slug)->with('dishes')->get();
+        return response()->json($restaurant);
     }
 
     /**
