@@ -7,11 +7,27 @@
     transition: background-color 0.2s ease;
 }
 
+.btn-outline-delete {
+    color: #000;
+    background-color: #ADE6CE;
+    border: 1px solid #DEE2E6;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
 
 .blue {
     &:hover {
         color: #fff;
         background-color: #007bff;
         border-color: #007bff;
+    }
+
+}
+
+.red {
+    &:hover {
+        color: #fff;
+        background-color: #DC3545;
+        border-color: #DC3545;
     }
 }
