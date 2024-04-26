@@ -19,7 +19,7 @@
     
                 {{-- TOKEN csrf --}}
                 @csrf
-                <div class="row">
+                <div class="row align-items-center">
                     {{-- INPUT AVAILABILITY --}}
                     <div class="col-12 mb-3">
                         <div class="form-check form-switch d-flex p-0">
@@ -36,7 +36,7 @@
     
                     {{-- INPUT TITLE --}}
                     <div class="col-12 mb-3">
-                        <label class="form-label label fw-bold" for="name">Titolo:</label>
+                        <label class="form-label label fw-bold" for="name">Nome del piatto:</label>
                         <input 
                             type="text" 
                             required 
@@ -106,10 +106,10 @@
                     </div>
     
                     {{-- INPUT GROUP INGREDIENTS --}}
-                    <div class="mb-3 col-12">
+                    <div class="col-12">
                         <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
                         <div id="ingredient-inputs"> 
-                            @if (!$dish->ingredient)
+                            @if (!$dish->ingredients)
                                 @if (old('ingredients'))
                                     @foreach (old('ingredients') as $ingredient)
                                         <input type="text" name="ingredients[]" class="mb-2 form-control" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
@@ -120,23 +120,23 @@
                                     id="ingredients" 
                                     name="ingredients[]" 
                                     class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" 
-                                    value="{{ trim($dish->ingredient) }}" 
+                                    value="{{ trim($dish->ingredients) }}" 
                                     placeholder="Inserisci un ingrediente..."
                                 >
                             @else
                                 @php
-                                $ingredients = explode(', ', $dish->ingredient);
+                                $ingredients = explode(', ', $dish->ingredients);
                                 @endphp
                                 @foreach ($ingredients as $ingredient)
                                     <input type="text" name="ingredients[]" class="me-2 mb-2 form-control bg-transparent border-dark-light rounded-pill" value="{{ $ingredient }}" placeholder="Inserisci un ingrediente...">
                                 @endforeach
                             @endif
                         </div>
-                        <button type="button" id="add-ingredient-btn" class="btn btn-sm mt-2 border-light-subtle rounded-pill" onclick="addIngredient()">Aggiungi Ingrediente</button>
+                        <button type="button" id="add-ingredient-btn" class="btn mt-2 border-light-subtle rounded-pill" onclick="addIngredient()">Aggiungi Ingrediente</button>
                     </div>
     
                     {{-- INPUT GROUP PRICE --}}
-                    <div class="mb-3 col-3 col-sm-4 col-xl-3">
+                    <div class="mb-3 col-6 col-sm-4 col-xl-5">
                         <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
                         <input type="number" name="price" id="price" step="0.1" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                         value="{{ old('price', $dish->price) }}">
@@ -152,10 +152,11 @@
                     </div>
     
                     {{-- INPUT IMMAGINE --}}
-                    <div class="col-8 mb-3">
-                        <div>
-                            <label class="form-label label fw-bold" for="image">Url Immagine</label>
-                            <input type="file" name="image" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
+                    <div class="col-6 col-sm-6 col-xl-5 mb-3">
+                        <div class="d-flex flex-column">
+                            <label class="form-label label fw-bold">Upload Immagine:</label>
+                            <input type="file" name="image" id="uploadBtn" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
+                            <label for="uploadBtn" role="button" id="upload-label" class="btn border-light-subtle rounded-pill">Carica un'immagine</label>
                             @error('image')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -168,14 +169,14 @@
                         </div>
                     </div>
                     {{-- CAMPO PREVIEW IMAGE --}}
-                    <div class="col-1 align-items-center d-none d-xl-flex">
+                    <div class="col-2 col-md-2 align-items-center d-none d-md-flex">
                         <img id="preview" src="{{ old('image', $dish->image) && @getimagesize($dish->image)
                         ? asset('storage/' . old('image', $dish->image)) 
                         : asset('/images/default-dish.png')}}" 
                         alt="{{ $dish->slug }}" class="img-fluid">
                     </div>
     
-                    <div class="col d-flex justify-content-between pt-4">
+                    <div class="col-12 d-flex justify-content-between pt-4">
                         <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-left-long me-2"></i> Torna indietro</a>
                         <div>
                             <button class="btn btn-success me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Salva</button>
