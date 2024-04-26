@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Api\RestaurantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Rotta per tutti i ristoranti
-Route::get('/restaurants', [RestaurantController::class, 'index']);
 //Rotta per il singolo ristorante
 Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
+//Rotta per tutti i ristoranti
+Route::get('/restaurants', [RestaurantController::class, 'index']);
+//Rotta per il piatto
+Route::get('/restaurants/{restaurantSlug}/dishes/{dishSlug}', [RestaurantController::class, 'showDish']);
