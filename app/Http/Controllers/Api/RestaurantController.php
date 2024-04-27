@@ -14,8 +14,11 @@ class RestaurantController extends Controller
      */
     public function index(Request $request)
     {
+        //Recupero i ristoranti con le categorie e lo user
         $restaurants = Restaurant::orderByDesc('updated_at')->orderByDesc('created_at')->with('categories', 'user')->get();
+        //Recupero tutte le categorie
         $categories = Category::all();
+        //Restituisco un array di array associativi 
         return response()->json(['restaurants' => $restaurants, 'categories' => $categories]);
     }
 
