@@ -9,21 +9,21 @@
     <!--Filtro per Portata del Piatto-->
     <form class="filter-courses" action="{{ route('admin.dishes.index') }}" method="GET">
       <div class="input-group">
-          <select class="form-select w-25" name="course">
-            <option value="">Tutte le portate</option>
+          <select role="button" id="coruse-filter" class="form-select w-25 text-white fw-bold bg-transparent rounded-pill" name="course">
+            <option class="fw-semibold" value="">Tutte le portate</option>
             @foreach ($courses as $course)
-            <option value="{{ $course }}"  {{ request('course') == $course ? 'selected' : '' }}>
+            <option class="fw-semibold" value="{{ $course }}"  {{ request('course') == $course ? 'selected' : '' }}>
               {{ $course }}
             </option>
             @endforeach
           </select>
           <!--Filtro in base a disponibilità del piatto-->
-          <select class="form-select w-25 pe-5" name="availability">
+          <select id="availability-filter" role="button" class="form-select w-25 pe-5 text-white fw-bold bg-transparent ms-2 rounded-pill" name="availability"> 
             <option value="">Tutti</option>
             <option value="available" @if($availability==='available')selected @endif>Disponibile</option>
             <option value="not-available" @if($availability==='not-available')selected @endif>Non Disponibile</option>
           </select>
-          <button class="btn btn-secondary" type="submit">Filtra</button>
+          <button class="btn-outline-index text-white fw-semibold rounded-pill gray ms-2" type="submit">Filtra</button>
       </div>
   </form>
     <h1 class="text-white me-5">Menu</h1>

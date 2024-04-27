@@ -19,8 +19,9 @@ body {
     min-height: 100vh;
     visibility: visible;
     font-family: "IBM Plex Mono", monospace;
-    // background: rgb(67, 206, 162);
-    background: linear-gradient(85deg, rgba(67, 206, 162, 1) 10%, rgba(24, 90, 157, 1) 90%);
+
+    background-image: linear-gradient(to left, #1e498b, #006fac, #0095bd, #00b8c0, #49daba);
+    ;
     background-size: cover;
 }
 
