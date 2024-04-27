@@ -2,6 +2,7 @@
 @import './_utilities';
 @import './_color';
 @import './components/form';
+@import './components/_button';
 @import './components/_upload';
 @import './components/_glasscard';
 @import './components/_dropdown';
@@ -15,10 +16,12 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
+    min-height: 100vh;
     visibility: visible;
     font-family: "IBM Plex Mono", monospace;
-    background: rgb(61, 195, 139);
-    background: linear-gradient(94deg, rgba(61, 195, 139, 1) 28%, rgba(15, 179, 194, 1) 73%);
+    // background: rgb(67, 206, 162);
+    background: linear-gradient(85deg, rgba(67, 206, 162, 1) 10%, rgba(24, 90, 157, 1) 90%);
+    background-size: cover;
 }
 
 html::-webkit-scrollbar {
@@ -26,7 +29,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-    background: white;
+    background: $white;
 }
 
 html::-webkit-scrollbar-thumb {

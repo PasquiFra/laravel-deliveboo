@@ -1,11 +1,11 @@
 <section class="space-y-6">
     <header>
         <h2 class="ms-3 text-lg font-medium text-gray-900">
-            {{ __('Delete Account') }}
+            {{ __('Elimina Account') }}
         </h2>
 
         <p class="ms-3 mt-1 text-sm text-gray-600">
-            {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
+            {{ __('Una volta che il tuo account sarà eliminato, tutte le risorse e i dati ad esso associati verranno cancellati in modo permanente. Prima di procedere con l\'eliminazione del tuo account, ti invitiamo a scaricare tutti i dati o le informazioni che desideri conservare.') }}
         </p>
     </header>
 
@@ -18,7 +18,7 @@
     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
     <div class="modal fade" id="delete-account" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="delete-account" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
+            <div id="glass-modal" class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="delete-account">Delete Account</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
