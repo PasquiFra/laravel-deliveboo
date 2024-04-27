@@ -5,7 +5,7 @@
 @section('content')
 <section id='dishes-trash' class="spacing">
     <div class="mb-2 d-flex justify-content-between align-items-center">
-      <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
+      <a href="{{route('admin.dishes.index')}}" class="btn-outline-index fw-semibold gray ms-1 px-3 py-2 rounded-pill"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
       <h1 class="text-white text-center mb-0">Piatti Eliminati</h1>
     </div>
     {{--Tabella--}}
@@ -58,12 +58,12 @@
             <td>
               <div class="d-flex gap-2 justify-content-end">
                 {{--# COLLEGAMENTO A SHOW --}}
-                <a href="{{ route('admin.dishes.show', $dish->id)}}" class="btn btn-sm btn button-outline-light show">
+                <a href="{{ route('admin.dishes.show', $dish->id)}}" class="rounded px-2 py-1 btn-outline-index blue">
                   <i class="far fa-eye"></i>
                 </a>
                 
                 {{--# COLLEGAMENTO A  EDIT --}}
-                <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn btn-sm btn button-outline-light edit">
+                <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="rounded px-2 py-1 btn-outline-index yellow">
                   <i class="fas fa-pencil"></i>
                 </a>
 
@@ -72,7 +72,7 @@
                     class="form-delete" data-dish="{{$dish->title}}">
                     @csrf
                     @method('PATCH')
-                    <button  class="btn btn-sm btn button-outline-light restore">
+                    <button  class="rounded px-2 py-1 btn-outline-index green">
                         <i class="fas fa-arrows-rotate"></i>
                     </button>
                 </form>

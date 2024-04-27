@@ -60,13 +60,13 @@
                 <div class="button-group">
                     <div class="gap-2 mt-4 d-flex align-items-center justify-content-between justify-content-md-between">
                         {{--# TORNA INDIETRO --}}
-                        <a href="{{route('admin.dishes.index')}}" class="btn btn-secondary d-flex align-items-center">
+                        <a href="{{route('admin.dishes.index')}}" class="btn-outline-index text-white fw-semibold gray ms-1 px-3 py-2 rounded-pill d-flex align-items-center text-white fw-semibold">
                             <i class="fa-solid fa-left-long"></i>
                             <span class="d-none ms-2 d-lg-block">Torna indietro</span>
                         </a>
                         <div class="d-flex gap-2 justify-content-md-end">
                             {{--# EDIT --}}
-                            <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn button-outline-light d-flex align-items-center edit">
+                            <a href="{{ route('admin.dishes.edit', $dish->id)}}" class="btn-outline-index text-white fw-semibold yellow ms-1 px-3 py-2 rounded-pill d-flex align-items-center edit">
                                 <i class="fas fa-pencil"></i>
                                 <span class="d-none ms-2 d-lg-block">Modifica</span>
                             </a>
@@ -74,7 +74,7 @@
                             <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" id="delete-form">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn button-outline-light destroy d-flex align-items-center text-center">
+                                <button class="btn-outline-index text-white fw-semibold red ms-1 px-3 py-2 rounded-pill d-flex align-items-center text-center">
                                     <i class="far fa-trash-can"></i>
                                     <span class="d-none ms-2 d-lg-block">Elimina</span>
                                 </button>

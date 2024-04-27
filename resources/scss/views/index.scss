@@ -84,39 +84,6 @@ tbody tr:hover {
     font-size: 16px !important;
 }
 
-.destroy-btn {
-
-    &:hover {
-        color: #f8f9fa !important;
-        background-color: #dc3545 !important;
-        border-color: #dc3545 !important;
-    }
-}
-
-.show-btn {
-
-    &:hover {
-        color: #f8f9fa !important;
-        background-color: #0D6EFD !important;
-        border-color: #0D6EFD !important;
-    }
-}
-
-.edit-btn {
-
-    &:hover {
-        color: #f8f9fa !important;
-        background-color: #FFC107 !important;
-        border-color: #FFC107 !important;
-    }
-}
-
-.restore:hover {
-    color: #f8f9fa !important;
-    background-color: #198754 !important;
-    border-color: #198754 !important;
-}
-
 .back:hover {
     color: #f8f9fa !important;
     background-color: #198754 !important;
@@ -159,4 +126,19 @@ tbody tr:hover {
 
 .not-available {
     background-color: rgb(216, 9, 9);
+}
+
+#coruse-filter {
+    border: 2px solid $white;
+    background-position: top 20px;
+    background-image: url('https://eaglestrategiecommerciali.it/wp-content/uploads/2020/05/kisspng-arrow-computer-icons-logo-white-down-arrow-png-5ab1bd5cde13f0.7986932615215977889096-1-300x300.png');
+    background-color: transparent;
+}
+
+
+#availability-filter {
+    border: 2px solid $white;
+    background-position: top 20px;
+    background-image: url('https://eaglestrategiecommerciali.it/wp-content/uploads/2020/05/kisspng-arrow-computer-icons-logo-white-down-arrow-png-5ab1bd5cde13f0.7986932615215977889096-1-300x300.png');
+    background-color: transparent;
 }
