@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container spacing">
-    <h1 class="text-center">
+    <h1 class="text-center mb-4">
         Benvenuto {{ Auth::user()->name }}
     </h1>
     <div class="row justify-content-center">
@@ -24,25 +24,25 @@
                             @endif
                             <div class="row">
                                 {{-- Finire di compilare gli href --}}
-                                <div class="col-3 text-center my-5">
+                                <div class="col-6 col-sm-6 col-md-3 text-center my-5">
                                     <a href="{{route('admin.dishes.index')}}" class="effect">
                                         <img class="img-fluid w-50" src="{{asset('img/menu.png')}}" alt="menu">
                                         <h3 class="mt-3">Menù</h3>
                                     </a>
                                 </div>
-                                <div class="col-3 text-center my-5">
+                                <div class="col-6 col-sm-6 col-md-3 text-center my-5">
                                     <a href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}" class="effect">
                                         <img class="img-fluid w-50" src="{{asset('img/restaurant.png')}}" alt="ristorante">
                                         <h3 class="mt-3">Ristorante</h3>
                                     </a>
                                 </div>
-                                <div class="col-3 text-center my-5">
+                                <div class="col-6 col-sm-6 col-md-3 text-center my-5">
                                     <a href="" class="effect">
                                         <img class="img-fluid w-50" src="{{asset('img/increase.png')}}" alt="grafico">
                                         <h3 class="mt-3">Grafico</h3>
                                     </a>
                                 </div>
-                                <div class="col-3 text-center my-5">
+                                <div class="col-6 col-sm-6 col-md-3 text-center my-5">
                                     <a href="" class="effect">
                                         <img class="img-fluid w-50" src="{{asset('img/receipt.png')}}" alt="ordine">
                                         <h3 class="mt-3">Ordini</h3>
