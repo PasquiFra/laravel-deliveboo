@@ -5,7 +5,10 @@
 @section('content')
 <section id='dishes-trash' class="spacing">
     <div class="mb-2 d-flex justify-content-between align-items-center">
-      <a href="{{route('admin.dishes.index')}}" class="btn-outline-index fw-semibold gray ms-1 px-3 py-2 rounded-pill"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
+      <a href="{{route('admin.dishes.index')}}" class="btn-outline-index fw-semibold gray text-white ms-1 px-3 py-1 py-md-2 rounded-pill">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span class="d-none d-md-inline-block">Torna indietro</span>
+      </a>
       <h1 class="text-white text-center mb-0">Piatti Eliminati</h1>
     </div>
     {{--Tabella--}}
@@ -13,10 +16,11 @@
     <table class="text-center">
       <thead>
         <tr>
-          <th>Immagine</th>
+          <th class="d-none d-lg-table-cell">Immagine</th>
           <th>Nome</th>
           <th>Online</th>
-          <th>Dieta</th>
+          <th class="d-none d-lg-table-cell">Portata</th>
+          <th class="d-none d-lg-table-cell">Dieta</th>
           <th>Prezzo</th>
           <th>Ultima modifica</th>
           <th></th>
@@ -29,7 +33,7 @@
       <tbody>
         @forelse ($dishes as $dish)
           <tr>
-            <td class="text-center d-flex justify-content-center">
+            <td class="text-center d-flex justify-content-center d-none d-lg-table-cell">
               <div class="index-prev">
                 @if ($dish->image)
                     <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
@@ -38,7 +42,9 @@
                 @endif
               </div>
             </td>
+            {{--Nome--}}
             <td class="text-center">{{$dish->name}}</td>
+            {{--Disponibilità--}}
             <td class="text-center">
               @if ($dish->availability == 1)
                 <span class="stamp is-available"></span> 
@@ -46,17 +52,23 @@
                 <span class="stamp not-available"></span>
               @endif
             </td>
-            <td class="text-center">
+            {{--Portata--}}
+            <td class="text-center d-none d-lg-table-cell">
+              {{$dish->course}}
+            </td>
+            {{--Dieta--}}
+            <td class="text-center d-none d-lg-table-cell">
               @if($dish->diet)
                {{$dish->diet}}
               @else
                 ---
               @endif
             </td>
-            <td class="text-center">{{$dish->price}}</td>
+            {{--Prezzo--}}
+            <td class="text-center">{{$dish->price}} €</td>
             <td class="text-center">{{$dish->updated_at}}</td>
             <td>
-              <div class="d-flex gap-2 justify-content-end">
+              <div class="d-flex gap-2 flex-column flex-xl-row align-items-center justify-content-end">
                 {{--# COLLEGAMENTO A SHOW --}}
                 <a href="{{ route('admin.dishes.show', $dish->id)}}" class="rounded px-2 py-1 btn-outline-index blue">
                   <i class="far fa-eye"></i>
