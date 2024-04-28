@@ -10,7 +10,7 @@ class CategoryRestaurantController extends Controller
 {
     public function __invoke(string $slug)
     {
-        $category = Category::whereSlug($slug);
+        $category = Category::whereSlug($slug)->first();
         if (!$category) return response(null, 404);
         $category->load('restaurants.categories');
         $restaurants = $category->restaurants;
