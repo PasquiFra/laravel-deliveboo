@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -15,9 +16,10 @@ class CategorySeeder extends Seeder
     {
         $labels = ['Italiano', 'Cinese', 'Giapponese', 'Indiano', 'Messicano', 'Siriano', 'Africano', 'Thailandese', 'Brasiliano', 'Turco'];
         foreach ($labels as $label) {
-            $type = new Category();
-            $type->label = $label;
-            $type->save();
+            $category = new Category();
+            $category->label = $label;
+            $category->slug = Str::slug($label);
+            $category->save();
         }
     }
 }
