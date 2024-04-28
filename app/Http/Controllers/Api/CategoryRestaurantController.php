@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class CategoryRestaurantController extends Controller
 {
-    public function __invoke(string $id)
+    public function __invoke(string $slug)
     {
-        $category = Category::find($id);
+        $category = Category::whereSlug($slug);
         if (!$category) return response(null, 404);
         $category->load('restaurants.categories');
         $restaurants = $category->restaurants;
