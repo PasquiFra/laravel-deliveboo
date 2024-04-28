@@ -35,8 +35,6 @@
 
                 @guest()
 
-
-                {{-- LEVARE RISTORANTE PERCHé INUTILE E HOME SI PRENDE LA GRANDEZZA DI RISTORANTE PER QUALCHE MOTIVO --}}
                 @elseif (Auth::user()->restaurant)
                 <li class="nav-item">
                     <a class="nav-link on-hover p-2 ps-sm-2 ps-md-2" href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">Ristorante</a>

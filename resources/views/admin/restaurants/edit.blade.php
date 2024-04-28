@@ -3,7 +3,7 @@
 @section('title', 'Modifica'.' '.$restaurant->restaurant_name)
 
 @section('content')
-        <section id="edit-form">
+        <section class="spacing" id="edit-form">
             <h1 class="text-center my-3">Modifica il tuo ristorante</h1>
 
            {{-- Form  --}}
