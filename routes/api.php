@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Api\RestaurantController;
+use App\Http\Controllers\Api\CategoryRestaurantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
 Route::get('/restaurants', [RestaurantController::class, 'index']);
 //Rotta per il piatto
 Route::get('/restaurants/{restaurantSlug}/dishes/{dishSlug}', [RestaurantController::class, 'showDish']);
+//Rotta per i ristoranti appartenenti ad una categoria
+Route::get('categories/{id}/restaurants', CategoryRestaurantController::class);
