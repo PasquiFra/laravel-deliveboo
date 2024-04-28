@@ -29,7 +29,7 @@
                 {{-- Se l'utente non è loggato vede la Home --}}
                 @guest()
                 <li class="nav-item">
-                    <a class="nav-link on-hover pe-2 p-sm-2 p-md-2" href="{{url('/') }}">{{ __('Home') }}</a>
+                    <a class="nav-link on-hover ms-1 ps-2 pe-2 p-sm-2 p-md-2" href="{{url('/') }}">{{ __('Home') }}</a>
                 </li>
                 @endguest
 
@@ -37,14 +37,14 @@
 
                 @elseif (Auth::user()->restaurant)
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">Ristorante</a>
+                    <a class="nav-link on-hover p-2 ps-sm-2 ps-md-2" href="{{route('admin.restaurants.show', Auth::user()->restaurant)}}">Ristorante</a>
                 </li>
                 @endguest
                 @guest()
 
                 @elseif (Auth::user()->restaurant)
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('admin.dishes.index')}}">Menu</a>
+                    <a class="nav-link on-hover p-2 ps-sm-2 ps-md-2 d-inline d-md-block" href="{{route('admin.dishes.index')}}">Menu</a>
                 </li>
                 @endguest
 
@@ -59,7 +59,7 @@
                 </li>
                 @else
                 <li class="active">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle on-hover" href="#" role="button" tabindex="0">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle on-hover px-2 py-2 px-sm-2 py-sm-2" href="#" role="button" tabindex="0">
                         {{ Auth::user()->name }}
                     </a>
                     <div class="glass-dropdown-content" aria-labelledby="navbarDropdown">
