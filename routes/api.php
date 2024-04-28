@@ -28,4 +28,4 @@ Route::get('/restaurants', [RestaurantController::class, 'index']);
 //Rotta per il piatto
 Route::get('/restaurants/{restaurantSlug}/dishes/{dishSlug}', [RestaurantController::class, 'showDish']);
 //Rotta per i ristoranti appartenenti ad una categoria
-Route::get('categories/{id}/restaurants', CategoryRestaurantController::class);
+Route::get('categories/{slug}/restaurants', CategoryRestaurantController::class);
