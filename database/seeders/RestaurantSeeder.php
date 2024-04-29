@@ -260,7 +260,7 @@ class RestaurantSeeder extends Seeder
 
             $new_restaurant = new Restaurant();
             $new_restaurant->user_id = $key + 1;
-            $new_restaurant->image = $faker->imageUrl(null, 350, 350);
+            $new_restaurant->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfquFcrRDx3VhVVSjorvJS2iddqpByPAE2xw&s';
             $new_restaurant->vat = $new_vat;
             $new_restaurant->phone =  $new_phone;
             $new_restaurant->cap = '00187';
