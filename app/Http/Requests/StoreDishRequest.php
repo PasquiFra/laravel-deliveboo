@@ -26,7 +26,7 @@ class StoreDishRequest extends FormRequest
             'name' => 'required|string',
             'slug' => 'string',
             'course' => 'string|required',
-            'price' => 'decimal:2|required',
+            'price' => 'decimal:2|numeric|min:0|required',
             'image' => 'nullable|image',
             'diet' => 'nullable',
             'ingredients' => 'string|nullable',
@@ -40,6 +40,9 @@ class StoreDishRequest extends FormRequest
             'image.image' => 'Il tipo di file non è corretto',
             'course.required' => 'La portata è obbligatoria',
             'course.string' => 'La portata dev\'essere una stringa',
+            'price.numeric' => 'Il prezzo dev\'essere un numero',
+            'price.min:0' => 'Il prezzo non può essere negativo',
+            'price.required' => 'Il prezzo dev\'essere inserito',
         ];
     }
 }

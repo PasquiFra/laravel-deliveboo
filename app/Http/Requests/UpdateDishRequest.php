@@ -25,7 +25,7 @@ class UpdateDishRequest extends FormRequest
         return [
             'name' => 'required|string',
             'slug' => 'string',
-            'price' => 'decimal:2|required',
+            'price' => 'decimal:2|numeric|min:0|required',
             'course' => 'string|required',
             'image' => 'nullable|image',
             'diet' => 'nullable',
@@ -40,6 +40,9 @@ class UpdateDishRequest extends FormRequest
             'image.image' => 'Il tipo di file non è corretto',
             'course.required' => 'La portata è obbligatoria',
             'course.string' => 'La portata dev\'essere una stringa',
+            'price.numeric' => 'Il prezzo dev\'essere un numero',
+            'price.min:0' => 'Il prezzo non può essere negativo',
+            'price.required' => 'Il prezzo dev\'essere inserito',
         ];
     }
 }

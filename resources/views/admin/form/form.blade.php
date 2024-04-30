@@ -66,7 +66,9 @@
                                 value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)
                             </option>
                             @foreach ($diet_options as $option)
-                                <option value="{{ $option }}" {{ old('diet', $dish->diet) === $option ? 'selected' : '' }}>{{ $option }}</option>
+                                <option value="{{ $option }}" {{ old('diet', $dish->diet) === $option ? 'selected' : '' }}>
+                                    {{ $option }}
+                                </option>
                             @endforeach
                         </select>
                         @error('diet')
@@ -217,10 +219,15 @@
     document.getElementById('input-form').addEventListener('submit', function() {;
 
         event.preventDefault();
+
+        const dietSelect = document.getElementById('diet');
+
         // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
         const priceInputField = document.getElementById('price');
         const priceValue = parseFloat(priceInputField.value).toFixed(2);
         priceInputField.value = priceValue;
+
+
     });
 
 </script>
