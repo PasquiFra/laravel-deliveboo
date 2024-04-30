@@ -193,56 +193,7 @@
     </div>
 </div>
 @endsection
+
 @section('scripts')
-
-<script>
-
-        // Recupero gli elementi
-        const inputs = document.querySelectorAll('.test');
-        const invalidMessage = document.querySelectorAll('.invalid-message');
-        const form = document.getElementById('registration-form');
-        let isValid = null;
-
-        
-        // Giro su tutti gli input
-        inputs.forEach( (input, i) => {
-
-            input.addEventListener('blur', function () {
-                
-                // Se l'input è vuoto
-                if(!input.value.trim()) {
-                    
-                    // Riassegno la flag a false
-                    isValid = false;
-                    
-                    // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
-                    input.classList.add('is-invalid');
-                    input.classList.remove('is-valid');
-
-                    // Costruisco il messaggio di errore e lo aggiungo all'invalid message
-                    invalidMessage[i].innerText = 'Il campo è obbligatorio'
-                    
-                } else {
-
-                    // Riassegno la flag a true
-                    isValid = true;
-
-                    // Aggiungo la classe 'is-valid' e rimuovo la classe 'is-invalid'
-                    input.classList.remove('is-invalid');
-                    input.classList.add('is-valid');
-
-                    // Rimuovo il messaggio di errore
-                    invalidMessage[i].innerText = '';
-                }
-            })
-
-        });
-
-
-        form.addEventListener('submit', e => {
-
-            // Se isValid è false non faccio partire il form
-            if(!isValid) e.preventDefault();
-        })
-    </script>
+    @vite('resources/js/validation_register_form.js')
 @endsection
