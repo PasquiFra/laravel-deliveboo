@@ -61,7 +61,8 @@ class DishController extends Controller
     public function create(Dish $dish)
     {
         $diet_options = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce'];
-        return view('admin.dishes.create', compact('dish', 'diet_options'));
+        $course_options = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
+        return view('admin.dishes.create', compact('dish', 'diet_options', 'course_options'));
     }
 
     /**
@@ -131,8 +132,9 @@ class DishController extends Controller
         };
 
         $diet_options = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce'];
+        $course_options = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
 
-        return view('admin.dishes.edit', compact('dish', 'diet_options'));
+        return view('admin.dishes.edit', compact('dish', 'diet_options', 'course_options'));
     }
 
     /**
