@@ -9,12 +9,20 @@
             @else Modifica {{$dish->name}} @endif 
         </h1>
     
+        @if($errors)
+        <!--Alert per errori del form-->
+        <div id="validation-errors" class="alert alert-danger d-none" role="alert">
+            <ul id="listed-errors">    
+            </ul>
+            </div>    
+        @endif
+
         {{-- Impostazioni del form --}}
         @if ($dish->exists)
-            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data" id="input-form">
             @method('put')
         @else
-            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data" id="input-form">
         @endif
     
                 {{-- TOKEN csrf --}}
@@ -34,7 +42,7 @@
                         </div> 
                     </div>
     
-                    {{-- INPUT TITLE --}}
+                    {{-- INPUT NOME DEL PIATTO --}}
                     <div class="col-12 mb-3">
                         <label class="form-label label fw-bold" for="name">Nome del piatto:</label>
                         <input 
@@ -86,15 +94,14 @@
                     <div class="mb-3 col-6">
                         <label class="form-label label fw-bold" for="course">Portata:</label>
                         <select class="form-select bg-transparent border-dark-light rounded-pill"  name="course" id="course" >
-                            <?php
-                            $courseOptions = ['Antipasto', 'Primo', 'Secondo', 'Dessert'];
-                            ?>
-                            @foreach ($courseOptions as $option)
+    
+                            @foreach ($course_options as $option)
                                 <option value="{{ $option }}" {{ old('course', $dish->course) === $option ? 'selected' : '' }}>{{ $option }}</option>
                             @endforeach
                             <option 
                                 value="" {{ old('course', $dish->course) ? '' : 'selected' }}>Scegli un'opzione (Obbligatorio)
                             </option>
+
                         </select>
                         @error('course')
                             <div class="invalid-feedback">
@@ -178,6 +185,14 @@
 @section('scripts')
 <script>
 
+    const errorBag=document.getElementById('validation-errors');
+    const listedErrors=document.getElementById('listed-errors');
+   
+    let isValid=true;
+    let errors=[];
+    let errorText='';
+    let errorsHtml='';
+
     // Label di availability dinamico
     document.getElementById('availability').addEventListener('change', function() {;
         const label = document.getElementById('availability-label');
@@ -213,21 +228,75 @@
 
     window.addEventListener('beforeunload', ()=> {
         if(blobUrl) URL.revokeObjectURL(blobUrl);
-    })
-        
+    }) 
 
     document.getElementById('input-form').addEventListener('submit', function() {;
 
-        event.preventDefault();
+        // setto il field name del ristorante quando il campo è valido
+        const nameField=document.getElementById('name');
+       
+        if (nameField.value.length >= 3) {
+            nameField.classList.add('is-valid');
+            nameField.classList.remove('is-invalid');
+        } else {
+            isValid=false
+            nameField.classList.add('is-invalid');
+            nameField.classList.remove('is-valid');
+            errorText='Il campo nome del piatto deve contenere almeno 3 lettere';
+            errors.push(errorText);
+        }
 
+        // setto il field diet in modo che i valori selezionati siano tra quelli consentiti
         const dietSelect = document.getElementById('diet');
+        const dietOptions = @json($diet_options);
+        
+        dietOptions.forEach(option => {
+            if (dietOptions.includes(dietSelect.value) || !dietSelect.value) {
+                dietSelect.classList.add('is-valid');
+                dietSelect.classList.remove('is-invalid');
+            } else {
+                isValid=false
+                dietSelect.classList.add('is-invalid');
+                dietSelect.classList.remove('is-valid');
+                errorText='Il campo dieta è errato';
+                errors.push(errorText);
+            }
+        });
 
+        // setto il field diet in modo che i valori selezionati siano tra quelli consentiti
+        const courseSelect = document.getElementById('course');
+        const courseOptions = @json($course_options);
+
+        courseOptions.forEach(option => {
+            if (courseOptions.includes(courseSelect.value)) {
+                courseSelect.classList.add('is-valid');
+                courseSelect.classList.remove('is-invalid');
+            } else {
+                isValid=false
+                courseSelect.classList.add('is-invalid');
+                courseSelect.classList.remove('is-valid');
+                errorText='Il campo portata è errato';
+                errors.push(errorText);
+            }
+        });
+        
         // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
         const priceInputField = document.getElementById('price');
         const priceValue = parseFloat(priceInputField.value).toFixed(2);
         priceInputField.value = priceValue;
-
-
+        
+        //Riempio la lista con gli errori
+        errors.forEach(error => {
+            errorsHtml+=`<li>${error}</li>`
+        });
+        listedErrors.innerHTML = errorsHtml;
+        
+        //Mostro l'alert se ci sono errori
+        if(errors.length){
+            errorBag.classList.remove('d-none')
+            event.preventDefault();
+        }
+        
     });
 
 </script>
