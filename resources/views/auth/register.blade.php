@@ -16,26 +16,23 @@
                             </ul>
                           </div>    
                         @endif
-                        <form method="POST" action="{{ route('register') }}" id="registrationForm">
+                        <form method="POST" action="{{ route('register') }}" id="registration-form" novalidate>
                             @csrf
                             <h2 class="mb-5">Registrazione</h2>
                             <div class="mb-4 row">
+
                                 {{-- Nome del ristorante--}}
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4">
-                                    <label for="restaurant-name" class="mb-2 ms-3">
+                                    <label for="restaurant_name" class="mb-2 ms-3">
                                         Nome ristorante
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input id="restaurant-name" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('restaurant-name') is-invalid @enderror" name="restaurant-name" value="{{old('restaurant-name')}}" required autocomplete="restaurant-name" autofocus>
-                                    <span id="error-message" class="text-danger"></span>
-                                    @error('restaurant-name')
+                                    <input placeholder="Nome del ristorante" id="restaurant_name" type="text" class="test form-control bg-transparent border-dark-light rounded-pill @error('restaurant_name') is-invalid @enderror" name="restaurant_name" value="{{old('restaurant_name')}}" required autocomplete="restaurant_name" autofocus>
+                                    <span class="invalid-message invalid-feedback ms-3"></span>
+                                    @error('restaurant_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @else
-                                        <div class="form-text text-12 ms-3">
-                                            Inserisci il nome del ristorante
-                                        </div>
                                     @enderror
                                 </div>
                                 
@@ -45,16 +42,12 @@
                                         Nome ristoratore
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input id="name" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" pattern="[A-Za-z]+" autofocus>
-                                    <span id="error-message" class="text-danger"></span>
+                                    <input placeholder="Nome del ristoratore" id="name" type="text" class="test form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" pattern="[A-Za-z]+" autofocus>
+                                    <span class="invalid-message invalid-feedback ms-3"></span>
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @else
-                                        <div class="form-text text-12 ms-3">
-                                            Inserisci il nome del ristoratore
-                                        </div>
                                     @enderror
                                 </div>
 
@@ -64,17 +57,14 @@
                                         Cognome Ristoratore
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input id="lastname" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('lastname') is-invalid @enderror"
+                                    <input placeholder="Cognome ristoratore" id="lastname" type="text" class="test form-control bg-transparent border-dark-light rounded-pill @error('lastname') is-invalid @enderror"
                                     name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                                    <span class="invalid-message invalid-feedback ms-3"></span>
     
                                     @error('lastname')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @else
-                                        <div class="form-text text-12 ms-3">
-                                            Inserisci il cognome
-                                        </div>
                                     @enderror
                                 </div>
 
@@ -85,18 +75,15 @@
                                         Email
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input id="email" type="email" class="form-control bg-transparent border-dark-light rounded-pill 
+                                    <input placeholder="es: name@example.com" id="email" type="email" class="test form-control bg-transparent border-dark-light rounded-pill 
                                     @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"
                                     minlength="6">
+                                    <span class="invalid-message invalid-feedback ms-3"></span>
     
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @else
-                                        <div class="form-text text-12 ms-3">
-                                            Inserisci la mail
-                                        </div>
                                     @enderror
                                 </div>
 
@@ -107,16 +94,13 @@
                                         {{ __('Password') }}
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input id="password" type="password" class="form-control bg-transparent border-dark-light rounded-pill @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <input placeholder="Inserisci la password" id="password" type="password" class="test form-control bg-transparent border-dark-light rounded-pill @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <span class="invalid-message invalid-feedback ms-3"></span>
     
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @else 
-                                        <div class="form-text text-12 ms-3">
-                                            Inserisci la password
-                                        </div>
                                     @enderror
                                 </div>
 
@@ -127,13 +111,10 @@
                                         Conferma Password
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input id="password-confirm" type="password" class="form-control bg-transparent border-dark-light rounded-pill" name="password_confirmation" required autocomplete="new-password">
+                                    <input placeholder="Conferma la password" id="password-confirm" type="password" class="test form-control bg-transparent border-dark-light rounded-pill" name="password_confirmation" required autocomplete="new-password">
+                                    <span class="invalid-message invalid-feedback ms-3"></span>
                                     @error('address')   
                                         <div class="invalid-feedback">{{$message}}</div>
-                                    @else
-                                    <div class="form-text text-12 ms-3">
-                                        Conferma la password
-                                    </div>
                                     @enderror
                                 </div>
 
@@ -143,26 +124,19 @@
                                         Indirizzo
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input name="address" value="{{old('address')}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
+                                    <input placeholder="es: Via Pippo de Ciccios 7" name="address" value="{{old('address')}}" type="text" class="test form-control bg-transparent border-dark-light rounded-pill @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
+                                    <span class="invalid-message invalid-feedback ms-3"></span>
                                         @error('address')   
                                             <div class="invalid-feedback">{{$message}}</div>
-                                        @else
-                                            <div class="form-text text-12 ms-3">
-                                                Inserisci l'indirizzo del ristorante
-                                            </div>
                                         @enderror
                                 </div>
 
                                 {{-- Input Numero di telefono --}}
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4">
                                     <label for="phone" class="mb-2 ms-3">Numero di telefono</label>
-                                    <input name="phone" value="{{old('phone', '')}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
+                                    <input placeholder="es: +39 3123456789" name="phone" value="{{old('phone', '')}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
                                         @error('phone')   
                                             <div class="invalid-feedback">{{$message}}</div>
-                                        @else
-                                            <div class="form-text text-12 ms-3">
-                                                Inserisci il numero di telefono
-                                            </div>
                                         @enderror
                                 </div>
 
@@ -172,15 +146,12 @@
                                         P.IVA
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input name="vat" value="{{old('vat')}}" type="text"
-                                    class="form-control bg-transparent border-dark-light rounded-pill
+                                    <input placeholder="Partita IVA" name="vat" value="{{old('vat')}}" type="text"
+                                    class="test form-control bg-transparent border-dark-light rounded-pill
                                      @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat" minlength="11">
+                                     <span class="invalid-message invalid-feedback ms-3"></span>
                                         @error('vat')   
                                             <div class="invalid-feedback">{{$message}}</div>
-                                        @else 
-                                            <div class="form-text text-12 ms-3">
-                                                Inserisci la P.IVA del ristorante
-                                            </div>
                                         @enderror
                                 </div>
 
@@ -225,121 +196,53 @@
 @section('scripts')
 
 <script>
-        const restaurantName = document.getElementById('restaurant-name');
-        const name = document.getElementById('name');
-        const lastName = document.getElementById('lastname');
-        const email = document.getElementById('email');
-        const password = document.getElementById('password');
-        const passwordConfirm = document.getElementById('password-confirm');
-        const address = document.getElementById('address');
-        const phone = document.getElementById('phone');
-        const vat = document.getElementById('vat');
-        //Error-bag
-        const errorBag=document.getElementById('error-bag');
-        //Lista degli errori
-        const errorList = document.getElementById('error-list');
-        document.getElementById('registrationForm').addEventListener('submit',function(event){
-            //Creo un flag per gli errori
-            let isValid=true;
-            let errors=[];
-            let errorText='';
-            let errorsHtml='';
-            //Nome Ristorante
-            if(!restaurantName.value.trim()){
-               isValid=false;
-               restaurantName.classList.add('is-invalid');
-               restaurantName.classList.remove('is-valid');
-               errorText='Il campo nome del Ristorante è obbligatorio';
-               errors.push(errorText);
-            }else{
-               name.classList.remove('is-invalid');
-               name.classList.add('is-valid');
-            }
-            //Nome
-            if(!name.value.trim()){
-                isValid=false;
-                name.classList.add('is-invalid');
-                name.classList.remove('is-valid');
-                errorText='Il campo nome del Ristoratore è obbligatorio';
-                errors.push(errorText);
-            }else{
-                name.classList.remove('is-invalid');
-                name.classList.add('is-valid');
-            }
-            //Cognomeome
-            if(!lastName.value.trim()){
-                isValid=false;
-                lastName.classList.add('is-invalid');
-                lastName.classList.remove('is-valid');
-                errorText='Il campo Cognome è obbligatorio';
-                errors.push(errorText);               
-            }else{
-                lastName.classList.remove('is-invalid');
-                lastName.classList.add('is-valid');
-            }
-            //Email
-            if(!email.value.trim()){
-                isValid=false;
-                email.classList.add('is-invalid');
-                email.classList.remove('is-valid');
-                errorText='Il campo email è obbligatorio';
-                errors.push(errorText);
-            }
-            //Password
-            if(!password.value.trim()){
-                isValid=false;
-                password.classList.add('is-invalid');
-                password.classList.remove('is-valid');
-                errorText='Il campo Password è obbligatorio';
-                errors.push(errorText);
-            }
-            //Conferma Password
-            if(!passwordConfirm.value.trim()){
-                isValid=false;
-                passwordConfirm.classList.add('is-invalid');
-                passwordConfirm.classList.remove('is-valid');
-                errorText='Il campo Conferma Password è obbligatorio';
-                errors.push(errorText);
-            }
-            //Indirizzo
-            if(!address.value.trim()){
-                isValid=false;
-                address.classList.add('is-invalid');
-                address.classList.remove('is-valid');
-                errorText='Il campo Indirizzo è obbligatorio';
-                errors.push(errorText);               
-            }
-            //Telefono
-            //  if(!phone.value.trim()){
-                //     isValid=false;
-                //     phone.classList.add('is-invalid');
-                //     phone.classList.remove('is-valid');
-                //     errorText='Questo campo è obbligatorio';
-                // }
-                //P.IVA
-                if(!vat.value.trim()){
-                    isValid=false;
-                    vat.classList.add('is-invalid');
-                    vat.classList.remove('is-valid');
-                    errorText='Il campo P:IVA è obbligatorio';
-                    errors.push(errorText);
-                    console.log(errors)
-                }
-            //Riempio la lista con gli errori
-            errors.forEach(error => {
-                errorsHtml+=`<li>${error}</li>`
-            });
-            errorList.innerHTML = errorsHtml;
 
-            //Mostro l'alert se ci sono errori
-            if(errors.length){
-                errorBag.classList.remove('d-none')
-            }
-            //Blocco l'invio del form in caso di errori
-            if(!isValid){
-                event.preventDefault();
-            }
+        // Recupero gli elementi
+        const inputs = document.querySelectorAll('.test');
+        const invalidMessage = document.querySelectorAll('.invalid-message');
+        const form = document.getElementById('registration-form');
+        let isValid = null;
+
+        
+        // Giro su tutti gli input
+        inputs.forEach( (input, i) => {
+
+            input.addEventListener('blur', function () {
                 
+                // Se l'input è vuoto
+                if(!input.value.trim()) {
+                    
+                    // Riassegno la flag a false
+                    isValid = false;
+                    
+                    // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+
+                    // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                    invalidMessage[i].innerText = 'Il campo è obbligatorio'
+                    
+                } else {
+
+                    // Riassegno la flag a true
+                    isValid = true;
+
+                    // Aggiungo la classe 'is-valid' e rimuovo la classe 'is-invalid'
+                    input.classList.remove('is-invalid');
+                    input.classList.add('is-valid');
+
+                    // Rimuovo il messaggio di errore
+                    invalidMessage[i].innerText = '';
+                }
+            })
+
+        });
+
+
+        form.addEventListener('submit', e => {
+
+            // Se isValid è false non faccio partire il form
+            if(!isValid) e.preventDefault();
         })
     </script>
 @endsection
