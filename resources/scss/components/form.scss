@@ -18,6 +18,11 @@ input {
     backdrop-filter: blur(15px);
 }
 
+input::placeholder {
+    padding-left: 4px;
+    font-size: 14px;
+}
+
 select {
     backdrop-filter: blur(15px);
 }
