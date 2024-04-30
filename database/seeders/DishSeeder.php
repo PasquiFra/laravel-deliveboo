@@ -263,7 +263,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Antipasto',
                 'price' => 19,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 4,
@@ -273,7 +273,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
                 'price' => 8.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi 
@@ -285,7 +285,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 4,
@@ -295,7 +295,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -307,7 +307,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 22,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 4,
@@ -317,7 +317,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 18,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -328,7 +328,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 4,
@@ -338,7 +338,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Gelateria Bartocci
@@ -352,7 +352,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 5,
@@ -362,7 +362,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 5,
@@ -372,7 +372,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 22,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 5,
@@ -382,7 +382,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 29,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Nonna Agrippina
@@ -397,7 +397,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 6,
@@ -407,7 +407,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi 
@@ -419,7 +419,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 6,
@@ -429,7 +429,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Primo',
                 'price' => 19,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -441,7 +441,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 6,
@@ -451,7 +451,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -462,7 +462,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
                 'price' => 5.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 6,
@@ -472,7 +472,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Gelateria Giolitti
@@ -486,7 +486,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 7,
@@ -496,7 +496,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 7,
@@ -506,7 +506,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 22,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 7,
@@ -516,7 +516,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 29,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Il Pellicano
@@ -530,7 +530,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Antipasto',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 8,
@@ -540,7 +540,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi 
@@ -552,7 +552,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 8,
@@ -562,7 +562,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Primo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -574,7 +574,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 8,
@@ -584,7 +584,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -596,7 +596,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 8,
@@ -606,7 +606,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Tavola Rotonda
@@ -620,7 +620,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 9,
@@ -630,7 +630,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi 
@@ -642,7 +642,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Primo',
                 'price' => 11,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 9,
@@ -652,7 +652,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -664,7 +664,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 18.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 9,
@@ -674,7 +674,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 20,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -686,7 +686,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 8.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 9,
@@ -696,7 +696,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti Ristoranti Giapponesi e Cinesi
@@ -712,7 +712,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Antipasto',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 10,
@@ -722,7 +722,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
                 'price' => 5.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 10,
@@ -732,7 +732,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Antipasto',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi
@@ -744,7 +744,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Primo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 10,
@@ -754,7 +754,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -766,7 +766,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 10,
@@ -776,7 +776,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 13,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -788,7 +788,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 10,
@@ -798,7 +798,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Your Sushi
@@ -812,7 +812,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 11,
@@ -822,7 +822,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi
@@ -834,7 +834,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 11,
@@ -844,7 +844,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 11,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 11,
@@ -854,7 +854,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -866,7 +866,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 11,
@@ -876,7 +876,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 13,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -888,7 +888,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 11,
@@ -898,7 +898,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 5.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Panda Market
@@ -912,7 +912,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 12,
@@ -922,7 +922,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi
@@ -934,7 +934,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 11,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 12,
@@ -944,7 +944,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -956,7 +956,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 12,
@@ -966,7 +966,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -978,7 +978,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 12,
@@ -988,7 +988,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Ciao Zì
@@ -1002,7 +1002,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 13,
@@ -1012,7 +1012,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi
@@ -1024,7 +1024,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 11,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 13,
@@ -1034,7 +1034,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -1046,7 +1046,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 13,
@@ -1056,7 +1056,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1068,7 +1068,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 13,
@@ -1078,7 +1078,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Zen Sushi
@@ -1092,7 +1092,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 14,
@@ -1102,7 +1102,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi
@@ -1114,7 +1114,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 18,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 14,
@@ -1124,7 +1124,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -1136,7 +1136,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 14,
@@ -1146,7 +1146,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 17,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1158,7 +1158,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 14,
@@ -1168,7 +1168,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Zenzero Fleming
@@ -1182,7 +1182,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 15,
@@ -1192,7 +1192,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 13,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi
@@ -1204,7 +1204,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 15,
@@ -1214,7 +1214,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -1226,7 +1226,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 15,
@@ -1236,7 +1236,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 18,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1248,7 +1248,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 15,
@@ -1258,7 +1258,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# New Town
@@ -1272,7 +1272,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 16,
@@ -1282,7 +1282,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi
@@ -1294,7 +1294,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 16,
@@ -1304,7 +1304,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -1316,7 +1316,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 16,
@@ -1326,7 +1326,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 18,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1338,7 +1338,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 16,
@@ -1348,7 +1348,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Crudo Pokè
@@ -1362,7 +1362,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 17,
@@ -1372,7 +1372,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Contorni
@@ -1384,7 +1384,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 17,
@@ -1394,7 +1394,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Temakinho
@@ -1408,7 +1408,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 18,
@@ -1418,7 +1418,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Primi
@@ -1430,7 +1430,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 18,
@@ -1440,7 +1440,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 13,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Secondi
@@ -1452,7 +1452,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 17,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 18,
@@ -1462,7 +1462,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1474,7 +1474,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 18,
@@ -1484,7 +1484,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Ravioleria Baozi
@@ -1498,7 +1498,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 3.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 19,
@@ -1508,7 +1508,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 19,
@@ -1518,7 +1518,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 19,
@@ -1528,7 +1528,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //~ Ristoranti Indiani
@@ -1544,7 +1544,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 20,
@@ -1554,7 +1554,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti principali - Vegetariani
@@ -1566,7 +1566,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 20,
@@ -1576,7 +1576,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti principali - Non vegetariani
@@ -1588,7 +1588,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 20,
@@ -1598,7 +1598,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1610,7 +1610,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 20,
@@ -1620,7 +1620,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Himalaya's Kashmir
@@ -1634,7 +1634,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 21,
@@ -1644,7 +1644,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti principali - Vegetariani
@@ -1656,7 +1656,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 11,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 21,
@@ -1666,7 +1666,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti principali - Non vegetariani
@@ -1678,7 +1678,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 21,
@@ -1688,7 +1688,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1700,7 +1700,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 5.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 21,
@@ -1710,7 +1710,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Tiger Tandoori
@@ -1724,7 +1724,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 22,
@@ -1734,7 +1734,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti principali - Vegetariani
@@ -1746,7 +1746,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 22,
@@ -1756,7 +1756,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti principali - Non vegetariani
@@ -1768,7 +1768,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 22,
@@ -1778,7 +1778,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1790,7 +1790,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 22,
@@ -1800,7 +1800,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# New Delhi
@@ -1814,7 +1814,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 23,
@@ -1824,7 +1824,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti principali - Vegetariani
@@ -1836,7 +1836,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 23,
@@ -1846,7 +1846,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Piatti principali - Non vegetariani
@@ -1858,7 +1858,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 23,
@@ -1868,7 +1868,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Dolci
@@ -1880,7 +1880,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 23,
@@ -1890,7 +1890,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Samoseria
@@ -1904,7 +1904,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 3,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 24,
@@ -1914,7 +1914,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 24,
@@ -1924,7 +1924,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 3.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 24,
@@ -1934,7 +1934,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             // Contorni
@@ -1946,7 +1946,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 2,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 24,
@@ -1956,7 +1956,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 2.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //~ Ristoranti Messicani
@@ -1972,7 +1972,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -1983,7 +1983,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 3.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 25,
@@ -1993,7 +1993,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2004,7 +2004,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Taco Libre
@@ -2018,7 +2018,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2029,7 +2029,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 3,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 26,
@@ -2039,7 +2039,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2050,7 +2050,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# The Mexican
@@ -2064,7 +2064,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2075,7 +2075,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 27,
@@ -2085,7 +2085,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 3.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2096,7 +2096,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Casa Quesadillas
@@ -2110,7 +2110,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2121,7 +2121,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 28,
@@ -2131,7 +2131,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2142,7 +2142,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //#Tacos King
@@ -2156,7 +2156,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2167,7 +2167,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 3.50,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 29,
@@ -2177,7 +2177,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2188,7 +2188,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //~ Ristoranti Siriani
@@ -2203,7 +2203,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2214,7 +2214,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 30,
@@ -2224,7 +2224,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2235,7 +2235,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Damas Kebab
@@ -2248,7 +2248,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2259,7 +2259,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 31,
@@ -2269,7 +2269,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2280,7 +2280,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //~ Ristoranti Africani
@@ -2296,7 +2296,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2307,7 +2307,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 32,
@@ -2317,7 +2317,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2328,7 +2328,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Afrik Cavour
@@ -2342,7 +2342,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2353,7 +2353,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 33,
@@ -2363,7 +2363,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2374,7 +2374,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //~ Ristoranti Thailandesi
@@ -2390,7 +2390,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2401,7 +2401,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 34,
@@ -2411,7 +2411,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2422,7 +2422,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Bussarakham
@@ -2436,7 +2436,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2447,7 +2447,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 13,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 35,
@@ -2457,7 +2457,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2468,7 +2468,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Bin Hai
@@ -2482,7 +2482,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2493,7 +2493,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 11,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 36,
@@ -2503,7 +2503,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2514,7 +2514,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Siam Cuisine
@@ -2528,7 +2528,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2539,7 +2539,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 11,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 37,
@@ -2549,7 +2549,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2560,7 +2560,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Thai Inn
@@ -2574,7 +2574,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2585,7 +2585,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 38,
@@ -2595,7 +2595,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2606,7 +2606,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //~ Ristoranti Brasiliani
@@ -2622,7 +2622,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2633,7 +2633,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 39,
@@ -2643,7 +2643,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2654,7 +2654,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Manioka
@@ -2668,7 +2668,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2679,7 +2679,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 13,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 40,
@@ -2689,7 +2689,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2700,7 +2700,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 7,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //~ Ristoranti Turchi
@@ -2716,7 +2716,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2727,7 +2727,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 42,
@@ -2737,7 +2737,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2748,7 +2748,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
 
             //# Furious Kebab
@@ -2762,7 +2762,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 9,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Piatti principali
             [
@@ -2773,7 +2773,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             [
                 'restaurant_id' => 42,
@@ -2783,7 +2783,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
             // Dolci
             [
@@ -2794,7 +2794,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Secondo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/'
             ],
         ];
 
@@ -2805,7 +2805,7 @@ class DishSeeder extends Seeder
             $new_dish = new Dish();
 
             if ($dish['image'] === '') {
-                $new_dish->image = 'dish_images/default-dish.png';
+                $new_dish->image = 'default-dish.png';
             }
 
             $new_dish->slug = Str::slug($dish['name']);
