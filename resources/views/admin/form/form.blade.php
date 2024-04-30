@@ -120,7 +120,7 @@
                     {{-- INPUT GROUP PRICE --}}
                     <div class="mb-3 col-6 col-sm-4 col-xl-5">
                         <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
-                        <input type="number" name="price" id="price" step="0.1" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                        <input type="number" name="price" id="price" step="0.1" min="0" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                         value="{{ old('price', $dish->price) }}">
                         @error('price')
                             <div class="invalid-feedback">
