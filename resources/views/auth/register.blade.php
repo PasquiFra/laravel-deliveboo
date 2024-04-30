@@ -146,7 +146,7 @@
                                         P.IVA
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input placeholder="Partita IVA" name="vat" value="{{old('vat')}}" type="text"
+                                    <input placeholder="es: IT12345678901" name="vat" value="{{old('vat')}}" type="text"
                                     class="test form-control bg-transparent border-dark-light rounded-pill
                                      @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat" minlength="11">
                                      <span class="invalid-message invalid-feedback ms-3"></span>
