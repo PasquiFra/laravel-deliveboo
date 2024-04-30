@@ -179,8 +179,13 @@ class DishController extends Controller
     //# Action per eliminare il piatto
     public function destroy(Dish $dish)
     {
+        if ($dish->restaurant->user_id !== Auth::id()) {
+            abort(404);
+        };
+
         $dish->delete();
         //Flash data toast
+
         return to_route('admin.dishes.index')
             ->with('toast-button-type', 'danger')
             ->with('toast-message', 'Piatto eliminato')
@@ -193,8 +198,9 @@ class DishController extends Controller
     //# Action per eliminare il piatto
     public function trash()
     {
+
         $dishes = Dish::onlyTrashed()->get();
-        //$isFromTrash = true;
+
         return view('admin.dishes.trash', compact('dishes'));
     }
 
