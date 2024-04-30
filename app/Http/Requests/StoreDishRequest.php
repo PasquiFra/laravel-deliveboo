@@ -41,7 +41,7 @@ class StoreDishRequest extends FormRequest
             'course.required' => 'La portata è obbligatoria',
             'course.string' => 'La portata dev\'essere una stringa',
             'price.numeric' => 'Il prezzo dev\'essere un numero',
-            'price.min:0' => 'Il prezzo non può essere negativo',
+            'price.min' => 'Il prezzo non può essere negativo',
             'price.required' => 'Il prezzo dev\'essere inserito',
         ];
     }

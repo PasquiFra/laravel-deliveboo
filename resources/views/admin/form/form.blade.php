@@ -234,8 +234,9 @@
 
         // setto il field name del ristorante quando il campo è valido
         const nameField=document.getElementById('name');
+        const nameFieldValue=document.getElementById('name').value;
        
-        if (nameField.value.length >= 3) {
+        if (nameFieldValue.length >= 3) {
             nameField.classList.add('is-valid');
             nameField.classList.remove('is-invalid');
         } else {
