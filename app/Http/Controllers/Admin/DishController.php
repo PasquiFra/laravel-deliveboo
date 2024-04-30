@@ -112,9 +112,7 @@ class DishController extends Controller
     public function show(Dish $dish)
     {
         if ($dish->restaurant->user_id !== Auth::id()) {
-            return to_route('admin.dishes.index')
-                ->with('message', "Non sei autorizzato a vedere questo piatto")
-                ->with('type', 'danger');
+            abort(404);
         };
 
         return view('admin.dishes.show', compact('dish'));
@@ -126,9 +124,7 @@ class DishController extends Controller
     public function edit(Dish $dish)
     {
         if ($dish->restaurant->user_id !== Auth::id()) {
-            return to_route('admin.dishes.index')
-                ->with('message', "Non sei autorizzato a modifcare questo piatto")
-                ->with('type', 'danger');
+            abort(404);
         };
 
         $diet_options = ['Vegetariano', 'Vegano', 'Gluten-free', 'Carne', 'Pesce'];
