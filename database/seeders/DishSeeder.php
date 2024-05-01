@@ -62,7 +62,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Primo',
                 'price' => 14,
-                'image' => 'dish_images/risotto-agli-asparagi-4.jpg'
+                'image' => 'dish_images/risotto-trionfo-di-asparagi-4.jpg'
             ],
 
             // Secondi
@@ -74,7 +74,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => 'dish_images/pollo-romana-5.jpg'
+                'image' => 'dish_images/pollo-alla-romana-veg-5.jpg'
             ],
             [
                 'restaurant_id' => 1,
@@ -84,7 +84,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
                 'price' => 22,
-                'image' => 'dish_images/grigliata-beyond-6.jpeg'
+                'image' => 'dish_images/grigliata-beyond-meat-6.jpeg'
             ],
             // Dolci
             [
@@ -95,7 +95,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
                 'price' => 6,
-                'image' => 'dish_images/tiramisu-veg-7.jpg'
+                'image' => 'dish_images/tiramisu-vegan-7.jpg'
             ],
             [
                 'restaurant_id' => 1,
@@ -105,7 +105,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
                 'price' => 4,
-                'image' => 'dish_images/tozzetti-8.jpg'
+                'image' => 'dish_images/tozzetti-artigianali-8.jpg'
             ],
 
 
@@ -124,7 +124,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Primo',
                 'price' => 13,
-                'image' => 'dish_images/spaghetti-pomodoro-9.jpeg'
+                'image' => 'dish_images/spaghetti-con-pomodoro-e-basilico-9.jpeg'
             ],
             [
                 'restaurant_id' => 2,
@@ -134,7 +134,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 14,
-                'image' => 'dish_images/spaghetti-carbonara-10.jpg'
+                'image' => 'dish_images/spaghetti-alla-carbonara-10.jpg'
             ],
 
             // Secondi
@@ -146,7 +146,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 15,
-                'image' => 'dish_images/saltimbocca-alla-romana-11.jpg'
+                'image' => 'dish_images/saltimbocca-alla-romana-con-patate-11.jpg'
             ],
             [
                 'restaurant_id' => 2,
@@ -156,7 +156,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 22,
-                'image' => 'dish_images/polpette-pomodoro-patate-12.jpg'
+                'image' => 'dish_images/polpette-al-pomodoro-con-patate-12.jpg'
             ],
             // Dolci
             [
@@ -177,7 +177,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 4,
-                'image' => 'dish_images/cheesecake-pistacchio-14.jpg'
+                'image' => 'dish_images/cheesecake-al-pistacchio-14.jpg'
             ],
 
             //# Foodie GreenLab
@@ -195,7 +195,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Primo',
                 'price' => 7.90,
-                'image' => 'dish_images/couscous-15.jpg'
+                'image' => 'dish_images/cous-cous-estivo-dellorto-15.jpg'
             ],
             [
                 'restaurant_id' => 3,
@@ -205,7 +205,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Primo',
                 'price' => 9.90,
-                'image' => 'dish_images/riso-basmati-16.jpg'
+                'image' => 'dish_images/riso-basmati-non-condito-250gr-16.jpg'
             ],
 
             // Secondi
@@ -217,7 +217,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => 'dish_images/insalata-lenticchie-17.jpg'
+                'image' => 'dish_images/insalata-di-lenticchie-250gr-17.jpg'
             ],
             [
                 'restaurant_id' => 3,
@@ -227,7 +227,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => 'dish_images/seitan-thai-18.jpg'
+                'image' => 'dish_images/seitan-in-salsa-thai-200gr-18.jpg'
             ],
             // Dolci
             [
@@ -238,7 +238,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
                 'price' => 5.50,
-                'image' => 'dish_images/flapjack-19.jpg'
+                'image' => 'dish_images/flapjack-2-barrette-energetiche-19.jpg'
             ],
             [
                 'restaurant_id' => 3,
@@ -248,7 +248,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 4,
-                'image' => 'dish_images/muffin-cioccolato-20.jpeg'
+                'image' => 'dish_images/muffin-al-cioccolato-20.jpeg'
             ],
 
             //# Tonnarello
@@ -263,7 +263,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Antipasto',
                 'price' => 19,
-                'image' => ''
+                'image' => 'dish_images/cestino-di-suppli-mignon-8-pezzi-21.png'
             ],
             [
                 'restaurant_id' => 4,
@@ -273,7 +273,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
                 'price' => 8.50,
-                'image' => ''
+                'image' => 'dish_images/carciofo-alla-giudia-22.jpeg'
             ],
 
             // Primi 
@@ -285,7 +285,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/tonnarelli-carbonara-23.jpg'
             ],
             [
                 'restaurant_id' => 4,
@@ -295,7 +295,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/tonnarello-allamatriciana-24.jpg'
             ],
 
             // Secondi
@@ -307,7 +307,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 22,
-                'image' => ''
+                'image' => 'dish_images/abbacchio-al-forno-25.jpg'
             ],
             [
                 'restaurant_id' => 4,
@@ -317,7 +317,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 18,
-                'image' => ''
+                'image' => 'dish_images/saltimbocca-alla-romana-26.jpeg'
             ],
             // Dolci
             [
@@ -328,7 +328,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/panna-cotta-con-le-fragole-27.jpg'
             ],
             [
                 'restaurant_id' => 4,
@@ -338,7 +338,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/salame-di-cioccolato-28.jpeg'
             ],
 
             //# Gelateria Bartocci
@@ -352,7 +352,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/vaschetta-di-gelato-350gr-29.jpg'
             ],
             [
                 'restaurant_id' => 5,
@@ -362,7 +362,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/vaschetta-di-gelato-350gr-29.jpg'
             ],
             [
                 'restaurant_id' => 5,
@@ -372,7 +372,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 22,
-                'image' => ''
+                'image' => 'dish_images/vaschetta-di-gelato-350gr-29.jpg'
             ],
             [
                 'restaurant_id' => 5,
@@ -382,7 +382,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 29,
-                'image' => ''
+                'image' => 'dish_images/vaschetta-di-gelato-350gr-29.jpg'
             ],
 
             //# Nonna Agrippina
@@ -397,7 +397,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/cicoria-ripassata-33.jpg'
             ],
             [
                 'restaurant_id' => 6,
@@ -407,7 +407,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Antipasto',
                 'price' => 4,
-                'image' => ''
+                'image' => 'dish_images/patate-al-forno-34.jpg'
             ],
 
             // Primi 
@@ -419,7 +419,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/bucatini-allamatriciana-35.jpg'
             ],
             [
                 'restaurant_id' => 6,
@@ -429,7 +429,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Primo',
                 'price' => 19,
-                'image' => ''
+                'image' => 'dish_images/lasagna-della-domenica-36.jpg'
             ],
 
             // Secondi
@@ -441,7 +441,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/insalata-di-lenticchie-250gr-37.jpg'
             ],
             [
                 'restaurant_id' => 6,
@@ -451,7 +451,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/seitan-in-salsa-thay-200gr-38.jpg'
             ],
             // Dolci
             [
@@ -462,7 +462,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegano',
                 'course' => 'Dessert',
                 'price' => 5.50,
-                'image' => ''
+                'image' => 'dish_images/flapjack-2-barrette-energetiche-39.jpeg'
             ],
             [
                 'restaurant_id' => 6,
@@ -472,7 +472,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 5,
-                'image' => ''
+                'image' => 'dish_images/muffin-al-cioccolato-40.jpeg'
             ],
 
             //# Gelateria Giolitti
@@ -486,7 +486,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/vaschetta-di-gelato-350gr-41.jpg'
             ],
             [
                 'restaurant_id' => 7,
@@ -496,7 +496,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 15,
-                'image' => ''
+                'image' => 'dish_images/vaschetta-di-gelato-350gr-41.jpg'
             ],
             [
                 'restaurant_id' => 7,
@@ -506,7 +506,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 22,
-                'image' => ''
+                'image' => 'dish_images/vaschetta-di-gelato-350gr-41.jpg'
             ],
             [
                 'restaurant_id' => 7,
@@ -516,7 +516,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 29,
-                'image' => ''
+                'image' => 'dish_images/vaschetta-di-gelato-350gr-41.jpg'
             ],
 
             //# Il Pellicano
@@ -530,7 +530,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Antipasto',
                 'price' => 6.50,
-                'image' => ''
+                'image' => 'dish_images/suppli-al-telefono-45.jpg'
             ],
             [
                 'restaurant_id' => 8,
@@ -540,7 +540,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Antipasto',
                 'price' => 8,
-                'image' => ''
+                'image' => 'dish_images/carciofi-alla-romana-46.jpg'
             ],
 
             // Primi 
@@ -552,7 +552,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Primo',
                 'price' => 12,
-                'image' => ''
+                'image' => 'dish_images/pasta-alla-carbonara-47.jpg'
             ],
             [
                 'restaurant_id' => 8,
@@ -562,7 +562,7 @@ class DishSeeder extends Seeder
                 'diet' => 'Vegetariano',
                 'course' => 'Primo',
                 'price' => 10,
-                'image' => ''
+                'image' => 'dish_images/cacio-e-pepe-48.jpg'
             ],
 
             // Secondi
@@ -574,7 +574,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 16.50,
-                'image' => ''
+                'image' => 'dish_images/saltimbocca-alla-romana-49.jpg'
             ],
             [
                 'restaurant_id' => 8,
@@ -584,7 +584,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Secondo',
                 'price' => 14,
-                'image' => ''
+                'image' => 'dish_images/trippa-alla-romana-50.jpg'
             ],
 
             // Dolci
@@ -596,7 +596,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 7.50,
-                'image' => ''
+                'image' => 'dish_images/tiramisu-51.jpg'
             ],
             [
                 'restaurant_id' => 8,
@@ -606,7 +606,7 @@ class DishSeeder extends Seeder
                 'diet' => null,
                 'course' => 'Dessert',
                 'price' => 6,
-                'image' => ''
+                'image' => 'dish_images/maritozzo-con-la-panna-52.jpg'
             ],
 
             //# Tavola Rotonda
