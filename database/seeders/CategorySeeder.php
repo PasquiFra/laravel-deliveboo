@@ -14,28 +14,73 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $labels = [
-            'Italiano',
-            'Cinese',
-            'Giapponese',
-            'Indiano',
-            'Messicano',
-            'Siriano',
-            'Africano',
-            'Thailandese',
-            'Brasiliano',
-            'Turco',
-            'Carne',
-            'Pesce',
-            'Gelato',
-            'Pizza',
-            'Poke'
+        $categories = [
+            [
+                'label' => 'Italiano',
+                'img' => '',
+            ],
+            [
+                'label' => 'Cinese',
+                'img' => '',
+            ],
+            [
+                'label' => 'Giapponese',
+                'img' => '',
+            ],
+            [
+                'label' => 'Indiano',
+                'img' => '',
+            ],
+            [
+                'label' => 'Messicano',
+                'img' => '',
+            ],
+            [
+                'label' => 'Siriano',
+                'img' => '',
+            ],
+            [
+                'label' => 'Africano',
+                'img' => '',
+            ],
+            [
+                'label' => 'Thailandese',
+                'img' => '',
+            ],
+            [
+                'label' => 'Brasiliano',
+                'img' => '',
+            ],
+            [
+                'label' => 'Turco',
+                'img' => '',
+            ],
+            [
+                'label' => 'Carne',
+                'img' => '',
+            ],
+            [
+                'label' => 'Pesce',
+                'img' => '',
+            ],
+            [
+                'label' => 'Gelato',
+                'img' => '',
+            ],
+            [
+                'label' => 'Pizza',
+                'img' => '',
+            ],
+            [
+                'label' => 'Poke',
+                'img' => '',
+            ],
         ];
-        foreach ($labels as $label) {
-            $category = new Category();
-            $category->label = $label;
-            $category->slug = Str::slug($label);
-            $category->save();
+        foreach ($categories as $category) {
+            $new_category = new Category();
+            $new_category->label = $category['label'];
+            $new_category->slug = Str::slug($category['label']);
+            $new_category->save();
         }
     }
 }
