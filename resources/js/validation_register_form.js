@@ -1,5 +1,5 @@
 // Recupero gli elementi
-const inputs = document.querySelectorAll('.test');
+const inputs = document.querySelectorAll('.form-inputs');
 const inputPassword = document.getElementById('password');
 const inputPasswordConfirm = document.getElementById('password-confirm');
 const invalidMessage = document.querySelectorAll('.invalid-message');

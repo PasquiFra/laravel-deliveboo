@@ -44,8 +44,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'lastname' => 'required|string|max:255',
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'password' => 'min:8',
+            'password' => ['required', 'confirmed', 'min:8', Rules\Password::defaults()],
             'restaurant_name' => 'required|string|min:5|max:50',
             'address' => 'required|string|min:5|max:50',
             'phone' => 'string|min:10|max:15|nullable',
@@ -53,7 +52,7 @@ class RegisteredUserController extends Controller
             'categories' => 'required|exists:categories,id',
 
         ], [
-            'name.required' => 'Il campo Nome è un campo obbligatorio',
+            'name.required' => 'Il campo Nome è obbligatorio',
             'lastname.required' => 'Il campo Cognome è obbligatorio',
             'email.required' => 'Il campo Email è obbligatorio',
             'email.lowercase' => 'Nel campo Email non possono essere inserite lettere maiuscole',

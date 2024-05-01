@@ -27,10 +27,10 @@
                                         Nome ristorante
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input placeholder="Nome del ristorante" id="restaurant_name" type="text" class="test form-control bg-transparent border-dark-light rounded-pill @error('restaurant_name') is-invalid @enderror" name="restaurant_name" value="{{old('restaurant_name')}}" required autocomplete="restaurant_name" autofocus>
+                                    <input placeholder="Nome del ristorante" id="restaurant_name" type="text" class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('restaurant_name') is-invalid @enderror" name="restaurant_name" value="{{old('restaurant_name')}}" required autocomplete="restaurant_name" autofocus>
                                     <span class="invalid-message invalid-feedback ms-3"></span>
                                     @error('restaurant_name')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback mx-3" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -42,10 +42,10 @@
                                         Nome ristoratore
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input placeholder="Nome del ristoratore" id="name" type="text" class="test form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" pattern="[A-Za-z]+" autofocus>
+                                    <input placeholder="Nome del ristoratore" id="name" type="text" class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" pattern="[A-Za-z]+" autofocus>
                                     <span class="invalid-message invalid-feedback ms-3"></span>
                                     @error('name')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback mx-3" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -57,12 +57,12 @@
                                         Cognome Ristoratore
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input placeholder="Cognome ristoratore" id="lastname" type="text" class="test form-control bg-transparent border-dark-light rounded-pill @error('lastname') is-invalid @enderror"
+                                    <input placeholder="Cognome ristoratore" id="lastname" type="text" class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('lastname') is-invalid @enderror"
                                     name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
                                     <span class="invalid-message invalid-feedback ms-3"></span>
     
                                     @error('lastname')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback mx-3" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -75,13 +75,13 @@
                                         Email
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input placeholder="es: name@example.com" id="email" type="email" class="test form-control bg-transparent border-dark-light rounded-pill 
+                                    <input placeholder="es: name@example.com" id="email" type="email" class="form-inputs form-control bg-transparent border-dark-light rounded-pill 
                                     @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"
                                     minlength="6">
                                     <span class="invalid-message invalid-feedback ms-3"></span>
     
                                     @error('email')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback mx-3" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -94,11 +94,11 @@
                                         {{ __('Password') }}
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input placeholder="Inserisci la password" id="password" type="password" class="test form-control bg-transparent border-dark-light rounded-pill @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <input placeholder="Inserisci la password" id="password" type="password" class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                                     <span class="invalid-message invalid-feedback ms-3"></span>
     
                                     @error('password')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback mx-3" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -111,10 +111,12 @@
                                         Conferma Password
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input placeholder="Conferma la password" id="password-confirm" type="password" class="test form-control bg-transparent border-dark-light rounded-pill" name="password_confirmation" required autocomplete="new-password">
+                                    <input placeholder="Conferma la password" id="password-confirm" type="password" class="form-inputs form-control bg-transparent border-dark-light rounded-pill" name="password_confirmation" required autocomplete="new-password">
                                     <span class="invalid-message invalid-feedback ms-3"></span>
                                     @error('address')   
-                                        <div class="invalid-feedback">{{$message}}</div>
+                                        <div class="invalid-feedback mx-3">
+                                            <strong>{{$message}}</strong>
+                                        </div>
                                     @enderror
                                 </div>
 
@@ -124,10 +126,12 @@
                                         Indirizzo
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
-                                    <input placeholder="es: Via Pippo de Ciccios 7" name="address" value="{{old('address')}}" type="text" class="test form-control bg-transparent border-dark-light rounded-pill @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
+                                    <input placeholder="es: Via Pippo de Ciccios 7" name="address" value="{{old('address')}}" type="text" class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('address') is-invalid @elseif(old('address', '')) is-valid @enderror" id="address">
                                     <span class="invalid-message invalid-feedback ms-3"></span>
                                         @error('address')   
-                                            <div class="invalid-feedback">{{$message}}</div>
+                                            <div class="invalid-feedback mx-3">
+                                                <strong>{{$message}}</strong>
+                                            </div>
                                         @enderror
                                 </div>
 
@@ -136,7 +140,9 @@
                                     <label for="phone" class="mb-2 ms-3">Numero di telefono</label>
                                     <input placeholder="es: +39 3123456789" name="phone" value="{{old('phone', '')}}" type="text" class="form-control bg-transparent border-dark-light rounded-pill @error('phone') is-invalid @elseif(old('phone', '')) is-valid @enderror" id="phone">
                                         @error('phone')   
-                                            <div class="invalid-feedback">{{$message}}</div>
+                                            <div class="invalid-feedback mx-3">
+                                                <strong>{{$message}}</strong>
+                                            </div>
                                         @enderror
                                 </div>
 
@@ -147,11 +153,13 @@
                                         <span class="text-danger"><strong><sup>*</sup></strong></span>
                                     </label>
                                     <input placeholder="es: IT12345678901" name="vat" value="{{old('vat')}}" type="text"
-                                    class="test form-control bg-transparent border-dark-light rounded-pill
+                                    class="form-inputs form-control bg-transparent border-dark-light rounded-pill
                                      @error('vat') is-invalid @elseif(old('vat', '')) is-valid @enderror" id="vat" minlength="11">
                                      <span class="invalid-message invalid-feedback ms-3"></span>
                                         @error('vat')   
-                                            <div class="invalid-feedback">{{$message}}</div>
+                                            <div class="invalid-feedback mx-3">
+                                                <strong>{{$message}}</strong>
+                                            </div>
                                         @enderror
                                 </div>
 
@@ -168,19 +176,19 @@
                                     </div>
                                 </div>    
                             </div>
-                            <p class="asterisk mb-3 text-center">I campi contrassegnati con <span class="text-danger"><strong><sup>*</sup></strong></span> sono obbligatori</p>
+                            <p class="asterisk mb-3 text-center me-3">I campi contrassegnati con <span class="text-danger"><strong><sup>*</sup></strong></span> sono obbligatori</p>
                         
                             {{-- Bottoni --}}
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-12 text-center">
                                     
                                     {{-- Bottone registrazione --}}
-                                    <button type="submit" class="btn btn-success me-2">
+                                    <button type="submit" class="btn-outline-index text-white fw-semibold green ms-1 px-3 py-2 rounded-pill align-items-center text-white fw-semibold me-2">
                                         <i class="fa-solid fa-floppy-disk me-2"></i>Registrati
                                     </button>
                                     
                                     {{-- Bottone reset --}}
-                                    <button type="reset" class="btn btn-warning">
+                                    <button type="reset" class="btn-outline-index text-white fw-semibold yellow ms-1 px-3 py-2 rounded-pill align-items-center text-white fw-semibold me-3">
                                         <i class="fa-solid fa-arrows-rotate me-2"></i>Reset
                                     </button>
                                 </div>
