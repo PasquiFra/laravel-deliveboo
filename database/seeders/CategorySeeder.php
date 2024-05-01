@@ -14,7 +14,23 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $labels = ['Italiano', 'Cinese', 'Giapponese', 'Indiano', 'Messicano', 'Siriano', 'Africano', 'Thailandese', 'Brasiliano', 'Turco'];
+        $labels = [
+            'Italiano',
+            'Cinese',
+            'Giapponese',
+            'Indiano',
+            'Messicano',
+            'Siriano',
+            'Africano',
+            'Thailandese',
+            'Brasiliano',
+            'Turco',
+            'Carne',
+            'Pesce',
+            'Gelato',
+            'Pizza',
+            'Poke'
+        ];
         foreach ($labels as $label) {
             $category = new Category();
             $category->label = $label;
