@@ -151,7 +151,7 @@ class DishController extends Controller
 
             $extension = $data['image']->extension();
 
-            $img_url = Storage::putFileAs('dish_images', $data['image'], "$dish->slug.$extension");
+            $img_url = Storage::putFileAs('dish_images', $data['image'], "{$dish->slug}-{$dish->id}.{$extension}");
             $dish->image = $img_url;
         }
 

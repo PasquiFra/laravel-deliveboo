@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Login')
+
 @section('content')
 <div class="container mt-4">
     <div class="glass-card spacing px-4 py-4">
