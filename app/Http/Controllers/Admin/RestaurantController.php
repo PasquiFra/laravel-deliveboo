@@ -80,6 +80,7 @@ class RestaurantController extends Controller
             'vat.min' => 'La P.IVA non può contenere meno di :min cifre',
             'vat.max' => 'La P.IVA non può contenere più di :max cifre',
             'image.image' => 'Il file inserito non è un\'immagine',
+            'image.mimes' => 'Il formato del file non è corretto',
             'categories.required' => 'Categoria obbligatoria',
             'categories.exists' => 'Categoria non valida'
         ]);
@@ -97,7 +98,7 @@ class RestaurantController extends Controller
 
             $extension = $data['image']->extension();
 
-            $img_url = Storage::putFileAs('restaurant_images', $data['image'], "$restaurant->slug.$extension");
+            $img_url = Storage::putFileAs('public/restaurant_images', $data['image'], "$restaurant->slug.$extension");
             $restaurant->image = $img_url;
         }
 
