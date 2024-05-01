@@ -37,8 +37,13 @@ class RestaurantController extends Controller
     {
 
 
-        // Recupera il ristorante con il dato slug e carica solo i piatti con disponibilità 1
-        $restaurant = Restaurant::whereSlug($slug)
+        // Recupero il ristorante con il dato slug 
+        $restaurant = Restaurant::select(['restaurant_name', 'city', 'address', 'cap', 'image', 'phone'])
+            ->whereSlug($slug)
+            ->first();
+
+        // Recupero il ristorante con il dato slug e carica solo i piatti con disponibilità 1
+        $restaurant_dishes = Restaurant::whereSlug($slug)
             ->with(['dishes' => function ($query) {
                 $query->where('availability', 1);
             }])
@@ -50,7 +55,7 @@ class RestaurantController extends Controller
         }
 
         // Restituisci i piatti disponibili come risposta JSON
-        return response()->json($restaurant->dishes);
+        return response()->json(['restaurant' => $restaurant, 'restaurant_dishes' => $restaurant_dishes]);
     }
 
     /**
