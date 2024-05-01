@@ -161,7 +161,7 @@
                     </div>
                     {{-- CAMPO PREVIEW IMAGE --}}
                     <div class="col-2 col-md-2 align-items-center d-none d-md-flex">
-                        <img id="preview" src="{{ old('image', $dish->image) && @getimagesize($dish->image)
+                        <img id="preview" src="{{ old('image', $dish->image)
                         ? asset('storage/' . old('image', $dish->image)) 
                         : asset('/images/default-dish.png')}}" 
                         alt="{{ $dish->slug }}" class="img-fluid">
