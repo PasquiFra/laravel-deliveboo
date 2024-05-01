@@ -1,4 +1,3 @@
-
 // Recupero gli elementi
 const inputs = document.querySelectorAll('.test');
 const inputPassword = document.getElementById('password');
@@ -7,7 +6,7 @@ const invalidMessage = document.querySelectorAll('.invalid-message');
 const form = document.getElementById('registration-form');
 
 // Flag
-let isValid = null;
+let isValid = true;
 
 // Regex
 const regex = /\d/;
@@ -15,12 +14,11 @@ const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))
 const regexVat = /^(IT)?[0-9]{11}$/;
 
 // Giro su tutti gli input
-inputs.forEach((input, i) => {
 
-    input.addEventListener('blur', function () {
+form.addEventListener('submit', e => {
 
+    inputs.forEach((input, i) => {
         const inputField = input.value.trim();
-
         // Se l'input è vuoto
         if (!inputField) {
 
@@ -36,9 +34,6 @@ inputs.forEach((input, i) => {
 
         } else {
 
-            // Riassegno la flag a true
-            isValid = true;
-
             // Aggiungo la classe 'is-valid' e rimuovo la classe 'is-invalid'
             input.classList.remove('is-invalid');
             input.classList.add('is-valid');
@@ -50,6 +45,7 @@ inputs.forEach((input, i) => {
         // Input restaurant_name
         if (input.id === 'restaurant_name') {
             if (inputField.length < 5 && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -62,7 +58,8 @@ inputs.forEach((input, i) => {
             }
 
             // Se è un numero
-            if (inputField.length >= 1 && !isNaN(inputField)) {
+            if (!isNaN(inputField) && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -78,6 +75,7 @@ inputs.forEach((input, i) => {
         // Input name
         if (input.id === 'name') {
             if (inputField.length < 2 && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -91,7 +89,8 @@ inputs.forEach((input, i) => {
 
 
             // Se è un numero
-            if (inputField.length >= 1 && regex.test(inputField)) {
+            if (regex.test(inputField && inputField.length >= 1)) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -107,6 +106,7 @@ inputs.forEach((input, i) => {
         // Input lastname
         if (input.id === 'lastname') {
             if (inputField.length < 2 && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -120,7 +120,8 @@ inputs.forEach((input, i) => {
 
 
             // Se è un numero
-            if (inputField.length >= 1 && regex.test(inputField)) {
+            if (regex.test(inputField) && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -135,7 +136,8 @@ inputs.forEach((input, i) => {
 
         // Input email
         if (input.id === 'email') {
-            if (inputField.length >= 1 && !input.value.match(regexEmail)) {
+            if (!input.value.match(regexEmail) && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -151,6 +153,7 @@ inputs.forEach((input, i) => {
         // Input password
         if (input.id === 'password') {
             if (inputField.length < 8 && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -166,6 +169,7 @@ inputs.forEach((input, i) => {
         // Input password-confirm
         if (input.id === 'password-confirm') {
             if (inputPassword.value !== inputPasswordConfirm.value) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -181,6 +185,7 @@ inputs.forEach((input, i) => {
         // Input indirizzo
         if (input.id === 'address') {
             if (inputField.length < 5 && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -193,7 +198,8 @@ inputs.forEach((input, i) => {
             }
 
             // Se è un numero
-            if (inputField.length >= 1 && !isNaN(inputField)) {
+            if (!isNaN(inputField) && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -209,6 +215,7 @@ inputs.forEach((input, i) => {
         // Input VAT
         if (input.id === 'vat') {
             if (inputField.length < 13 && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -220,7 +227,8 @@ inputs.forEach((input, i) => {
                 invalidMessage[i].innerText = 'La P.IVA deve avere almeno 11 caratteri dopo IT';
             }
 
-            if (inputField.length >= 1 && !input.value.match(regexVat)) {
+            if (!input.value.match(regexVat) && inputField.length >= 1) {
+
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -234,10 +242,5 @@ inputs.forEach((input, i) => {
         }
     });
 
-
-    form.addEventListener('submit', e => {
-
-        // Se isValid è false non faccio partire il form
-        if (!isValid) e.preventDefault();
-    })
-})
+    if (!isValid) e.preventDefault()
+});
