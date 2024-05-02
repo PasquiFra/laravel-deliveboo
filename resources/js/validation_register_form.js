@@ -8,7 +8,6 @@ const checkBoxes = document.querySelectorAll('[type="checkbox"]');
 const textCheckbox = document.getElementById('text-checkbox');
 
 // Flag
-let isValid = true;
 let isCheckboxValid = false;
 
 // Regex
@@ -16,10 +15,12 @@ const regex = /\d/;
 const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexVat = /^(IT)?[0-9]{11}$/;
 
-// Giro su tutti gli input
-
+//! Effettiva validazione
 form.addEventListener('submit', e => {
+    // Flag
+    let isValid = true;
 
+    // Giro su tutti gli input
     inputs.forEach((input, i) => {
         const inputField = input.value.trim();
         // Se l'input è vuoto
@@ -270,6 +271,8 @@ form.addEventListener('submit', e => {
         textCheckbox.innerText = 'Aggiungi almeno un categoria';
         textCheckbox.classList.remove('d-none');
     }
+
+    console.log(isValid);
 
     // Controllo se la flag è a false
     if (!isValid || !isCheckboxValid) e.preventDefault();

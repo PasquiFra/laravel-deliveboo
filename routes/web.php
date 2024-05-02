@@ -51,7 +51,6 @@ Route::middleware('auth')->group(function () {
 
         // Rotte Admin Restaurant CRUD
         Route::get('/restaurants/{restaurant}', [RestaurantController::class, 'show'])->name('restaurants.show');
-        Route::get('/restaurants/{restaurant}/edit', [RestaurantController::class, 'edit'])->name('restaurants.edit');
         Route::put('/restaurants/{restaurant}', [RestaurantController::class, 'update'])->name('restaurants.update');
     });
 });
