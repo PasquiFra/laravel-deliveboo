@@ -8,21 +8,13 @@
             @if (Route::is('admin.dishes.create')) Aggiungi nuovo piatto
             @else Modifica {{$dish->name}} @endif 
         </h1>
-    
-        @if($errors)
-        <!--Alert per errori del form-->
-        <div id="validation-errors" class="alert alert-danger d-none" role="alert">
-            <ul id="listed-errors">    
-            </ul>
-            </div>    
-        @endif
 
         {{-- Impostazioni del form --}}
         @if ($dish->exists)
-            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data" id="input-form">
+            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data" id="form-update" novalidate>
             @method('put')
         @else
-            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data" id="input-form">
+            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data" id="form-create" novalidate>
         @endif
     
                 {{-- TOKEN csrf --}}
@@ -50,10 +42,11 @@
                             required 
                             id="name" 
                             name="name" 
-                            class="form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
+                            class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
                             value="{{ old('name', $dish->name) }}" 
                             placeholder="Inserisci titolo..."
                         >
+                        <span class="invalid-message invalid-feedback ms-3"></span>
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -129,8 +122,9 @@
                     {{-- INPUT GROUP PRICE --}}
                     <div class="mb-3 col-6 col-sm-4 col-xl-5">
                         <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
-                        <input type="number" name="price" id="price" step="0.1" min="0" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                        <input type="number" name="price" id="price" step="0.1" min="0" class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                         value="{{ old('price', $dish->price) }}">
+                        <span class="invalid-message invalid-feedback ms-3"></span>
                         @error('price')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -185,14 +179,6 @@
 @section('scripts')
 <script>
 
-    const errorBag=document.getElementById('validation-errors');
-    const listedErrors=document.getElementById('listed-errors');
-   
-    let isValid=true;
-    let errors=[];
-    let errorText='';
-    let errorsHtml='';
-
     // Label di availability dinamico
     document.getElementById('availability').addEventListener('change', function() {;
         const label = document.getElementById('availability-label');
@@ -230,76 +216,11 @@
         if(blobUrl) URL.revokeObjectURL(blobUrl);
     }) 
 
-    document.getElementById('input-form').addEventListener('submit', function() {;
-
-        // setto il field name del ristorante quando il campo è valido
-        const nameField=document.getElementById('name');
-        const nameFieldValue=document.getElementById('name').value;
-       
-        if (nameFieldValue.length >= 3) {
-            nameField.classList.add('is-valid');
-            nameField.classList.remove('is-invalid');
-        } else {
-            isValid=false
-            nameField.classList.add('is-invalid');
-            nameField.classList.remove('is-valid');
-            errorText='Il campo nome del piatto deve contenere almeno 3 lettere';
-            errors.push(errorText);
-        }
-
-        // setto il field diet in modo che i valori selezionati siano tra quelli consentiti
-        const dietSelect = document.getElementById('diet');
-        const dietOptions = @json($diet_options);
-        
-        dietOptions.forEach(option => {
-            if (dietOptions.includes(dietSelect.value) || !dietSelect.value) {
-                dietSelect.classList.add('is-valid');
-                dietSelect.classList.remove('is-invalid');
-            } else {
-                isValid=false
-                dietSelect.classList.add('is-invalid');
-                dietSelect.classList.remove('is-valid');
-                errorText='Il campo dieta è errato';
-                errors.push(errorText);
-            }
-        });
-
-        // setto il field diet in modo che i valori selezionati siano tra quelli consentiti
-        const courseSelect = document.getElementById('course');
-        const courseOptions = @json($course_options);
-
-        courseOptions.forEach(option => {
-            if (courseOptions.includes(courseSelect.value)) {
-                courseSelect.classList.add('is-valid');
-                courseSelect.classList.remove('is-invalid');
-            } else {
-                isValid=false
-                courseSelect.classList.add('is-invalid');
-                courseSelect.classList.remove('is-valid');
-                errorText='Il campo portata è errato';
-                errors.push(errorText);
-            }
-        });
-        
-        // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
-        const priceInputField = document.getElementById('price');
-        const priceValue = parseFloat(priceInputField.value).toFixed(2);
-        priceInputField.value = priceValue;
-        
-        //Riempio la lista con gli errori
-        errors.forEach(error => {
-            errorsHtml+=`<li>${error}</li>`
-        });
-        listedErrors.innerHTML = errorsHtml;
-        
-        //Mostro l'alert se ci sono errori
-        if(errors.length){
-            errorBag.classList.remove('d-none')
-            event.preventDefault();
-        }
-        
-    });
-
 </script>
 
+    @if ($dish->exists)
+        @vite('resources/js/validation_dish_form_update.js')
+    @else
+        @vite('resources/js/validation_dish_form_create.js')
+    @endif
 @endsection
