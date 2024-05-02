@@ -44,7 +44,6 @@
             <div class="card-footer mt-4">
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="{{route('dashboard')}}" class="btn-outline-index text-white fw-semibold gray ms-1 px-3 py-2 rounded-pill"><i class="fa-solid fa-left-long me-2"></i>Torna indietro</a>
-                    <a href="{{route('admin.restaurants.edit', $restaurant->id)}}" class="btn-outline-index text-white fw-semibold yellow ms-1 px-3 py-2 rounded-pill"><i class="fas fa-pencil me-2"></i>Modifica</a>
                 </div>
             </div>
         </div>
