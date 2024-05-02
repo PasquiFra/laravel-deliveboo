@@ -75,11 +75,7 @@
                         @error('diet')
                             <div class="invalid-feedback">
                                 {{ $message }}
-                            </div>   
-                        @else        
-                            <div class="valid-feedback">
-                                Campo corretto
-                            </div>      
+                            </div>        
                         @enderror       
                     </div>
     
@@ -99,11 +95,7 @@
                         @error('course')
                             <div class="invalid-feedback">
                                 {{ $message }}<a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
-                            </div>   
-                        @else        
-                            <div class="valid-feedback">
-                                Campo corretto
-                            </div>      
+                            </div>        
                         @enderror       
                     </div>
                     {{-- INPUT GROUP INGREDIENTS --}}
@@ -128,11 +120,7 @@
                         @error('price')
                             <div class="invalid-feedback">
                                 {{ $message }}
-                            </div>   
-                        @else        
-                            <div class="valid-feedback">
-                                Campo corretto
-                            </div>      
+                            </div>        
                         @enderror     
                     </div>
     
@@ -216,7 +204,12 @@
         if(blobUrl) URL.revokeObjectURL(blobUrl);
     }) 
 
+// Recupero i valori delle select
+const dietOptions = @json($diet_options);
+const courseOptions = @json($course_options);
+
 </script>
+
 
     @if ($dish->exists)
         @vite('resources/js/validation_dish_form_update.js')
