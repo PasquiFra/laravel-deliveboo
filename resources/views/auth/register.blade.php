@@ -163,18 +163,17 @@
                                         @enderror
                                 </div>
 
-                                    <div class="col-12 text-center">
-                                        <p class="mb-3">Categorie</p>
-                                            {{-- Foreach delle categorie --}}
-                                            @foreach ($categories as $category)
-                                                <div class="form-check form-check-inline me-2">
-                                                    <label class="form-check-label" for="category-{{$category->id}}">{{$category->label}}</label>
-                                                    <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
-                                                </div>
-                                            @endforeach
+                                <div class="col-12 text-center">
+                                    <p class="mb-3">Categorie</p>
+                                    {{-- Foreach delle categorie --}}
+                                    @foreach ($categories as $category)
+                                        <div class="form-check form-check-inline me-2">
+                                            <label class="form-check-label" for="category-{{$category->id}}">{{$category->label}}</label>
+                                            <input class="form-check-input" type="checkbox" id="category-{{$category->id}}" value="{{$category->id}}" name="categories[]" @if (in_array($category->id, old('categories', $prev_categories ?? []))) checked @endif>
                                         </div>
-                                    </div>
-                                </div>    
+                                    @endforeach
+                                    <div id="text-checkbox" class="text-danger d-none mt-4"></div>
+                                </div>
                             </div>
                             <p class="asterisk mb-3 text-center me-3">I campi contrassegnati con <span class="text-danger"><strong><sup>*</sup></strong></span> sono obbligatori</p>
                         
