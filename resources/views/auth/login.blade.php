@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col">
                 <div class="text-center pb-4">{{ __('Login') }}</div>
-                    <form method="POST" action="{{ route('login') }}">
+                    <form novalidate method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-4 row">
                             <label for="email" class="col-5 col-sm-5 col-md-4  col-form-label text-md-right text-center">{{ __('E-Mail') }}</label>
