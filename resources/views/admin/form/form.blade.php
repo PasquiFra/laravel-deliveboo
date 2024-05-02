@@ -48,11 +48,11 @@
                         >
                         <span class="invalid-message invalid-feedback ms-3"></span>
                         @error('name')
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback ms-3">
                                 {{ $message }}
                             </div>   
                         @else        
-                            <div class="valid-feedback">
+                            <div class="valid-feedback ms-3">
                                 Campo corretto
                             </div>      
                         @enderror       
@@ -73,7 +73,7 @@
                             @endforeach
                         </select>
                         @error('diet')
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback ms-3">
                                 {{ $message }}
                             </div>        
                         @enderror       
@@ -93,9 +93,9 @@
 
                         </select>
                         @error('course')
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback ms-3">
                                 {{ $message }}<a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
-                            </div>        
+                            </div> 
                         @enderror       
                     </div>
                     {{-- INPUT GROUP INGREDIENTS --}}
@@ -118,7 +118,7 @@
                         value="{{ old('price', $dish->price) }}">
                         <span class="invalid-message invalid-feedback ms-3"></span>
                         @error('price')
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback ms-3">
                                 {{ $message }}
                             </div>        
                         @enderror     

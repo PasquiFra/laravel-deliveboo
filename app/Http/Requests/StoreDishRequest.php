@@ -40,10 +40,11 @@ class StoreDishRequest extends FormRequest
             'image.image' => 'Il tipo di file non è corretto',
             'image.mimes' => 'Il formato del file non è corretto',
             'course.required' => 'La portata è obbligatoria',
-            'course.string' => 'La portata dev\'essere una stringa',
-            'price.numeric' => 'Il prezzo dev\'essere un numero',
+            'course.string' => 'La portata deveessere una stringa',
+            'price.decimal' => 'Il prezzo deve avere almeno due decimali',
+            'price.numeric' => 'Il prezzo deve essere un numero',
             'price.min' => 'Il prezzo non può essere negativo',
-            'price.required' => 'Il prezzo dev\'essere inserito',
+            'price.required' => 'Il prezzo deve essere inserito',
         ];
     }
 }
