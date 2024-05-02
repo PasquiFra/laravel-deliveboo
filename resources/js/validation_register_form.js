@@ -8,7 +8,6 @@ const checkBoxes = document.querySelectorAll('[type="checkbox"]');
 const textCheckbox = document.getElementById('text-checkbox');
 
 // Flag
-let isValid = true;
 let isCheckboxValid = false;
 
 // Regex
@@ -18,6 +17,8 @@ const regexVat = /^(IT)?[0-9]{11}$/;
 
 //! Effettiva validazione
 form.addEventListener('submit', e => {
+    // Flag
+    let isValid = true;
 
     // Giro su tutti gli input
     inputs.forEach((input, i) => {
@@ -270,6 +271,8 @@ form.addEventListener('submit', e => {
         textCheckbox.innerText = 'Aggiungi almeno un categoria';
         textCheckbox.classList.remove('d-none');
     }
+
+    console.log(isValid);
 
     // Controllo se la flag è a false
     if (!isValid || !isCheckboxValid) e.preventDefault();
