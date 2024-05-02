@@ -16,10 +16,10 @@ const regex = /\d/;
 const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexVat = /^(IT)?[0-9]{11}$/;
 
-// Giro su tutti gli input
-
+//! Effettiva validazione
 form.addEventListener('submit', e => {
 
+    // Giro su tutti gli input
     inputs.forEach((input, i) => {
         const inputField = input.value.trim();
         // Se l'input è vuoto
