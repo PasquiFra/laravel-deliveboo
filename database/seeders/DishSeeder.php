@@ -19,7 +19,7 @@ class DishSeeder extends Seeder
 
         //~ Piatti Ristoranti Italiani
 
-        //# Rifugio Romano#
+        //# Rifugio Romano
         $dishes = [
             // Antipasti
             [
