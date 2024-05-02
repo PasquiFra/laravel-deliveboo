@@ -55,11 +55,11 @@
                             placeholder="Inserisci titolo..."
                         >
                         @error('name')
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback ms-3">
                                 {{ $message }}
                             </div>   
                         @else        
-                            <div class="valid-feedback">
+                            <div class="valid-feedback ms-3">
                                 Campo corretto
                             </div>      
                         @enderror       
@@ -80,11 +80,11 @@
                             @endforeach
                         </select>
                         @error('diet')
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback ms-3">
                                 {{ $message }}
                             </div>   
                         @else        
-                            <div class="valid-feedback">
+                            <div class="valid-feedback ms-3">
                                 Campo corretto
                             </div>      
                         @enderror       
@@ -104,11 +104,11 @@
 
                         </select>
                         @error('course')
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback ms-3">
                                 {{ $message }}<a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
                             </div>   
                         @else        
-                            <div class="valid-feedback">
+                            <div class="valid-feedback ms-3">
                                 Campo corretto
                             </div>      
                         @enderror       
@@ -132,11 +132,11 @@
                         <input type="number" name="price" id="price" step="0.1" min="0" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                         value="{{ old('price', $dish->price) }}">
                         @error('price')
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback ms-3">
                                 {{ $message }}
                             </div>   
                         @else        
-                            <div class="valid-feedback">
+                            <div class="valid-feedback ms-3">
                                 Campo corretto
                             </div>      
                         @enderror     
