@@ -68,8 +68,9 @@
       <tbody>
         @forelse ($dishes as $dish)
           <tr>
+            {{-- Immagine --}}
             <td class="text-center d-flex justify-content-center d-none d-lg-table-cell">
-              <div class="index-prev">
+              <div class="index-prev mx-auto">
                 @if ($dish->image)
                     <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
                 @else
