@@ -4,9 +4,12 @@ const inputPassword = document.getElementById('password');
 const inputPasswordConfirm = document.getElementById('password-confirm');
 const invalidMessage = document.querySelectorAll('.invalid-message');
 const form = document.getElementById('registration-form');
+const checkBoxes = document.querySelectorAll('[type="checkbox"]');
+const textCheckbox = document.getElementById('text-checkbox');
 
 // Flag
 let isValid = true;
+let isCheckboxValid = false;
 
 // Regex
 const regex = /\d/;
@@ -242,5 +245,32 @@ form.addEventListener('submit', e => {
         }
     });
 
-    if (!isValid) e.preventDefault()
+    // Creo una flag
+    let categories = [];
+
+    // Faccio un foreach sui checkbox
+    checkBoxes.forEach(check => {
+
+        // Controllo che i checkbox non siano checked
+        if (!check.checked) {
+
+            // Pusho dentro la flag categories il value del checkbox
+            categories.push(check.value);
+        }
+    })
+
+    // Controllo che la length della flag categories sia minore della length dell'array dei checkbox (checkBoxes)
+    if (categories.length < checkBoxes.length) {
+        isCheckboxValid = true;
+        textCheckbox.classList.add('d-none');
+    }
+
+    if (categories.length === checkBoxes.length) {
+        isCheckboxValid = false;
+        textCheckbox.innerText = 'Aggiungi almeno un categoria';
+        textCheckbox.classList.remove('d-none');
+    }
+
+    // Controllo se la flag è a false
+    if (!isValid || !isCheckboxValid) e.preventDefault();
 });
