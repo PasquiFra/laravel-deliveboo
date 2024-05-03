@@ -102,7 +102,7 @@
             </td>
             {{--Prezzo--}}
             <td class="text-center">{{$dish->price}} €</td>
-            <td class="text-center">{{$dish->updated_at}}</td>
+            <td class="text-center">{{$dish->getFormattedDate('updated_at', 'd/m/Y H:i')}}</td>
             <td>
               <div class="d-flex gap-2 flex-column flex-xl-row align-items-center justify-content-end">
                 {{--# COLLEGAMENTO A SHOW --}}
