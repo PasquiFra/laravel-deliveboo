@@ -19,6 +19,26 @@ class OrderController extends Controller
 
     public function makePayment(Request $request, Gateway $gateway)
     {
-        return 'make payment';
+        $result = $gateway->transaction()->sale([
+            'amount' => '10.00',
+            'paymentMethodNonce' => '$request->token',
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+
+        if ($result->success) {
+            $data = [
+                'success' => true,
+                'message' => 'Transazione eseguita con successo'
+            ];
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'success' => false,
+                'message' => 'Transazione fallita'
+            ];
+            return response()->json($data, 401);
+        }
     }
 }
