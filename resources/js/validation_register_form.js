@@ -93,7 +93,7 @@ form.addEventListener('submit', e => {
 
 
             // Se è un numero
-            if (regex.test(inputField && inputField.length >= 1)) {
+            if (regex.test(inputField) && inputField.length >= 1) {
 
                 // Riassegno la flag a false
                 isValid = false;
