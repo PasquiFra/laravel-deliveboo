@@ -61,7 +61,7 @@ formUpdate.addEventListener('submit', e => {
         }
 
         if (input.id === 'price') {
-            if (input.value < 0) {
+            if (input.value <= 0) {
                 // Riassegno la flag a false
                 isValid = false;
 
@@ -70,7 +70,8 @@ formUpdate.addEventListener('submit', e => {
                 input.classList.remove('is-valid');
 
                 // Costruisco il messaggio di errore e lo aggiungo all'invalid message
-                invalidMessage[i].innerText = 'Il prezzo non può essere negativo';
+                invalidMessage[i].innerText = input.value < 0 ? 'Il prezzo non può essere negativo' : 'Il prezzo non può essere 0';
+
             } else if (inputField.match(minRegexDecimal)) {
                 // Riassegno la flag a false
                 isValid = false;
