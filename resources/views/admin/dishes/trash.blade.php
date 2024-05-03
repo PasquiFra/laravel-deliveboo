@@ -34,11 +34,11 @@
         @forelse ($dishes as $dish)
           <tr>
             <td class="text-center d-flex justify-content-center d-none d-lg-table-cell">
-              <div class="index-prev">
+              <div class="index-img mx-auto">
                 @if ($dish->image)
-                    <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
+                    <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded-circle">
                 @else
-                    <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid">
+                    <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded-circle">
                 @endif
               </div>
             </td>
@@ -98,19 +98,4 @@
     </table>
   </div> 
 </section>
-@endsection
-@section('scripts')
-<script>
-    
-      // CONFERMA DI CANCELLAZIONE
-      const formsDelete= document.querySelectorAll('.delete-form');
-    formsDelete.forEach(form => {
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            const dish = form.dataset.dish;
-            const confirmation = confirm(`Sei sicuro di voler eliminare il piatto ${dish}?`);
-            if(confirmation) form.submit();
-        })
-    });
-</script>
 @endsection

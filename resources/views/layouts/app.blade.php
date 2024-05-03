@@ -52,6 +52,9 @@
     
     {{--Toast--}}
     @include('layouts.includes.toast')
+    
+    {{-- Modal --}}
+    @include('layouts.includes.modal')
 
     {{--Scripts--}}
     @yield('scripts')
