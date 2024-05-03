@@ -25,7 +25,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
 //Rotta per tutti i ristoranti
 Route::get('/restaurants', [RestaurantController::class, 'index']);
-//Rotta per il piatto
-Route::get('/restaurants/{restaurantSlug}/dishes/{dishSlug}', [RestaurantController::class, 'showDish']);
-//Rotta per i ristoranti appartenenti ad una categoria
-Route::get('categories/{slug}/restaurants', CategoryRestaurantController::class);
