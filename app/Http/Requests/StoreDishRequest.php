@@ -36,7 +36,6 @@ class StoreDishRequest extends FormRequest
     {
         return [
             'name.required' => 'Il nome del piatto è obbligatorio',
-            'availability.required' => 'Indica se pubblicare o no il prodotto',
             'image.image' => 'Il tipo di file non è corretto',
             'image.mimes' => 'Il formato del file non è corretto',
             'course.required' => 'La portata è obbligatoria',
