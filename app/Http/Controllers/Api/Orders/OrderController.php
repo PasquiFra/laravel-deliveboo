@@ -10,11 +10,14 @@ class OrderController extends Controller
 {
     public function generate(Request $request, Gateway $gateway)
     {
-        dd($gateway->clientToken());
-        return 'generate';
+        $token = $gateway->clientToken()->generate();
+        $data = [
+            'token' => $token
+        ];
+        return response()->json($data, 200);
     }
 
-    public function makePayment(Request $request)
+    public function makePayment(Request $request, Gateway $gateway)
     {
         return 'make payment';
     }
