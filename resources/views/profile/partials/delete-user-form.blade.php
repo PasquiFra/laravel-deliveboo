@@ -32,7 +32,7 @@
                     </p>
                 </div>
                 <div class="d-flex justify-content-between align-items-center ms-3">
-                    <button type="button" class="btn-outline-index text-white fw-semibold gray ms-1 px-3 py-2 rounded-pill d-flex align-items-center text-white fw-semibold" data-bs-dismiss="modal">Torna indietro</button>
+                    <button type="button" class="btn-outline-index text-white fw-semibold gray ms-1 px-3 py-2 rounded-pill d-flex align-items-center fw-semibold" data-bs-dismiss="modal">Torna indietro</button>
 
                     <form method="post" action="{{ route('profile.destroy') }}" class="p-6">
                         @csrf
