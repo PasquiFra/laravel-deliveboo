@@ -23,7 +23,7 @@
                     {{-- INPUT AVAILABILITY --}}
                     <div class="col-12 mb-3">
                         <div class="form-check form-switch d-flex p-0">
-                            <label class="form-check-label" for="availability">Status articolo:</label>
+                            <label class="form-check-label mb-2 ms-3" for="availability">Status articolo</label>
                             <div class="ms-5">
                                 <label class="form-check-label" id="availability-label" for="availability"></label>
                                 <input class="form-check-input" type="checkbox" role="switch" id="availability" 
@@ -36,7 +36,10 @@
     
                     {{-- INPUT NOME DEL PIATTO --}}
                     <div class="col-12 mb-3">
-                        <label class="form-label label fw-bold" for="name">Nome del piatto:</label>
+                        <label class="form-label label ms-3 mt-1" for="name">
+                            Nome del piatto 
+                            <span class="text-danger"><strong><sup>*</sup></strong></span>
+                        </label>
                         <input 
                             type="text" 
                             required 
@@ -61,7 +64,7 @@
     
                     {{-- SELECT DIET --}}
                     <div class="col-6 mb-3 ">
-                        <label class="form-label label fw-bold" for="diet">Dieta:</label>
+                        <label class="form-label label ms-3" for="diet">Dieta</label>
                         <select class="form-select bg-transparent border-dark-light rounded-pill" name="diet" id="diet">
                             <option 
                                 value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)
@@ -81,7 +84,10 @@
     
                     {{-- SELECT COURSE --}}
                     <div class="mb-3 col-6">
-                        <label class="form-label label fw-bold" for="course">Portata:</label>
+                        <label class="form-label label ms-3 mt-3" for="course">
+                            Portata
+                            <span class="text-danger"><strong><sup>*</sup></strong></span>
+                        </label>
                         <select class="form-select bg-transparent border-dark-light rounded-pill"  name="course" id="course" >
     
                             @foreach ($course_options as $option)
@@ -100,7 +106,7 @@
                     </div>
                     {{-- INPUT GROUP INGREDIENTS --}}
                     <div class="col-12">
-                        <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
+                        <label class="form-label label ms-3 mt-3" for="ingredients">Ingredienti</label>
                         <input 
                             type="text" 
                             id="ingredients" 
@@ -113,7 +119,10 @@
     
                     {{-- INPUT GROUP PRICE --}}
                     <div class="mb-3 col-6 col-sm-4 col-xl-5">
-                        <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
+                        <label class="form-label label ms-3" for="price">
+                            Prezzo piatto
+                            <span class="text-danger"><strong><sup>*</sup></strong></span>
+                        </label>
                         <input type="number" name="price" id="price" step="0.1" min="0" class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                         value="{{ old('price', $dish->price) }}">
                         <span class="invalid-message invalid-feedback ms-3"></span>
@@ -127,7 +136,7 @@
                     {{-- INPUT IMMAGINE --}}
                     <div class="col-6 col-sm-6 col-xl-5 mb-3">
                         <div class="d-flex flex-column">
-                            <label class="form-label label fw-bold">Upload Immagine:</label>
+                            <label class="form-label label ms-3">Upload Immagine</label>
                             <input type="file" name="image" id="uploadBtn" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
                             <label for="uploadBtn" role="button" id="upload-label" class="btn border-light-subtle rounded-pill">Carica un'immagine</label>
                             @error('image')
@@ -148,8 +157,8 @@
                         : asset('/images/default-dish.png')}}" 
                         alt="{{ $dish->slug }}" class="img-fluid">
                     </div>
-    
-                    <div class="col-12 d-flex justify-content-between pt-4">
+                    <p class="asterisk mb-3 text-center me-3">I campi contrassegnati con <span class="text-danger"><strong><sup>*</sup></strong></span> sono obbligatori</p>
+                    <div class="col-12 d-flex justify-content-between pt-2">
                         <a href="{{route('admin.dishes.index')}}" class="btn-outline-index text-white fw-semibold gray ms-1 px-3 py-2 rounded-pill d-flex align-items-center text-white fw-semibold"><i class="fa-solid fa-left-long me-2"></i> Torna indietro</a>
                         <div>
                             <button class="btn-outline-index text-white fw-semibold green ms-1 px-3 py-2 rounded-pill align-items-center text-white fw-semibold me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Salva</button>
