@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\CategoryRestaurantController;
+use App\Http\Controllers\Api\DishController as ApiDishController;
 use App\Http\Controllers\Api\Orders\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,9 @@ Route::get('/restaurants/{restaurantSlug}/dishes/{dishSlug}', [RestaurantControl
 Route::get('categories/{slug}/restaurants', CategoryRestaurantController::class);
 
 
-//Rotte della Orders API
+//creo la rotta al DishControllergenerate
+Route::get('dishes', [ApiDishController::class, 'index']);
 
+//Rotte della Orders API
 Route::get('orders/generate', [OrderController::class, 'generate']);
 Route::post('orders/make/payment', [OrderController::class, 'makePayment']);

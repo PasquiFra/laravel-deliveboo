@@ -11,8 +11,9 @@ class DishController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function __invoke(string $slug)
+    public function index(Request $request)
     {
-        //
+        $dishes = Dish::all();
+        return response()->json($dishes, 200);
     }
 }
