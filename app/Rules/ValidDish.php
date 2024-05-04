@@ -4,9 +4,9 @@ namespace App\Rules;
 
 use App\Models\Dish;
 use Closure;
-use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Contracts\Validation\Rule;
 
-class ValidDish implements ValidationRule
+class ValidDish implements Rule
 {
     /**
      * Run the validation rule.
