@@ -6,6 +6,7 @@ use App\Models\Dish;
 use Closure;
 use Illuminate\Contracts\Validation\Rule;
 
+//In origine era presente Validation/ValidationRule, abbiamo sostituito con Validation/Rule in modo da farci restituire il messaggio di errore del prodotto nel caso di ID del prodotto inesistente
 class ValidDish implements Rule
 {
     /**
