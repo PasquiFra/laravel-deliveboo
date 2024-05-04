@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Orders;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\OrderRequest;
+use App\Models\Dish;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,7 @@ class OrderController extends Controller
 {
     public function generate(Request $request, Gateway $gateway)
     {
+        //Generazione del token da restituire al Client
         $token = $gateway->clientToken()->generate();
         $data = [
             'token' => $token
@@ -20,14 +22,18 @@ class OrderController extends Controller
 
     public function makePayment(OrderRequest $request, Gateway $gateway)
     {
+
+        $dish = Dish::find($request->dish);
+        // Elaborazione e validazione dei parametri dell'ordine
         $result = $gateway->transaction()->sale([
-            'amount' => $request->amount,
+            'amount' => $dish->price,
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submitForSettlement' => true
             ]
         ]);
 
+        //Restituzione dell'esito della transazione
         if ($result->success) {
             $data = [
                 'success' => true,

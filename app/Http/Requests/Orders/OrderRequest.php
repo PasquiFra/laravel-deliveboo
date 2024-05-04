@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Orders;
 
+use App\Rules\ValidDish;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
@@ -19,11 +20,15 @@ class OrderRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+    public function rules()
     {
+        // Validazione dei parametri della request dell'ordine
         return [
             'token' => 'required',
-            'amount' => 'required'
+            'dish' => [
+                'required',
+                new ValidDish()
+            ]
         ];
     }
 }
