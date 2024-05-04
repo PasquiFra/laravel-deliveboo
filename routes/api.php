@@ -37,5 +37,7 @@ Route::get('categories/{slug}/restaurants', CategoryRestaurantController::class)
 Route::get('dishes', [ApiDishController::class, 'index']);
 
 //Rotte della Orders API
+// generazione del token
 Route::get('orders/generate', [OrderController::class, 'generate']);
+// esito transazione
 Route::post('orders/make/payment', [OrderController::class, 'makePayment']);
