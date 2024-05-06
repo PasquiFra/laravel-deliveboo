@@ -37,11 +37,11 @@ class CategorySeeder extends Seeder
             ],
             [
                 'label' => 'Siriano',
-                'img' => 'category_images/doner-kebab.png',
+                'img' => 'category_images/kebab.png',
             ],
             [
                 'label' => 'Africano',
-                'img' => 'category_images/meat.png',
+                'img' => 'category_images/couscous.png',
             ],
             [
                 'label' => 'Thailandese',
@@ -49,7 +49,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'label' => 'Brasiliano',
-                'img' => 'category_images/meat.png',
+                'img' => 'category_images/feijoada.png',
             ],
             [
                 'label' => 'Turco',
