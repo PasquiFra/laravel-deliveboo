@@ -106,4 +106,10 @@ class RestaurantController extends Controller
 
         return response()->json($dish);
     }
+
+    public function getRestaurant(string $id)
+    {
+        $restaurant = Restaurant::whereId($id)->first();
+        return response()->json($restaurant);
+    }
 }

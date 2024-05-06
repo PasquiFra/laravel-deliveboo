@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Rotta per recuperante il ristorante dall'id
+Route::get('/restaurants/restaurant/{id}', [RestaurantController::class, 'getRestaurant']);
 //Rotta per il singolo ristorante
 Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
 //Rotta per tutti i ristoranti
