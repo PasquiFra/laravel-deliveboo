@@ -59,7 +59,7 @@ class RestaurantController extends Controller
 
 
         // Recupero il ristorante con il dato slug 
-        $restaurant = Restaurant::select(['restaurant_name', 'city', 'address', 'cap', 'image', 'phone'])
+        $restaurant = Restaurant::with('categories')
             ->whereSlug($slug)
             ->first();
 
