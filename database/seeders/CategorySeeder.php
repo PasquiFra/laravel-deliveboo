@@ -17,68 +17,69 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 'label' => 'Italiano',
-                'img' => '',
+                'img' => 'category_images/spaghetti.png',
             ],
             [
                 'label' => 'Cinese',
-                'img' => '',
+                'img' => 'category_images/dumpling.png',
             ],
             [
                 'label' => 'Giapponese',
-                'img' => '',
+                'img' => 'category_images/sushi.png',
             ],
             [
                 'label' => 'Indiano',
-                'img' => '',
+                'img' => 'category_images/chili.png',
             ],
             [
                 'label' => 'Messicano',
-                'img' => '',
+                'img' => 'category_images/taco.png',
             ],
             [
                 'label' => 'Siriano',
-                'img' => '',
+                'img' => 'category_images/kebab.png',
             ],
             [
                 'label' => 'Africano',
-                'img' => '',
+                'img' => 'category_images/couscous.png',
             ],
             [
                 'label' => 'Thailandese',
-                'img' => '',
+                'img' => 'category_images/ramen.png',
             ],
             [
                 'label' => 'Brasiliano',
-                'img' => '',
+                'img' => 'category_images/feijoada.png',
             ],
             [
                 'label' => 'Turco',
-                'img' => '',
+                'img' => 'category_images/doner-kebab.png',
             ],
             [
                 'label' => 'Carne',
-                'img' => '',
+                'img' => 'category_images/meat.png',
             ],
             [
                 'label' => 'Pesce',
-                'img' => '',
+                'img' => 'category_images/fish.png',
             ],
             [
                 'label' => 'Gelato',
-                'img' => '',
+                'img' => 'category_images/ice-cream-cone.png',
             ],
             [
                 'label' => 'Pizza',
-                'img' => '',
+                'img' => 'category_images/pizza.png',
             ],
             [
                 'label' => 'Poke',
-                'img' => '',
+                'img' => 'category_images/poke-bowl.png',
             ],
         ];
         foreach ($categories as $category) {
             $new_category = new Category();
             $new_category->label = $category['label'];
+            $new_category->img = $category['img'];
             $new_category->slug = Str::slug($category['label']);
             $new_category->save();
         }

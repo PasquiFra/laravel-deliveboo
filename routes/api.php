@@ -23,10 +23,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Rotta per recuperante il ristorante dall'id
+Route::get('/restaurants/restaurant/{id}', [RestaurantController::class, 'getRestaurant']);
 //Rotta per il singolo ristorante
 Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
 //Rotta per tutti i ristoranti
 Route::get('/restaurants', [RestaurantController::class, 'index']);
+
 //Rotta per il piatto
 Route::get('/restaurants/{restaurantSlug}/dishes/{dishSlug}', [RestaurantController::class, 'showDish']);
 //Rotta per i ristoranti appartenenti ad una categoria
@@ -41,3 +44,5 @@ Route::get('dishes', [ApiDishController::class, 'index']);
 Route::get('orders/generate', [OrderController::class, 'generate']);
 // esito transazione
 Route::post('orders/make/payment', [OrderController::class, 'makePayment']);
+
+

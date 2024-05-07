@@ -68,12 +68,13 @@
       <tbody>
         @forelse ($dishes as $dish)
           <tr>
+            {{-- Immagine --}}
             <td class="text-center d-flex justify-content-center d-none d-lg-table-cell">
-              <div class="index-prev">
+              <div class="index-img mx-auto">
                 @if ($dish->image)
-                    <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="show-image">
+                    <img src="{{asset('storage/' . $dish->image)}}" alt="foto-{{$dish->slug}}" class="img-fluid rounded-circle">
                 @else
-                    <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid">
+                    <img src="{{asset('/images/default-dish.png')}}" alt="" class="img-fluid rounded-circle">
                 @endif
               </div>
             </td>
@@ -101,7 +102,7 @@
             </td>
             {{--Prezzo--}}
             <td class="text-center">{{$dish->price}} €</td>
-            <td class="text-center">{{$dish->updated_at}}</td>
+            <td class="text-center">{{$dish->getFormattedDate('updated_at', 'd/m/Y H:i')}}</td>
             <td>
               <div class="d-flex gap-2 flex-column flex-xl-row align-items-center justify-content-end">
                 {{--# COLLEGAMENTO A SHOW --}}
@@ -116,7 +117,7 @@
                 
                 {{--# COLLEGAMENTO A  DESTROY --}}
                 <form action="{{ route('admin.dishes.destroy', $dish->id) }}" 
-                  method="POST" class="delete-form" data-dish="{{$dish->name}}">
+                  method="POST" class="delete-form" data-dish="{{$dish->id}}" data-bs-toggle="modal" data-bs-target="#modal">
                   @csrf
                   @method('DELETE')
                   <button class="rounded px-2 py-1 btn-outline-index red text-white fw-semibold"><i class="far fa-trash-can"></i></button>
@@ -135,24 +136,9 @@
       
 @section('scripts')
 <script>
-
-    // CONFERMA DI CANCELLAZIONE
-    const formsDelete= document.querySelectorAll('.delete-form');
-    formsDelete.forEach(form => {
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            const dish = form.dataset.dish;
-            const confirmation = confirm(`Sei sicuro di voler eliminare il piatto ${dish}?`);
-            if(confirmation) form.submit();
-        })
-    });
-
-  
-
+  const dishes = @json($dishes);
 </script>
-
-
-
+  @vite('resources/js/delete_confirmation.js')
 @endsection
 
 

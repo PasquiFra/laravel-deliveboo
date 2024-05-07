@@ -31,7 +31,7 @@
                                     <span class="invalid-message invalid-feedback ms-3"></span>
                                     @error('restaurant_name')
                                         <span class="invalid-feedback mx-3" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <strong>{{ $message }}</strong> 
                                         </span>
                                     @enderror
                                 </div>
@@ -164,7 +164,7 @@
                                 </div>
 
                                 <div class="col-12 text-center">
-                                    <p class="mb-3">Categorie</p>
+                                    <p class="mb-3 text-center">Categorie<span class="text-danger ms-2"><strong><sup>*</sup></strong></span> </p>
                                     {{-- Foreach delle categorie --}}
                                     @foreach ($categories as $category)
                                         <div class="form-check form-check-inline me-2">

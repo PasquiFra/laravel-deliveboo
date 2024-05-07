@@ -46,7 +46,8 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 //'email' => trans('auth.failed'),
-                'email' => 'Email o password sono errate',
+                'email.required' => 'Email o password sono errate',
+                'password.required' => 'La password è obbligatoria'
             ]);
         }
 

@@ -14,10 +14,31 @@ class RestaurantController extends Controller
      */
     public function index(Request $request)
     {
-        //Recupero i ristoranti con le categorie e lo user
-        $restaurants = Restaurant::orderByDesc('updated_at')->orderByDesc('created_at')->with('categories', 'user')->get();
+        $categoryLabels = $request->query('categories');
         //Recupero tutte le categorie
         $categories = Category::all();
+        //Se arrivano dati nella query
+        if (!empty($categoryLabels)) {
+            //Trasformo l'array in stringa e aggiungo un separatore
+            $categoryLabels = explode(',', $categoryLabels);
+            // Prendo tutti i ristoranti
+            $query = Restaurant::query();
+            // Applica un filtro per ogni categoria richiesta
+            foreach ($categoryLabels as $label) {
+                /*Cerco nella tabella categories le categorie la cui colonna
+                label corrisponde al valore $label*/
+                $query->whereHas('categories', function ($query) use ($label) {
+                    $query->where('label', $label);
+                });
+            }
+            /*Recupero i ristoranti sottoposti 
+            alla query con le categorie*/
+            $restaurants = $query->with('categories')->get();
+        } else {
+            //Recupero i ristoranti con le categorie e lo user
+            $restaurants = Restaurant::orderBy('restaurant_name')->orderByDesc('created_at')->with('categories', 'user')->get();
+        }
+
         //Restituisco un array di array associativi 
         return response()->json(['restaurants' => $restaurants, 'categories' => $categories]);
     }
@@ -38,7 +59,7 @@ class RestaurantController extends Controller
 
 
         // Recupero il ristorante con il dato slug 
-        $restaurant = Restaurant::select(['restaurant_name', 'city', 'address', 'cap', 'image', 'phone'])
+        $restaurant = Restaurant::with('categories')
             ->whereSlug($slug)
             ->first();
 
@@ -84,5 +105,11 @@ class RestaurantController extends Controller
         }
 
         return response()->json($dish);
+    }
+
+    public function getRestaurant(string $id)
+    {
+        $restaurant = Restaurant::whereId($id)->first();
+        return response()->json($restaurant);
     }
 }

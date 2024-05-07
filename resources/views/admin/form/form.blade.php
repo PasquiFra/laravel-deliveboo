@@ -8,21 +8,13 @@
             @if (Route::is('admin.dishes.create')) Aggiungi nuovo piatto
             @else Modifica {{$dish->name}} @endif 
         </h1>
-    
-        @if($errors)
-        <!--Alert per errori del form-->
-        <div id="validation-errors" class="alert alert-danger d-none" role="alert">
-            <ul id="listed-errors">    
-            </ul>
-            </div>    
-        @endif
 
         {{-- Impostazioni del form --}}
         @if ($dish->exists)
-            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data" id="input-form">
+            <form action="{{ route('admin.dishes.update', $dish->id) }}" method="post" enctype="multipart/form-data" id="form-update" novalidate>
             @method('put')
         @else
-            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data" id="input-form">
+            <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data" id="form-create" novalidate>
         @endif
     
                 {{-- TOKEN csrf --}}
@@ -31,7 +23,7 @@
                     {{-- INPUT AVAILABILITY --}}
                     <div class="col-12 mb-3">
                         <div class="form-check form-switch d-flex p-0">
-                            <label class="form-check-label" for="availability">Status articolo:</label>
+                            <label class="form-check-label mb-2 ms-3" for="availability">Status articolo</label>
                             <div class="ms-5">
                                 <label class="form-check-label" id="availability-label" for="availability"></label>
                                 <input class="form-check-input" type="checkbox" role="switch" id="availability" 
@@ -44,16 +36,20 @@
     
                     {{-- INPUT NOME DEL PIATTO --}}
                     <div class="col-12 mb-3">
-                        <label class="form-label label fw-bold" for="name">Nome del piatto:</label>
+                        <label class="form-label label ms-3 mt-1" for="name">
+                            Nome del piatto 
+                            <span class="text-danger"><strong><sup>*</sup></strong></span>
+                        </label>
                         <input 
                             type="text" 
                             required 
                             id="name" 
                             name="name" 
-                            class="form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
+                            class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('name') is-invalid @elseif(old('name')) is-valid @enderror" 
                             value="{{ old('name', $dish->name) }}" 
                             placeholder="Inserisci titolo..."
                         >
+                        <span class="invalid-message invalid-feedback ms-3"></span>
                         @error('name')
                             <div class="invalid-feedback ms-3">
                                 {{ $message }}
@@ -68,7 +64,7 @@
     
                     {{-- SELECT DIET --}}
                     <div class="col-6 mb-3 ">
-                        <label class="form-label label fw-bold" for="diet">Dieta:</label>
+                        <label class="form-label label ms-3" for="diet">Dieta</label>
                         <select class="form-select bg-transparent border-dark-light rounded-pill" name="diet" id="diet">
                             <option 
                                 value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)
@@ -82,17 +78,16 @@
                         @error('diet')
                             <div class="invalid-feedback ms-3">
                                 {{ $message }}
-                            </div>   
-                        @else        
-                            <div class="valid-feedback ms-3">
-                                Campo corretto
-                            </div>      
+                            </div>        
                         @enderror       
                     </div>
     
                     {{-- SELECT COURSE --}}
                     <div class="mb-3 col-6">
-                        <label class="form-label label fw-bold" for="course">Portata:</label>
+                        <label class="form-label label ms-3 mt-3" for="course">
+                            Portata
+                            <span class="text-danger"><strong><sup>*</sup></strong></span>
+                        </label>
                         <select class="form-select bg-transparent border-dark-light rounded-pill"  name="course" id="course" >
     
                             @foreach ($course_options as $option)
@@ -106,16 +101,12 @@
                         @error('course')
                             <div class="invalid-feedback ms-3">
                                 {{ $message }}<a href="{{route('admin.dishes.index')}}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left me-2"></i>Torna indietro</a>
-                            </div>   
-                        @else        
-                            <div class="valid-feedback ms-3">
-                                Campo corretto
-                            </div>      
+                            </div> 
                         @enderror       
                     </div>
                     {{-- INPUT GROUP INGREDIENTS --}}
                     <div class="col-12">
-                        <label class="form-label label fw-bold" for="ingredients">Ingredienti:</label>
+                        <label class="form-label label ms-3 mt-3" for="ingredients">Ingredienti</label>
                         <input 
                             type="text" 
                             id="ingredients" 
@@ -128,24 +119,24 @@
     
                     {{-- INPUT GROUP PRICE --}}
                     <div class="mb-3 col-6 col-sm-4 col-xl-5">
-                        <label class="form-label label fw-bold" for="price">Prezzo piatto:</label>
-                        <input type="number" name="price" id="price" step="0.1" min="0" class="form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
+                        <label class="form-label label ms-3" for="price">
+                            Prezzo piatto
+                            <span class="text-danger"><strong><sup>*</sup></strong></span>
+                        </label>
+                        <input type="number" name="price" id="price" step="0.1" min="0" class="form-inputs form-control bg-transparent border-dark-light rounded-pill @error('price') is-invalid @elseif(old('price')) is-valid @enderror"
                         value="{{ old('price', $dish->price) }}">
+                        <span class="invalid-message invalid-feedback ms-3"></span>
                         @error('price')
                             <div class="invalid-feedback ms-3">
                                 {{ $message }}
-                            </div>   
-                        @else        
-                            <div class="valid-feedback ms-3">
-                                Campo corretto
-                            </div>      
+                            </div>        
                         @enderror     
                     </div>
     
                     {{-- INPUT IMMAGINE --}}
                     <div class="col-6 col-sm-6 col-xl-5 mb-3">
                         <div class="d-flex flex-column">
-                            <label class="form-label label fw-bold">Upload Immagine:</label>
+                            <label class="form-label label ms-3">Upload Immagine</label>
                             <input type="file" name="image" id="uploadBtn" class="form-control bg-transparent border-dark-light rounded-pill @error('image') is-invalid @elseif(old('image')) is-valid @enderror">
                             <label for="uploadBtn" role="button" id="upload-label" class="btn border-light-subtle rounded-pill">Carica un'immagine</label>
                             @error('image')
@@ -166,8 +157,8 @@
                         : asset('/images/default-dish.png')}}" 
                         alt="{{ $dish->slug }}" class="img-fluid">
                     </div>
-    
-                    <div class="col-12 d-flex justify-content-between pt-4">
+                    <p class="asterisk mb-3 text-center me-3">I campi contrassegnati con <span class="text-danger"><strong><sup>*</sup></strong></span> sono obbligatori</p>
+                    <div class="col-12 d-flex justify-content-between pt-2">
                         <a href="{{route('admin.dishes.index')}}" class="btn-outline-index text-white fw-semibold gray ms-1 px-3 py-2 rounded-pill d-flex align-items-center text-white fw-semibold"><i class="fa-solid fa-left-long me-2"></i> Torna indietro</a>
                         <div>
                             <button class="btn-outline-index text-white fw-semibold green ms-1 px-3 py-2 rounded-pill align-items-center text-white fw-semibold me-2" type="submit"><i class="fa-solid fa-floppy-disk me-2"></i>Salva</button>
@@ -184,14 +175,6 @@
     
 @section('scripts')
 <script>
-
-    const errorBag=document.getElementById('validation-errors');
-    const listedErrors=document.getElementById('listed-errors');
-   
-    let isValid=true;
-    let errors=[];
-    let errorText='';
-    let errorsHtml='';
 
     // Label di availability dinamico
     document.getElementById('availability').addEventListener('change', function() {;
@@ -230,76 +213,16 @@
         if(blobUrl) URL.revokeObjectURL(blobUrl);
     }) 
 
-    document.getElementById('input-form').addEventListener('submit', function() {;
-
-        // setto il field name del ristorante quando il campo è valido
-        const nameField=document.getElementById('name');
-        const nameFieldValue=document.getElementById('name').value;
-       
-        if (nameFieldValue.length >= 3) {
-            nameField.classList.add('is-valid');
-            nameField.classList.remove('is-invalid');
-        } else {
-            isValid=false
-            nameField.classList.add('is-invalid');
-            nameField.classList.remove('is-valid');
-            errorText='Il campo nome del piatto deve contenere almeno 3 lettere';
-            errors.push(errorText);
-        }
-
-        // setto il field diet in modo che i valori selezionati siano tra quelli consentiti
-        const dietSelect = document.getElementById('diet');
-        const dietOptions = @json($diet_options);
-        
-        dietOptions.forEach(option => {
-            if (dietOptions.includes(dietSelect.value) || !dietSelect.value) {
-                dietSelect.classList.add('is-valid');
-                dietSelect.classList.remove('is-invalid');
-            } else {
-                isValid=false
-                dietSelect.classList.add('is-invalid');
-                dietSelect.classList.remove('is-valid');
-                errorText='Il campo dieta è errato';
-                errors.push(errorText);
-            }
-        });
-
-        // setto il field diet in modo che i valori selezionati siano tra quelli consentiti
-        const courseSelect = document.getElementById('course');
-        const courseOptions = @json($course_options);
-
-        courseOptions.forEach(option => {
-            if (courseOptions.includes(courseSelect.value)) {
-                courseSelect.classList.add('is-valid');
-                courseSelect.classList.remove('is-invalid');
-            } else {
-                isValid=false
-                courseSelect.classList.add('is-invalid');
-                courseSelect.classList.remove('is-valid');
-                errorText='Il campo portata è errato';
-                errors.push(errorText);
-            }
-        });
-        
-        // Setto il field price in modo che abbia sempre 2 decimali quando submitto il form
-        const priceInputField = document.getElementById('price');
-        const priceValue = parseFloat(priceInputField.value).toFixed(2);
-        priceInputField.value = priceValue;
-        
-        //Riempio la lista con gli errori
-        errors.forEach(error => {
-            errorsHtml+=`<li>${error}</li>`
-        });
-        listedErrors.innerHTML = errorsHtml;
-        
-        //Mostro l'alert se ci sono errori
-        if(errors.length){
-            errorBag.classList.remove('d-none')
-            event.preventDefault();
-        }
-        
-    });
+// Recupero i valori delle select
+const dietOptions = @json($diet_options);
+const courseOptions = @json($course_options);
 
 </script>
 
+
+    @if ($dish->exists)
+        @vite('resources/js/validation_dish_form_update.js')
+    @else
+        @vite('resources/js/validation_dish_form_create.js')
+    @endif
 @endsection
