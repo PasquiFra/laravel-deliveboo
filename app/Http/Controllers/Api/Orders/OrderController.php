@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Orders;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\OrderRequest;
 use App\Models\Dish;
+use App\Models\Order;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
 
@@ -50,13 +51,14 @@ class OrderController extends Controller
                 'phone_number.min' => 'Il numero avere :min cifre',
                 'phone_number.max' => 'Il numero avere :max cifre',
                 'dishes.required' => 'E\' necessario inserire dei piatti nel carrello',
+                'dishes.array' => 'Il formato ricevuto non è corretto',
                 'card_number.required' => 'Campo obbligatorio',
                 'card_number.digits' => 'Il numero carta deve essere di :digits cifre',
                 'card_expire_date.required' => 'Campo obbligatorio',
             ]
         );
 
-        // Se alcuni campi non arrivano invierò un messaggio di errore
+        // Se alcuni campi non arrivano correttamente la transazione verrà annullata
         if (
             !$request->restaurant_id || !$request->name || !$request->lastname ||
             !$request->address || !$request->email || !$request->phone || !$request->dishes ||
@@ -69,9 +71,6 @@ class OrderController extends Controller
             return response()->json($data, 401);
         } else {
 
-            // Attribuisco forzatamente il token per il metodo di pagamento
-            $payment_method_nonce = $request->payment_method_nonce;
-
             // Recupero i piatti
             $dishes = $request->dishes;
 
@@ -82,41 +81,79 @@ class OrderController extends Controller
                 $price = $dish['price'];
                 $total += $price;
             }
-
-            // Assegno il totale e stabilisco sempre che abbia due numeri decimali
-            $total = number_format($total, 2);
-
-
-
-            return $total;
-            // Recupero l'id del ristorante
-            $restaurant_id = $request->restaurant_id;
-
-
-            return $dishes;
         }
 
+        // Attribuisco forzatamente il token per il metodo di pagamento
+        $nonce = $request->payment_method_nonce;
+
+        // Assegno il totale e stabilisco sempre che abbia due numeri decimali
+        $total = number_format($total, 2, '.', '');
 
         // Elaborazione e validazione dei parametri dell'ordine
         $result = $gateway->transaction()->sale([
-            'amount' => $request->total, //! DA INSERIRE IL TOTALE DELL'ORDINE (possibilmente calcolato nel back)
-            'paymentMethodNonce' => $payment_method_nonce,
+            // dati della transazione
+            'amount' => $total,
+            'paymentMethodNonce' => $nonce,
+
+            // dati del cliente
+            'customer' => [
+                'firstName' => $request->name,
+                'lastName' => $request->lastname,
+                'email' => $request->email,
+                'phone' => $request->phone,
+            ],
+
+            // dettagli della consegna
+            'shipping' => [
+                'firstName' => $request->name,
+                'lastName' => $request->lastname,
+                'streetAddress' => $request->address,
+            ],
+
             'options' => [
                 'submitForSettlement' => true
             ]
         ]);
 
+        // Creo un nuovo ordine
+        $order = new Order([
+            'restaurant_id' => $request->restaurant_id,
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'total' => $total
+        ]);
+
+
+        // Salvo l'ordine
+        $order->save();
+
         //Restituzione dell'esito della transazione
         if ($result->success) {
+
+            //assegno il valore true all'ordine e salvo
+            $order->status = true;
+            $order->save();
+
+            // restituisco l'esito al front
             $data = [
                 'success' => true,
-                'message' => 'Transazione eseguita con successo'
+                'message' => 'Transazione eseguita con successo',
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'total' => $total
             ];
+
             return response()->json($data, 200);
         } else {
+
+            // restituisco l'esito al front
             $data = [
                 'success' => false,
-                'message' => 'Transazione fallita'
+                'message' => 'Qualcosa è andato storto! Transazione fallita'
             ];
             return response()->json($data, 401);
         }
