@@ -66,11 +66,8 @@ class RestaurantController extends Controller
         // Recupero il ristorante con il dato slug e carica solo i piatti con disponibilità 1
         $restaurant_dishes = Restaurant::whereSlug($slug)
             ->with(['dishes' => function ($query) {
-                $query->where('availability', 1);
-                // ->orderBy('Antipasto')
-                // ->orderBy('Primo')
-                // ->orderBy('Secondo')
-                // ->orderBy('Dessert');
+                $query->where('availability', 1)
+                    ->orderBy('name', 'asc');
             }])
             ->first();
 
