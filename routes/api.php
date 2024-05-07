@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Api\RestaurantController;
-use App\Http\Controllers\Api\CategoryRestaurantController;
 use App\Http\Controllers\Api\DishController as ApiDishController;
 use App\Http\Controllers\Api\Orders\OrderController;
 use Illuminate\Http\Request;
@@ -32,8 +30,6 @@ Route::get('/restaurants', [RestaurantController::class, 'index']);
 
 //Rotta per il piatto
 Route::get('/restaurants/{restaurantSlug}/dishes/{dishSlug}', [RestaurantController::class, 'showDish']);
-//Rotta per i ristoranti appartenenti ad una categoria
-Route::get('categories/{slug}/restaurants', CategoryRestaurantController::class);
 
 
 //creo la rotta al DishControllergenerate
@@ -44,5 +40,3 @@ Route::get('dishes', [ApiDishController::class, 'index']);
 Route::get('orders/generate', [OrderController::class, 'generate']);
 // esito transazione
 Route::post('orders/make/payment', [OrderController::class, 'makePayment']);
-
-
