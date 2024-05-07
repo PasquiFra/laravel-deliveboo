@@ -154,7 +154,12 @@ class OrderController extends Controller
             // restituisco l'esito al front
             $data = [
                 'success' => false,
-                'message' => 'Qualcosa è andato storto! Transazione fallita'
+                'message' => 'Qualcosa è andato storto! Transazione fallita',
+                'name' => $request->name,
+                'lastname' => $request->lastname,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'total' => $total
             ];
             return response()->json($data, 401);
         }
