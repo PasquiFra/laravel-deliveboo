@@ -36,7 +36,7 @@ class RestaurantController extends Controller
             $restaurants = $query->with('categories')->get();
         } else {
             //Recupero i ristoranti con le categorie e lo user
-            $restaurants = Restaurant::orderBy('restaurant_name')->orderByDesc('created_at')->with('categories', 'user')->get();
+            $restaurants = Restaurant::orderBy('id')->orderByDesc('created_at')->with('categories', 'user')->get();
         }
 
         //Restituisco un array di array associativi 
