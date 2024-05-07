@@ -142,6 +142,7 @@ class OrderController extends Controller
                 'success' => true,
                 'message' => 'Transazione eseguita con successo',
                 'name' => $request->name,
+                'lastname' => $request->lastname,
                 'phone' => $request->phone,
                 'address' => $request->address,
                 'total' => $total
