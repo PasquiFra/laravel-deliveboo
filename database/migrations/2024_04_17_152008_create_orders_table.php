@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->int('restaurant_id')->required();
-            $table->decimal('total')->required();
-            $table->boolean('status')->required();
+            $table->unsignedBigInteger('restaurant_id')->required();
+            $table->decimal('total', 10, 2)->required();
+            $table->boolean('status')->default(false);
             $table->string('name')->required();
             $table->string('lastname')->required();
             $table->string('email')->required();
