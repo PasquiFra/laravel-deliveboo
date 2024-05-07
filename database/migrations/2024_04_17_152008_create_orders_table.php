@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->date('order_date', 50)->required();
+            $table->int('restaurant_id')->required();
             $table->decimal('total')->required();
-            $table->text('notes')->nullable();
+            $table->boolean('status')->required();
             $table->string('name')->required();
             $table->string('lastname')->required();
             $table->string('email')->required();
