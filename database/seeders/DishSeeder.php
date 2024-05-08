@@ -2621,7 +2621,7 @@ class DishSeeder extends Seeder
                 'ingredients' => 'Gamberetti, funghi, erba cipollina, peperoncino, lime',
                 'diet' => null,
                 'course' => 'Secondo',
-                'price' => 750,
+                'price' => 15,
                 'image' => ''
             ],
             // Piatti principali
