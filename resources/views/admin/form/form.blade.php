@@ -64,7 +64,7 @@
     
                     {{-- SELECT DIET --}}
                     <div class="col-6 mb-3 ">
-                        <label class="form-label label ms-3" for="diet">Dieta</label>
+                        <label class="form-label label ms-3 mt-3" for="diet">Dieta</label>
                         <select class="form-select bg-transparent border-dark-light rounded-pill" name="diet" id="diet">
                             <option 
                                 value="" {{ old('diet', $dish->diet) ? '' : 'selected' }}>Scegli un'opzione (facoltativo)

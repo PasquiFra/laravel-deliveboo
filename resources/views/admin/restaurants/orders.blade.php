@@ -4,9 +4,7 @@
 
 @section('content')
         <section id="show-orders">
-            <h1 class="text-center my-5">Riepilogo ordini di {{$restaurant_name}}</h1>
-
-            
+            <h1 class="text-center text-white my-5">Riepilogo ordini di {{$restaurant_name}}</h1>
             <table class="text-center">
 
                 <thead  class="tbl-header">
@@ -35,7 +33,9 @@
                         <td><strong>{{$order->total}}</strong></td>
                     </tr>
                     @empty
-                    <tr>Non sono ancora stati effettuati ordini</tr>   
+                    <tr>
+                        <td colspan="8" class="py-4">Non sono ancora stati effettuati ordini</td>   
+                    </tr>
                     @endforelse
                     <tr id="total-orders">
                         <td></td>

@@ -22,7 +22,7 @@
                                 {{ session('status') }}
                             </div>
                             @endif
-                            <div class="row">
+                            <div class="row justify-content-center">
                                 {{-- Finire di compilare gli href --}}
                                 <div class="col-6 col-sm-6 col-md-3 text-center my-5">
                                     <a href="{{route('admin.dishes.index')}}" class="effect">
@@ -36,12 +36,7 @@
                                         <h3 class="mt-3">Ristorante</h3>
                                     </a>
                                 </div>
-                                <div class="col-6 col-sm-6 col-md-3 text-center my-5">
-                                    <a href="" class="effect">
-                                        <img class="img-fluid w-50" src="{{asset('img/increase.png')}}" alt="grafico">
-                                        <h3 class="mt-3">Grafico</h3>
-                                    </a>
-                                </div>
+
                                 <div class="col-6 col-sm-6 col-md-3 text-center my-5">
                                     <a href="{{route('admin.restaurants.orders', Auth::user()->restaurant)}}" class="effect">
                                         <img class="img-fluid w-50" src="{{asset('img/receipt.png')}}" alt="ordine">

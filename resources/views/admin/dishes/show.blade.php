@@ -24,7 +24,7 @@
             </div>
 
             {{-- INFO PIATTO --}}
-            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-9 col-12 d-flex justify-content-center"> 
+            <div class="col-sm-12 col-md-6 col-lg-9 col-xl-9 col-12 d-flex"> 
                 <div class="info-dishes">
                     <div class="mb-3 mt-3">
                         L'articolo è
