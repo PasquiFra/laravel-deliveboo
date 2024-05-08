@@ -15,10 +15,19 @@ class OrderController extends Controller
     {
         //Generazione del token da restituire al Client
         $token = $gateway->clientToken()->generate();
-        $data = [
-            'token' => $token
-        ];
-        return response()->json($data, 200);
+
+        if ($token) {
+            $data = [
+                'token' => $token
+            ];
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'success' => false,
+                'message' => 'Non abbiamo l\'autorizzazione a proseguire con il pagamento! Transazione fallita',
+            ];
+            return response()->json($data, 401);
+        }
     }
 
     public function makePayment(Request $request, Gateway $gateway)
