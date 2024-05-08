@@ -36,7 +36,7 @@ class RestaurantController extends Controller
             $restaurants = $query->with('categories')->get();
         } else {
             //Recupero i ristoranti con le categorie e lo user
-            $restaurants = Restaurant::orderBy('restaurant_name')->orderByDesc('created_at')->with('categories', 'user')->get();
+            $restaurants = Restaurant::orderBy('id')->orderByDesc('created_at')->with('categories', 'user')->get();
         }
 
         //Restituisco un array di array associativi 
@@ -66,7 +66,8 @@ class RestaurantController extends Controller
         // Recupero il ristorante con il dato slug e carica solo i piatti con disponibilità 1
         $restaurant_dishes = Restaurant::whereSlug($slug)
             ->with(['dishes' => function ($query) {
-                $query->where('availability', 1);
+                $query->where('availability', 1)
+                    ->orderBy('name', 'asc');
             }])
             ->first();
 
