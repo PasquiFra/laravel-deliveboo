@@ -202,5 +202,10 @@
 @endsection
 
 @section('scripts')
+    <script>
+        const vats = @json($vats);
+        const emails = @json($emails);
+    </script>
+
     @vite('resources/js/validation_register_form.js')
 @endsection
