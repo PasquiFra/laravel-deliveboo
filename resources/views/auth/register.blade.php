@@ -202,5 +202,7 @@
 @endsection
 
 @section('scripts')
-    @vite('resources/js/validation_register_form.js')
+    {{-- @vite('resources/js/validation_register_form.js') --}}
+
+    @vite('resources/js/validation_blur_register_form.js')
 @endsection

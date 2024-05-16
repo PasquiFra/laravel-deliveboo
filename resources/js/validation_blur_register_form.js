@@ -7,23 +7,21 @@ const form = document.getElementById('registration-form');
 const checkBoxes = document.querySelectorAll('[type="checkbox"]');
 const textCheckbox = document.getElementById('text-checkbox');
 
-// Flag
-let isCheckboxValid = false;
-
 // Regex
 const regex = /\d/;
 const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexVat = /^(IT)?[0-9]{11}$/;
 
-// Bella santi
+// Flag checkbox
+let isCheckboxValid = false;
 
-//! Effettiva validazione
-form.addEventListener('submit', e => {
-    // Flag
-    let isValid = true;
+// Flag input
+let isValid = false;
 
-    // Giro su tutti gli input
-    inputs.forEach((input, i) => {
+
+inputs.forEach((input, i) => {
+    input.addEventListener('blur', () => {
+
         const inputField = input.value.trim();
         // Se l'input è vuoto
         if (!inputField) {
@@ -247,6 +245,26 @@ form.addEventListener('submit', e => {
             }
         }
     });
+});
+
+form.addEventListener('submit', e => {
+    inputs.forEach((input, i) => {
+        const inputField = input.value.trim();
+        // Se l'input è vuoto
+        if (!inputField) {
+
+            // Riassegno la flag a false
+            isValid = false;
+
+            // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+
+            // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+            invalidMessage[i].innerText = 'Il campo è obbligatorio'
+
+        }
+    })
 
     // Creo una flag
     let categories = [];
@@ -275,5 +293,6 @@ form.addEventListener('submit', e => {
     }
 
     // Controllo se la flag è a false
+    console.log(isValid, isCheckboxValid);
     if (!isValid || !isCheckboxValid) e.preventDefault();
 });
