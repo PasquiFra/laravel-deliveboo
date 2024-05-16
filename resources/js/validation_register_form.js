@@ -7,20 +7,249 @@ const form = document.getElementById('registration-form');
 const checkBoxes = document.querySelectorAll('[type="checkbox"]');
 const textCheckbox = document.getElementById('text-checkbox');
 
-// Flag
-let isCheckboxValid = false;
-
 // Regex
 const regex = /\d/;
 const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexVat = /^(IT)?[0-9]{11}$/;
 
-// Bella santi
+// Flag checkbox
+let isCheckboxValid = false;
 
-//! Effettiva validazione
+// Flag input
+let isValid = false;
+
+
+inputs.forEach((input, i) => {
+    input.addEventListener('blur', () => {
+
+        const inputField = input.value.trim();
+        // Se l'input è vuoto
+        if (!inputField) {
+
+            // Riassegno la flag a false
+            isValid = false;
+
+            // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+
+            // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+            invalidMessage[i].innerText = 'Il campo è obbligatorio'
+
+        } else {
+
+            // Aggiungo la classe 'is-valid' e rimuovo la classe 'is-invalid'
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+
+            // Rimuovo il messaggio di errore
+            invalidMessage[i].innerText = '';
+        }
+
+        // Input restaurant_name
+        if (input.id === 'restaurant_name') {
+            if (inputField.length < 5 && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Il nome del ristorante deve avere più di 5 caratteri';
+            }
+
+            // Se è un numero
+            if (!isNaN(inputField) && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Il nome del ristorante non può avere solo numeri';
+            }
+        }
+
+        // Input name
+        if (input.id === 'name') {
+            if (inputField.length < 2 && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Il nome deve avere più di 2 caratteri';
+            }
+
+
+            // Se è un numero
+            if (regex.test(inputField) && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Il nome non può contenere numeri';
+            }
+        }
+
+        // Input lastname
+        if (input.id === 'lastname') {
+            if (inputField.length < 2 && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Il cognome deve avere più di 2 caratteri';
+            }
+
+
+            // Se è un numero
+            if (regex.test(inputField) && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Il cognome non può contenere numeri';
+            }
+        }
+
+        // Input email
+        if (input.id === 'email') {
+            if (!input.value.match(regexEmail) && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Email non corretta';
+            }
+        }
+
+        // Input password
+        if (input.id === 'password') {
+            if (inputField.length < 8 && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'La password deve contenere almeno 8 caratteri';
+            }
+        }
+
+        // Input password-confirm
+        if (input.id === 'password-confirm') {
+            if (inputPassword.value !== inputPasswordConfirm.value) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Le password non coincidono';
+            }
+        }
+
+        // Input indirizzo
+        if (input.id === 'address') {
+            if (inputField.length < 5 && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'L\'indirizzo deve avere più di 5 lettere';
+            }
+
+            // Se è un numero
+            if (!isNaN(inputField) && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'La via del ristorante non può avere solo numeri';
+            }
+        }
+
+        // Input VAT
+        if (input.id === 'vat') {
+            if (inputField.length < 13 && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'La P.IVA deve avere almeno 11 caratteri dopo IT';
+            }
+
+            if (!input.value.match(regexVat) && inputField.length >= 1) {
+
+                // Riassegno la flag a false
+                isValid = false;
+
+                // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+
+                // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                invalidMessage[i].innerText = 'Il formato non è valido';
+            }
+        }
+    });
+});
+
 form.addEventListener('submit', e => {
     // Flag
-    let isValid = true;
+    isValid = true;
 
     // Giro su tutti gli input
     inputs.forEach((input, i) => {
