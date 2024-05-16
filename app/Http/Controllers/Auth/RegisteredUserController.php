@@ -26,8 +26,10 @@ class RegisteredUserController extends Controller
     {
         // Recupero le categorie da passare al form
         $categories = Category::select('label', 'id')->get();
+        $vats = Restaurant::select('vat')->get();
+        $emails = User::select('email')->get();
 
-        return view('auth.register', compact('categories'));
+        return view('auth.register', compact('categories', 'vats', 'emails'));
     }
 
     /**

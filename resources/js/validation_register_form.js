@@ -152,6 +152,24 @@ inputs.forEach((input, i) => {
                 // Costruisco il messaggio di errore e lo aggiungo all'invalid message
                 invalidMessage[i].innerText = 'Email non corretta';
             }
+
+            // Giro su tutte le email
+            emails.forEach(({ email }) => {
+
+                // Se l'email nel database è uguale all'email inserita
+                if (email === inputField) {
+
+                    // Riassegno la flag a false
+                    isValid = false;
+
+                    // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+
+                    // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                    invalidMessage[i].innerText = 'Questa email è già stata utilizzata';
+                }
+            })
         }
 
         // Input password
@@ -243,6 +261,24 @@ inputs.forEach((input, i) => {
                 // Costruisco il messaggio di errore e lo aggiungo all'invalid message
                 invalidMessage[i].innerText = 'Il formato non è valido';
             }
+
+            // Giro su tuttle le P.IVA
+            vats.forEach(({ vat }) => {
+
+                // Se la P.IVA nel database è uguale alla P.IVA inserita
+                if (vat === inputField) {
+
+                    // Riassegno la flag a false
+                    isValid = false;
+
+                    // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+
+                    // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                    invalidMessage[i].innerText = 'P.IVA già esistente';
+                }
+            })
         }
     });
 });
@@ -383,6 +419,24 @@ form.addEventListener('submit', e => {
                 // Costruisco il messaggio di errore e lo aggiungo all'invalid message
                 invalidMessage[i].innerText = 'Email non corretta';
             }
+
+            // Giro su tutte le email
+            emails.forEach(({ email }) => {
+
+                // Se l'email nel database è uguale all'email inserita
+                if (email === inputField) {
+
+                    // Riassegno la flag a false
+                    isValid = false;
+
+                    // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+
+                    // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                    invalidMessage[i].innerText = 'Questa email è già stata utilizzata';
+                }
+            })
         }
 
         // Input password
@@ -474,6 +528,25 @@ form.addEventListener('submit', e => {
                 // Costruisco il messaggio di errore e lo aggiungo all'invalid message
                 invalidMessage[i].innerText = 'Il formato non è valido';
             }
+
+            // Giro su tuttle le P.IVA
+            vats.forEach(({ vat }) => {
+
+                // Se la P.IVA nel database è uguale alla P.IVA inserita
+                if (vat === inputField) {
+
+                    // Riassegno la flag a false
+                    isValid = false;
+
+                    // Aggiungo la classe 'is-invalid' e rimuovo la classe 'is-valid'
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+
+                    // Costruisco il messaggio di errore e lo aggiungo all'invalid message
+                    invalidMessage[i].innerText = 'P.IVA già esistente';
+                }
+            })
+
         }
     });
 
