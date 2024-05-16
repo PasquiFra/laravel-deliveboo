@@ -15,6 +15,7 @@ const regex = /\d/;
 const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexVat = /^(IT)?[0-9]{11}$/;
 
+// Bella santi
 
 //! Effettiva validazione
 form.addEventListener('submit', e => {
